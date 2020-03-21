@@ -1,0 +1,7 @@
+.vs/
+.vscode/
+
+RestModels/Bin
+RestModels/obj
+
+TestProject

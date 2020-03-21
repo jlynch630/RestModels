@@ -1,9 +1,0 @@
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\bin\Debug\netcoreapp3.1\RestModels.deps.json
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\bin\Debug\netcoreapp3.1\RestModels.dll
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.csprojAssemblyReference.cache
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.AssemblyInfoInputs.cache
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.AssemblyInfo.cs
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\bin\Debug\netcoreapp3.1\RestModels.pdb
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.dll
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.pdb
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.csproj.CoreCompileInputs.cache
