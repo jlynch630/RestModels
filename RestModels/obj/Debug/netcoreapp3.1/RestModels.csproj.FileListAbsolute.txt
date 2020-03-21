@@ -7,6 +7,3 @@ C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\bin\D
 C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.dll
 C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.pdb
 C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.csproj.CoreCompileInputs.cache
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\bin\Debug\netcoreapp3.1\RestModels.runtimeconfig.json
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\bin\Debug\netcoreapp3.1\RestModels.runtimeconfig.dev.json
-C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels\obj\Debug\netcoreapp3.1\RestModels.genruntimeconfig.cache

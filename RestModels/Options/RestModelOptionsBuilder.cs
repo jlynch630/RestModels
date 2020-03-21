@@ -8,7 +8,7 @@
 namespace RestModels.Options {
 	using System;
 	using System.Collections.Generic;
-
+	using System.Linq.Expressions;
 	using Microsoft.AspNetCore.Builder;
 	using RestModels.Auth;
 	using RestModels.Conditions;
@@ -29,7 +29,7 @@ namespace RestModels.Options {
 		/// <summary>
 		///     The children options being built off of this one
 		/// </summary>
-		private readonly List<RestModelOptionsBuilder<TModel, TUser>> Children;
+		private readonly List<RestModelOptionsBuilder<TModel, TUser>> Children = new List<RestModelOptionsBuilder<TModel, TUser>>();
 
 		/// <summary>
 		///     The options object that's being built
@@ -42,7 +42,16 @@ namespace RestModels.Options {
 		/// <param name="existing">Starting options for this builder</param>
 		internal RestModelOptionsBuilder(RestModelOptions<TModel, TUser> existing = null) {
 			this.Options = existing ?? new RestModelOptions<TModel, TUser>();
-			this.Children = new List<RestModelOptionsBuilder<TModel, TUser>>();
+		}
+
+		/// <summary>
+		///     Initializes a new instance of the <see cref="RestModelOptionsBuilder{TModel, TUser}" /> class.
+		/// </summary>
+		/// <param name="baseRoute">The base route for these options</param>
+		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
+		internal RestModelOptionsBuilder(string baseRoute, Action<IEndpointConventionBuilder> routeOptionsHandler) : this() {
+			this.Options.RoutePattern = RestModelOptionsBuilder<TModel, TUser>.FixRoute(baseRoute);
+			this.Options.RouteOptionsHandler = routeOptionsHandler;
 		}
 
 		/// <summary>
@@ -59,9 +68,7 @@ namespace RestModels.Options {
 			// create a copy of the options and use that for the new route
 			RestModelOptions<TModel, TUser> Copy = this.Options.Copy();
 
-			if (pattern.StartsWith("/")) pattern = pattern.Substring(1);
-			if (!pattern.EndsWith("/")) pattern += "/";
-			Copy.RoutePattern += pattern;
+			Copy.RoutePattern += RestModelOptionsBuilder<TModel, TUser>.FixRoute(pattern);
 
 			if (routeOptionsHandler != null) Copy.RouteOptionsHandler = routeOptionsHandler;
 
@@ -73,11 +80,24 @@ namespace RestModels.Options {
 		}
 
 		/// <summary>
+		///		Fixes a route string provided through user input
+		/// </summary>
+		/// <param name="routeString">The inputted route string</param>
+		/// <returns>The route string, ensuring that it ends with a / and starts with a letter</returns>
+		private static string FixRoute(string routeString) {
+			if (routeString.StartsWith("/")) routeString = routeString.Substring(1);
+			if (routeString.Length != 0 && !routeString.EndsWith("/")) routeString += "/";
+			return routeString;
+		}
+
+		/// <summary>
 		///		Adds an auth provider to this route
 		/// </summary>
 		/// <param name="authProvider">The auth provider to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> AddAuthProvider(IAuthProvider<TModel, TUser> authProvider) {
+			if (this.Options.AuthProviders == null) this.Options.AuthProviders = new List<IAuthProvider<TModel, TUser>>();
+			this.Options.AuthProviders.Add(authProvider);
 			return this;
 		}
 
@@ -87,6 +107,8 @@ namespace RestModels.Options {
 		/// <param name="bodyParser">The body parser to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> AddBodyParser(IBodyParser<TModel> bodyParser) {
+			if (this.Options.BodyParsers == null) this.Options.BodyParsers = new List<IBodyParser<TModel>>();
+			this.Options.BodyParsers.Add(bodyParser);
 			return this;
 		}
 
@@ -96,6 +118,7 @@ namespace RestModels.Options {
 		/// <param name="condition">The condition to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> AddCondition(ICondition<TModel, TUser> condition) {
+			this.Options.Conditions.Add(condition);
 			return this;
 		}
 
@@ -105,6 +128,7 @@ namespace RestModels.Options {
 		/// <param name="filter">The filter to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> AddFilter(IFilter<TModel, TUser> filter) {
+			this.Options.Filters.Add(filter);
 			return this;
 		}
 
@@ -114,6 +138,8 @@ namespace RestModels.Options {
 		/// <param name="exceptionHandler">The exception handler to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> AddExceptionHandler(IExceptionHandler exceptionHandler) {
+			if (this.Options.ExceptionHandlers == null) this.Options.ExceptionHandlers = new List<IExceptionHandler>();
+			this.Options.ExceptionHandlers.Add(exceptionHandler);
 			return this;
 		}
 
@@ -123,6 +149,7 @@ namespace RestModels.Options {
 		/// <param name="modelProvider">The model provider to use</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> UseModelProvider(IModelProvider<TModel, TUser> modelProvider) {
+			this.Options.ModelProvider = modelProvider;
 			return this;
 		}
 
@@ -132,6 +159,8 @@ namespace RestModels.Options {
 		/// <param name="requestMethod">The request method to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> AddRequestMethod(string requestMethod) {
+			if (this.Options.RequestMethods == null) this.Options.RequestMethods = new HashSet<string>();
+			this.Options.RequestMethods.Add(requestMethod);
 			return this;
 		}
 
@@ -141,15 +170,47 @@ namespace RestModels.Options {
 		/// <param name="operation">The operation to use</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> UseOperation(IOperation<TModel, TUser> operation) {
+			this.Options.Operation = operation;
 			return this;
 		}
 
 		/// <summary>
-		///		Sets the result formatter to use for this route
+		///		Sets the result writer to use for this route
 		/// </summary>
-		/// <param name="resultFormatter">The result formatter to use</param>
+		/// <param name="ResultWriter">The result writer to use</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> UseResultFormatter(IResultFormatter<TModel, TUser> resultFormatter) {
+		public RestModelOptionsBuilder<TModel, TUser> UseResultWriter(IResultWriter<TModel, TUser> ResultWriter) {
+			this.Options.ResultWriter = ResultWriter;
+			return this;
+		}
+
+		/// <summary>
+		///		Sets whether or not to accept arrays of <typeparamref name="TModel"/> as the request body
+		/// </summary>
+		/// <param name="accept">A value indicating whether or not to accept arrays as the request body</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> AcceptArrays(bool accept = true) {
+			this.Options.ParserOptions.ParseArrays = accept;
+			return this;
+		}
+
+		/// <summary>
+		///		Sets whether or not to write the result as a <typeparamref name="TModel"/> instead of as a collection of <typeparamref name="TModel"/> if there is only a single element in the result array
+		/// </summary>
+		/// <param name="strip">A value indicating whether or not to strip the array from a result body if there is only a single element in the result array</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> StripArrayIfSingleResult(bool strip = true) {
+			this.Options.FormattingOptions.StripArrayIfSingleElement = strip;
+			return this;
+		}
+
+		/// <summary>
+		///		
+		/// </summary>
+		/// <param name="propertyExpression">An expression that returns the property to require</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> RequireProperty(Expression<Func<TModel, object>> propertyExpression) {
+			this.Options.FormattingOptions.StripArrayIfSingleElement = strip;
 			return this;
 		}
 
@@ -158,6 +219,11 @@ namespace RestModels.Options {
 		/// </summary>
 		/// <returns>A list of all of the options created by this builder, including its own</returns>
 		internal IEnumerable<RestModelOptions<TModel, TUser>> BuildAll() {
+			// do some preprocessing
+			if (this.Options.RequestMethods == null)
+				this.Options.RequestMethods = new HashSet<string>() { "GET", "POST", "PUT", "DELETE" };
+
+			// create options
 			List<RestModelOptions<TModel, TUser>> AllOptions =
 				new List<RestModelOptions<TModel, TUser>> { this.Options };
 			foreach (RestModelOptionsBuilder<TModel, TUser> Builder in this.Children)

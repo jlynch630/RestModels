@@ -6,6 +6,8 @@
 // -----------------------------------------------------------------------
 
 namespace RestModels.Parsers {
+	using System.Collections.Generic;
+
 	using Microsoft.AspNetCore.Http;
 
 	using RestModels.Options;
@@ -21,7 +23,7 @@ namespace RestModels.Parsers {
 		/// <param name="body">The data of the request body</param>
 		/// <param name="options">Options for the parser</param>
 		/// <param name="requestContext">The context for the HTTP request</param>
-		/// <returns>The parsed object</returns>
-		TModel Parse(byte[] body, ParserOptions options, HttpRequest requestContext);
+		/// <returns>The parsed models</returns>
+		TModel[] Parse(byte[] body, ParserOptions options, HttpRequest requestContext);
 	}
 }

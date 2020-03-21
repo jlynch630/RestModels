@@ -6,8 +6,6 @@
 // -----------------------------------------------------------------------
 
 namespace RestModels.Auth {
-	using System.Data.Entity;
-	using System.Linq;
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
@@ -23,8 +21,8 @@ namespace RestModels.Auth {
 		///		Authenticates the given request context, and returns the authenticated user
 		/// </summary>
 		/// <param name="requestContext">The current request context</param>
-		/// <param name="parsed">The model parsed from the request body, if any</param>
+		/// <param name="parsed">The models parsed from the request body, if any</param>
 		/// <returns>The currently authenticated user context</returns>
-		Task<TUser> AuthenticateAsync(HttpContext requestContext, TModel parsed);
+		Task<TUser> AuthenticateAsync(HttpContext requestContext, TModel[] parsed);
 	}
 }

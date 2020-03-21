@@ -13,11 +13,25 @@ namespace TestProject {
 	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.AspNetCore.Http;
 	using RestModels.Options;
+	using RestModels.Results;
+
+	using TestProject.TestComponents;
+	using RestModels.Models;
+	using RestModels.Filters;
+	using Microsoft.Extensions.Options;
+	using Microsoft.EntityFrameworkCore;
+	using RestModels.Conditions;
+	using RestModels.Parsers;
+	using RestModels.ExceptionHandlers;
+	using RestModels.Operations.EntityFramework;
+	using RestModels.Auth;
+	using RestModels.Exceptions;
 
 	public class Startup {
 		// This method gets called by the runtime. Use this method to add services to the container.
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services) {
+			services.AddDbContext<TestDbContext>(options => { options.UseInMemoryDatabase("test"); });
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,6 +45,29 @@ namespace TestProject {
 					await context.Response.WriteAsync($"Hello World!");
 				});
 			});
+			
+			app.UseRestModels<TestModel, object>("/",
+				options => {
+					options
+						.UseModelProvider(new EntityFrameworkModelProvider<TestModel, TestDbContext>())
+						.AddRequestMethod("POST")
+						.AddAuthProvider(new DelegateAuthProvider<TestModel, object>(async (c, m) => {
+							if (c.Request.Query["key"] != "1234") throw new AuthFailedException("Wrong key");
+							return null;
+						}))
+						.AddBodyParser(new JsonBodyParser<TestModel>())
+						.AddFilter(new DelegateFilter<TestModel, object>(async (c, d, m, u) => d.Skip(1)))
+						.AddFilter(new DelegateFilter<TestModel, object>(async (c, d, m, u) => d.Take(1)))
+						.AddCondition(new DelegateCondition<TestModel, object>(async (c, d, m, u) => d.Count() == 1))
+						.UseOperation(new CreateOperation<TestModel, TestDbContext>())
+						.AddExceptionHandler(new DelegateExceptionHandler(
+							async (e, c) => {
+								await c.Response.WriteAsync(e.Message);
+								c.Response.StatusCode = 500;
+								return false;
+							}))
+						.UseResultWriter(new JsonResultWriter<TestModel>());
+				}, null);
 			/*
 			app.UseRestModels<string>(
 				options => {
@@ -49,7 +86,7 @@ namespace TestProject {
 						null);
 				});*/
 
-			
+
 		}
 	}
 }

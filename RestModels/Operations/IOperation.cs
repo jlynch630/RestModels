@@ -30,7 +30,14 @@ namespace RestModels.Operations {
 		Task<IEnumerable<TModel>> OperateAsync(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			TModel parsed,
+			TModel[] parsed,
 			TUser user);
 	}
+
+	/// <summary>
+	///     Operation on model datasets, like create, update, or delete.
+	/// </summary>
+	/// <typeparam name="TModel">The type of model being operated on</typeparam>
+	public interface IOperation<TModel> : IOperation<TModel, object>
+		where TModel : class { }
 }

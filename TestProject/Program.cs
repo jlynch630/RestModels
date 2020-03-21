@@ -4,13 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TestProject.TestComponents;
 
 namespace TestProject {
 	public class Program {
 		public static void Main(string[] args) {
-			CreateHostBuilder(args).Build().Run();
+			IHost Host = CreateHostBuilder(args).Build();
+			using IServiceScope Scope = Host.Services.CreateScope();
+			IServiceProvider Provider = Scope.ServiceProvider;
+			TestDbContext Context = Provider.GetRequiredService<TestDbContext>();
+			Context.Database.EnsureCreated();
+			Context.Models.Add(new TestModel { Name = "One", PrivateKey = "1234" });
+			Context.Models.Add(new TestModel { Name = "Deux", PrivateKey = "4321" });
+			Context.Models.Add(new TestModel { Name = "Tres", PrivateKey = "abcd" });
+			Context.SaveChanges();
+			Host.Run();
 		}
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -24,6 +24,12 @@ namespace RestModels.Models {
 		/// <param name="parsed">The parsed request body, if any</param>
 		/// <param name="user">The current user context, if any</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
-		Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, TModel parsed, TUser user);
+		Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, TModel[] parsed, TUser user);
 	}
+
+	/// <summary>
+	///     Provider for API models
+	/// </summary>
+	/// <typeparam name="TModel">The type of model being queried for</typeparam>
+	public interface IModelProvider<TModel> : IModelProvider<TModel, object> where TModel : class { }
 }

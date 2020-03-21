@@ -65,15 +65,15 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets the request methods these options match
 		/// </summary>
-		public List<string> RequestMethods { get; set; }
+		public HashSet<string> RequestMethods { get; set; }
 
 		/// <summary>
-		///     Gets or sets the result formatter for this route
+		///     Gets or sets the result writer for this route
 		/// </summary>
-		public IResultFormatter<TModel, TUser> ResultFormatter { get; set; }
+		public IResultWriter<TModel, TUser> ResultWriter { get; set; }
 
 		/// <summary>
-		///		Gets or sets any options for the <see cref="RestModelOptions{TModel, TUser}.ResultFormatter"/>
+		///		Gets or sets any options for the <see cref="RestModelOptions{TModel, TUser}.ResultWriter"/>
 		/// </summary>
 		public FormattingOptions FormattingOptions { get; set; } = new FormattingOptions();
 
@@ -115,8 +115,8 @@ namespace RestModels.Options {
 				                                           ModelProvider = this.ModelProvider,
 				                                           Operation = this.Operation,
 				                                           ParserOptions = this.ParserOptions.Copy(),
-				                                           RequestMethods = new List<string>(this.RequestMethods),
-				                                           ResultFormatter = this.ResultFormatter,
+				                                           RequestMethods = this.RequestMethods == null ? null : new HashSet<string>(this.RequestMethods),
+				                                           ResultWriter = this.ResultWriter,
 				                                           RouteOptionsHandler = this.RouteOptionsHandler,
 				                                           RoutePattern = this.RoutePattern
 			                                           };

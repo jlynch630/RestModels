@@ -17,6 +17,7 @@ namespace RestModels.Middleware {
 	using Microsoft.Extensions.DependencyInjection;
 	using RestModels.Auth;
 	using RestModels.Conditions;
+	using RestModels.ExceptionHandlers;
 	using RestModels.Exceptions;
 	using RestModels.Filters;
 	using RestModels.Options;
@@ -52,8 +53,6 @@ namespace RestModels.Middleware {
 		/// <param name="context">The http context of the current request</param>
 		/// <returns>When the request is completed</returns>
 		public async Task TryHandleRequest(HttpContext context) {
-			await context.Response.WriteAsync("Hello! " + this.Options.RoutePattern);
-
 			/**
 				Order of things here
 					- MATCH the route and method!
@@ -67,7 +66,11 @@ namespace RestModels.Middleware {
 				await this.HandleRequest(context);
 			}
 			catch (Exception e) {
-				// foreach (Action<Exception> Action in this.Options.)
+				if (this.Options.ExceptionHandlers.Count == 0) throw;
+				foreach (IExceptionHandler Handler in this.Options.ExceptionHandlers) {
+					bool? Result = await Handler.HandleException(e, context);
+					if (Result.HasValue) break;
+				}
 			}
 		}
 
@@ -75,10 +78,10 @@ namespace RestModels.Middleware {
 		///     Authenticates the request using the auth providers specified by this middleware's options, if any
 		/// </summary>
 		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The parsed model, or null if there are no body parsers specified</param>
+		/// <param name="parsed">The parsed models, or null if there are no body parsers specified</param>
 		/// <returns>The authenticated user context, or null if there is none</returns>
 		/// <exception cref="AuthFailedException">If none of the available authentication methods succeeded</exception>
-		private async Task<TUser> Authenticate(HttpContext context, TModel parsed) {
+		private async Task<TUser> Authenticate(HttpContext context, TModel[] parsed) {
 			if (this.Options.AuthProviders == null) return null;
 
 			TUser UserContext = null;
@@ -116,13 +119,11 @@ namespace RestModels.Middleware {
 			   |	- MODIFY data if there are any IOperations
 			   |	- RETURN formatted output
 			 
-				note that the only required element should be the result formatter
-				(even an empty result formatter is required to return a blank result)
+				note that the only required element should be the result writer
+				(even an empty result writer is required to return a blank result)
 			*/
-			IServiceProvider Provider = context.RequestServices;
-
 			// go through our body parsers to try and parse the request body. may be null
-			TModel ParsedModel = await this.ParseBody(context);
+			TModel[] ParsedModel = await this.ParseBody(context);
 
 			// then authenticate the request. may return null
 			TUser User = await this.Authenticate(context, ParsedModel);
@@ -153,10 +154,9 @@ namespace RestModels.Middleware {
 					                               User)
 				                             : Dataset;
 
-			// and format the result
-			await this.Options.ResultFormatter.FormatResultAsync(
+			// and write the result
+			await this.Options.ResultWriter.WriteResultAsync(
 				context,
-				context.Response.Body,
 				Result,
 				User,
 				this.Options.FormattingOptions);
@@ -168,13 +168,13 @@ namespace RestModels.Middleware {
 		/// <param name="context">The current request context</param>
 		/// <returns>The parsed model, or null if there are no body parsers specified</returns>
 		/// <exception cref="InvalidParserException">If none of the available parsers can properly parse the request</exception>
-		private async Task<TModel> ParseBody(HttpContext context) {
+		private async Task<TModel[]> ParseBody(HttpContext context) {
 			if (this.Options.BodyParsers == null) return null;
 
 			await using MemoryStream Stream = new MemoryStream();
 			await context.Request.Body.CopyToAsync(Stream);
 			byte[] BodyContents = Stream.ToArray();
-			TModel Parsed = null;
+			TModel[] Parsed = null;
 			bool ParseSuccess = false;
 			foreach (IBodyParser<TModel> Parser in this.Options.BodyParsers)
 				try {
@@ -194,14 +194,14 @@ namespace RestModels.Middleware {
 		/// </summary>
 		/// <param name="context">The current request context</param>
 		/// <param name="dataset">The dataset to verify conditions for</param>
-		/// <param name="parsed">The parsed model, if any</param>
+		/// <param name="parsed">The parsed models, if any</param>
 		/// <param name="user">The authenticated user context, if any</param>
 		/// <returns>When all conditions have passed</returns>
 		/// <exception cref="ConditionFailedException">If any conditions fail</exception>
 		private async Task VerifyConditions(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			TModel parsed,
+			TModel[] parsed,
 			TUser user) {
 			foreach (ICondition<TModel, TUser> Condition in this.Options.Conditions)
 				try {
