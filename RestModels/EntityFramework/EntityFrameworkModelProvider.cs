@@ -5,13 +5,16 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestModels.Models {
+namespace RestModels.EntityFramework {
 	using System.Linq;
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.Extensions.DependencyInjection;
+
+	using RestModels.Models;
+	using RestModels.Parsers;
 
 	/// <summary>
 	///     Model provider that uses Entity Framework as a backend
@@ -27,7 +30,7 @@ namespace RestModels.Models {
 		/// <param name="parsed">The parsed request body, if any</param>
 		/// <param name="user">The current user context, if any</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
-		public async Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, TModel[] parsed, object user) {
+		public async Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, ParseResult<TModel>[] parsed, object user) {
 			TContext DatabaseContext = context.RequestServices.GetRequiredService<TContext>();
 			return DatabaseContext.Set<TModel>();
 		}

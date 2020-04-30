@@ -12,6 +12,8 @@ namespace RestModels.Conditions {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Parsers;
+
 	/// <summary>
 	///     Condition that uses a delegate to check if it has been met
 	/// </summary>
@@ -22,13 +24,13 @@ namespace RestModels.Conditions {
 		/// <summary>
 		///     The delegate to use to check the status of the condition
 		/// </summary>
-		private readonly Func<HttpContext, IQueryable<TModel>, TModel[], TUser, Task<bool>> ConditionDelegate;
+		private readonly Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<bool>> ConditionDelegate;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="DelegateCondition{TModel, TUser}" /> class.
 		/// </summary>
 		/// <param name="conditionDelegate">The delegate to use to check the status of the condition</param>
-		public DelegateCondition(Func<HttpContext, IQueryable<TModel>, TModel[], TUser, Task<bool>> conditionDelegate) =>
+		public DelegateCondition(Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<bool>> conditionDelegate) =>
 			this.ConditionDelegate = conditionDelegate;
 
 		/// <summary>
@@ -44,7 +46,7 @@ namespace RestModels.Conditions {
 		/// <param name="parsed">The parsed request body, if any</param>
 		/// <param name="user">The current user context, if any</param>
 		/// <returns><code>true</code> if the request should continue, <code>false</code> otherwise</returns>
-		public Task<bool> VerifyAsync(HttpContext context, IQueryable<TModel> dataset, TModel[] parsed, TUser user) =>
+		public Task<bool> VerifyAsync(HttpContext context, IQueryable<TModel> dataset, ParseResult<TModel>[] parsed, TUser user) =>
 			this.ConditionDelegate(context, dataset, parsed, user);
 	}
 }

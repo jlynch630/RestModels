@@ -8,6 +8,7 @@
 namespace RestModels.Results {
 	using System;
 	using System.Collections.Generic;
+	using System.Diagnostics;
 	using System.Linq;
 	using System.Reflection;
 	using System.Text.Json;
@@ -26,6 +27,24 @@ namespace RestModels.Results {
 	public class JsonResultWriter<TModel> : IResultWriter<TModel>
 		where TModel : class {
 		/// <summary>
+		///		Options for the JSON serializer
+		/// </summary>
+		private readonly JsonSerializerOptions Options;
+
+		/// <summary>
+		///		Initializes a new instance of the <see cref="JsonResultWriter{TModel}"/> class
+		/// </summary>
+		/// <param name="options">Options for the JSON serializer</param>
+		public JsonResultWriter(JsonSerializerOptions options = null) => this.Options = options;
+
+		/// <summary>
+		///		Gets whether or not this <see cref="IResultWriter{TModel, TUser}"/> can write a result for the given request
+		/// </summary>
+		/// <param name="request">The request to test if a result can be written for it</param>
+		/// <returns><code>true</code></returns>
+		public async Task<bool> CanWriteAsync(HttpRequest request) => true;
+
+		/// <summary>
 		///     Formats the API result
 		/// </summary>
 		/// <param name="context">The current request context</param>
@@ -39,7 +58,7 @@ namespace RestModels.Results {
 			object user,
 			FormattingOptions options) {
 			// set content type first, then actually write the json
-			context.Response.Headers[HeaderNames.ContentType] = "application/json";
+			context.Response.ContentType = "application/json";
 
 			if (data == null) {
 				await context.Response.WriteAsync("null");
@@ -52,12 +71,12 @@ namespace RestModels.Results {
 			byte[] ResultString;
 			if (options.IncludedReturnProperties == null) 
 				ResultString = ReturnObject
-				                      ? JsonSerializer.SerializeToUtf8Bytes(FullDataset[0])
-				                      : JsonSerializer.SerializeToUtf8Bytes(FullDataset);
+				                      ? JsonSerializer.SerializeToUtf8Bytes(FullDataset[0], this.Options)
+				                      : JsonSerializer.SerializeToUtf8Bytes(FullDataset, this.Options);
 			else {
 				ResultString = ReturnObject
-					               ? JsonSerializer.SerializeToUtf8Bytes(this.Transform(FullDataset[0], options.IncludedReturnProperties))
-					               : JsonSerializer.SerializeToUtf8Bytes(FullDataset.Select(t => this.Transform(t, options.IncludedReturnProperties)));
+					               ? JsonSerializer.SerializeToUtf8Bytes(this.Transform(FullDataset[0], options.IncludedReturnProperties), this.Options)
+					               : JsonSerializer.SerializeToUtf8Bytes(FullDataset.Select(t => this.Transform(t, options.IncludedReturnProperties)), this.Options);
 			}
 
 			await context.Response.Body.WriteAsync(ResultString);
@@ -69,7 +88,7 @@ namespace RestModels.Results {
 		/// <param name="input">The input model</param>
 		/// <param name="included">The properties of <typeparamref name="TModel"/> that should be included</param>
 		/// <returns>The transformed model</returns>
-		private Dictionary<string, object> Transform(TModel input, List<PropertyInfo> included) {
+		private Dictionary<string, object> Transform(TModel input, IEnumerable<PropertyInfo> included) {
 			Dictionary<string, object> Transformed = new Dictionary<string, object>();
 			foreach (PropertyInfo Property in included)
 				Transformed[Property.Name] = Property.GetGetMethod().Invoke(input, null);

@@ -6,6 +6,7 @@
 // -----------------------------------------------------------------------
 
 namespace RestModels.Options {
+	using System;
 	using System.Collections.Generic;
 	using System.Reflection;
 
@@ -16,8 +17,8 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets a list of default values for parsed properties
 		/// </summary>
-		public Dictionary<PropertyInfo, object> DefaultPropertyValues { get; set; } =
-			new Dictionary<PropertyInfo, object>();
+		public Dictionary<PropertyInfo, Func<object>> DefaultPropertyValues { get; set; } =
+			new Dictionary<PropertyInfo, Func<object>>();
 
 		/// <summary>
 		///     Gets or sets a list of properties that are ignored if their values are set
@@ -41,7 +42,7 @@ namespace RestModels.Options {
 		public ParserOptions Copy() {
 			return new ParserOptions {
 				                         DefaultPropertyValues =
-					                         new Dictionary<PropertyInfo, object>(this.DefaultPropertyValues),
+					                         new Dictionary<PropertyInfo, Func<object>>(this.DefaultPropertyValues),
 				                         IgnoredParseProperties = new List<PropertyInfo>(this.IgnoredParseProperties),
 				                         RequiredParseProperties = new List<PropertyInfo>(this.RequiredParseProperties),
 										 ParseArrays = this.ParseArrays

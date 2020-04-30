@@ -12,6 +12,8 @@ namespace RestModels.Operations {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Parsers;
+
 	/// <summary>
 	///     Operation on model datasets, like create, update, or delete.
 	/// </summary>
@@ -30,7 +32,7 @@ namespace RestModels.Operations {
 		Task<IEnumerable<TModel>> OperateAsync(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			TModel[] parsed,
+			ParseResult<TModel>[] parsed,
 			TUser user);
 	}
 

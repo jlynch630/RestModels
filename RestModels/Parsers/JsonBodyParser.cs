@@ -8,7 +8,7 @@ namespace RestModels.Parsers {
 	using System.Reflection;
 	using System.Text.Json;
 	using System.Text.Json.Serialization;
-
+	using System.Threading.Tasks;
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.EntityFrameworkCore.Metadata.Internal;
 	using Microsoft.Net.Http.Headers;
@@ -20,41 +20,63 @@ namespace RestModels.Parsers {
 	/// </summary>
 	/// <typeparam name="TModel">The type of model to parse</typeparam>
 	public class JsonBodyParser<TModel> : IBodyParser<TModel> where TModel : class {
+		/// <summary>
+		///		A map of a property's serialized name to its info
+		/// </summary>
 		private readonly Dictionary<string, PropertyInfo> PropertyMap;
+
+		/// <summary>
+		///		Options for the JSON deserializer
+		/// </summary>
+		private JsonSerializerOptions SerializationOptions;
 
 		/// <summary>
 		///		Initializes a new instance of the <see cref="JsonBodyParser{TModel}"/> class
 		/// </summary>
-		public JsonBodyParser() {
+		public JsonBodyParser()
+			: this(null) { }
+
+		/// <summary>
+		///		Initializes a new instance of the <see cref="JsonBodyParser{TModel}"/> class
+		/// </summary>
+		/// <param name="serializerOptions">Options for the JSON serializer</param>
+		public JsonBodyParser(JsonSerializerOptions serializerOptions) {
+			this.SerializationOptions = serializerOptions ?? new JsonSerializerOptions();
 			this.PropertyMap = this.CreatePropertyMap();
 		}
+
+		/// <summary>
+		///		Gets whether or not the request body can be parsed by this <see cref="IBodyParser{TModel}"/>
+		/// </summary>
+		/// <param name="context">The context for the HTTP request</param>
+		/// <returns><c>true</c> if the request body can be parsed by this <see cref="IBodyParser{TModel}"/>, <c>false</c> otherwise</returns>
+		public async Task<bool> CanParse(HttpContext context) => context.Request.ContentType == "application/json";
 
 		/// <summary>
 		///     Parses a request body
 		/// </summary>
 		/// <param name="body">The data of the request body</param>
 		/// <param name="options">Options for the parser</param>
-		/// <param name="requestContext">The context for the HTTP request</param>
+		/// <param name="context">The context for the HTTP request</param>
 		/// <returns>The parsed object</returns>
-		public TModel[] Parse(byte[] body, ParserOptions options, HttpRequest requestContext) {
-			if (requestContext.Headers[HeaderNames.ContentType] != "application/json")
-				throw new InvalidParserException("Wrong content-type specified for JSON body");
-			
+		public async Task<ParseResult<TModel>[]> Parse(byte[] body, ParserOptions options, HttpContext context) {
 			using JsonDocument Document = JsonDocument.Parse(body);
 			JsonElement Root = Document.RootElement;
 			if (Root.ValueKind != JsonValueKind.Array) return new[] { this.ParseModel(Root, options) };
 			
-			if (options.ParseArrays) throw new ParsingFailedException("This parser does not accept arrays");
+			if (!options.ParseArrays) throw new ParsingFailedException("This parser does not accept arrays");
 			return Root.EnumerateArray().Select(e => this.ParseModel(e, options)).ToArray();
 		}
 
-		private TModel ParseModel(JsonElement model, ParserOptions options) {
+		private ParseResult<TModel> ParseModel(JsonElement model, ParserOptions options) {
 			if (model.ValueKind != JsonValueKind.Object)
 				throw new ParsingFailedException($"Json parser expected object but got {model.ValueKind}");
 
 			TModel Model = (TModel)typeof(TModel).GetConstructor(Type.EmptyTypes)?.Invoke(null);
-			Dictionary<PropertyInfo, object> Values =
-				new Dictionary<PropertyInfo, object>(options.DefaultPropertyValues);
+			Dictionary<PropertyInfo, Func<object>> Values =
+				new Dictionary<PropertyInfo, Func<object>>(options.DefaultPropertyValues);
+
+			List<PropertyInfo> PresentProperties = new List<PropertyInfo>();
 			List<PropertyInfo> RequiredLeft = new List<PropertyInfo>(options.RequiredParseProperties);
 
 			foreach (JsonProperty Property in model.EnumerateObject()) {
@@ -68,15 +90,27 @@ namespace RestModels.Parsers {
 				if (options.IgnoredParseProperties.Any(p => p.Name == Matching.Name)) continue;
 
 				RequiredLeft.RemoveAll(p => p.Name == Matching.Name);
+				PresentProperties.Add(Matching);
+				
+				// if the property has a json converter, use that
+				Type ConverterType = Matching.GetCustomAttribute<JsonConverterAttribute>()?.ConverterType;
+				JsonConverter Converter = (JsonConverter)ConverterType?.GetConstructor(Type.EmptyTypes)?.Invoke(null);
+				JsonSerializerOptions Options = new JsonSerializerOptions();
+				if (Converter != null) Options.Converters.Add(Converter);
 
-				Values[Matching] = JsonSerializer.Deserialize(Property.Value.GetRawText(), Matching.PropertyType);
+				object Deserialized = JsonSerializer.Deserialize(Property.Value.GetRawText(), Matching.PropertyType, Options);
+				Values[Matching] = () => Deserialized;
 			}
 
-			foreach ((PropertyInfo PropertyInfo, object Value) in Values) {
-				PropertyInfo.GetSetMethod().Invoke(Model, new[] { Value });
+			if (RequiredLeft.Any())
+				throw new ParsingFailedException(
+					$"Failed to parse input. Required properties [{String.Join(", ", RequiredLeft.Select(p => p.Name))}] not present.");
+
+			foreach ((PropertyInfo PropertyInfo, Func<object> Value) in Values) {
+				PropertyInfo.GetSetMethod().Invoke(Model, new[] { Value() });
 			}
 
-			return Model;
+			return new ParseResult<TModel>(Model, PresentProperties);
 		}
 
 		private Dictionary<string, PropertyInfo> CreatePropertyMap() {

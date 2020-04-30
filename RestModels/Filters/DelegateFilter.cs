@@ -12,6 +12,8 @@ namespace RestModels.Filters {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Parsers;
+
 	/// <summary>
 	///     A dataset filter that uses a delegate to filter
 	/// </summary>
@@ -22,14 +24,14 @@ namespace RestModels.Filters {
 		/// <summary>
 		///     The delegate to use to filter the dataset
 		/// </summary>
-		private readonly Func<HttpContext, IQueryable<TModel>, TModel[], TUser, Task<IQueryable<TModel>>> FilterDelegate;
+		private readonly Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<IQueryable<TModel>>> FilterDelegate;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="DelegateFilter{TModel, TUser}" /> class.
 		/// </summary>
 		/// <param name="filterDelegate">The delegate to use to filter the dataset</param>
 		public DelegateFilter(
-			Func<HttpContext, IQueryable<TModel>, TModel[], TUser, Task<IQueryable<TModel>>> filterDelegate) =>
+			Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<IQueryable<TModel>>> filterDelegate) =>
 			this.FilterDelegate = filterDelegate;
 
 		/// <summary>
@@ -43,7 +45,7 @@ namespace RestModels.Filters {
 		public Task<IQueryable<TModel>> FilterDataAsync(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			TModel[] parsed,
+			ParseResult<TModel>[] parsed,
 			TUser user) {
 			return this.FilterDelegate(context, dataset, parsed, user);
 		}

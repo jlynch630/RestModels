@@ -36,7 +36,10 @@ namespace RestModels.Options {
 		public FormattingOptions Copy() {
 			return new FormattingOptions {
 				                             StripArrayIfSingleElement = this.StripArrayIfSingleElement,
-				                             IncludedReturnProperties = new List<PropertyInfo>(this.IncludedReturnProperties)
+				                             IncludedReturnProperties =
+					                             this.IncludedReturnProperties == null
+						                             ? null
+						                             : new List<PropertyInfo>(this.IncludedReturnProperties)
 			                             };
 		}
 	}

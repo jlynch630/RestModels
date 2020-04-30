@@ -11,6 +11,8 @@ namespace RestModels.Auth {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Parsers;
+
 	/// <summary>
 	///     Auth provider that uses a delegate to retrieve the user context
 	/// </summary>
@@ -21,22 +23,31 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     The delegate to use to retrieve a user context
 		/// </summary>
-		private readonly Func<HttpContext, TModel[], Task<TUser>> AuthDelegate;
+		private readonly Func<HttpContext, ParseResult<TModel>[], Task<TUser>> AuthDelegate;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="DelegateAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="authDelegate">The delegate to use to retrieve a user context</param>
-		public DelegateAuthProvider(Func<HttpContext, TModel[], Task<TUser>> authDelegate) =>
+		public DelegateAuthProvider(Func<HttpContext, ParseResult<TModel>[], Task<TUser>> authDelegate) =>
 			this.AuthDelegate = authDelegate;
 
 		/// <summary>
 		///     Authenticates the given request context, and returns the authenticated user
 		/// </summary>
-		/// <param name="requestContext">The current request context</param>
+		/// <param name="context">The current request context</param>
 		/// <param name="parsed">The models parsed from the request body, if any</param>
 		/// <returns>The currently authenticated user context</returns>
-		public Task<TUser> AuthenticateAsync(HttpContext requestContext, TModel[] parsed) =>
-			this.AuthDelegate(requestContext, parsed);
+		public Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed) =>
+			this.AuthDelegate(context, parsed);
+
+
+		/// <summary>
+		///     Gets whether or not the given request can be authenticated for
+		/// </summary>
+		/// <param name="requestContext">The current request context</param>
+		/// <param name="parsedModel">The models parsed from the request body, if any</param>
+		/// <returns><c>true</c></returns>
+		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel) => true;
 	}
 }

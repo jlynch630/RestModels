@@ -1,0 +1,24 @@
+Left to implement:
+AuthProvider
+BodyParser
+	- XmlBodyParser
+Conditions
+Filters 
+ExceptionHandlers  
+ModelProvider 
+Operation 
+RequestMethods 
+ResultFormatter
+
+
+TODO OTHERWISE:
+	- LOTS OF OPTIONS METHODZ
+
+Ideas
+	- Reset (clears all)
+	- EF .UseRestModels
+	- FlatMap
+	- Finish? (completes this route and starts a new one with the same pattern)
+
+EF Stuff
+	- Filter primary key by query, etc...

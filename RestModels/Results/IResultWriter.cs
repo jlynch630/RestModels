@@ -7,7 +7,6 @@
 
 namespace RestModels.Results {
 	using System.Collections.Generic;
-	using System.IO;
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
@@ -20,6 +19,13 @@ namespace RestModels.Results {
 	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
 	public interface IResultWriter<in TModel, in TUser>
 		where TModel : class where TUser : class {
+		/// <summary>
+		///		Gets whether or not this <see cref="IResultWriter{TModel, TUser}"/> can write a result for the given request
+		/// </summary>
+		/// <param name="request">The request to test if a result can be written for it</param>
+		/// <returns><code>true</code> if a result can be written for <paramref name="request"/>, <code>false</code> otherwise</returns>
+		Task<bool> CanWriteAsync(HttpRequest request);
+
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
