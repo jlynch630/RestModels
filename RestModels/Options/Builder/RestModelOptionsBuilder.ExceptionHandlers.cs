@@ -43,6 +43,22 @@ namespace RestModels.Options.Builder {
 			return this;
 		}
 
+		/// <summary>
+		///     Sets this route up to catch exceptions, writing the exception message to the response body
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> CatchExceptions() {
+			return this.AddExceptionHandler<SimpleExceptionHandler>();
+		}
+
+		/// <summary>
+		///     Sets this route up to halt request execution if authentication fails
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> FailOnInvalidAuth() {
+			return this.AddExceptionHandler<AuthFailedExceptionHandler>();
+		}
+
 		// what follows is 19 methods that take various lambdas for catching exceptions
 		// either (Exception, HttpContext) or (Exception) parameters, either bool? or void return values, either async or not, and either specific exception or all
 		// an additional method takes an IExceptionHandler for a specific method

@@ -48,8 +48,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> RequireInput(Func<ParseResult<TModel>[], bool> condition) {
-			this.Require((c, d, p, u) => condition(p));
+		public RestModelOptionsBuilder<TModel, TUser> RequireInput(Func<TModel[], bool> condition) {
+			this.Require((c, d, p, u) => condition(p.Select(p => p.ParsedModel).ToArray()));
 			return this;
 		}
 
@@ -58,8 +58,18 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> RequireInputAsync(Func<ParseResult<TModel>[], Task<bool>> condition) {
-			this.RequireAsync((c, d, p, u) => condition(p));
+		public RestModelOptionsBuilder<TModel, TUser> RequireAllInput(Func<TModel, bool> condition) {
+			this.RequireInput(p => p.All(condition));
+			return this;
+		}
+
+		/// <summary>
+		///     Adds a requirement to this route that will ensure the parsed body meets the given condition
+		/// </summary>
+		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> RequireInputAsync(Func<TModel[], Task<bool>> condition) {
+			this.RequireAsync((c, d, p, u) => condition(p.Select(p => p.ParsedModel).ToArray()));
 			return this;
 		}
 

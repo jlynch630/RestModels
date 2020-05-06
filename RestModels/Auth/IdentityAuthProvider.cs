@@ -99,6 +99,6 @@ namespace RestModels.Auth {
 		/// <returns>
 		///     <c>true</c> if this request contains the header value this <see cref="HeaderAuthProvider{TModel, TUser}"/> authenticates with
 		/// </returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel) => true;
+		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) => true;
 	}
 }

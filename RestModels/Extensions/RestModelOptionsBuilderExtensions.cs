@@ -75,7 +75,7 @@ namespace RestModels.Extensions {
 			where TModel : class {
 			return builder.AuthBasicAsync(
 				async (u, p) => {
-					if (await handler(u, p)) return (NoUser)null;
+					if (await handler(u, p)) return new NoUser();
 					throw new AuthFailedException();
 				});
 		}
@@ -137,7 +137,7 @@ namespace RestModels.Extensions {
 			return builder.AuthHeaderAsync(
 				parameterName,
 				async s => {
-					if (await handler(s)) return (NoUser)null;
+					if (await handler(s)) return new NoUser();
 					throw new AuthFailedException();
 				});
 		}
@@ -199,75 +199,9 @@ namespace RestModels.Extensions {
 			return builder.AuthQueryAsync(
 				parameterName,
 				async s => {
-					if (await handler(s)) return (NoUser)null;
+					if (await handler(s)) return new NoUser();
 					throw new AuthFailedException();
 				});
-		}
-
-		/// <summary>
-		///     Sets this route up to catch all exceptions and halt request execution after one is thrown.
-		/// </summary>
-		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
-		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-		/// <param name="builder">The options builder to perform the operation on</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static RestModelOptionsBuilder<TModel, TUser> CatchAllExceptions<TModel, TUser>(
-			this RestModelOptionsBuilder<TModel, TUser> builder)
-			where TModel : class where TUser : class {
-			builder.CatchExceptions();
-			builder.FailOnInvalidAuth();
-			return builder;
-		}
-
-		/// <summary>
-		///     Sets this route up to catch all exceptions except for <see cref="AuthFailedException" /> exceptions to enable
-		///     middleware pass-through
-		/// </summary>
-		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
-		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-		/// <param name="builder">The options builder to perform the operation on</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static RestModelOptionsBuilder<TModel, TUser> CatchExceptions<TModel, TUser>(
-			this RestModelOptionsBuilder<TModel, TUser> builder)
-			where TModel : class where TUser : class {
-			builder.AddExceptionHandler<SimpleExceptionHandler>();
-			return builder;
-		}
-
-		/// <summary>
-		///     Sets this route up to halt request execution if authentication fails
-		/// </summary>
-		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
-		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-		/// <param name="builder">The options builder to perform the operation on</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static RestModelOptionsBuilder<TModel, TUser> FailOnInvalidAuth<TModel, TUser>(
-			this RestModelOptionsBuilder<TModel, TUser> builder)
-			where TModel : class where TUser : class {
-			builder.AddExceptionHandler<AuthFailedExceptionHandler>();
-			return builder;
-		}
-
-		/// <summary>
-		///     Resets this <see cref="RestModelOptionsBuilder{TModel, TUser}" />, clearing all lists and resetting all values
-		///     except for the route pattern
-		/// </summary>
-		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
-		/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-		/// <param name="builder">The options builder to perform the operation on</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public static RestModelOptionsBuilder<TModel, TUser> Reset<TModel, TUser>(
-			this RestModelOptionsBuilder<TModel, TUser> builder)
-			where TModel : class where TUser : class {
-			builder.ClearAuthProviders();
-			builder.ClearBodyParsers();
-			builder.ClearConditions();
-			builder.ClearExceptionHandlers();
-			builder.ClearFilters();
-			builder.ClearOperation();
-			builder.ClearRequestMethods();
-			builder.ClearResultWriter();
-			return builder;
 		}
 	}
 }

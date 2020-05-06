@@ -23,7 +23,7 @@ namespace RestModels.Conditions {
 		/// <summary>
 		///     Gets a message indicating why the condition might have failed
 		/// </summary>
-		string FailureMessage { get; }
+		string? FailureMessage { get; }
 
 		/// <summary>
 		///     Verifies that the current request meets a condition
@@ -33,6 +33,10 @@ namespace RestModels.Conditions {
 		/// <param name="parsed">The parsed request body, if any</param>
 		/// <param name="user">The current user context, if any</param>
 		/// <returns><code>true</code> if the request should continue, <code>false</code> otherwise</returns>
-		Task<bool> VerifyAsync(HttpContext context, IQueryable<TModel> dataset, ParseResult<TModel>[] parsed, TUser user);
+		Task<bool> VerifyAsync(
+			HttpContext context,
+			IQueryable<TModel> dataset,
+			ParseResult<TModel>[]? parsed,
+			TUser? user);
 	}
 }

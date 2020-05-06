@@ -30,12 +30,12 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets a list of providers available to authenticate the request
 		/// </summary>
-		public List<IAuthProvider<TModel, TUser>> AuthProviders { get; set; }
+		public List<IAuthProvider<TModel, TUser>>? AuthProviders { get; set; }
 
 		/// <summary>
 		///     Gets or sets the parsers available to parse a request body
 		/// </summary>
-		public List<IBodyParser<TModel>> BodyParsers { get; set; }
+		public List<IBodyParser<TModel>>? BodyParsers { get; set; }
 
 		/// <summary>
 		///     Gets or sets a list of conditions that the request must meet
@@ -50,12 +50,12 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets the provider for the API's models
 		/// </summary>
-		public IModelProvider<TModel, TUser> ModelProvider { get; set; }
+		public IModelProvider<TModel, TUser>? ModelProvider { get; set; }
 
 		/// <summary>
 		///     Gets or sets the operation to perform on the dataset, if any
 		/// </summary>
-		public IOperation<TModel, TUser> Operation { get; set; }
+		public IOperation<TModel, TUser>? Operation { get; set; }
 
 		/// <summary>
 		///     Gets or sets the options for parsing request bodies
@@ -65,12 +65,12 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets the request methods these options match
 		/// </summary>
-		public HashSet<string> RequestMethods { get; set; }
+		public HashSet<string>? RequestMethods { get; set; }
 
 		/// <summary>
 		///     Gets or sets the result writer for this route
 		/// </summary>
-		public IResultWriter<TModel, TUser> ResultWriter { get; set; }
+		public IResultWriter<TModel, TUser>? ResultWriter { get; set; }
 
 		/// <summary>
 		///		Gets or sets any options for the <see cref="RestModelOptions{TModel, TUser}.ResultWriter"/>
@@ -90,7 +90,7 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets the handler that will set route options, if any
 		/// </summary>
-		internal Action<IEndpointConventionBuilder> RouteOptionsHandler { get; set; }
+		internal Action<IEndpointConventionBuilder>? RouteOptionsHandler { get; set; }
 
 		/// <summary>
 		///     Makes a copy of this options object and returns it

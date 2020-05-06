@@ -89,14 +89,14 @@ namespace RestModels.Options.Builder {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Get(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
+		public RestModelOptionsBuilder<TModel, TUser> SetupGet(string? routePattern, Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
 			RestModelOptionsBuilder<TModel, TUser> OptionsBuilder = this.FlatMap(routePattern);
 			OptionsBuilder.ClearRequestMethods();
 			OptionsBuilder.CanGet();
 			OptionsBuilder.ClearBodyParsers();
 			OptionsBuilder.ClearOperation();
 
-			optionsHandler(OptionsBuilder);
+			optionsHandler?.Invoke(OptionsBuilder);
 			return this;
 		}
 
@@ -105,16 +105,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Get(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.Get("", optionsHandler);
+		public RestModelOptionsBuilder<TModel, TUser> SetupGet(Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupGet("", optionsHandler);
 		}
 
 		/// <summary>
 		///     Sets up a GET request for the same route pattern, clearing body parsers and any operation.
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Get() {
-			return this.Get(null);
+		public RestModelOptionsBuilder<TModel, TUser> SetupGet() {
+			return this.SetupGet(null);
 		}
 
 		/// <summary>
@@ -123,12 +123,12 @@ namespace RestModels.Options.Builder {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> AnonymousGet(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.Get(
+		public RestModelOptionsBuilder<TModel, TUser> SetupAnonymousGet(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupGet(
 				routePattern,
 				(o) => {
 					o.ClearAuthProviders();
-					optionsHandler(o);
+					optionsHandler?.Invoke(o);
 				});
 		}
 
@@ -138,16 +138,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> AnonymousGet(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.AnonymousGet("", optionsHandler);
+		public RestModelOptionsBuilder<TModel, TUser> SetupAnonymousGet(Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupAnonymousGet("", optionsHandler);
 		}
 
 		/// <summary>
 		///     Sets up an anonymous GET request for the same route pattern, clearing body parsers and any operation.
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> AnonymousGet() {
-			return this.AnonymousGet(null);
+		public RestModelOptionsBuilder<TModel, TUser> SetupAnonymousGet() {
+			return this.SetupAnonymousGet(null);
 		}
 
 		/// <summary>
@@ -156,12 +156,12 @@ namespace RestModels.Options.Builder {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Post(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
+		public RestModelOptionsBuilder<TModel, TUser> SetupPost(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
 			RestModelOptionsBuilder<TModel, TUser> OptionsBuilder = this.FlatMap(routePattern);
 			OptionsBuilder.ClearRequestMethods();
 			OptionsBuilder.CanPost();
-			
-			optionsHandler(OptionsBuilder);
+
+			optionsHandler?.Invoke(OptionsBuilder);
 			return this;
 		}
 
@@ -170,16 +170,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Post(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.Post("", optionsHandler);
+		public RestModelOptionsBuilder<TModel, TUser> SetupPost(Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupPost("", optionsHandler);
 		}
 
 		/// <summary>
 		///     Sets up a POST request for the same route pattern.
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Post() {
-			return this.Post(null);
+		public RestModelOptionsBuilder<TModel, TUser> SetupPost() {
+			return this.SetupPost(null);
 		}
 
 		/// <summary>
@@ -188,12 +188,12 @@ namespace RestModels.Options.Builder {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Put(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
+		public RestModelOptionsBuilder<TModel, TUser> SetupPut(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
 			RestModelOptionsBuilder<TModel, TUser> OptionsBuilder = this.FlatMap(routePattern);
 			OptionsBuilder.ClearRequestMethods();
 			OptionsBuilder.CanPut();
 
-			optionsHandler(OptionsBuilder);
+			optionsHandler?.Invoke(OptionsBuilder);
 			return this;
 		}
 
@@ -202,16 +202,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Put(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.Put("", optionsHandler);
+		public RestModelOptionsBuilder<TModel, TUser> SetupPut(Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupPut("", optionsHandler);
 		}
 
 		/// <summary>
 		///     Sets up a PUT request for the same route pattern.
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Put() {
-			return this.Put(null);
+		public RestModelOptionsBuilder<TModel, TUser> SetupPut() {
+			return this.SetupPut(null);
 		}
 
 		/// <summary>
@@ -220,12 +220,13 @@ namespace RestModels.Options.Builder {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Delete(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
+		public RestModelOptionsBuilder<TModel, TUser> SetupDelete(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
 			RestModelOptionsBuilder<TModel, TUser> OptionsBuilder = this.FlatMap(routePattern);
 			OptionsBuilder.ClearRequestMethods();
+			OptionsBuilder.ClearBodyParsers();
 			OptionsBuilder.CanDelete();
 
-			optionsHandler(OptionsBuilder);
+			optionsHandler?.Invoke(OptionsBuilder);
 			return this;
 		}
 
@@ -234,16 +235,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Delete(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.Delete("", optionsHandler);
+		public RestModelOptionsBuilder<TModel, TUser> SetupDelete(Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupDelete("", optionsHandler);
 		}
 
 		/// <summary>
 		///     Sets up a DELETE request for the same route pattern.
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Delete() {
-			return this.Delete(null);
+		public RestModelOptionsBuilder<TModel, TUser> SetupDelete() {
+			return this.SetupDelete(null);
 		}
 
 		/// <summary>
@@ -252,12 +253,12 @@ namespace RestModels.Options.Builder {
 		/// <param name="routePattern">The route pattern to set up the request for</param>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Patch(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
+		public RestModelOptionsBuilder<TModel, TUser> SetupPatch(string routePattern, Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
 			RestModelOptionsBuilder<TModel, TUser> OptionsBuilder = this.FlatMap(routePattern);
 			OptionsBuilder.ClearRequestMethods();
 			OptionsBuilder.CanPatch();
 
-			optionsHandler(OptionsBuilder);
+			optionsHandler?.Invoke(OptionsBuilder);
 			return this;
 		}
 
@@ -266,16 +267,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">A handler for the route options</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Patch(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
-			return this.Patch("", optionsHandler);
+		public RestModelOptionsBuilder<TModel, TUser> SetupPatch(Action<RestModelOptionsBuilder<TModel, TUser>>? optionsHandler) {
+			return this.SetupPatch("", optionsHandler);
 		}
 
 		/// <summary>
 		///     Sets up a PATCH request for the same route pattern.
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Patch() {
-			return this.Patch(null);
+		public RestModelOptionsBuilder<TModel, TUser> SetupPatch() {
+			return this.SetupPatch(null);
 		}
 	}
 }

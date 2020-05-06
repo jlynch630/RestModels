@@ -41,13 +41,12 @@ namespace RestModels.Auth {
 		public Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed) =>
 			this.AuthDelegate(context, parsed);
 
-
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
 		/// <param name="requestContext">The current request context</param>
 		/// <param name="parsedModel">The models parsed from the request body, if any</param>
 		/// <returns><c>true</c></returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel) => true;
+		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) => true;
 	}
 }

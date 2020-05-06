@@ -136,13 +136,13 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
-		///		Enables zero-indexed pagination of the API output using the "page" and "count" query parameters with infinite maximum page sizes
+		///		Enables one-indexed pagination of the API output using the "page" and "count" query parameters with infinite maximum page sizes
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Paginate() => this.Paginate("page", "count");
 
 		/// <summary>
-		///     Enables zero-indexed pagination of the API output with infinite maximum page sizes
+		///     Enables one-indexed pagination of the API output with infinite maximum page sizes
 		/// </summary>
 		/// <param name="pageParamName">The name of the parameter that defines what page to return, starting from zero</param>
 		/// <param name="countParamName">The name of the parameter that defines how many elements to return</param>
@@ -151,7 +151,7 @@ namespace RestModels.Options.Builder {
 			this.Paginate(pageParamName, countParamName, 0);
 
 		/// <summary>
-		///     Enables zero-indexed pagination of the API output
+		///     Enables one-indexed pagination of the API output
 		/// </summary>
 		/// <param name="pageParamName">The name of the parameter that defines what page to return, starting from zero</param>
 		/// <param name="countParamName">The name of the parameter that defines how many elements to return</param>
@@ -162,19 +162,19 @@ namespace RestModels.Options.Builder {
 				throw new ArgumentOutOfRangeException(nameof(maxPageSize), maxPageSize, "Max page size must be non-negative. Use overload without parameter to allow infinite page sizes.");
 			this.Filter(
 				(c, d) => {
-					int Page = 0;
+					int Page = 1;
 					int PageCount = 0;
 					if (c.Request.Query.ContainsKey(pageParamName))
 						Page = Int32.Parse(c.Request.Query[pageParamName]);
 					if (c.Request.Query.ContainsKey(countParamName))
 						PageCount = Int32.Parse(c.Request.Query[countParamName]);
-					if (Page < 0)
-						throw new ArgumentOutOfRangeException(pageParamName, Page, "Page must be non-negative");
+					if (Page < 1)
+						throw new ArgumentOutOfRangeException(pageParamName, Page, "Page must be at least one");
 					if (PageCount < 0)
 						throw new ArgumentOutOfRangeException(countParamName, PageCount, "Count must be non-negative");
 					if (maxPageSize != 0 && PageCount > maxPageSize) PageCount = maxPageSize;
-					if (maxPageSize == 0 && PageCount == 0) return d.Skip(Page * PageCount);
-					return d.Skip(Page * PageCount).Take(PageCount);
+					if (maxPageSize == 0 && PageCount == 0) return d;
+					return d.Skip((Page - 1) * PageCount).Take(PageCount);
 				});
 			return this;
 		}

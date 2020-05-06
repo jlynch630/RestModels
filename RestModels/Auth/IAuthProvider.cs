@@ -25,7 +25,7 @@ namespace RestModels.Auth {
 		/// <param name="context">The current request context</param>
 		/// <param name="parsed">The models parsed from the request body, if any</param>
 		/// <returns>The currently authenticated user context</returns>
-		Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed);
+		Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[]? parsed);
 
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
@@ -36,6 +36,6 @@ namespace RestModels.Auth {
 		///     <c>true</c> if this request contains the necessary attributes to be authenticated by this
 		///     <see cref="IAuthProvider{TModel, TUser}" />, <c>false</c> otherwise.
 		/// </returns>
-		Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel);
+		Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel);
 	}
 }

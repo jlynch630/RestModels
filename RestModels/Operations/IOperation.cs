@@ -32,8 +32,8 @@ namespace RestModels.Operations {
 		Task<IEnumerable<TModel>> OperateAsync(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			ParseResult<TModel>[] parsed,
-			TUser user);
+			ParseResult<TModel>[]? parsed,
+			TUser? user);
 	}
 
 	/// <summary>

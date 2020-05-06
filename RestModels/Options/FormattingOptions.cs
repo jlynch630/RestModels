@@ -27,7 +27,7 @@ namespace RestModels.Options {
 		/// <summary>
 		///     Gets or sets a list of properties that should be included in the result
 		/// </summary>
-		public List<PropertyInfo> IncludedReturnProperties { get; set; }
+		public List<PropertyInfo>? IncludedReturnProperties { get; set; }
 
 		/// <summary>
 		///		Makes a copy of these <see cref="FormattingOptions"/>

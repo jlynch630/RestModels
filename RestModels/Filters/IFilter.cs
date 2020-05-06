@@ -30,8 +30,8 @@ namespace RestModels.Filters {
 		Task<IQueryable<TModel>> FilterDataAsync(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			ParseResult<TModel>[] parsed,
-			TUser user);
+			ParseResult<TModel>[]? parsed,
+			TUser? user);
 	}
 
 	/// <summary>

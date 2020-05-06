@@ -5,3 +5,6 @@ RestModels/Bin
 RestModels/obj
 
 TestProject
+/RestModels.EntityFramework/obj
+/RestModels.EntityFramework/bin/Debug/netcoreapp3.1
+/RestModels.sln.DotSettings.user

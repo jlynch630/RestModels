@@ -11,7 +11,6 @@ namespace RestModels.Middleware {
 	using System.Diagnostics;
 	using System.IO;
 	using System.Linq;
-	using System.Reflection;
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
@@ -36,11 +35,6 @@ namespace RestModels.Middleware {
 		///     The options to use for determining the route actions
 		/// </summary>
 		private readonly RestModelOptions<TModel, TUser> Options;
-
-		/// <summary>
-		///		A list of types to their constructors, for dependency injection
-		/// </summary>
-		private readonly Dictionary<Type,ConstructorInfo> Constructors = new Dictionary<Type, ConstructorInfo>();
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="RestModelMiddleware{TModel, TUser}" /> class
@@ -93,12 +87,12 @@ namespace RestModels.Middleware {
 		/// <param name="parsed">The parsed models, or null if there are no body parsers specified</param>
 		/// <returns>The authenticated user context, or null if there is none</returns>
 		/// <exception cref="AuthFailedException">If none of the available authentication methods succeeded</exception>
-		private async Task<TUser> Authenticate(HttpContext context, ParseResult<TModel>[] parsed) {
+		private async Task<TUser?> Authenticate(HttpContext context, ParseResult<TModel>[]? parsed) {
 			if (this.Options.AuthProviders == null) return null;
 
-			TUser UserContext = null;
+			TUser? UserContext = null;
 			bool AuthSuccess = false;
-			AuthFailedException LastException = null;
+			AuthFailedException? LastException = null;
 			foreach (IAuthProvider<TModel, TUser> Provider in this.Options.AuthProviders)
 				try {
 					if (!await Provider.CanAuthAsync(context.Request, parsed)) continue;
@@ -115,7 +109,7 @@ namespace RestModels.Middleware {
 				       ? UserContext
 				       : throw new AuthFailedException(
 					         "No authentication providers were able to authorize the request",
-							 LastException);
+							 LastException!);
 		}
 
 		/// <summary>
@@ -142,17 +136,17 @@ namespace RestModels.Middleware {
 			// go through our body parsers to try and parse the request body. may be null
 			Stopwatch Stopwatch = new Stopwatch();
 			Stopwatch.Start();
-			if (!await this.Options.ResultWriter.CanWriteAsync(context.Request))
+			if (!await this.Options.ResultWriter!.CanWriteAsync(context.Request))
 				throw new WritingFailedException("Request aborted. Cannot serialize response to request");
 
-			ParseResult<TModel>[] ParsedModel = await this.ParseBody(context);
+			ParseResult<TModel>[]? ParsedModel = await this.ParseBody(context);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Parse\t{Stopwatch.ElapsedMilliseconds}");
 			Stopwatch.Restart();
 			/////////////////////
 			// then authenticate the request. may return null
-			TUser User = await this.Authenticate(context, ParsedModel);
+			TUser? User = await this.Authenticate(context, ParsedModel);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Auth\t{Stopwatch.ElapsedMilliseconds}");
@@ -164,7 +158,7 @@ namespace RestModels.Middleware {
 					                               context,
 					                               ParsedModel,
 					                               User)
-				                             : null;
+				                             : new TModel[0].AsQueryable();
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Query\t{Stopwatch.ElapsedMilliseconds}");
@@ -197,7 +191,7 @@ namespace RestModels.Middleware {
 			Stopwatch.Restart();
 			/////////////////////
 			// and write the result
-			await this.Options.ResultWriter.WriteResultAsync(
+			await this.Options.ResultWriter!.WriteResultAsync(
 				context,
 				Result,
 				User,
@@ -215,13 +209,13 @@ namespace RestModels.Middleware {
 		/// <param name="context">The current request context</param>
 		/// <returns>The parsed model, or null if there are no body parsers specified</returns>
 		/// <exception cref="InvalidParserException">If none of the available parsers can properly parse the request</exception>
-		private async Task<ParseResult<TModel>[]> ParseBody(HttpContext context) {
+		private async Task<ParseResult<TModel>[]?> ParseBody(HttpContext context) {
 			if (this.Options.BodyParsers == null) return null;
 
 			await using MemoryStream Stream = new MemoryStream();
 			await context.Request.Body.CopyToAsync(Stream);
 			byte[] BodyContents = Stream.ToArray();
-			ParseResult<TModel>[] Parsed = null;
+			ParseResult<TModel>[]? Parsed = null;
 			bool ParseSuccess = false;
 			foreach (IBodyParser<TModel> Parser in this.Options.BodyParsers)
 				try {
@@ -249,8 +243,8 @@ namespace RestModels.Middleware {
 		private async Task VerifyConditions(
 			HttpContext context,
 			IQueryable<TModel> dataset,
-			ParseResult<TModel>[] parsed,
-			TUser user) {
+			ParseResult<TModel>[]? parsed,
+			TUser? user) {
 			foreach (ICondition<TModel, TUser> Condition in this.Options.Conditions)
 				try {
 					if (!await Condition.VerifyAsync(context, dataset, parsed, user))

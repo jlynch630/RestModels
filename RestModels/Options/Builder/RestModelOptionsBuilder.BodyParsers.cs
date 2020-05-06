@@ -59,8 +59,10 @@ namespace RestModels.Options.Builder {
 		/// <summary>
 		///     Sets this route up to parse XML and JSON request bodies
 		/// </summary>
+		/// <param name="keepExisting">True to keep existing parsers, false otherwise</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ParseXmlAndJson() {
+		public RestModelOptionsBuilder<TModel, TUser> ParseXmlAndJson(bool keepExisting = false) {
+			if (!keepExisting) this.ClearBodyParsers();
 			this.ParseJson();
 			this.ParseXml();
 			return this;

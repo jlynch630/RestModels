@@ -58,7 +58,6 @@ namespace RestModels.Auth {
 			return await this.AuthDelegate(QueryValue);
 		}
 
-
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
@@ -68,7 +67,7 @@ namespace RestModels.Auth {
 		///     <c>true</c> if this request contains the query parameter this
 		///     <see cref="IAuthProvider{TModel, TUser}" /> authenticates with, <c>false</c> otherwise.
 		/// </returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel) =>
+		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) =>
 			requestContext.Query.ContainsKey(this.ParameterName);
 	}
 }

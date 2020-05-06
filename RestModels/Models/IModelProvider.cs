@@ -26,7 +26,7 @@ namespace RestModels.Models {
 		/// <param name="parsed">The parsed request body, if any</param>
 		/// <param name="user">The current user context, if any</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
-		Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, ParseResult<TModel>[] parsed, TUser user);
+		Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, ParseResult<TModel>[]? parsed, TUser? user);
 	}
 
 	/// <summary>

@@ -67,7 +67,7 @@ namespace RestModels.Auth {
 		/// <returns>
 		///     <c>true</c> if this request contains an Authorization header that starts with "Basic", <c>false</c> otherwise.
 		/// </returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel) =>
+		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) =>
 			requestContext.Headers.ContainsKey(HeaderNames.Authorization)
 			&& requestContext.Headers[HeaderNames.Authorization].Count == 1
 			&& requestContext.Headers[HeaderNames.Authorization][0].StartsWith("Basic ");

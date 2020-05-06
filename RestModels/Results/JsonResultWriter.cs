@@ -29,13 +29,13 @@ namespace RestModels.Results {
 		/// <summary>
 		///		Options for the JSON serializer
 		/// </summary>
-		private readonly JsonSerializerOptions Options;
+		private readonly JsonSerializerOptions? Options;
 
 		/// <summary>
 		///		Initializes a new instance of the <see cref="JsonResultWriter{TModel}"/> class
 		/// </summary>
 		/// <param name="options">Options for the JSON serializer</param>
-		public JsonResultWriter(JsonSerializerOptions options = null) => this.Options = options;
+		public JsonResultWriter(JsonSerializerOptions? options = null) => this.Options = options;
 
 		/// <summary>
 		///		Gets whether or not this <see cref="IResultWriter{TModel, TUser}"/> can write a result for the given request
@@ -88,10 +88,10 @@ namespace RestModels.Results {
 		/// <param name="input">The input model</param>
 		/// <param name="included">The properties of <typeparamref name="TModel"/> that should be included</param>
 		/// <returns>The transformed model</returns>
-		private Dictionary<string, object> Transform(TModel input, IEnumerable<PropertyInfo> included) {
-			Dictionary<string, object> Transformed = new Dictionary<string, object>();
+		private Dictionary<string, object?> Transform(TModel input, IEnumerable<PropertyInfo> included) {
+			Dictionary<string, object?> Transformed = new Dictionary<string, object?>();
 			foreach (PropertyInfo Property in included)
-				Transformed[Property.Name] = Property.GetGetMethod().Invoke(input, null);
+				Transformed[Property.Name] = Property.GetGetMethod()?.Invoke(input, null);
 			return Transformed;
 		}
 	}

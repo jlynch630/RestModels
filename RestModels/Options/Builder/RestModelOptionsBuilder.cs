@@ -8,16 +8,15 @@
 namespace RestModels.Options.Builder {
 	using System;
 	using System.Collections.Generic;
+	using System.Linq;
 	using System.Linq.Expressions;
 	using System.Reflection;
-	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Builder;
-	using Microsoft.AspNetCore.Http;
 
 	using RestModels.Auth;
 	using RestModels.Conditions;
-	using RestModels.ExceptionHandlers;
+	using RestModels.Exceptions;
 	using RestModels.Filters;
 	using RestModels.Models;
 	using RestModels.Operations;
@@ -46,7 +45,7 @@ namespace RestModels.Options.Builder {
 		///     Initializes a new instance of the <see cref="RestModelOptionsBuilder{TModel, TUser}" /> class.
 		/// </summary>
 		/// <param name="existing">Starting options for this builder</param>
-		internal RestModelOptionsBuilder(RestModelOptions<TModel, TUser> existing = null) =>
+		public RestModelOptionsBuilder(RestModelOptions<TModel, TUser>? existing = null) =>
 			this.Options = existing ?? new RestModelOptions<TModel, TUser>();
 
 		/// <summary>
@@ -54,11 +53,16 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="baseRoute">The base route for these options</param>
 		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
-		internal RestModelOptionsBuilder(string baseRoute, Action<IEndpointConventionBuilder> routeOptionsHandler)
+		public RestModelOptionsBuilder(string baseRoute, Action<IEndpointConventionBuilder>? routeOptionsHandler)
 			: this() {
 			this.Options.RoutePattern = RestModelOptionsBuilder<TModel, TUser>.FixRoute(baseRoute);
 			this.Options.RouteOptionsHandler = routeOptionsHandler;
 		}
+
+		/// <summary>
+		///     The route pattern for this builder
+		/// </summary>
+		public string RoutePattern => this.Options.RoutePattern;
 
 		/// <summary>
 		///     Sets whether or not to accept arrays of <typeparamref name="TModel" /> as the request body
@@ -87,7 +91,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <typeparam name="TProvider">The type of auth provider to add</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> AddAuthProvider<TProvider>() where TProvider : IAuthProvider<TModel, TUser>, new() {
+		public RestModelOptionsBuilder<TModel, TUser> AddAuthProvider<TProvider>()
+			where TProvider : IAuthProvider<TModel, TUser>, new() {
 			this.AddAuthProvider(new TProvider());
 			return this;
 		}
@@ -104,11 +109,12 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
-		///		Adds a new body parser to this route
+		///     Adds a new body parser to this route
 		/// </summary>
 		/// <typeparam name="TParser">The type of body parser to add</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> AddBodyParser<TParser>() where TParser : IBodyParser<TModel>, new() {
+		public RestModelOptionsBuilder<TModel, TUser> AddBodyParser<TParser>()
+			where TParser : IBodyParser<TModel>, new() {
 			this.AddBodyParser(new TParser());
 			return this;
 		}
@@ -145,10 +151,102 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
+		///     Clears all of the auth providers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearAuthProviders() {
+			this.Options.AuthProviders = null;
+			return this;
+		}
+
+		/// <summary>
+		///     Clears all of the body parsers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearBodyParsers() {
+			this.Options.BodyParsers = null;
+			return this;
+		}
+
+		/// <summary>
+		///     Clears all of the conditions registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearConditions() {
+			this.Options.Conditions.Clear();
+			return this;
+		}
+
+		/// <summary>
+		///     Clears all of the exception handlers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearExceptionHandlers() {
+			this.Options.ExceptionHandlers.Clear();
+			return this;
+		}
+
+		/// <summary>
+		///     Clears all of the filters registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearFilters() {
+			this.Options.Filters.Clear();
+			return this;
+		}
+
+		/// <summary>
+		///     Clears the operation registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearOperation() {
+			this.Options.Operation = null;
+			return this;
+		}
+
+		/// <summary>
+		///     Clears all of the request methods registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearRequestMethods() {
+			this.Options.RequestMethods = null;
+			return this;
+		}
+
+		/// <summary>
+		///     Clears the result writer registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearResultWriter() {
+			this.Options.ResultWriter = null;
+			return this;
+		}
+
+		/// <summary>
+		///     Sets a default value for a property of the <typeparamref name="TModel" /> parsed from the request body
+		/// </summary>
+		/// <param name="property">The property to set the default for</param>
+		/// <param name="defaultValue">
+		///     A delegate that will retrieve the default value for the given <paramref name="property" />
+		/// </param>
+		/// <typeparam name="TProperty">The type of the property for to set the default for</typeparam>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Default<TProperty>(
+			PropertyInfo property,
+			Func<TProperty> defaultValue) {
+			// double lambda looks silly but we can't cast Func<TProperty> to Func<object> without making it constrained to reference types
+			this.Options.ParserOptions.DefaultPropertyValues.Add(property, () => defaultValue());
+			return this;
+		}
+
+		/// <summary>
 		///     Sets a default value for a property of the <typeparamref name="TModel" /> parsed from the request body
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to set a default for</param>
-		/// <param name="defaultValue">A delegate that will retrieve the default value for the property defined by <paramref name="propertyExpression" /></param>
+		/// <param name="defaultValue">
+		///     A delegate that will retrieve the default value for the property defined by
+		///     <paramref name="propertyExpression" />
+		/// </param>
 		/// <typeparam name="TProperty">The type of the property for to set the default for</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Default<TProperty>(
@@ -157,6 +255,7 @@ namespace RestModels.Options.Builder {
 			PropertyInfo Info = RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression);
 
 			// double lambda looks silly but we can't cast Func<TProperty> to Func<object> without making it constrained to reference types
+			// todo: would there ever be a non-reference type in a model though?
 			this.Options.ParserOptions.DefaultPropertyValues.Add(Info, () => defaultValue());
 			return this;
 		}
@@ -169,10 +268,75 @@ namespace RestModels.Options.Builder {
 		/// <typeparam name="TProperty">The type of the property for to set the default for</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Default<TProperty>(
-			Expression<Func<TModel, TProperty>> propertyExpression, TProperty defaultValue) {
+			Expression<Func<TModel, TProperty>> propertyExpression,
+			TProperty defaultValue) {
 			PropertyInfo Info = RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression);
 			this.Options.ParserOptions.DefaultPropertyValues.Add(Info, () => defaultValue);
 			return this;
+		}
+
+		/// <summary>
+		///     Maps another route to the same route pattern
+		/// </summary>
+		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
+		/// <remarks>
+		///     This method works just like
+		///     <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})" />
+		///     , but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}" />, rather than the one used to
+		///     create the route.
+		/// </remarks>
+		public RestModelOptionsBuilder<TModel, TUser> FlatMap() => this.FlatMap(this.Options.RoutePattern, null);
+
+		/// <summary>
+		///     Maps a route to a route pattern
+		/// </summary>
+		/// <param name="pattern">The pattern to match with</param>
+		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
+		/// <remarks>
+		///     This method works just like
+		///     <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})" />
+		///     , but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}" />, rather than the one used to
+		///     create the route.
+		/// </remarks>
+		public RestModelOptionsBuilder<TModel, TUser> FlatMap(string? pattern) => this.FlatMap(pattern, null);
+
+		/// <summary>
+		///     Maps another route to the same route pattern
+		/// </summary>
+		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
+		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
+		/// <remarks>
+		///     This method works just like
+		///     <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})" />
+		///     , but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}" />, rather than the one used to
+		///     create the route.
+		/// </remarks>
+		public RestModelOptionsBuilder<TModel, TUser> FlatMap(Action<IEndpointConventionBuilder>? routeOptionsHandler) =>
+			this.FlatMap(this.Options.RoutePattern, routeOptionsHandler);
+
+		/// <summary>
+		///     Maps a route to a route pattern
+		/// </summary>
+		/// <param name="pattern">The pattern to match with</param>
+		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
+		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
+		/// <remarks>
+		///     This method works just like
+		///     <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})" />
+		///     , but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}" />, rather than the one used to
+		///     create the route.
+		/// </remarks>
+		public RestModelOptionsBuilder<TModel, TUser> FlatMap(
+			string? pattern,
+			Action<IEndpointConventionBuilder>? routeOptionsHandler) {
+			// create a copy of the options and use that for the new route
+			RestModelOptions<TModel, TUser> Copy = this.Options.Copy();
+			Copy.RoutePattern += RestModelOptionsBuilder<TModel, TUser>.FixRoute(pattern);
+			if (routeOptionsHandler != null) Copy.RouteOptionsHandler = routeOptionsHandler;
+			RestModelOptionsBuilder<TModel, TUser> Child = this.CreateChild(Copy);
+			this.Children.Add(Child);
+
+			return Child;
 		}
 
 		/// <summary>
@@ -187,16 +351,51 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
+		///     Ensures that a property of the <typeparamref name="TModel" /> will not be parsed from the request body
+		/// </summary>
+		/// <param name="property">The property to be ignored</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Ignore(PropertyInfo property) {
+			// todo: add to other methods
+			if (property.DeclaringType != null && typeof(TModel) != property.DeclaringType
+			                                   && !property.DeclaringType.IsSubclassOf(typeof(TModel)))
+				throw new OptionsException("Cannot ignore a property that doesn't belong to the model class");
+			this.Options.ParserOptions.IgnoredParseProperties.Add(property);
+			return this;
+		}
+
+		/// <summary>
+		///     Ensures that all properties of the <typeparamref name="TModel" /> will not be parsed from the request body
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> IgnoreAll() {
+			this.Options.ParserOptions.IgnoredParseProperties.AddRange(typeof(TModel).GetProperties().Where(p => p.CanWrite));
+			return this;
+		}
+
+		/// <summary>
 		///     Ensures that a property of the <typeparamref name="TModel" /> will be included in the response body
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to be included</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Include(Expression<Func<TModel, object>> propertyExpression) {
+			return this.Include(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+		}
+
+		/// <summary>
+		///     Ensures that a property of the <typeparamref name="TModel" /> will be included in the response body
+		/// </summary>
+		/// <param name="property">The property to be ignored</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Include(PropertyInfo property) {
+			if (property.DeclaringType != null && typeof(TModel) != property.DeclaringType
+			                                   && !property.DeclaringType.IsSubclassOf(typeof(TModel)))
+				throw new OptionsException("Cannot include a property that doesn't belong to the model class");
+
 			if (this.Options.FormattingOptions.IncludedReturnProperties == null)
 				this.Options.FormattingOptions.IncludedReturnProperties = new List<PropertyInfo>();
 
-			this.Options.FormattingOptions.IncludedReturnProperties.Add(
-				RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			this.Options.FormattingOptions.IncludedReturnProperties.Add(property);
 			return this;
 		}
 
@@ -205,10 +404,7 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> IncludeAll() {
-			if (this.Options.FormattingOptions.IncludedReturnProperties == null)
-				this.Options.FormattingOptions.IncludedReturnProperties = new List<PropertyInfo>();
-
-			this.Options.FormattingOptions.IncludedReturnProperties.AddRange(typeof(TModel).GetProperties());
+			this.Options.FormattingOptions.IncludedReturnProperties = null;
 			return this;
 		}
 
@@ -230,7 +426,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="optionsHandler">The options for this route</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> MapRoute(Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
+		public RestModelOptionsBuilder<TModel, TUser> MapRoute(
+			Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler) {
 			optionsHandler(this.FlatMap());
 			return this;
 		}
@@ -264,58 +461,16 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
-		///     Maps another route to the same route pattern
+		///     Ensures that a property of the <typeparamref name="TModel" /> will not be included in the response body
 		/// </summary>
-		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
-		/// <remarks>
-		///		This method works just like <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})"/>, but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}"/>, rather than the one used to create the route.
-		/// </remarks>
-		public RestModelOptionsBuilder<TModel, TUser> FlatMap() {
-			return this.FlatMap(this.Options.RoutePattern, null);
-		}
+		/// <param name="property">The property to be omitted</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Omit(PropertyInfo property) {
+			if (this.Options.FormattingOptions.IncludedReturnProperties == null)
+				this.IncludeAll();
 
-		/// <summary>
-		///		Maps a route to a route pattern
-		/// </summary>
-		/// <param name="pattern">The pattern to match with</param>
-		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
-		/// <remarks>
-		///		This method works just like <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})"/>, but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}"/>, rather than the one used to create the route.
-		/// </remarks>
-		public RestModelOptionsBuilder<TModel, TUser> FlatMap(string pattern) {
-			return this.FlatMap(pattern, null);
-		}
-
-		/// <summary>
-		///     Maps another route to the same route pattern
-		/// </summary>
-		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
-		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
-		/// <remarks>
-		///		This method works just like <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})"/>, but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}"/>, rather than the one used to create the route.
-		/// </remarks>
-		public RestModelOptionsBuilder<TModel, TUser> FlatMap(Action<IEndpointConventionBuilder> routeOptionsHandler) {
-			return this.FlatMap(this.Options.RoutePattern, routeOptionsHandler);
-		}
-
-		/// <summary>
-		///		Maps a route to a route pattern
-		/// </summary>
-		/// <param name="pattern">The pattern to match with</param>
-		/// <param name="routeOptionsHandler">ASP.NET core specific route options</param>
-		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object</returns>
-		/// <remarks>
-		///		This method works just like <see cref="MapRoute(string, Action{RestModelOptionsBuilder{TModel, TUser}}, Action{IEndpointConventionBuilder})"/>, but returns the newly created <see cref="RestModelOptionsBuilder{TModel, TUser}"/>, rather than the one used to create the route.
-		/// </remarks>
-		public RestModelOptionsBuilder<TModel, TUser> FlatMap(string pattern, Action<IEndpointConventionBuilder> routeOptionsHandler) {
-			// create a copy of the options and use that for the new route
-			RestModelOptions<TModel, TUser> Copy = this.Options.Copy();
-			Copy.RoutePattern += RestModelOptionsBuilder<TModel, TUser>.FixRoute(pattern);
-			if (routeOptionsHandler != null) Copy.RouteOptionsHandler = routeOptionsHandler;
-			RestModelOptionsBuilder<TModel, TUser> Child = new RestModelOptionsBuilder<TModel, TUser>(Copy);
-			this.Children.Add(Child);
-
-			return Child;
+			this.Options.FormattingOptions.IncludedReturnProperties?.Remove(property);
+			return this;
 		}
 
 		/// <summary>
@@ -324,12 +479,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to be omitted</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Omit(Expression<Func<TModel, object>> propertyExpression) {
-			if (this.Options.FormattingOptions.IncludedReturnProperties == null)
-				this.IncludeAll();
-
-			this.Options.FormattingOptions.IncludedReturnProperties?.Remove(
-				RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-			return this;
+			return this.Omit(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 		}
 
 		/// <summary>
@@ -347,8 +497,16 @@ namespace RestModels.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to make optional</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Optional(Expression<Func<TModel, object>> propertyExpression) {
-			this.Options.ParserOptions.RequiredParseProperties.Remove(
-				RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+			return this.Optional(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+		}
+
+		/// <summary>
+		///     Makes a property of the <typeparamref name="TModel" /> optional in the request body
+		/// </summary>
+		/// <param name="property">The property to make optional</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Optional(PropertyInfo property) {
+			this.Options.ParserOptions.RequiredParseProperties.Remove(property);
 			return this;
 		}
 
@@ -357,9 +515,27 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to require</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> RequireProperty(Expression<Func<TModel, object>> propertyExpression) {
-			this.Options.ParserOptions.RequiredParseProperties.Add(
-				RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+		public RestModelOptionsBuilder<TModel, TUser> RequireProperty(
+			Expression<Func<TModel, object>> propertyExpression) {
+			return this.RequireProperty(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
+		}
+
+		/// <summary>
+		///     Requires all properties of the <typeparamref name="TModel" /> to be present in the request body
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> RequireAllProperties() {
+			this.Options.ParserOptions.RequiredParseProperties.AddRange(typeof(TModel).GetProperties().Where(p => p.CanWrite));
+			return this;
+		}
+
+		/// <summary>
+		///     Requires a property of the <typeparamref name="TModel" /> to be present in the request body
+		/// </summary>
+		/// <param name="property">The property to require</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> RequireProperty(PropertyInfo property) {
+			this.Options.ParserOptions.RequiredParseProperties.Add(property);
 			return this;
 		}
 
@@ -400,10 +576,10 @@ namespace RestModels.Options.Builder {
 		/// <summary>
 		///     Sets the result writer to use for this route
 		/// </summary>
-		/// <param name="ResultWriter">The result writer to use</param>
+		/// <param name="resultWriter">The result writer to use</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> UseResultWriter(IResultWriter<TModel, TUser> ResultWriter) {
-			this.Options.ResultWriter = ResultWriter;
+		public RestModelOptionsBuilder<TModel, TUser> UseResultWriter(IResultWriter<TModel, TUser> resultWriter) {
+			this.Options.ResultWriter = resultWriter;
 			return this;
 		}
 
@@ -412,88 +588,46 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <typeparam name="TWriter">The type of result writer to use</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> UseResultWriter<TWriter>() where TWriter : IResultWriter<TModel, TUser>, new() {
+		public RestModelOptionsBuilder<TModel, TUser> UseResultWriter<TWriter>()
+			where TWriter : IResultWriter<TModel, TUser>, new() {
 			this.Options.ResultWriter = new TWriter();
 			return this;
 		}
 
 		/// <summary>
-		///		Clears all of the auth providers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
+		///     Resets this <see cref="RestModelOptionsBuilder{TModel, TUser}" />, clearing all lists and resetting all values
+		///     except for the route pattern
 		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearAuthProviders() {
-			this.Options.AuthProviders = null;
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Reset() {
+			this.ClearAuthProviders();
+			this.ClearBodyParsers();
+			this.ClearConditions();
+			this.ClearExceptionHandlers();
+			this.ClearFilters();
+			this.ClearOperation();
+			this.ClearRequestMethods();
+			this.ClearResultWriter();
 			return this;
 		}
 
 		/// <summary>
-		///		Clears all of the body parsers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
+		///		Creates a child instance of the <see cref="RestModelOptionsBuilder{TModel, TUser}"/> type sharing the given base options. When overriden in a derived class, this method can be used to ensure that the entire tree of <see cref="RestModelOptionsBuilder{TModel, TUser}"/> objects share the same derived type
 		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearBodyParsers() {
-			this.Options.BodyParsers = null;
-			return this;
+		/// <param name="baseOptions">The base options for the new instance</param>
+		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}"/> instance</returns>
+		public virtual RestModelOptionsBuilder<TModel, TUser> CreateChild(RestModelOptions<TModel, TUser>? baseOptions) {
+			return new RestModelOptionsBuilder<TModel, TUser>(baseOptions);
 		}
 
 		/// <summary>
-		///		Clears all of the filters registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
+		///     Builds these options and all of this builder's child options. Not intended for application use.
 		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearFilters() {
-			this.Options.Filters.Clear();
-			return this;
-		}
-
-		/// <summary>
-		///		Clears all of the conditions registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
-		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearConditions() {
-			this.Options.Conditions.Clear();
-			return this;
-		}
-
-		/// <summary>
-		///		Clears the operation registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
-		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearOperation() {
-			this.Options.Operation = null;
-			return this;
-		}
-
-		/// <summary>
-		///		Clears all of the exception handlers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
-		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearExceptionHandlers() {
-			this.Options.ExceptionHandlers.Clear();
-			return this;
-		}
-
-		/// <summary>
-		///		Clears the result writer registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
-		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearResultWriter() {
-			this.Options.ResultWriter = null;
-			return this;
-		}
-
-		/// <summary>
-		///		Clears all of the request methods registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}"/>
-		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}"/> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> ClearRequestMethods() {
-			this.Options.RequestMethods = null;
-			return this;
-		}
-
-		/// <summary>
-		///     Builds these options and all of this builder's child options
-		/// </summary>
-		/// <returns>A list of all of the options created by this builder, including its own, in the order they were added, keyed to the route it's for</returns>
-		internal Dictionary<string, List<RestModelOptions<TModel, TUser>>> BuildAll() {
+		/// <returns>
+		///     A list of all of the options created by this builder, including its own, in the order they were added, keyed
+		///     to the route it's for
+		/// </returns>
+		public Dictionary<string, List<RestModelOptions<TModel, TUser>>> BuildAll() {
 			// create options
 			// this is not the prettiest thing i've ever written
 			List<RestModelOptions<TModel, TUser>> MyOptions = new List<RestModelOptions<TModel, TUser>> { this.Options };
@@ -532,7 +666,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="routeString">The inputted route string</param>
 		/// <returns>The route string, ensuring that it ends with a / and starts with a letter</returns>
-		private static string FixRoute(string routeString) {
+		private static string FixRoute(string? routeString) {
+			if (routeString == null) return "";
 			if (routeString.StartsWith("/")) routeString = routeString.Substring(1);
 			if (routeString.Length != 0 && !routeString.EndsWith("/")) routeString += "/";
 			return routeString;
