@@ -38,7 +38,7 @@ namespace RestModels.Options.Builder {
 		/// <typeparam name="TException">The type of exception that this handler will be called for</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Template<TException>(Func<Exception, HttpContext, bool, Task<bool?>> handler) where TException : Exception {
-			this.Catch<TException>(new DelegateExceptionHandler(handler));
+			////this.Catch<TException>(new DelegateExceptionHandler(handler));
 			return this;
 		}
 	}

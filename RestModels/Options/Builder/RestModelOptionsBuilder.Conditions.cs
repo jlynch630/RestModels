@@ -13,6 +13,7 @@ namespace RestModels.Options.Builder {
 	using Microsoft.AspNetCore.Http;
 
 	using RestModels.Conditions;
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -28,8 +29,8 @@ namespace RestModels.Options.Builder {
 		/// <param name="condition">The delegate to use to determine if the request meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Require(
-			Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, bool> condition) {
-			this.RequireAsync(async (c, d, p, u) => condition(c, d, p, u));
+			Func<IApiContext<TModel, TUser>, IQueryable<TModel>, bool> condition) {
+			this.RequireAsync(async (c, d) => condition(c, d));
 			return this;
 		}
 
@@ -39,7 +40,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="condition">The delegate to use to determine if the request meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Require(Func<IQueryable<TModel>, bool> condition) {
-			this.Require((c, d, p, u) => condition(d));
+			this.RequireAsync(async d => condition(d));
 			return this;
 		}
 
@@ -49,7 +50,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> RequireInput(Func<TModel[], bool> condition) {
-			this.Require((c, d, p, u) => condition(p.Select(p => p.ParsedModel).ToArray()));
+			this.Require((c, d) => condition(c.Parsed.Select(p => p.ParsedModel).ToArray()));
 			return this;
 		}
 
@@ -69,17 +70,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> RequireInputAsync(Func<TModel[], Task<bool>> condition) {
-			this.RequireAsync((c, d, p, u) => condition(p.Select(p => p.ParsedModel).ToArray()));
-			return this;
-		}
-
-		/// <summary>
-		///     Adds a requirement to this route that will ensure the request meets the given condition
-		/// </summary>
-		/// <param name="condition">The delegate to use to determine if the request meets a condition</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Require(Func<HttpContext, IQueryable<TModel>, bool> condition) {
-			this.Require((c, d, p, u) => condition(c, d));
+			this.RequireAsync((c, d) => condition(c.Parsed.Select(p => p.ParsedModel).ToArray()));
 			return this;
 		}
 
@@ -89,7 +80,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="condition">The delegate to use to determine if the request meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> RequireAsync(
-			Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<bool>> condition) {
+			Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task<bool>> condition) {
 			this.AddCondition(new DelegateCondition<TModel, TUser>(condition));
 			return this;
 		}
@@ -100,17 +91,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="condition">The delegate to use to determine if the request meets a condition</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> RequireAsync(Func<IQueryable<TModel>, Task<bool>> condition) {
-			this.RequireAsync((c, d, p, u) => condition(d));
-			return this;
-		}
-
-		/// <summary>
-		///     Adds a requirement to this route that will ensure the request meets the given condition
-		/// </summary>
-		/// <param name="condition">The delegate to use to determine if the request meets a condition</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> RequireAsync(Func<HttpContext, IQueryable<TModel>, Task<bool>> condition) {
-			this.RequireAsync((c, d, p, u) => condition(c, d));
+			this.RequireAsync((c, d) => condition(d));
 			return this;
 		}
 

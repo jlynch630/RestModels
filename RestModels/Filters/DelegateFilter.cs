@@ -12,6 +12,7 @@ namespace RestModels.Filters {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -24,30 +25,26 @@ namespace RestModels.Filters {
 		/// <summary>
 		///     The delegate to use to filter the dataset
 		/// </summary>
-		private readonly Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<IQueryable<TModel>>> FilterDelegate;
+		private readonly Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task<IQueryable<TModel>>> FilterDelegate;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="DelegateFilter{TModel, TUser}" /> class.
 		/// </summary>
 		/// <param name="filterDelegate">The delegate to use to filter the dataset</param>
 		public DelegateFilter(
-			Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<IQueryable<TModel>>> filterDelegate) =>
+			Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task<IQueryable<TModel>>> filterDelegate) =>
 			this.FilterDelegate = filterDelegate;
 
 		/// <summary>
 		///     Filters the model dataset by some condition
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The current dataset to be filtered</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>The filtered dataset</returns>
 		public Task<IQueryable<TModel>> FilterDataAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[] parsed,
-			TUser user) {
-			return this.FilterDelegate(context, dataset, parsed, user);
+			IApiContext<TModel, TUser> context,
+			IQueryable<TModel> dataset) {
+			return this.FilterDelegate(context, dataset);
 		}
 	}
 }

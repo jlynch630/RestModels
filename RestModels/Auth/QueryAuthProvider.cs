@@ -11,6 +11,7 @@ namespace RestModels.Auth {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Exceptions;
 	using RestModels.Parsers;
 
@@ -47,10 +48,9 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     Authenticates the given request context, and returns the authenticated user
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed) {
+		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
 			string QueryValue = context.Request.Query[this.ParameterName];
 			if (QueryValue == null)
 				throw new AuthFailedException("Failed to authorize user with query parameter authentication");
@@ -61,13 +61,12 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
-		/// <param name="requestContext">The current request context</param>
-		/// <param name="parsedModel">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>
 		///     <c>true</c> if this request contains the query parameter this
 		///     <see cref="IAuthProvider{TModel, TUser}" /> authenticates with, <c>false</c> otherwise.
 		/// </returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) =>
-			requestContext.Query.ContainsKey(this.ParameterName);
+		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
+			context.Request.Query.ContainsKey(this.ParameterName);
 	}
 }

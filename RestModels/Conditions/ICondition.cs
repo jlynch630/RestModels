@@ -11,6 +11,7 @@ namespace RestModels.Conditions {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -28,15 +29,11 @@ namespace RestModels.Conditions {
 		/// <summary>
 		///     Verifies that the current request meets a condition
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The current dataset to be filtered</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns><code>true</code> if the request should continue, <code>false</code> otherwise</returns>
 		Task<bool> VerifyAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[]? parsed,
-			TUser? user);
+			IApiContext<TModel, TUser> context,
+			IQueryable<TModel> dataset);
 	}
 }

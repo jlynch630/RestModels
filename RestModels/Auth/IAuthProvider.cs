@@ -10,6 +10,7 @@ namespace RestModels.Auth {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -22,20 +23,18 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     Authenticates the given request context, and returns the authenticated user
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[]? parsed);
+		Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context);
 
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
-		/// <param name="requestContext">The current request context</param>
-		/// <param name="parsedModel">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>
 		///     <c>true</c> if this request contains the necessary attributes to be authenticated by this
 		///     <see cref="IAuthProvider{TModel, TUser}" />, <c>false</c> otherwise.
 		/// </returns>
-		Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel);
+		Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context);
 	}
 }

@@ -11,6 +11,7 @@ namespace RestModels.Models {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -22,11 +23,9 @@ namespace RestModels.Models {
 		/// <summary>
 		///     Gets a query pointing to all of the models available for the current request context
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
-		Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, ParseResult<TModel>[]? parsed, TUser? user);
+		Task<IQueryable<TModel>> GetModelsAsync(IApiContext<TModel, TUser> context);
 	}
 
 	/// <summary>

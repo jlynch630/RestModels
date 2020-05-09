@@ -13,6 +13,7 @@ namespace RestModels.Results {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Options;
 
 	/// <summary>
@@ -44,18 +45,16 @@ namespace RestModels.Results {
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="data">The dataset to format</param>
-		/// <param name="user">The current authenticated user context</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
 		public async Task WriteResultAsync(
-			HttpContext context,
+			IApiContext<TModel, object> context,
 			IEnumerable<TModel> data,
-			object user,
 			FormattingOptions options) {
-			context.Response.ContentType = "text/plain";
-			await context.Response.WriteAsync(String.Format(this.TemplateText, data?.Count() ?? 0));
+			context.HttpResponse.ContentType = "text/plain";
+			await context.HttpResponse.WriteAsync(String.Format(this.TemplateText, data?.Count() ?? 0));
 		}
 	}
 }

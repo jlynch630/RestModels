@@ -18,6 +18,7 @@ namespace RestModels.Results {
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.Net.Http.Headers;
 
+	using RestModels.Context;
 	using RestModels.Options;
 
 	/// <summary>
@@ -29,13 +30,13 @@ namespace RestModels.Results {
 		/// <summary>
 		///		Options for the JSON serializer
 		/// </summary>
-		private readonly JsonSerializerOptions? Options;
+		private readonly JsonSerializerOptions Options;
 
 		/// <summary>
 		///		Initializes a new instance of the <see cref="JsonResultWriter{TModel}"/> class
 		/// </summary>
 		/// <param name="options">Options for the JSON serializer</param>
-		public JsonResultWriter(JsonSerializerOptions? options = null) => this.Options = options;
+		public JsonResultWriter(JsonSerializerOptions? options = null) => this.Options = options ?? new JsonSerializerOptions();
 
 		/// <summary>
 		///		Gets whether or not this <see cref="IResultWriter{TModel, TUser}"/> can write a result for the given request
@@ -47,52 +48,69 @@ namespace RestModels.Results {
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="data">The dataset to format</param>
-		/// <param name="user">The current authenticated user context</param>
-		/// <param name="options">Options for formatting the result</param>
+		/// <param name="formatOptions">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
 		public async Task WriteResultAsync(
-			HttpContext context,
+			IApiContext<TModel, object> context,
 			IEnumerable<TModel> data,
-			object user,
-			FormattingOptions options) {
+			FormattingOptions formatOptions) {
 			// set content type first, then actually write the json
-			context.Response.ContentType = "application/json";
+			context.HttpResponse.ContentType = "application/json";
 
 			if (data == null) {
-				await context.Response.WriteAsync("null");
+				await context.HttpResponse.WriteAsync("null");
 				return;
 			}
 
 			TModel[] FullDataset = data.ToArray();
 
-			bool ReturnObject = options.StripArrayIfSingleElement && FullDataset.Length == 1;
+
+			JsonSerializerOptions Options = this.Options;
+			if (formatOptions.IncludedReturnProperties != null) Options = this.CreateCustomOptions(formatOptions);
+
 			byte[] ResultString;
-			if (options.IncludedReturnProperties == null) 
+			if (context.Response == null) {
+				bool ReturnObject = formatOptions.StripArrayIfSingleElement && FullDataset.Length == 1;
 				ResultString = ReturnObject
-				                      ? JsonSerializer.SerializeToUtf8Bytes(FullDataset[0], this.Options)
-				                      : JsonSerializer.SerializeToUtf8Bytes(FullDataset, this.Options);
+					               ? JsonSerializer.SerializeToUtf8Bytes(FullDataset[0], Options)
+					               : JsonSerializer.SerializeToUtf8Bytes(FullDataset, Options);
+			}
 			else {
-				ResultString = ReturnObject
-					               ? JsonSerializer.SerializeToUtf8Bytes(this.Transform(FullDataset[0], options.IncludedReturnProperties), this.Options)
-					               : JsonSerializer.SerializeToUtf8Bytes(FullDataset.Select(t => this.Transform(t, options.IncludedReturnProperties)), this.Options);
+				// set the data on the response object
+				context.Response.Populate(FullDataset, formatOptions.StripArrayIfSingleElement);
+
+				// and serialize
+				ResultString = JsonSerializer.SerializeToUtf8Bytes(context.Response, context.Response.GetType(), Options);
 			}
 
-			await context.Response.Body.WriteAsync(ResultString);
+			await context.HttpResponse.Body.WriteAsync(ResultString);
 		}
 
 		/// <summary>
-		///		Transforms the input model and returns an object with only the included properties
+		///		Creates a clone of the given serialization options with an additional <see cref="ModelJsonConverter{TModel}"/>
 		/// </summary>
-		/// <param name="input">The input model</param>
-		/// <param name="included">The properties of <typeparamref name="TModel"/> that should be included</param>
-		/// <returns>The transformed model</returns>
-		private Dictionary<string, object?> Transform(TModel input, IEnumerable<PropertyInfo> included) {
-			Dictionary<string, object?> Transformed = new Dictionary<string, object?>();
-			foreach (PropertyInfo Property in included)
-				Transformed[Property.Name] = Property.GetGetMethod()?.Invoke(input, null);
-			return Transformed;
+		/// <param name="formatOptions">Options containing the included return properties</param>
+		/// <returns>The new <see cref="JsonSerializerOptions"/></returns>
+		private JsonSerializerOptions CreateCustomOptions(FormattingOptions formatOptions) {
+			JsonSerializerOptions NewOptions = new JsonSerializerOptions() {
+				AllowTrailingCommas = this.Options.AllowTrailingCommas,
+				DefaultBufferSize = this.Options.DefaultBufferSize,
+				DictionaryKeyPolicy = this.Options.DictionaryKeyPolicy,
+				Encoder = this.Options.Encoder,
+				IgnoreNullValues = this.Options.IgnoreNullValues,
+				IgnoreReadOnlyProperties = this.Options.IgnoreReadOnlyProperties,
+				MaxDepth = 64,//this.Options.MaxDepth,
+				PropertyNameCaseInsensitive = this.Options.PropertyNameCaseInsensitive,
+				PropertyNamingPolicy = this.Options.PropertyNamingPolicy,
+				ReadCommentHandling = this.Options.ReadCommentHandling,
+				WriteIndented = this.Options.WriteIndented
+			};
+			foreach (JsonConverter Existing in this.Options.Converters)
+				NewOptions.Converters.Add(Existing);
+			NewOptions.Converters.Add(new ModelJsonConverter<TModel>(formatOptions.IncludedReturnProperties));
+			return NewOptions;
 		}
 	}
 }

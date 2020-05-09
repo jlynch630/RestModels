@@ -11,6 +11,7 @@ namespace RestModels.Filters {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -22,21 +23,17 @@ namespace RestModels.Filters {
 		/// <summary>
 		///     Filters the model dataset by some condition
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The current dataset to be filtered</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>The filtered dataset</returns>
 		Task<IQueryable<TModel>> FilterDataAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[]? parsed,
-			TUser? user);
+			IApiContext<TModel, TUser> context,
+			IQueryable<TModel> dataset);
 	}
 
 	/// <summary>
 	///     Filter for model datasets
 	/// </summary>
 	/// <typeparam name="TModel">The type of model being filtered</typeparam>
-	public interface IFilter<TModel> : IFilter<TModel, object> where TModel : class  { }
+	public interface IFilter<TModel> : IFilter<TModel, object> where TModel : class { }
 }

@@ -21,6 +21,7 @@ namespace RestModels.Options.Builder {
 	using RestModels.Models;
 	using RestModels.Operations;
 	using RestModels.Parsers;
+	using RestModels.Responses;
 	using RestModels.Results;
 
 	/// <summary>
@@ -151,6 +152,32 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
+		///     Builds these options and all of this builder's child options. Not intended for application use.
+		/// </summary>
+		/// <returns>
+		///     A list of all of the options created by this builder, including its own, in the order they were added, keyed
+		///     to the route it's for
+		/// </returns>
+		public Dictionary<string, List<RestModelOptions<TModel, TUser>>> BuildAll() {
+			// create options
+			// this is not the prettiest thing i've ever written
+			List<RestModelOptions<TModel, TUser>> MyOptions = new List<RestModelOptions<TModel, TUser>> { this.Options };
+			Dictionary<string, List<RestModelOptions<TModel, TUser>>> AllOptions =
+				new Dictionary<string, List<RestModelOptions<TModel, TUser>>> {
+					                                                              {
+						                                                              this.Options.RoutePattern,
+						                                                              MyOptions
+					                                                              }
+				                                                              };
+			foreach (RestModelOptionsBuilder<TModel, TUser> Builder in this.Children)
+			foreach ((string Key, List<RestModelOptions<TModel, TUser>> OptionsList) in Builder.BuildAll())
+				if (AllOptions.ContainsKey(Key)) AllOptions[Key].AddRange(OptionsList);
+				else AllOptions.Add(Key, OptionsList);
+
+			return AllOptions;
+		}
+
+		/// <summary>
 		///     Clears all of the auth providers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
@@ -221,6 +248,16 @@ namespace RestModels.Options.Builder {
 			this.Options.ResultWriter = null;
 			return this;
 		}
+
+		/// <summary>
+		///     Creates a child instance of the <see cref="RestModelOptionsBuilder{TModel, TUser}" /> type sharing the given base
+		///     options. When overriden in a derived class, this method can be used to ensure that the entire tree of
+		///     <see cref="RestModelOptionsBuilder{TModel, TUser}" /> objects share the same derived type
+		/// </summary>
+		/// <param name="baseOptions">The base options for the new instance</param>
+		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}" /> instance</returns>
+		public virtual RestModelOptionsBuilder<TModel, TUser> CreateChild(RestModelOptions<TModel, TUser>? baseOptions) =>
+			new RestModelOptionsBuilder<TModel, TUser>(baseOptions);
 
 		/// <summary>
 		///     Sets a default value for a property of the <typeparamref name="TModel" /> parsed from the request body
@@ -369,7 +406,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> IgnoreAll() {
-			this.Options.ParserOptions.IgnoredParseProperties.AddRange(typeof(TModel).GetProperties().Where(p => p.CanWrite));
+			this.Options.ParserOptions.IgnoredParseProperties.AddRange(
+				typeof(TModel).GetProperties().Where(p => p.CanWrite));
 			return this;
 		}
 
@@ -378,9 +416,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to be included</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Include(Expression<Func<TModel, object>> propertyExpression) {
-			return this.Include(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-		}
+		public RestModelOptionsBuilder<TModel, TUser> Include(Expression<Func<TModel, object>> propertyExpression) =>
+			this.Include(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Ensures that a property of the <typeparamref name="TModel" /> will be included in the response body
@@ -478,9 +515,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to be omitted</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Omit(Expression<Func<TModel, object>> propertyExpression) {
-			return this.Omit(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-		}
+		public RestModelOptionsBuilder<TModel, TUser> Omit(Expression<Func<TModel, object>> propertyExpression) =>
+			this.Omit(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Ensures that no properties of the <typeparamref name="TModel" /> will be included in the response body
@@ -496,9 +532,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to make optional</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Optional(Expression<Func<TModel, object>> propertyExpression) {
-			return this.Optional(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-		}
+		public RestModelOptionsBuilder<TModel, TUser> Optional(Expression<Func<TModel, object>> propertyExpression) =>
+			this.Optional(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Makes a property of the <typeparamref name="TModel" /> optional in the request body
@@ -511,23 +546,23 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
+		///     Requires all properties of the <typeparamref name="TModel" /> to be present in the request body
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> RequireAllProperties() {
+			this.Options.ParserOptions.RequiredParseProperties.AddRange(
+				typeof(TModel).GetProperties().Where(p => p.CanWrite));
+			return this;
+		}
+
+		/// <summary>
 		///     Requires a property of the <typeparamref name="TModel" /> to be present in the request body
 		/// </summary>
 		/// <param name="propertyExpression">An expression that returns the property to require</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> RequireProperty(
-			Expression<Func<TModel, object>> propertyExpression) {
-			return this.RequireProperty(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-		}
-
-		/// <summary>
-		///     Requires all properties of the <typeparamref name="TModel" /> to be present in the request body
-		/// </summary>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> RequireAllProperties() {
-			this.Options.ParserOptions.RequiredParseProperties.AddRange(typeof(TModel).GetProperties().Where(p => p.CanWrite));
-			return this;
-		}
+			Expression<Func<TModel, object>> propertyExpression) =>
+			this.RequireProperty(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 
 		/// <summary>
 		///     Requires a property of the <typeparamref name="TModel" /> to be present in the request body
@@ -536,6 +571,23 @@ namespace RestModels.Options.Builder {
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> RequireProperty(PropertyInfo property) {
 			this.Options.ParserOptions.RequiredParseProperties.Add(property);
+			return this;
+		}
+
+		/// <summary>
+		///     Resets this <see cref="RestModelOptionsBuilder{TModel, TUser}" />, clearing all lists and resetting all values
+		///     except for the route pattern
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> Reset() {
+			this.ClearAuthProviders();
+			this.ClearBodyParsers();
+			this.ClearConditions();
+			this.ClearExceptionHandlers();
+			this.ClearFilters();
+			this.ClearOperation();
+			this.ClearRequestMethods();
+			this.ClearResultWriter();
 			return this;
 		}
 
@@ -595,55 +647,14 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
-		///     Resets this <see cref="RestModelOptionsBuilder{TModel, TUser}" />, clearing all lists and resetting all values
-		///     except for the route pattern
+		///     Ensures that the API response will be wrapped in the given type.
 		/// </summary>
+		/// <typeparam name="TResponse">The type of the response wrapper</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Reset() {
-			this.ClearAuthProviders();
-			this.ClearBodyParsers();
-			this.ClearConditions();
-			this.ClearExceptionHandlers();
-			this.ClearFilters();
-			this.ClearOperation();
-			this.ClearRequestMethods();
-			this.ClearResultWriter();
+		public RestModelOptionsBuilder<TModel, TUser> WrapResponse<TResponse>()
+			where TResponse : Response<TModel> {
+			this.Options.ResponseType = typeof(TResponse);
 			return this;
-		}
-
-		/// <summary>
-		///		Creates a child instance of the <see cref="RestModelOptionsBuilder{TModel, TUser}"/> type sharing the given base options. When overriden in a derived class, this method can be used to ensure that the entire tree of <see cref="RestModelOptionsBuilder{TModel, TUser}"/> objects share the same derived type
-		/// </summary>
-		/// <param name="baseOptions">The base options for the new instance</param>
-		/// <returns>The new <see cref="RestModelOptionsBuilder{TModel, TUser}"/> instance</returns>
-		public virtual RestModelOptionsBuilder<TModel, TUser> CreateChild(RestModelOptions<TModel, TUser>? baseOptions) {
-			return new RestModelOptionsBuilder<TModel, TUser>(baseOptions);
-		}
-
-		/// <summary>
-		///     Builds these options and all of this builder's child options. Not intended for application use.
-		/// </summary>
-		/// <returns>
-		///     A list of all of the options created by this builder, including its own, in the order they were added, keyed
-		///     to the route it's for
-		/// </returns>
-		public Dictionary<string, List<RestModelOptions<TModel, TUser>>> BuildAll() {
-			// create options
-			// this is not the prettiest thing i've ever written
-			List<RestModelOptions<TModel, TUser>> MyOptions = new List<RestModelOptions<TModel, TUser>> { this.Options };
-			Dictionary<string, List<RestModelOptions<TModel, TUser>>> AllOptions =
-				new Dictionary<string, List<RestModelOptions<TModel, TUser>>> {
-					                                                              {
-						                                                              this.Options.RoutePattern,
-						                                                              MyOptions
-					                                                              }
-				                                                              };
-			foreach (RestModelOptionsBuilder<TModel, TUser> Builder in this.Children)
-			foreach ((string Key, List<RestModelOptions<TModel, TUser>> OptionsList) in Builder.BuildAll())
-				if (AllOptions.ContainsKey(Key)) AllOptions[Key].AddRange(OptionsList);
-				else AllOptions.Add(Key, OptionsList);
-
-			return AllOptions;
 		}
 
 		/// <summary>
@@ -667,7 +678,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="routeString">The inputted route string</param>
 		/// <returns>The route string, ensuring that it ends with a / and starts with a letter</returns>
 		private static string FixRoute(string? routeString) {
-			if (routeString == null) return "";
+			if (routeString == null) return string.Empty;
 			if (routeString.StartsWith("/")) routeString = routeString.Substring(1);
 			if (routeString.Length != 0 && !routeString.EndsWith("/")) routeString += "/";
 			return routeString;

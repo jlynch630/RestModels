@@ -12,7 +12,7 @@ namespace RestModels.Parsers {
 	using Microsoft.AspNetCore.Http;
 
 	using RestModels.Options;
-
+	
 	/// <summary>
 	///     Parser for a request body
 	/// </summary>
@@ -26,6 +26,8 @@ namespace RestModels.Parsers {
 		/// <param name="context">The context for the HTTP request</param>
 		/// <returns>The parsed models</returns>
 		Task<ParseResult<TModel>[]> Parse(byte[] body, ParserOptions options, HttpContext context);
+		
+		// todo: should we add a Response<TModel> parameter?
 
 		/// <summary>
 		///		Gets whether or not the request body can be parsed by this <see cref="IBodyParser{TModel}"/>

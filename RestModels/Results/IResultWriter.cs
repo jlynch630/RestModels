@@ -10,6 +10,7 @@ namespace RestModels.Results {
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
+	using RestModels.Context;
 	using RestModels.Options;
 
 	/// <summary>
@@ -17,7 +18,7 @@ namespace RestModels.Results {
 	/// </summary>
 	/// <typeparam name="TModel">The type of model to format</typeparam>
 	/// <typeparam name="TUser">The type of authenticated user context</typeparam>
-	public interface IResultWriter<in TModel, in TUser>
+	public interface IResultWriter<TModel, in TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
 		///		Gets whether or not this <see cref="IResultWriter{TModel, TUser}"/> can write a result for the given request
@@ -29,17 +30,16 @@ namespace RestModels.Results {
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="data">The dataset to format</param>
-		/// <param name="user">The current authenticated user context</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
-		Task WriteResultAsync(HttpContext context, IEnumerable<TModel> data, TUser user, FormattingOptions options);
+		Task WriteResultAsync(IApiContext<TModel, TUser> context, IEnumerable<TModel> data, FormattingOptions options);
 	}
 
 	/// <summary>
 	///     Writer for API results
 	/// </summary>
 	/// <typeparam name="TModel">The type of model to format</typeparam>
-	public interface IResultWriter<in TModel> : IResultWriter<TModel, object> where TModel : class { }
+	public interface IResultWriter<TModel> : IResultWriter<TModel, object> where TModel : class { }
 }

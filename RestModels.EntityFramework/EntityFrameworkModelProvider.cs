@@ -12,7 +12,7 @@ namespace RestModels.EntityFramework {
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.Extensions.DependencyInjection;
-
+	using RestModels.Context;
 	using RestModels.Models;
 	using RestModels.Parsers;
 
@@ -26,15 +26,11 @@ namespace RestModels.EntityFramework {
 		/// <summary>
 		///     Gets an entity framework query pointing to all of the models available for the current request context
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
-		public async Task<IQueryable<TModel>> GetModelsAsync(
-			HttpContext context,
-			ParseResult<TModel>[]? parsed,
-			object user) {
-			TContext DatabaseContext = context.RequestServices.GetRequiredService<TContext>();
+		public async Task<IQueryable<TModel>> GetModelsAsync(IApiContext<TModel, object> context) {
+			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();
 			return DatabaseContext.Set<TModel>();
 		}
 	}

@@ -29,6 +29,7 @@ namespace RestModels.ExceptionHandlers {
 		///     route, <code>false</code> to halt request execution, <code>null</code> to continue with the next exception handler.
 		/// </returns>
 		public async Task<bool?> HandleException(Exception exception, HttpContext context, bool hasNext) {
+			context.Response.ContentType = "text/plain";
 			switch (exception) {
 				case ConditionFailedException _:
 				case ParsingFailedException _:

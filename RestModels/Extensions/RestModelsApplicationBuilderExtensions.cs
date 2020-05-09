@@ -15,6 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection {
 
 	using Microsoft.AspNetCore.Builder;
 
+	using RestModels.Auth;
 	using RestModels.Middleware;
 	using RestModels.Options;
 	using RestModels.Options.Builder;
@@ -23,6 +24,55 @@ namespace Microsoft.Extensions.DependencyInjection {
 	///     Extension methods for the <see cref="IApplicationBuilder" /> interface.
 	/// </summary>
 	public static class RestModelsApplicationBuilderExtensions {
+
+		/// <summary>
+		///     Adds rest models middleware to the app
+		/// </summary>
+		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
+		/// <typeparam name="TUser">The user to authenticate with the API</typeparam>
+		/// <param name="app">The app to add rest models to</param>
+		/// <param name="route">The base route for rest models</param>
+		/// <param name="optionsHandler">A handler to set options for this rest models API</param>
+		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
+		public static IApplicationBuilder UseRestModels<TModel>(
+			this IApplicationBuilder app,
+			string route,
+			Action<RestModelOptionsBuilder<TModel, NoUser>> optionsHandler)
+			where TModel : class =>
+			app.UseRestModels<TModel>(route, optionsHandler, null);
+
+		/// <summary>
+		///     Adds rest models middleware to the app at the root ("/") endpoint
+		/// </summary>
+		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
+		/// <typeparam name="TUser">The user to authenticate with the API</typeparam>
+		/// <param name="app">The app to add rest models to</param>
+		/// <param name="optionsHandler">A handler to set options for this rest models API</param>
+		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
+		public static IApplicationBuilder UseRestModels<TModel>(
+			this IApplicationBuilder app,
+			Action<RestModelOptionsBuilder<TModel, NoUser>> optionsHandler)
+			where TModel : class =>
+			app.UseRestModels<TModel>("/", optionsHandler);
+
+		/// <summary>
+		///     Adds rest models middleware to the app
+		/// </summary>
+		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
+		/// <typeparam name="TUser">The user to authenticate with the API</typeparam>
+		/// <param name="app">The app to add rest models to</param>
+		/// <param name="route">The base route for rest models</param>
+		/// <param name="optionsHandler">A handler to set options for this rest models API</param>
+		/// <param name="routeOptionsHandler">A handler to set ASP.NET Core options</param>
+		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
+		public static IApplicationBuilder UseRestModels<TModel>(
+			this IApplicationBuilder app,
+			string route,
+			Action<RestModelOptionsBuilder<TModel, NoUser>> optionsHandler,
+			Action<IEndpointConventionBuilder>? routeOptionsHandler)
+			where TModel : class =>
+			app.UseRestModels<TModel, NoUser>(route, optionsHandler, routeOptionsHandler);
+
 		/// <summary>
 		///     Adds rest models middleware to the app
 		/// </summary>

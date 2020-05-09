@@ -18,6 +18,7 @@ namespace RestModels.Options {
 	using RestModels.Models;
 	using RestModels.Operations;
 	using RestModels.Parsers;
+	using RestModels.Responses;
 	using RestModels.Results;
 
 	/// <summary>
@@ -88,6 +89,11 @@ namespace RestModels.Options {
 		public List<IExceptionHandler> ExceptionHandlers { get; set; } = new List<IExceptionHandler>();
 
 		/// <summary>
+		///		Gets or sets the type of <see cref="Response{TModel}"/> to wrap responses in
+		/// </summary>
+		public Type? ResponseType { get; set; }
+
+		/// <summary>
 		///     Gets or sets the handler that will set route options, if any
 		/// </summary>
 		internal Action<IEndpointConventionBuilder>? RouteOptionsHandler { get; set; }
@@ -118,7 +124,8 @@ namespace RestModels.Options {
 				                                           RequestMethods = this.RequestMethods == null ? null : new HashSet<string>(this.RequestMethods),
 				                                           ResultWriter = this.ResultWriter,
 				                                           RouteOptionsHandler = this.RouteOptionsHandler,
-				                                           RoutePattern = this.RoutePattern
+				                                           RoutePattern = this.RoutePattern,
+														   ResponseType = this.ResponseType
 			                                           };
 		}
 	}

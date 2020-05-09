@@ -14,6 +14,8 @@ namespace RestModels.Options.Builder {
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
+
+	using RestModels.Context;
 	using RestModels.Exceptions;
 	using RestModels.Filters;
 	using RestModels.ParameterRetrievers;
@@ -31,7 +33,7 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="filter">The delegate to use to filter results</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> FilterAsync(Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<IQueryable<TModel>>> filter) {
+		public RestModelOptionsBuilder<TModel, TUser> FilterAsync(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task<IQueryable<TModel>>> filter) {
 			this.AddFilter(new DelegateFilter<TModel, TUser>(filter));
 			return this;
 		}
@@ -41,8 +43,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="filter">The delegate to use to filter results</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Filter(Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, IQueryable<TModel>> filter) {
-			this.AddFilter(new DelegateFilter<TModel, TUser>(async (c, d, p, u) => filter(c, d, p, u)));
+		public RestModelOptionsBuilder<TModel, TUser> Filter(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, IQueryable<TModel>> filter) {
+			this.AddFilter(new DelegateFilter<TModel, TUser>(async (c, d) => filter(c, d)));
 			return this;
 		}
 
@@ -52,7 +54,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="filter">The delegate to use to filter results</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> FilterAsync(Func<IQueryable<TModel>, Task<IQueryable<TModel>>> filter) {
-			this.FilterAsync((c, d, p, u) => filter(d));
+			this.FilterAsync((c, d) => filter(d));
 			return this;
 		}
 
@@ -62,27 +64,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="filter">The delegate to use to filter results</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Filter(Func<IQueryable<TModel>, IQueryable<TModel>> filter) {
-			this.Filter((c, d, p, u) => filter(d));
-			return this;
-		}
-
-		/// <summary>
-		///     Adds a filter to this route that will filter the dataset to operate on using the given delegate
-		/// </summary>
-		/// <param name="filter">The delegate to use to filter results</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> FilterAsync(Func<HttpContext, IQueryable<TModel>, Task<IQueryable<TModel>>> filter) {
-			this.FilterAsync((c, d, p, u) => filter(c, d));
-			return this;
-		}
-
-		/// <summary>
-		///     Adds a filter to this route that will filter the dataset to operate on using the given delegate
-		/// </summary>
-		/// <param name="filter">The delegate to use to filter results</param>
-		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Filter(Func<HttpContext, IQueryable<TModel>, IQueryable<TModel>> filter) {
-			this.Filter((c, d, p, u) => filter(c, d));
+			this.Filter((c, d) => filter(d));
 			return this;
 		}
 
@@ -291,8 +273,8 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="predicate">The predicate to use to determine if an element should be included in the dataset or not</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> FilterWhere(Func<HttpContext, TModel, bool> predicate) {
-			this.Filter((c, d, p, u) => d.Where(m => predicate(c, m)));
+		public RestModelOptionsBuilder<TModel, TUser> FilterWhere(Func<IApiContext<TModel, TUser>, TModel, bool> predicate) {
+			this.Filter((c, d) => d.Where(m => predicate(c, m)));
 			return this;
 		}
 

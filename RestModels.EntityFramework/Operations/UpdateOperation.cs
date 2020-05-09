@@ -17,6 +17,7 @@ namespace RestModels.EntityFramework.Operations {
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.Extensions.DependencyInjection;
 
+	using RestModels.Context;
 	using RestModels.Exceptions;
 	using RestModels.Filters;
 	using RestModels.Operations;
@@ -56,23 +57,19 @@ namespace RestModels.EntityFramework.Operations {
 		/// <summary>
 		///     Updates the models specified in the request body by their primary key
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The filtered dataset to operate on</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>The affected models</returns>
 		public async Task<IEnumerable<TModel>> OperateAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[]? parsed,
-			object? user) {
-			TContext DatabaseContext = context.RequestServices.GetRequiredService<TContext>();
+			IApiContext<TModel, object> context,
+			IQueryable<TModel> dataset) {
+			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();
 
 			// todo: make better
 			List<TModel> UpdatedList = new List<TModel>();
-			if (parsed == null) throw new OperationFailedException("Must have a parsed body to update");
+			if (context.Parsed == null) throw new OperationFailedException("Must have a parsed body to update");
 
-			foreach (ParseResult<TModel> Result in parsed) {
+			foreach (ParseResult<TModel> Result in context.Parsed) {
 				// by default assume the properties were parsed with the rest of the model
 				// todo: this is the ugliest thing i have ever seen
 				object?[] Values = this.ParameterDelegates == null

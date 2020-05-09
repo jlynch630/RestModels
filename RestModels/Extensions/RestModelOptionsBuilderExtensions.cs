@@ -10,6 +10,7 @@ namespace RestModels.Extensions {
 	using System.Threading.Tasks;
 
 	using RestModels.Auth;
+	using RestModels.Context;
 	using RestModels.ExceptionHandlers;
 	using RestModels.Exceptions;
 	using RestModels.Options.Builder;
@@ -78,6 +79,44 @@ namespace RestModels.Extensions {
 					if (await handler(u, p)) return new NoUser();
 					throw new AuthFailedException();
 				});
+		}
+
+		/// <summary>
+		///     Adds an auth provider to this route that authenticates with a delegate
+		/// </summary>
+		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
+		/// <param name="builder">The options builder to perform the operation on</param>
+		/// <param name="handler">
+		///     The handler which, when given the API request context, will return <c>true</c> if the credentials are valid and
+		///     <c>false</c> otherwise
+		/// </param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public static RestModelOptionsBuilder<TModel, NoUser> AuthAsync<TModel>(
+			this RestModelOptionsBuilder<TModel, NoUser> builder,
+			Func<IApiContext<TModel, NoUser>, Task<bool>> handler)
+			where TModel : class {
+			return builder.AuthAsync(
+				async (c) => {
+					if (await handler(c)) return new NoUser();
+					throw new AuthFailedException();
+				});
+		}
+
+		/// <summary>
+		///     Adds an auth provider to this route that authenticates with a delegate
+		/// </summary>
+		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
+		/// <param name="builder">The options builder to perform the operation on</param>
+		/// <param name="handler">
+		///     The handler which, when given the API request context, will return <c>true</c> if the credentials are valid and
+		///     <c>false</c> otherwise
+		/// </param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public static RestModelOptionsBuilder<TModel, NoUser> Auth<TModel>(
+			this RestModelOptionsBuilder<TModel, NoUser> builder,
+			Func<IApiContext<TModel, NoUser>, bool> handler)
+			where TModel : class {
+			return builder.AuthAsync(async (c) => handler(c));
 		}
 
 		/// <summary>

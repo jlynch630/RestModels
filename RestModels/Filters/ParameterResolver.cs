@@ -32,16 +32,16 @@ namespace RestModels.Filters {
 		///     Parses a parameter
 		/// </summary>
 		/// <param name="input">The input received from the HTTP request data</param>
-		/// <param name="keyType">The expected type of the primary key</param>
+		/// <param name="keyType">The expected type of the parameter</param>
 		/// <returns>The parsed primary key</returns>
 		/// <exception cref="ArgumentException">
 		///     If the type is not one of the types int, long, float, double, Guid, decimal,
 		///     DateTime, string, or bool
 		/// </exception>
 		public static object? ParseParameter(string? input, Type keyType) {
-			if (!ParameterResolver.ParameterMap.TryGetValue(keyType, out Func<string, object> Output))
+			if (!ParameterResolver.ParameterMap.TryGetValue(keyType, out Func<string, object>? Output))
 				throw new ArgumentException(
-					"Primary key type is not one of expected int, long, float, double, Guid, decimal, DateTime, bool, string");
+					"Parameter type is not one of expected int, long, float, double, Guid, decimal, DateTime, bool, string");
 
 			return input == null ? null : (Output?.Invoke(input) ?? null);
 		}

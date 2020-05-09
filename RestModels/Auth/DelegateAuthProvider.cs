@@ -10,7 +10,7 @@ namespace RestModels.Auth {
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
-
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -23,30 +23,28 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     The delegate to use to retrieve a user context
 		/// </summary>
-		private readonly Func<HttpContext, ParseResult<TModel>[], Task<TUser>> AuthDelegate;
+		private readonly Func<IApiContext<TModel, TUser>, Task<TUser>> AuthDelegate;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="DelegateAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="authDelegate">The delegate to use to retrieve a user context</param>
-		public DelegateAuthProvider(Func<HttpContext, ParseResult<TModel>[], Task<TUser>> authDelegate) =>
+		public DelegateAuthProvider(Func<IApiContext<TModel, TUser>, Task<TUser>> authDelegate) =>
 			this.AuthDelegate = authDelegate;
 
 		/// <summary>
 		///     Authenticates the given request context, and returns the authenticated user
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed) =>
-			this.AuthDelegate(context, parsed);
+		public Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) =>
+			this.AuthDelegate(context);
 
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
-		/// <param name="requestContext">The current request context</param>
-		/// <param name="parsedModel">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns><c>true</c></returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) => true;
+		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) => true;
 	}
 }

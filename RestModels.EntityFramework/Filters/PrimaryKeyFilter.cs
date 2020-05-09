@@ -15,7 +15,7 @@ namespace RestModels.EntityFramework.Filters {
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.EntityFrameworkCore.Metadata;
 	using Microsoft.Extensions.DependencyInjection;
-
+	using RestModels.Context;
 	using RestModels.Exceptions;
 	using RestModels.Filters;
 	using RestModels.ParameterRetrievers;
@@ -47,17 +47,13 @@ namespace RestModels.EntityFramework.Filters {
 		/// <summary>
 		///     Filters the model dataset by the primary key obtained from the request context
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The current dataset to be filtered</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>The filtered dataset</returns>
 		public async Task<IQueryable<TModel>> FilterDataAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[] parsed,
-			object? user) {
-			TContext DatabaseContext = context.RequestServices.GetRequiredService<TContext>();
+			IApiContext<TModel, object> context,
+			IQueryable<TModel> dataset) {
+			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();
 
 			this.PrimaryKey ??= DatabaseContext.Model.FindRuntimeEntityType(typeof(TModel)).FindPrimaryKey();
 

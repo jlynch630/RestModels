@@ -16,6 +16,7 @@ namespace RestModels.Results {
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.Net.Http.Headers;
 
+	using RestModels.Context;
 	using RestModels.Options;
 
 	/// <summary>
@@ -44,21 +45,19 @@ namespace RestModels.Results {
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="data">The dataset to format</param>
-		/// <param name="user">The current authenticated user context</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
 		public async Task WriteResultAsync(
-			HttpContext context,
+			IApiContext<TModel, object> context,
 			IEnumerable<TModel> data,
-			object user,
 			FormattingOptions options) {
 			// set content type first, then actually write the xml
-			context.Response.ContentType = "application/xml";
+			context.HttpResponse.ContentType = "application/xml";
 
 			if (data == null) {
-				await context.Response.WriteAsync("null");
+				await context.HttpResponse.WriteAsync("null");
 				return;
 			}
 
@@ -83,7 +82,8 @@ namespace RestModels.Results {
 				new XmlSerializer(typeof(TModel), Overrides).Serialize(Writer, FullDataset[0]);
 			else new XmlSerializer(typeof(TModel[]), Overrides).Serialize(Writer, FullDataset);
 
-			await context.Response.WriteAsync(Writer.ToString());
+			// todo response rapper
+			await context.HttpResponse.WriteAsync(Writer.ToString());
 		}
 	}
 }

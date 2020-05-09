@@ -11,19 +11,21 @@ namespace RestModels.Results {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Options;
 
 	/// <summary>
 	///     A result writer that simply writes a static string
 	/// </summary>
-	public class StringResultWriter : IResultWriter<object> {
+	/// <typeparam name="TModel">The type of model managed by the API</typeparam>
+	public class StringResultWriter<TModel> : IResultWriter<TModel> where TModel : class {
 		/// <summary>
 		///     The text to respond with
 		/// </summary>
 		private readonly string ResponseText;
 
 		/// <summary>
-		///     Initializes a new instance of the <see cref="StringResultWriter" /> class.
+		///     Initializes a new instance of the <see cref="StringResultWriter{TModel}" /> class.
 		/// </summary>
 		/// <param name="responseText">The text to respond with</param>
 		public StringResultWriter(string responseText) => this.ResponseText = responseText;
@@ -40,18 +42,16 @@ namespace RestModels.Results {
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="data">The dataset to format</param>
-		/// <param name="user">The current authenticated user context</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
 		public async Task WriteResultAsync(
-			HttpContext context,
-			IEnumerable<object> data,
-			object user,
+			IApiContext<TModel, object> context,
+			IEnumerable<TModel> data,
 			FormattingOptions options) {
-			context.Response.ContentType = "text/plain";
-			await context.Response.WriteAsync(this.ResponseText);
+			context.HttpResponse.ContentType = "text/plain";
+			await context.HttpResponse.WriteAsync(this.ResponseText);
 		}
 	}
 }

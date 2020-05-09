@@ -69,6 +69,6 @@ namespace RestModels.Options.Builder {
 		/// <param name="str">The string to return</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> WriteString(string str) =>
-			this.UseResultWriter(new StringResultWriter(str));
+			this.UseResultWriter(new StringResultWriter<TModel>(str));
 	}
 }

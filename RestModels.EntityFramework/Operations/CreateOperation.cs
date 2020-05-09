@@ -14,6 +14,7 @@ namespace RestModels.EntityFramework.Operations {
 	using Microsoft.EntityFrameworkCore;
 	using Microsoft.Extensions.DependencyInjection;
 
+	using RestModels.Context;
 	using RestModels.Operations;
 	using RestModels.Parsers;
 
@@ -27,19 +28,15 @@ namespace RestModels.EntityFramework.Operations {
 		/// <summary>
 		///     Creates the models specified in the request body
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The filtered dataset to operate on</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>The affected models</returns>
 		public async Task<IEnumerable<TModel>> OperateAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[] parsed,
-			object user) {
-			TContext DatabaseContext = context.RequestServices.GetRequiredService<TContext>();
-			IEnumerable<TModel> Models = parsed.Select(p => p.ParsedModel).ToArray();
-			DatabaseContext.Set<TModel>().AddRange(Models);
+			IApiContext<TModel, object> context,
+			IQueryable<TModel> dataset) {
+			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();
+			IEnumerable<TModel> Models = context.Parsed.Select(p => p.ParsedModel).ToArray();
+			DatabaseContext.Set<TModel>().AddRange(Models); // docs say not to use async method here
 			await DatabaseContext.SaveChangesAsync();
 
 			return Models;

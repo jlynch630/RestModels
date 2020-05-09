@@ -13,6 +13,7 @@ namespace RestModels.Results {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Options;
 
 	/// <summary>
@@ -81,22 +82,20 @@ namespace RestModels.Results {
 		/// <summary>
 		///     Formats the API result
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="data">The dataset to format</param>
-		/// <param name="user">The current authenticated user context</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
-		public virtual async Task WriteResultAsync(
-			HttpContext context,
+		public async Task WriteResultAsync(
+			IApiContext<TModel, TUser> context,
 			IEnumerable<TModel> data,
-			TUser user,
 			FormattingOptions options) {
 			int Index = this.GetWriterIndex(context.Request);
 
 			// if default index is also -1, we wont get here because of CanWriteAsync
 			if (Index == -1) Index = this.DefaultIndex;
 
-			await this.ResultWriters[Index].WriteResultAsync(context, data, user, options);
+			await this.ResultWriters[Index].WriteResultAsync(context, data, options);
 		}
 
 		/// <summary>

@@ -16,6 +16,8 @@ namespace RestModels.Auth {
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.AspNetCore.Identity;
 	using Microsoft.Extensions.DependencyInjection;
+
+	using RestModels.Context;
 	using RestModels.Exceptions;
 	using RestModels.Parsers;
 
@@ -29,7 +31,7 @@ namespace RestModels.Auth {
 		/// <summary>
 		///		The policy that the <see cref="TUser"/> must fulfill in order for this <see cref="IAuthProvider{TModel, TUser}"/> to succeed
 		/// </summary>
-		private readonly string Policy;
+		private readonly string? Policy;
 
 		/// <summary>
 		///		The roles that the <see cref="TUser"/> must be in for this <see cref="IAuthProvider{TModel, TUser}"/> to succeed
@@ -45,60 +47,56 @@ namespace RestModels.Auth {
 		///     Initializes a new instance of the <see cref="IdentityAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="policy">The policy that the <see cref="TUser"/> must fulfill to authenticate</param>
-		public IdentityAuthProvider(string policy) : this(policy, null) { }
+		public IdentityAuthProvider(string? policy) : this(policy, null) { }
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="IdentityAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="roles">The roles that the <see cref="TUser"/> must be in to authenticate</param>
-		public IdentityAuthProvider(IEnumerable<string> roles) : this(null, roles) {}
+		public IdentityAuthProvider(IEnumerable<string>? roles) : this(null, roles) {}
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="IdentityAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
 		/// <param name="policy">The policy that the <see cref="TUser"/> must fulfill to authenticate</param>
 		/// <param name="roles">The roles that the <see cref="TUser"/> must be in to authenticate</param>
-		public IdentityAuthProvider(string policy, IEnumerable<string> roles) {
+		public IdentityAuthProvider(string? policy, IEnumerable<string>? roles) {
 			this.Policy = policy;
-			this.Roles = roles?.ToArray();
+			this.Roles = roles?.ToArray() ?? new string[0];
 		}
 
 		/// <summary>
 		///     Authenticates the given request context, and returns the authenticated user
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed) {
-			SignInManager<TUser> SignInManager = context.RequestServices.GetRequiredService<SignInManager<TUser>>();
-			UserManager<TUser> UserManager = context.RequestServices.GetRequiredService<UserManager<TUser>>();
+		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
+			SignInManager<TUser> SignInManager = context.Services.GetRequiredService<SignInManager<TUser>>();
+			UserManager<TUser> UserManager = context.Services.GetRequiredService<UserManager<TUser>>();
 
-			if (context.User == null || !SignInManager.IsSignedIn(context.User))
+			if (context.User == null || !SignInManager.IsSignedIn(context.HttpContext.User))
 				throw new AuthFailedException("Failed to authenticate user with Identity auth");
 
 			if (this.Policy != null) {
-				IAuthorizationService AuthService = context.RequestServices.GetRequiredService<IAuthorizationService>();
-				AuthorizationResult Result = await AuthService.AuthorizeAsync(context.User, this.Policy);
+				IAuthorizationService AuthService = context.Services.GetRequiredService<IAuthorizationService>();
+				AuthorizationResult Result = await AuthService.AuthorizeAsync(context.HttpContext.User, this.Policy);
 				if (!Result.Succeeded)
 					throw new AuthFailedException("User does not fulfill required policy for this route");
 			}
 
-			if (this.Roles != null) {
-				if (this.Roles.Any(r => !context.User.IsInRole(r)))
-					throw new AuthFailedException("User not in required role for this route");
-			}
+			if (this.Roles.Any(r => !context.HttpContext.User.IsInRole(r)))
+				throw new AuthFailedException("User not in required role for this route");
 
-			return await UserManager.GetUserAsync(context.User);
+			return await UserManager.GetUserAsync(context.HttpContext.User);
 		}
 
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
-		/// <param name="requestContext">The current request context</param>
-		/// <param name="parsedModel">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>
-		///     <c>true</c> if this request contains the header value this <see cref="HeaderAuthProvider{TModel, TUser}"/> authenticates with
+		///     <c>true</c> always
 		/// </returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) => true;
+		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) => true;
 	}
 }

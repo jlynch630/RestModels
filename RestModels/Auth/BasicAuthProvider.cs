@@ -15,6 +15,7 @@ namespace RestModels.Auth {
 	using Microsoft.Extensions.DependencyInjection;
 	using Microsoft.Net.Http.Headers;
 
+	using RestModels.Context;
 	using RestModels.Exceptions;
 	using RestModels.Parsers;
 
@@ -42,11 +43,10 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     Authenticates the given request context, and returns the authenticated user
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>The currently authenticated user context</returns>
-		public async Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed) {
-			string AuthHeader = context.Request.Headers[HeaderNames.Authorization];
+		public async Task<TUser> AuthenticateAsync(IApiContext<TModel, TUser> context) {
+			string AuthHeader = context.HttpContext.Request.Headers[HeaderNames.Authorization];
 
 			byte[] DecodedCredentialBytes = Convert.FromBase64String(AuthHeader.Substring(6)); // "Basic "
 			string DecodedCredentials = Encoding.UTF8.GetString(DecodedCredentialBytes);
@@ -62,14 +62,13 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
-		/// <param name="requestContext">The current request context</param>
-		/// <param name="parsedModel">The models parsed from the request body, if any</param>
+		/// <param name="context">The current API context</param>
 		/// <returns>
 		///     <c>true</c> if this request contains an Authorization header that starts with "Basic", <c>false</c> otherwise.
 		/// </returns>
-		public async Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[]? parsedModel) =>
-			requestContext.Headers.ContainsKey(HeaderNames.Authorization)
-			&& requestContext.Headers[HeaderNames.Authorization].Count == 1
-			&& requestContext.Headers[HeaderNames.Authorization][0].StartsWith("Basic ");
+		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
+			context.Request.Headers.ContainsKey(HeaderNames.Authorization)
+			&& context.Request.Headers[HeaderNames.Authorization].Count == 1
+			&& context.Request.Headers[HeaderNames.Authorization][0].StartsWith("Basic ");
 	}
 }

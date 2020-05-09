@@ -12,6 +12,7 @@ namespace RestModels.Operations {
 
 	using Microsoft.AspNetCore.Http;
 
+	using RestModels.Context;
 	using RestModels.Parsers;
 
 	/// <summary>
@@ -24,16 +25,12 @@ namespace RestModels.Operations {
 		/// <summary>
 		///    Performs some action on a model dataset and returns the models that were affected
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The filtered dataset to operate on</param>
-		/// <param name="parsed">The parsed request body, if any</param>
-		/// <param name="user">The current user context, if any</param>
 		/// <returns>The affected models</returns>
 		Task<IEnumerable<TModel>> OperateAsync(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[]? parsed,
-			TUser? user);
+			IApiContext<TModel, TUser> context,
+			IQueryable<TModel> dataset);
 	}
 
 	/// <summary>

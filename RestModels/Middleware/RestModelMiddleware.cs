@@ -17,11 +17,13 @@ namespace RestModels.Middleware {
 	using Microsoft.Extensions.DependencyInjection;
 	using RestModels.Auth;
 	using RestModels.Conditions;
+	using RestModels.Context;
 	using RestModels.ExceptionHandlers;
 	using RestModels.Exceptions;
 	using RestModels.Filters;
 	using RestModels.Options;
 	using RestModels.Parsers;
+	using RestModels.Responses;
 
 	/// <summary>
 	///     Middleware for RestModels.
@@ -83,11 +85,10 @@ namespace RestModels.Middleware {
 		/// <summary>
 		///     Authenticates the request using the auth providers specified by this middleware's options, if any
 		/// </summary>
-		/// <param name="context">The current request context</param>
-		/// <param name="parsed">The parsed models, or null if there are no body parsers specified</param>
+		/// <param name="context">The current api context</param>
 		/// <returns>The authenticated user context, or null if there is none</returns>
 		/// <exception cref="AuthFailedException">If none of the available authentication methods succeeded</exception>
-		private async Task<TUser?> Authenticate(HttpContext context, ParseResult<TModel>[]? parsed) {
+		private async Task<TUser?> Authenticate(ApiContext<TModel, TUser> context) {
 			if (this.Options.AuthProviders == null) return null;
 
 			TUser? UserContext = null;
@@ -95,8 +96,8 @@ namespace RestModels.Middleware {
 			AuthFailedException? LastException = null;
 			foreach (IAuthProvider<TModel, TUser> Provider in this.Options.AuthProviders)
 				try {
-					if (!await Provider.CanAuthAsync(context.Request, parsed)) continue;
-					UserContext = await Provider.AuthenticateAsync(context, parsed);
+					if (!await Provider.CanAuthAsync(context)) continue;
+					UserContext = await Provider.AuthenticateAsync(context);
 					AuthSuccess = true;
 					break;
 				}
@@ -130,7 +131,7 @@ namespace RestModels.Middleware {
 			   |	- MODIFY data if there are any IOperations
 			   |	- RETURN formatted output
 			 
-				note that the only required element should be the result writer
+				note that the only required element should be the result writer AND the request method
 				(even an empty result writer is required to return a blank result)
 			*/
 			// go through our body parsers to try and parse the request body. may be null
@@ -139,14 +140,20 @@ namespace RestModels.Middleware {
 			if (!await this.Options.ResultWriter!.CanWriteAsync(context.Request))
 				throw new WritingFailedException("Request aborted. Cannot serialize response to request");
 
-			ParseResult<TModel>[]? ParsedModel = await this.ParseBody(context);
+			// alright first we have to create the context
+			Response<TModel>? ResponseWrapper = this.Options.ResponseType != null
+													? (Response<TModel>?)Activator.CreateInstance(this.Options.ResponseType)
+													: null;
+			ApiContext<TModel, TUser> ApiContext = new ApiContext<TModel, TUser>(context, ResponseWrapper);
+
+			ApiContext.Parsed = await this.ParseBody(ApiContext);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Parse\t{Stopwatch.ElapsedMilliseconds}");
 			Stopwatch.Restart();
 			/////////////////////
 			// then authenticate the request. may return null
-			TUser? User = await this.Authenticate(context, ParsedModel);
+			ApiContext.User = await this.Authenticate(ApiContext);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Auth\t{Stopwatch.ElapsedMilliseconds}");
@@ -154,10 +161,7 @@ namespace RestModels.Middleware {
 			/////////////////////
 			// query the dataset for models
 			IQueryable<TModel> Dataset = this.Options.ModelProvider != null
-				                             ? await this.Options.ModelProvider.GetModelsAsync(
-					                               context,
-					                               ParsedModel,
-					                               User)
+				                             ? await this.Options.ModelProvider.GetModelsAsync(ApiContext)
 				                             : new TModel[0].AsQueryable();
 			//////////////////////
 			Stopwatch.Stop();
@@ -168,10 +172,10 @@ namespace RestModels.Middleware {
 			if (this.Options.Filters.Count > 0 && Dataset == null)
 				throw new RequestFailedException("Attempt to filter dataset but no model provider was given");
 			foreach (IFilter<TModel, TUser> Filter in this.Options.Filters)
-				Dataset = await Filter.FilterDataAsync(context, Dataset, ParsedModel, User);
+				Dataset = await Filter.FilterDataAsync(ApiContext, Dataset);
 
 			// ensure it passes all conditions
-			await this.VerifyConditions(context, Dataset, ParsedModel, User);
+			await this.VerifyConditions(ApiContext, Dataset);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Filter\t{Stopwatch.ElapsedMilliseconds}");
@@ -179,11 +183,7 @@ namespace RestModels.Middleware {
 			/////////////////////
 			// then do our operation
 			IEnumerable<TModel> Result = this.Options.Operation != null
-				                             ? await this.Options.Operation.OperateAsync(
-					                               context,
-					                               Dataset,
-					                               ParsedModel,
-					                               User)
+				                             ? await this.Options.Operation.OperateAsync(ApiContext, Dataset)
 				                             : Dataset;
 			//////////////////////
 			Stopwatch.Stop();
@@ -192,26 +192,26 @@ namespace RestModels.Middleware {
 			/////////////////////
 			// and write the result
 			await this.Options.ResultWriter!.WriteResultAsync(
-				context,
+				ApiContext,
 				Result,
-				User,
 				this.Options.FormattingOptions);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Write\t{Stopwatch.ElapsedMilliseconds}");
-			Stopwatch.Restart();
 			/////////////////////
+			ApiContext.Dispose();
 		}
 
 		/// <summary>
 		///     Parses the request body using the body parsers specified by this middleware's options, if any
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current api context</param>
 		/// <returns>The parsed model, or null if there are no body parsers specified</returns>
 		/// <exception cref="InvalidParserException">If none of the available parsers can properly parse the request</exception>
-		private async Task<ParseResult<TModel>[]?> ParseBody(HttpContext context) {
+		private async Task<ParseResult<TModel>[]?> ParseBody(ApiContext<TModel, TUser> context) {
 			if (this.Options.BodyParsers == null) return null;
 
+			// todo: scoped services, response?
 			await using MemoryStream Stream = new MemoryStream();
 			await context.Request.Body.CopyToAsync(Stream);
 			byte[] BodyContents = Stream.ToArray();
@@ -219,8 +219,8 @@ namespace RestModels.Middleware {
 			bool ParseSuccess = false;
 			foreach (IBodyParser<TModel> Parser in this.Options.BodyParsers)
 				try {
-					if (!await Parser.CanParse(context)) continue;
-					Parsed = await Parser.Parse(BodyContents, this.Options.ParserOptions, context);
+					if (!await Parser.CanParse(context.HttpContext)) continue;
+					Parsed = await Parser.Parse(BodyContents, this.Options.ParserOptions, context.HttpContext);
 					ParseSuccess = true;
 					break;
 				}
@@ -234,20 +234,16 @@ namespace RestModels.Middleware {
 		/// <summary>
 		///     Verifies that all the conditions provided in the options are met for a given request
 		/// </summary>
-		/// <param name="context">The current request context</param>
+		/// <param name="context">The current api context</param>
 		/// <param name="dataset">The dataset to verify conditions for</param>
-		/// <param name="parsed">The parsed models, if any</param>
-		/// <param name="user">The authenticated user context, if any</param>
 		/// <returns>When all conditions have passed</returns>
 		/// <exception cref="ConditionFailedException">If any conditions fail</exception>
 		private async Task VerifyConditions(
-			HttpContext context,
-			IQueryable<TModel> dataset,
-			ParseResult<TModel>[]? parsed,
-			TUser? user) {
+			ApiContext<TModel, TUser> context,
+			IQueryable<TModel> dataset) {
 			foreach (ICondition<TModel, TUser> Condition in this.Options.Conditions)
 				try {
-					if (!await Condition.VerifyAsync(context, dataset, parsed, user))
+					if (!await Condition.VerifyAsync(context, dataset))
 						throw new ConditionFailedException(Condition.FailureMessage ?? "Condition was not met");
 				}
 				catch (Exception e) when (!(e is ConditionFailedException)) {
