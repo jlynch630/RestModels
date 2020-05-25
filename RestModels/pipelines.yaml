@@ -20,4 +20,3 @@ steps:
     command: 'pack'
     packagesToPack: 'RestModels/RestModels.csproj'
     nobuild: true
-    versioningScheme: 'byBuildNumber'
