@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +10,6 @@ namespace RestModels.Parsers {
 	using System.Text.Json.Serialization;
 	using System.Threading.Tasks;
 	using Microsoft.AspNetCore.Http;
-	using Microsoft.EntityFrameworkCore.Metadata.Internal;
 	using Microsoft.Net.Http.Headers;
 	using RestModels.Exceptions;
 	using RestModels.Options;

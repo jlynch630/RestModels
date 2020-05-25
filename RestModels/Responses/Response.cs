@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Response.cs" company="John Lynch">
 //   This file is licensed under the MIT license
 //   Copyright (c) 2020 John Lynch
@@ -6,7 +6,6 @@
 // -----------------------------------------------------------------------
 
 namespace RestModels.Responses {
-	using Microsoft.EntityFrameworkCore.Internal;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
