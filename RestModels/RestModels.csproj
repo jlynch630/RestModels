@@ -1,8 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
+	<PackageId>RestModels</PackageId>
+	<Version>0.1.0</Version>
+	<Authors>John Lynch</Authors>
+	<Company>RestModels</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>rest;api;restmodels;rest-models;web</PackageTags>
+    <RepositoryUrl>https://github.com/jlynch630/RestModels</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

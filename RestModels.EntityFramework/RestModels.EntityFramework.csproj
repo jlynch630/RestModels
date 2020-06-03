@@ -1,8 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
+      
+    <PackageId>RestModels.EntityFramework</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>John Lynch</Authors>
+    <Company>RestModels</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>entity-framework;rest;api;restmodels;rest-models;web;ef</PackageTags>
+    <RepositoryUrl>https://github.com/jlynch630/RestModels</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,4 +29,7 @@
     <ProjectReference Include="..\RestModels\RestModels.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+	</ItemGroup>
 </Project>
