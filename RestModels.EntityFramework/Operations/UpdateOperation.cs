@@ -85,7 +85,7 @@ namespace RestModels.EntityFramework.Operations {
 						"Missing expected value for update operation",
 						new ArgumentNullException(
 							this.Properties[Array.FindIndex(Values, v => v == null)].Name,
-							"Parameter was null"));
+							"Parameter was null"), 400);
 
 				// so that ef can still use sql queries, let's generate an expression tree for it to use
 				ParameterExpression ModelParameter = Expression.Parameter(typeof(TModel));

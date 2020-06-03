@@ -20,6 +20,7 @@ namespace RestModels.Options.Builder {
 	using RestModels.Filters;
 	using RestModels.ParameterRetrievers;
 	using RestModels.Parsers;
+	using RestModels.Responses.Attributes;
 
 	/// <summary>
 	///     Builder for <see cref="RestModelOptions{TModel, TUser}" />
@@ -139,24 +140,29 @@ namespace RestModels.Options.Builder {
 		/// <param name="countParamName">The name of the parameter that defines how many elements to return</param>
 		/// <param name="maxPageSize">The maximum number of elements to return in a page</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> Paginate(string pageParamName, string countParamName, int maxPageSize) {
+		public RestModelOptionsBuilder<TModel, TUser> Paginate(string pageParamName, string? countParamName, int maxPageSize) {
 			if (maxPageSize < 0)
 				throw new ArgumentOutOfRangeException(nameof(maxPageSize), maxPageSize, "Max page size must be non-negative. Use overload without parameter to allow infinite page sizes.");
 			this.Filter(
 				(c, d) => {
 					int Page = 1;
-					int PageCount = 0;
+					int PageSize = 0;
+					int TotalElements = d.Count();
 					if (c.Request.Query.ContainsKey(pageParamName))
 						Page = Int32.Parse(c.Request.Query[pageParamName]);
-					if (c.Request.Query.ContainsKey(countParamName))
-						PageCount = Int32.Parse(c.Request.Query[countParamName]);
+					if (countParamName != null && c.Request.Query.ContainsKey(countParamName))
+						PageSize = Int32.Parse(c.Request.Query[countParamName]);
 					if (Page < 1)
 						throw new ArgumentOutOfRangeException(pageParamName, Page, "Page must be at least one");
-					if (PageCount < 0)
-						throw new ArgumentOutOfRangeException(countParamName, PageCount, "Count must be non-negative");
-					if (maxPageSize != 0 && PageCount > maxPageSize) PageCount = maxPageSize;
-					if (maxPageSize == 0 && PageCount == 0) return d;
-					return d.Skip((Page - 1) * PageCount).Take(PageCount);
+					if (PageSize < 0)
+						throw new ArgumentOutOfRangeException(countParamName, PageSize, "Count must be non-negative");
+					if (maxPageSize != 0 && (PageSize > maxPageSize || PageSize == 0)) PageSize = maxPageSize;
+					if (maxPageSize == 0 && PageSize == 0)
+						return d;
+
+					c.Response?.SetString<CurrentPageAttribute>(Page.ToString());
+					c.Response?.SetString<TotalPagesAttribute>(Math.Ceiling((double)TotalElements / PageSize).ToString("0"));
+					return d.Skip((Page - 1) * PageSize).Take(PageSize);
 				});
 			return this;
 		}
@@ -168,9 +174,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="pageSize">The number of elements to include in each page</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Paginate(string pageParamName, int pageSize) {
-			this.SkipQuery(pageParamName, pageSize);
-			this.Limit(pageSize);
-			return this;
+			return this.Paginate(pageParamName, null, pageSize);
 		}
 
 

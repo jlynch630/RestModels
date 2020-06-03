@@ -10,7 +10,6 @@ namespace RestModels.Parsers {
 	using System.Text.Json.Serialization;
 	using System.Threading.Tasks;
 	using Microsoft.AspNetCore.Http;
-	using Microsoft.EntityFrameworkCore.Metadata.Internal;
 	using Microsoft.Net.Http.Headers;
 	using RestModels.Exceptions;
 	using RestModels.Options;
@@ -72,7 +71,7 @@ namespace RestModels.Parsers {
 			if (model.ValueKind != JsonValueKind.Object)
 				throw new ParsingFailedException($"Json parser expected object but got {model.ValueKind}");
 
-			TModel Model = (TModel)typeof(TModel).GetConstructor(Type.EmptyTypes)?.Invoke(null);
+			TModel Model = Activator.CreateInstance<TModel>()!;
 			Dictionary<PropertyInfo, Func<object>> Values =
 				new Dictionary<PropertyInfo, Func<object>>(options.DefaultPropertyValues);
 
@@ -84,7 +83,7 @@ namespace RestModels.Parsers {
 				// default values check
 				// ignored values check 
 				// required values check
-				PropertyInfo Matching = this.PropertyMap.ContainsKey(Property.Name) ? this.PropertyMap[Property.Name] : null;
+				PropertyInfo? Matching = this.PropertyMap.ContainsKey(Property.Name) ? this.PropertyMap[Property.Name] : null;
 				if (Matching == null) continue; // todo: option to throw if extra properties
 
 				if (options.IgnoredParseProperties.Any(p => p.Name == Matching.Name)) continue;
@@ -93,9 +92,9 @@ namespace RestModels.Parsers {
 				PresentProperties.Add(Matching);
 				
 				// if the property has a json converter, use that
-				Type ConverterType = Matching.GetCustomAttribute<JsonConverterAttribute>()?.ConverterType;
-				JsonConverter Converter = (JsonConverter)ConverterType?.GetConstructor(Type.EmptyTypes)?.Invoke(null);
-				JsonSerializerOptions Options = new JsonSerializerOptions();
+				Type? ConverterType = Matching.GetCustomAttribute<JsonConverterAttribute>()?.ConverterType;
+				JsonConverter? Converter = (JsonConverter?)ConverterType?.GetConstructor(Type.EmptyTypes)?.Invoke(null);
+				JsonSerializerOptions Options = new JsonSerializerOptions(); // todo actually use the other options
 				if (Converter != null) Options.Converters.Add(Converter);
 
 				object Deserialized = JsonSerializer.Deserialize(Property.Value.GetRawText(), Matching.PropertyType, Options);
@@ -118,7 +117,7 @@ namespace RestModels.Parsers {
 			return new Dictionary<string, PropertyInfo>(
 				typeof(TModel).GetProperties().Select(
 					p => new KeyValuePair<string, PropertyInfo>(
-						p.GetCustomAttribute<JsonPropertyNameAttribute>(false)?.Name ?? p.Name,
+						p.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? this.SerializationOptions.PropertyNamingPolicy?.ConvertName(p.Name) ?? p.Name,
 						p)));
 		}
 	}

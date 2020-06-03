@@ -18,18 +18,18 @@ namespace RestModels.Exceptions {
 	///     If thrown from middleware, this exception indicates that all auth providers failed and request execution should
 	///     halt.
 	/// </remarks>
-	public class AuthFailedException : Exception {
+	public class AuthFailedException : ApiException {
 		/// <summary>
 		///     Initializes a new instance of the <see cref="AuthFailedException" /> class
 		/// </summary>
-		public AuthFailedException() { }
+		public AuthFailedException() : base(ErrorCodes.AuthFailed) { }
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="AuthFailedException" /> class
 		/// </summary>
 		/// <param name="message">A message explaining the exception</param>
 		public AuthFailedException(string message)
-			: base(message) { }
+			: base(message, ErrorCodes.AuthFailed) { }
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="AuthFailedException" /> class
@@ -37,6 +37,23 @@ namespace RestModels.Exceptions {
 		/// <param name="message">A message explaining the exception</param>
 		/// <param name="inner">The inner exception that caused this one</param>
 		public AuthFailedException(string message, Exception inner)
-			: base(message, inner) { }
+			: base(message, inner, ErrorCodes.AuthFailed) { }
+
+		/// <summary>
+		///     Initializes a new instance of the <see cref="AuthFailedException" /> class
+		/// </summary>
+		/// <param name="message">A message explaining the exception</param>
+		/// <param name="errorCode">A unique error code for the error that occurred</param>
+		public AuthFailedException(string message, int errorCode)
+			: base(message, errorCode) { }
+
+		/// <summary>
+		///     Initializes a new instance of the <see cref="AuthFailedException" /> class
+		/// </summary>
+		/// <param name="message">A message explaining the exception</param>
+		/// <param name="inner">The inner exception that caused this one</param>
+		/// <param name="errorCode">A unique error code for the error that occurred</param>
+		public AuthFailedException(string message, Exception inner, int errorCode)
+			: base(message, inner, errorCode) { }
 	}
 }

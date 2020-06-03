@@ -8,8 +8,10 @@
 namespace RestModels.Exceptions {
 	using System;
 
+	using RestModels.Options;
+
 	/// <summary>
-	///     Exception thrown when an error occurs while building a <see cref="RestModelOptions{TModel,TUser}"/>
+	///     Exception thrown when an error occurs while building <see cref="RestModelOptions{TModel,TUser}"/>
 	/// </summary>
 	public class OptionsException : Exception {
 		/// <summary>

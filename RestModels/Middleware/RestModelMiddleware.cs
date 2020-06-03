@@ -9,12 +9,15 @@ namespace RestModels.Middleware {
 	using System;
 	using System.Collections.Generic;
 	using System.Diagnostics;
+	using System.Diagnostics.CodeAnalysis;
 	using System.IO;
 	using System.Linq;
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
 	using Microsoft.Extensions.DependencyInjection;
+
+	using RestModels.Actions;
 	using RestModels.Auth;
 	using RestModels.Conditions;
 	using RestModels.Context;
@@ -24,6 +27,7 @@ namespace RestModels.Middleware {
 	using RestModels.Options;
 	using RestModels.Parsers;
 	using RestModels.Responses;
+	using RestModels.Responses.Attributes;
 
 	/// <summary>
 	///     Middleware for RestModels.
@@ -110,7 +114,7 @@ namespace RestModels.Middleware {
 				       ? UserContext
 				       : throw new AuthFailedException(
 					         "No authentication providers were able to authorize the request",
-							 LastException!);
+					         LastException!);
 		}
 
 		/// <summary>
@@ -118,7 +122,9 @@ namespace RestModels.Middleware {
 		/// </summary>
 		/// <param name="context">The http context of the current request</param>
 		/// <returns>When the request is completed</returns>
+		[SuppressMessage("ReSharper", "PossibleMultipleEnumeration", Justification = "Result may be enumerated twice but likely only on a type where thats okay")]
 		private async Task HandleRequest(HttpContext context) {
+			// ReSharper disable once InvalidXmlDocComment
 			/**
 			 *		- CHECK if we can even serialize the result
 			 *		- PARSE body if there are body parsers present
@@ -159,18 +165,17 @@ namespace RestModels.Middleware {
 			Debug.WriteLine($"Auth\t{Stopwatch.ElapsedMilliseconds}");
 			Stopwatch.Restart();
 			/////////////////////
+			if (this.Options.ModelProvider == null)
+				throw new ApiException("No model provider was given. Request failed.");
+
 			// query the dataset for models
-			IQueryable<TModel> Dataset = this.Options.ModelProvider != null
-				                             ? await this.Options.ModelProvider.GetModelsAsync(ApiContext)
-				                             : new TModel[0].AsQueryable();
+			IQueryable<TModel> Dataset = await this.Options.ModelProvider.GetModelsAsync(ApiContext);
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Query\t{Stopwatch.ElapsedMilliseconds}");
 			Stopwatch.Restart();
 			/////////////////////
 			// filter our dataset
-			if (this.Options.Filters.Count > 0 && Dataset == null)
-				throw new RequestFailedException("Attempt to filter dataset but no model provider was given");
 			foreach (IFilter<TModel, TUser> Filter in this.Options.Filters)
 				Dataset = await Filter.FilterDataAsync(ApiContext, Dataset);
 
@@ -181,6 +186,13 @@ namespace RestModels.Middleware {
 			Debug.WriteLine($"Filter\t{Stopwatch.ElapsedMilliseconds}");
 			Stopwatch.Restart();
 			/////////////////////
+			foreach (IPreOpAction<TModel, TUser> Action in this.Options.PreOpActions)
+				await Action.RunAsync(ApiContext, Dataset);
+			//////////////////////
+			Stopwatch.Stop();
+			Debug.WriteLine($"PreOp\t{Stopwatch.ElapsedMilliseconds}");
+			Stopwatch.Restart();
+			/////////////////////
 			// then do our operation
 			IEnumerable<TModel> Result = this.Options.Operation != null
 				                             ? await this.Options.Operation.OperateAsync(ApiContext, Dataset)
@@ -188,6 +200,13 @@ namespace RestModels.Middleware {
 			//////////////////////
 			Stopwatch.Stop();
 			Debug.WriteLine($"Op\t{Stopwatch.ElapsedMilliseconds}");
+			Stopwatch.Restart();
+			/////////////////////
+			foreach (IPostOpAction<TModel, TUser> Action in this.Options.PostOpActions)
+				await Action.RunAsync(ApiContext, Result);
+			//////////////////////
+			Stopwatch.Stop();
+			Debug.WriteLine($"PostOp\t{Stopwatch.ElapsedMilliseconds}");
 			Stopwatch.Restart();
 			/////////////////////
 			// and write the result
@@ -224,11 +243,11 @@ namespace RestModels.Middleware {
 					ParseSuccess = true;
 					break;
 				}
-				catch (InvalidParserException) {
+				catch (ParsingFailedException) {
 					/* Just keep moving, by design */
 				}
 
-			return ParseSuccess ? Parsed : throw new InvalidParserException("No valid parsers found for request body");
+			return ParseSuccess ? Parsed : throw new ParsingFailedException("No valid parsers found for request body");
 		}
 
 		/// <summary>

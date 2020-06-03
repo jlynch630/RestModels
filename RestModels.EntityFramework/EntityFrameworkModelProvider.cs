@@ -27,7 +27,6 @@ namespace RestModels.EntityFramework {
 		///     Gets an entity framework query pointing to all of the models available for the current request context
 		/// </summary>
 		/// <param name="context">The current API context</param>
-		/// <param name="parsed">The parsed request body, if any</param>
 		/// <returns>An <see cref="IQueryable{T}" /> of all of the models available</returns>
 		public async Task<IQueryable<TModel>> GetModelsAsync(IApiContext<TModel, object> context) {
 			TContext DatabaseContext = context.Services.GetRequiredService<TContext>();

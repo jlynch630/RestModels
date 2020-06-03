@@ -4,12 +4,25 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
 	
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+	  <None Include="..\.editorconfig" Link=".editorconfig" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta" />
+	  <PackageReference Include="System.IO.Pipelines" Version="4.7.1" />
 	</ItemGroup>
 </Project>

@@ -49,10 +49,7 @@ namespace RestModels.Results {
 		/// <param name="data">The dataset to format</param>
 		/// <param name="options">Options for formatting the result</param>
 		/// <returns>When the result has been sent</returns>
-		public async Task WriteResultAsync(
-			IApiContext<TModel, object> context,
-			IEnumerable<TModel> data,
-			FormattingOptions options) {
+		public async Task WriteResultAsync(IApiContext<TModel, object> context, IEnumerable<TModel> data, FormattingOptions options) {
 			// set content type first, then actually write the xml
 			context.HttpResponse.ContentType = "application/xml";
 
@@ -66,24 +63,38 @@ namespace RestModels.Results {
 			bool ReturnObject = options.StripArrayIfSingleElement && FullDataset.Length == 1;
 			XmlAttributeOverrides Overrides = new XmlAttributeOverrides();
 
-			if (options.IncludedReturnProperties != null) {
-				IEnumerable<PropertyInfo> OmittedProperties = this.Properties.Except(options.IncludedReturnProperties);
-				foreach (PropertyInfo OmittedProperty in OmittedProperties) {
-					XmlAttributes IgnoreAttributes = new XmlAttributes { XmlIgnore = true };
-					IgnoreAttributes.XmlElements.Add(new XmlElementAttribute(OmittedProperty.Name));
-					Overrides.Add(OmittedProperty.DeclaringType, OmittedProperty.Name, IgnoreAttributes);
-				}
-			}
+			if (options.IncludedReturnProperties != null)
+				XmlResultWriter<TModel>.OmitProperties(Overrides, this.Properties.Except(options.IncludedReturnProperties));
 
 			// cannot use stream as synchronous io is disallowed
 			await using StringWriter Writer = new StringWriter();
-			
-			if (ReturnObject)
-				new XmlSerializer(typeof(TModel), Overrides).Serialize(Writer, FullDataset[0]);
-			else new XmlSerializer(typeof(TModel[]), Overrides).Serialize(Writer, FullDataset);
+			if (context.Response == null) {
+				if (ReturnObject)
+					new XmlSerializer(typeof(TModel), Overrides).Serialize(Writer, FullDataset[0]);
+				else new XmlSerializer(typeof(TModel[]), Overrides).Serialize(Writer, FullDataset);
+			} else {
+				context.Response.Populate(FullDataset, ReturnObject);
+				XmlResultWriter<TModel>.OmitProperties(Overrides, context.Response.GetOmittedProperties());
+				Overrides.Add(
+					context.Response.GetType(),
+					new XmlAttributes { XmlRoot = new XmlRootAttribute("Response") });
+				new XmlSerializer(context.Response.GetType(), Overrides).Serialize(Writer, context.Response);
+			}
 
-			// todo response rapper
 			await context.HttpResponse.WriteAsync(Writer.ToString());
+		}
+
+		/// <summary>
+		///		Omits the given list of properties in XML serialization
+		/// </summary>
+		/// <param name="overrides">The <see cref="XmlAttributeOverrides"/> to set the <see cref="XmlIgnoreAttribute" /> on</param>
+		/// <param name="omitted">The properties to omit</param>
+		private static void OmitProperties(XmlAttributeOverrides overrides, IEnumerable<PropertyInfo> omitted) {
+			foreach (PropertyInfo OmittedProperty in omitted) {
+				XmlAttributes IgnoreAttributes = new XmlAttributes { XmlIgnore = true };
+				IgnoreAttributes.XmlElements.Add(new XmlElementAttribute(OmittedProperty.Name));
+				overrides.Add(OmittedProperty.DeclaringType, OmittedProperty.Name, IgnoreAttributes);
+			}
 		}
 	}
 }

@@ -12,6 +12,8 @@ namespace Microsoft.Extensions.DependencyInjection {
 
 	using Microsoft.AspNetCore.Builder;
 	using Microsoft.EntityFrameworkCore;
+
+	using RestModels.Auth;
 	using RestModels.EntityFramework;
 	using RestModels.EntityFramework.Options;
 	using RestModels.Options.Builder;
@@ -78,6 +80,60 @@ namespace Microsoft.Extensions.DependencyInjection {
 			Action<RestModelOptionsBuilder<TModel, TUser>> optionsHandler)
 			where TModel : class where TContext : DbContext where TUser : class {
 			return app.UseEntityFrameworkRestModels<TModel, TContext, TUser>("/", optionsHandler, null);
+		}
+
+		/// <summary>
+		///     Adds rest models middleware with Entity Framework to the app without a user context
+		/// </summary>
+		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
+		/// <typeparam name="TContext">The type of database context to use to access <typeparamref name="TModel"/> entities</typeparam>
+		/// <param name="app">The app to add rest models to</param>
+		/// <param name="route">The base route for rest models</param>
+		/// <param name="optionsHandler">A handler to set options for this rest models API</param>
+		/// <param name="routeOptionsHandler">A handler to set ASP.NET Core options</param>
+		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
+		public static IApplicationBuilder UseEntityFrameworkRestModels<TModel, TContext>(
+			this IApplicationBuilder app,
+			string route,
+			Action<RestModelOptionsBuilder<TModel, NoUser>> optionsHandler,
+			Action<IEndpointConventionBuilder>? routeOptionsHandler)
+			where TModel : class where TContext : DbContext {
+			return app.UseEntityFrameworkRestModels<TModel, TContext, NoUser>(
+				route,
+				optionsHandler,
+				routeOptionsHandler);
+		}
+
+		/// <summary>
+		///     Adds rest models middleware with Entity Framework to the app without a user context
+		/// </summary>
+		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
+		/// <typeparam name="TContext">The type of database context to use to access <typeparamref name="TModel"/> entities</typeparam>
+		/// <param name="app">The app to add rest models to</param>
+		/// <param name="route">The base route for rest models</param>
+		/// <param name="optionsHandler">A handler to set options for this rest models API</param>
+		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
+		public static IApplicationBuilder UseEntityFrameworkRestModels<TModel, TContext>(
+			this IApplicationBuilder app,
+			string route,
+			Action<RestModelOptionsBuilder<TModel, NoUser>> optionsHandler)
+			where TModel : class where TContext : DbContext {
+			return app.UseEntityFrameworkRestModels<TModel, TContext>(route, optionsHandler, null);
+		}
+
+		/// <summary>
+		///     Adds rest models middleware with Entity Framework to the app at the root ("/") endpoint without a user context
+		/// </summary>
+		/// <typeparam name="TModel">The type of model to use with the API</typeparam>
+		/// <typeparam name="TContext">The type of database context to use to access <typeparamref name="TModel"/> entities</typeparam>
+		/// <param name="app">The app to add rest models to</param>
+		/// <param name="optionsHandler">A handler to set options for this rest models API</param>
+		/// <returns>The same <see cref="IApplicationBuilder" />, for chaining</returns>
+		public static IApplicationBuilder UseEntityFrameworkRestModels<TModel, TContext>(
+			this IApplicationBuilder app,
+			Action<RestModelOptionsBuilder<TModel, NoUser>> optionsHandler)
+			where TModel : class where TContext : DbContext {
+			return app.UseEntityFrameworkRestModels<TModel, TContext>("/", optionsHandler, null);
 		}
 	}
 }

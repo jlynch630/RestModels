@@ -33,7 +33,6 @@ namespace RestModels.ExceptionHandlers {
 			switch (exception) {
 				case ConditionFailedException _:
 				case ParsingFailedException _:
-				case InvalidParserException _:
 				case OperationFailedException _:
 					context.Response.StatusCode = StatusCodes.Status400BadRequest;
 					break;

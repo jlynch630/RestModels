@@ -14,6 +14,7 @@ namespace RestModels.Options.Builder {
 
 	using Microsoft.AspNetCore.Builder;
 
+	using RestModels.Actions;
 	using RestModels.Auth;
 	using RestModels.Conditions;
 	using RestModels.Exceptions;
@@ -110,6 +111,46 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
+		///     Adds a pre-operation action to this route
+		/// </summary>
+		/// <param name="action">The pre-op action to add</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> AddPreOpAction(IPreOpAction<TModel, TUser> action) {
+			this.Options.PreOpActions.Add(action);
+			return this;
+		}
+
+		/// <summary>
+		///     Adds a pre-operation action to this route
+		/// </summary>
+		/// <typeparam name="TAction">The type of pre-op action to add</typeparam>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> AddPreOpAction<TAction>() where TAction: IPreOpAction<TModel, TUser>, new() {
+			this.AddPreOpAction(new TAction());
+			return this;
+		}
+
+		/// <summary>
+		///     Adds a post-operation action to this route
+		/// </summary>
+		/// <typeparam name="TAction">The type of post-op action to add</typeparam>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> AddPostOpAction<TAction>() where TAction : IPostOpAction<TModel, TUser>, new() {
+			this.AddPostOpAction(new TAction());
+			return this;
+		}
+
+		/// <summary>
+		///     Adds a post-operation action to this route
+		/// </summary>
+		/// <param name="action">The post-op action to add</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> AddPostOpAction(IPostOpAction<TModel, TUser> action) {
+			this.Options.PostOpActions.Add(action);
+			return this;
+		}
+
+		/// <summary>
 		///     Adds a new body parser to this route
 		/// </summary>
 		/// <typeparam name="TParser">The type of body parser to add</typeparam>
@@ -185,6 +226,25 @@ namespace RestModels.Options.Builder {
 			this.Options.AuthProviders = null;
 			return this;
 		}
+
+		/// <summary>
+		///     Clears all of the pre-operation actions registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearPreOpActions() {
+			this.Options.PreOpActions.Clear();
+			return this;
+		}
+
+		/// <summary>
+		///     Clears all of the post-operation actions registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> ClearPostOpActions() {
+			this.Options.PostOpActions.Clear();
+			return this;
+		}
+
 
 		/// <summary>
 		///     Clears all of the body parsers registered for this <see cref="RestModelOptionsBuilder{TModel, TUser}" />
@@ -647,7 +707,7 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
-		///     Ensures that the API response will be wrapped in the given type.
+		///     Wraps all API responses in an instance of the given type
 		/// </summary>
 		/// <typeparam name="TResponse">The type of the response wrapper</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
@@ -655,6 +715,14 @@ namespace RestModels.Options.Builder {
 			where TResponse : Response<TModel> {
 			this.Options.ResponseType = typeof(TResponse);
 			return this;
+		}
+
+		/// <summary>
+		///     Wraps all API responses in an instance of <see cref="BasicResponse{TModel}"/>
+		/// </summary>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> WrapResponse() {
+			return this.WrapResponse<BasicResponse<TModel>>();
 		}
 
 		/// <summary>

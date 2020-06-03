@@ -9,6 +9,7 @@ namespace RestModels.Options.Builder {
 	using System.Text.Json;
 	using Microsoft.Net.Http.Headers;
 	using RestModels.Results;
+	using RestModels.Results.Json;
 
 	/// <summary>
 	///     Builder for <see cref="RestModelOptions{TModel, TUser}" />

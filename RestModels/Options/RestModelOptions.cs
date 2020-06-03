@@ -11,6 +11,7 @@ namespace RestModels.Options {
 
 	using Microsoft.AspNetCore.Builder;
 	using Microsoft.SqlServer.Server;
+	using RestModels.Actions;
 	using RestModels.Auth;
 	using RestModels.Conditions;
 	using RestModels.ExceptionHandlers;
@@ -89,6 +90,16 @@ namespace RestModels.Options {
 		public List<IExceptionHandler> ExceptionHandlers { get; set; } = new List<IExceptionHandler>();
 
 		/// <summary>
+		///		Gets or sets the list of pre-operation actions for this route
+		/// </summary>
+		public List<IPreOpAction<TModel, TUser>> PreOpActions { get; set; } = new List<IPreOpAction<TModel, TUser>>();
+
+		/// <summary>
+		///		Gets or sets the list of post-operation actions for this route
+		/// </summary>
+		public List<IPostOpAction<TModel, TUser>> PostOpActions { get; set; } = new List<IPostOpAction<TModel, TUser>>();
+
+		/// <summary>
 		///		Gets or sets the type of <see cref="Response{TModel}"/> to wrap responses in
 		/// </summary>
 		public Type? ResponseType { get; set; }
@@ -117,6 +128,8 @@ namespace RestModels.Options {
 					                                           new List<ICondition<TModel, TUser>>(this.Conditions),
 				                                           Filters = new List<IFilter<TModel, TUser>>(this.Filters),
 				                                           ExceptionHandlers = new List<IExceptionHandler>(this.ExceptionHandlers),
+														   PostOpActions = new List<IPostOpAction<TModel, TUser>>(this.PostOpActions),
+														   PreOpActions = new List<IPreOpAction<TModel, TUser>>(this.PreOpActions),
 				                                           FormattingOptions = this.FormattingOptions.Copy(),
 				                                           ModelProvider = this.ModelProvider,
 				                                           Operation = this.Operation,

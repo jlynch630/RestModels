@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestModels.Results {
+namespace RestModels.Results.Json {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
@@ -17,19 +17,19 @@ namespace RestModels.Results {
 	///     JSON converter for RestModels API objects
 	/// </summary>
 	/// <typeparam name="TModel">The type of model to convert</typeparam>
-	public class ModelJsonConverter<TModel> : JsonConverter<TModel>
+	public class ModelJsonConverter<TModel> : JsonConverter<TModel>, IModelJsonConverter
 		where TModel : class {
 		/// <summary>
 		///     The list of properties that should be included when serializing
 		/// </summary>
-		private readonly List<PropertyInfo> IncludedReturnProperties;
+		private readonly PropertyInfo[] IncludedReturnProperties;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="ModelJsonConverter{TModel}" /> class.
 		/// </summary>
 		/// <param name="includedReturnProperties">The list of properties that should be included when serializing the model</param>
-		internal ModelJsonConverter(List<PropertyInfo> includedReturnProperties) =>
-			this.IncludedReturnProperties = includedReturnProperties;
+		public ModelJsonConverter(IEnumerable<PropertyInfo> includedReturnProperties) =>
+			this.IncludedReturnProperties = includedReturnProperties.ToArray();
 
 		/// <summary>
 		///     Reads the model from a JSON reader. Not yet implemented
@@ -40,6 +40,17 @@ namespace RestModels.Results {
 		/// <returns>The deserialized object</returns>
 		public override TModel Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) =>
 			throw new NotImplementedException();
+
+
+		/// <summary>
+		///     Writes the given model object to a JSON writer
+		/// </summary>
+		/// <param name="writer">The JSON writer to write the <paramref name="value" /> to</param>
+		/// <param name="value">The value to write</param>
+		/// <param name="options">Any options to use when serializing the JSON</param>
+		public void WriteObject(Utf8JsonWriter writer, object value, JsonSerializerOptions options) {
+			this.Write(writer, (TModel)value, options);
+		}
 
 		/// <summary>
 		///     Writes the given model object to a JSON writer
@@ -111,64 +122,6 @@ namespace RestModels.Results {
 				writer.WritePropertyName(Key);
 				JsonSerializer.Serialize(writer, Object, options);
 			}
-		}
-	}
-
-	/// <summary>
-	///     A JSON property on a model
-	/// </summary>
-	/// <typeparam name="TModel">The model the property is on</typeparam>
-	internal abstract class ModelJsonProperty<TModel> {
-		/// <summary>
-		///     Writes the property to a JSON writer
-		/// </summary>
-		/// <param name="writer">The writer to write the value of the property to</param>
-		/// <param name="model">The model that contains the property</param>
-		/// <param name="options">Options for the JSON serializer</param>
-		public abstract void Write(Utf8JsonWriter writer, TModel model, JsonSerializerOptions options);
-	}
-
-	/// <summary>
-	///     A JSON property on a model
-	/// </summary>
-	/// <typeparam name="TModel">The model the property is on</typeparam>
-	/// <typeparam name="TProperty">The type of property to serialize</typeparam>
-	internal class ModelJsonProperty<TModel, TProperty> : ModelJsonProperty<TModel> {
-		/// <summary>
-		///     The <see cref="JsonConverter" /> to use to serialize the property.
-		/// </summary>
-		private readonly JsonConverter<TProperty>? Converter;
-
-		/// <summary>
-		///     The property being serialized
-		/// </summary>
-		private readonly PropertyInfo Property;
-
-		/// <summary>
-		///     Initializes a new instance of the <see cref="ModelJsonProperty{TModel, TProperty}" /> class
-		/// </summary>
-		/// <param name="property">The property being serialized</param>
-		public ModelJsonProperty(PropertyInfo property) {
-			this.Property = property;
-			this.Converter = (JsonConverter<TProperty>?)property.GetCustomAttribute<JsonConverterAttribute>()
-				?.CreateConverter(property.PropertyType);
-		}
-
-		/// <summary>
-		///     Writes the property to a JSON writer
-		/// </summary>
-		/// <param name="writer">The writer to write the value of the property to</param>
-		/// <param name="model">The model that contains the property</param>
-		/// <param name="options">Options for the JSON serializer</param>
-		public override void Write(Utf8JsonWriter writer, TModel model, JsonSerializerOptions options) {
-			TProperty Value =
-				(TProperty)(this.Property.GetGetMethod()?.Invoke(model, null) ?? throw new JsonException());
-
-			JsonConverter<TProperty>? Converter =
-				this.Converter ?? (JsonConverter<TProperty>?)options.GetConverter(this.Property.PropertyType);
-
-			if (this.Converter != null) this.Converter.Write(writer, Value, options);
-			else JsonSerializer.Serialize(writer, Value, options);
 		}
 	}
 }

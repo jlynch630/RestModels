@@ -6,13 +6,13 @@
 // -----------------------------------------------------------------------
 
 namespace RestModels.Responses {
-	using Microsoft.EntityFrameworkCore.Internal;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Reflection;
 
 	using RestModels.Filters;
+	using RestModels.Responses.Attributes;
 
 	/// <summary>
 	///     An API response
@@ -42,14 +42,55 @@ namespace RestModels.Responses {
 		public PropertyInfo[] GetIncludedProperties() => this.SetProperties.ToArray();
 
 		/// <summary>
+		///		Gets all of the properties on this <see cref="Response{TModel}" /> that should not be included in the serialized body
+		/// </summary>
+		/// <returns> All of the properties on this <see cref="Response{TModel}" /> that should not be included in the serialized body</returns>
+		public PropertyInfo[] GetOmittedProperties() => this.Properties.Except(this.SetProperties).ToArray();
+
+		/// <summary>
 		///		Sets the value of all properties on this <see cref="Response{TModel}"/> that have the given attribute applied to them. If no such properties exist, no action will occur.
 		/// </summary>
 		/// <typeparam name="TAttribute">The attribute to match on the properties to set</typeparam>
 		/// <param name="value">The value to assign to that property</param>
 		public void Set<TAttribute>(object value) where TAttribute : Attribute {
 			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<TAttribute>(false) != null).ToArray();
-			foreach (PropertyInfo ToSet in Matching)
+			foreach (PropertyInfo ToSet in Matching) {
 				ToSet.GetSetMethod()?.Invoke(this, new[] { value });
+				this.SetProperties.Add(ToSet);
+			}
+		}
+
+		/// <summary>
+		///		Sets the value of all properties on this <see cref="Response{TModel}"/> that have the <see cref="ResponseValueAttribute"/> with the given name applied to them. If no such properties exist, no action will occur.
+		/// </summary>
+		/// <param name="name">The name given to the <see cref="ResponseValueAttribute"/> on the properties to set</param>
+		/// <param name="value">The value to assign to that property</param>
+		public void Set(string name, object value) {
+			if (name == null) throw new ArgumentNullException(nameof(name));
+			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<ResponseValueAttribute>()?.Name == name).ToArray();
+			foreach (PropertyInfo ToSet in Matching) {
+				ToSet.GetSetMethod()?.Invoke(this, new[] { value });
+				this.SetProperties.Add(ToSet);
+			}
+		}
+
+		/// <summary>
+		///		Sets the value of all properties on this <see cref="Response{TModel}"/> that have the <see cref="ResponseValueAttribute"/> with the given name applied to them. If no such properties exist, no action will occur.
+		/// </summary>
+		/// <param name="name">The name given to the <see cref="ResponseValueAttribute"/> on the properties to set</param>
+		/// <param name="value">The string value to assign to that property</param>
+		/// <remarks>
+		///		This method will attempt to convert the string value to a supported type if the type of the matching property is not string.
+		/// </remarks>
+		public void SetString(string name, string value) {
+			if (name == null) throw new ArgumentNullException(nameof(name));
+			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<ResponseValueAttribute>()?.Name == name).ToArray();
+			foreach (PropertyInfo ToSet in Matching) {
+				ToSet.GetSetMethod()?.Invoke(
+					this,
+					new[] { ParameterResolver.ParseParameter(value, ToSet.PropertyType) });
+				this.SetProperties.Add(ToSet);
+			}
 		}
 
 		/// <summary>
@@ -62,8 +103,12 @@ namespace RestModels.Responses {
 		/// </remarks>
 		public void SetString<TAttribute>(string value) where TAttribute : Attribute {
 			PropertyInfo[] Matching = this.Properties.Where(p => p.GetCustomAttribute<TAttribute>(false) != null).ToArray();
-			foreach (PropertyInfo ToSet in Matching)
-				ToSet.GetSetMethod()?.Invoke(this, new[] { ParameterResolver.ParseParameter(value, ToSet.PropertyType) });
+			foreach (PropertyInfo ToSet in Matching) {
+				ToSet.GetSetMethod()?.Invoke(
+					this,
+					new[] { ParameterResolver.ParseParameter(value, ToSet.PropertyType) });
+				this.SetProperties.Add(ToSet);
+			}
 		}
 
 		/// <summary>

@@ -5,20 +5,19 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace RestModels.Results {
+namespace RestModels.Results.Json {
 	using System;
 	using System.Collections.Generic;
-	using System.Diagnostics;
+	using System.IO;
 	using System.Linq;
-	using System.Reflection;
 	using System.Text.Json;
 	using System.Text.Json.Serialization;
 	using System.Threading.Tasks;
 
 	using Microsoft.AspNetCore.Http;
-	using Microsoft.Net.Http.Headers;
 
 	using RestModels.Context;
+	using RestModels.Exceptions;
 	using RestModels.Options;
 
 	/// <summary>
@@ -70,22 +69,30 @@ namespace RestModels.Results {
 			JsonSerializerOptions Options = this.Options;
 			if (formatOptions.IncludedReturnProperties != null) Options = this.CreateCustomOptions(formatOptions);
 
-			byte[] ResultString;
+			// setup the writer to write out to the response body
+			await using Utf8JsonWriter Writer = new Utf8JsonWriter(
+				context.HttpResponse.BodyWriter,
+				new JsonWriterOptions { Encoder = Options.Encoder, Indented = Options.WriteIndented, SkipValidation = true });
+
 			if (context.Response == null) {
 				bool ReturnObject = formatOptions.StripArrayIfSingleElement && FullDataset.Length == 1;
-				ResultString = ReturnObject
-					               ? JsonSerializer.SerializeToUtf8Bytes(FullDataset[0], Options)
-					               : JsonSerializer.SerializeToUtf8Bytes(FullDataset, Options);
+				if (ReturnObject) JsonSerializer.Serialize(Writer, FullDataset[0], Options);
+				else JsonSerializer.Serialize(Writer, FullDataset, Options);
 			}
 			else {
 				// set the data on the response object
 				context.Response.Populate(FullDataset, formatOptions.StripArrayIfSingleElement);
 
+				// create the converter for the response
+				IModelJsonConverter ResponseConverter = (IModelJsonConverter)(Activator.CreateInstance(
+					                                                              typeof(ModelJsonConverter<>).MakeGenericType(context.Response.GetType()),
+					                                                              new object[] { context.Response.GetIncludedProperties() }) ?? throw new WritingFailedException());
+
 				// and serialize
-				ResultString = JsonSerializer.SerializeToUtf8Bytes(context.Response, context.Response.GetType(), Options);
+				ResponseConverter.WriteObject(Writer, context.Response, Options);
 			}
 
-			await context.HttpResponse.Body.WriteAsync(ResultString);
+			await Writer.FlushAsync();
 		}
 
 		/// <summary>
@@ -101,7 +108,7 @@ namespace RestModels.Results {
 				Encoder = this.Options.Encoder,
 				IgnoreNullValues = this.Options.IgnoreNullValues,
 				IgnoreReadOnlyProperties = this.Options.IgnoreReadOnlyProperties,
-				MaxDepth = 64,//this.Options.MaxDepth,
+				MaxDepth = this.Options.MaxDepth,
 				PropertyNameCaseInsensitive = this.Options.PropertyNameCaseInsensitive,
 				PropertyNamingPolicy = this.Options.PropertyNamingPolicy,
 				ReadCommentHandling = this.Options.ReadCommentHandling,
@@ -109,7 +116,8 @@ namespace RestModels.Results {
 			};
 			foreach (JsonConverter Existing in this.Options.Converters)
 				NewOptions.Converters.Add(Existing);
-			NewOptions.Converters.Add(new ModelJsonConverter<TModel>(formatOptions.IncludedReturnProperties));
+
+			NewOptions.Converters.Add(new ModelJsonConverter<TModel>(formatOptions.IncludedReturnProperties!));
 			return NewOptions;
 		}
 	}

@@ -81,11 +81,11 @@ namespace RestModels.Auth {
 				IAuthorizationService AuthService = context.Services.GetRequiredService<IAuthorizationService>();
 				AuthorizationResult Result = await AuthService.AuthorizeAsync(context.HttpContext.User, this.Policy);
 				if (!Result.Succeeded)
-					throw new AuthFailedException("User does not fulfill required policy for this route");
+					throw new AuthFailedException("User does not fulfill required policy for this route", ErrorCodes.Forbidden);
 			}
 
 			if (this.Roles.Any(r => !context.HttpContext.User.IsInRole(r)))
-				throw new AuthFailedException("User not in required role for this route");
+				throw new AuthFailedException("User not in required role for this route", ErrorCodes.Forbidden);
 
 			return await UserManager.GetUserAsync(context.HttpContext.User);
 		}
