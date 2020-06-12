@@ -135,6 +135,12 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <typeparam name="TAction">The type of post-op action to add</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response
+		///		<para>
+		///			Note that if you would like to omit/include properties from the API response or set response parameters, use the <see cref="RestModelOptionsBuilder{TModel, TUser}.Omit(Expression{Func{TModel, object}})" />, <see cref="RestModelOptionsBuilder{TModel, TUser}.Include(Expression{Func{TModel, object}})" />, and <see cref="RestModelOptionsBuilder{TModel, TUser}.WriteResponseValue(string, object)" /> methods respectively.
+		///		</para>
+		/// </remarks>
 		public RestModelOptionsBuilder<TModel, TUser> AddPostOpAction<TAction>() where TAction : IPostOpAction<TModel, TUser>, new() {
 			this.AddPostOpAction(new TAction());
 			return this;
@@ -145,6 +151,12 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="action">The post-op action to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response
+		///		<para>
+		///			Note that if you would like to omit/include properties from the API response or set response parameters, use the <see cref="RestModelOptionsBuilder{TModel, TUser}.Omit(Expression{Func{TModel, object}})" />, <see cref="RestModelOptionsBuilder{TModel, TUser}.Include(Expression{Func{TModel, object}})" />, and <see cref="RestModelOptionsBuilder{TModel, TUser}.WriteResponseValue(string, object)" /> methods respectively.
+		///		</para>
+		/// </remarks>
 		public RestModelOptionsBuilder<TModel, TUser> AddPostOpAction(IPostOpAction<TModel, TUser> action) {
 			this.Options.PostOpActions.Add(action);
 			return this;

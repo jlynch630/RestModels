@@ -30,6 +30,12 @@ namespace RestModels.Options.Builder {
 		///     result
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response
+		///		<para>
+		///			Note that if you would like to omit/include properties from the API response or set response parameters, use the <see cref="RestModelOptionsBuilder{TModel, TUser}.Omit(Expression{Func{TModel, object}})" />, <see cref="RestModelOptionsBuilder{TModel, TUser}.Include(Expression{Func{TModel, object}})" />, and <see cref="RestModelOptionsBuilder{TModel, TUser}.WriteResponseValue(string, object)" /> methods respectively.
+		///		</para>
+		/// </remarks>
 		public RestModelOptionsBuilder<TModel, TUser> PostOp(
 			Action<IApiContext<TModel, TUser>, IEnumerable<TModel>> handler) {
 			return this.PostOpAsync(async (c, d) => handler(c, d));
@@ -43,6 +49,12 @@ namespace RestModels.Options.Builder {
 		///     result
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response
+		///		<para>
+		///			Note that if you would like to omit/include properties from the API response or set response parameters, use the <see cref="RestModelOptionsBuilder{TModel, TUser}.Omit(Expression{Func{TModel, object}})" />, <see cref="RestModelOptionsBuilder{TModel, TUser}.Include(Expression{Func{TModel, object}})" />, and <see cref="RestModelOptionsBuilder{TModel, TUser}.WriteResponseValue(string, object)" /> methods respectively.
+		///		</para>
+		/// </remarks>
 		public RestModelOptionsBuilder<TModel, TUser> PostOpAsync(
 			Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task> handler) =>
 			this.AddPostOpAction(new DelegatePostOpAction<TModel, TUser>(handler));
