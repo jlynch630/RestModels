@@ -9,6 +9,7 @@ namespace RestModels.Options.Builder {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
+	using System.Linq.Expressions;
 	using System.Threading.Tasks;
 
 	using RestModels.Actions;
@@ -23,7 +24,7 @@ namespace RestModels.Options.Builder {
 	public partial class RestModelOptionsBuilder<TModel, TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
-		///     Adds a post-operation action to this route that will run before the operation is executed
+		///     Adds a post-operation action to this route that will run after the operation is executed
 		/// </summary>
 		/// <param name="handler">
 		///     The action to run after the operation, which will be passed the current API context and operation
@@ -42,7 +43,7 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
-		///     Adds a post-operation action to this route that will run before the operation is executed
+		///     Adds a post-operation action to this route that will run after the operation is executed
 		/// </summary>
 		/// <param name="handler">
 		///     The action to run after the operation, which will be passed the current API context and operation

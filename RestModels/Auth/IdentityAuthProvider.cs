@@ -29,12 +29,12 @@ namespace RestModels.Auth {
 	public class IdentityAuthProvider<TModel, TUser> : IAuthProvider<TModel, TUser>
 		where TModel : class where TUser : class {
 		/// <summary>
-		///		The policy that the <see cref="TUser"/> must fulfill in order for this <see cref="IAuthProvider{TModel, TUser}"/> to succeed
+		///		The policy that the <typeparamref cref="TUser"/> must fulfill in order for this <see cref="IAuthProvider{TModel, TUser}"/> to succeed
 		/// </summary>
 		private readonly string? Policy;
 
 		/// <summary>
-		///		The roles that the <see cref="TUser"/> must be in for this <see cref="IAuthProvider{TModel, TUser}"/> to succeed
+		///		The roles that the <typeparamref cref="TUser"/> must be in for this <see cref="IAuthProvider{TModel, TUser}"/> to succeed
 		/// </summary>
 		private readonly string[] Roles;
 
@@ -46,20 +46,20 @@ namespace RestModels.Auth {
 		/// <summary>
 		///     Initializes a new instance of the <see cref="IdentityAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
-		/// <param name="policy">The policy that the <see cref="TUser"/> must fulfill to authenticate</param>
+		/// <param name="policy">The policy that the <typeparamref cref="TUser"/> must fulfill to authenticate</param>
 		public IdentityAuthProvider(string? policy) : this(policy, null) { }
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="IdentityAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
-		/// <param name="roles">The roles that the <see cref="TUser"/> must be in to authenticate</param>
+		/// <param name="roles">The roles that the <typeparamref cref="TUser"/> must be in to authenticate</param>
 		public IdentityAuthProvider(IEnumerable<string>? roles) : this(null, roles) {}
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="IdentityAuthProvider{TModel,TUser}" /> class.
 		/// </summary>
-		/// <param name="policy">The policy that the <see cref="TUser"/> must fulfill to authenticate</param>
-		/// <param name="roles">The roles that the <see cref="TUser"/> must be in to authenticate</param>
+		/// <param name="policy">The policy that the <typeparamref cref="TUser"/> must fulfill to authenticate</param>
+		/// <param name="roles">The roles that the <typeparamref cref="TUser"/> must be in to authenticate</param>
 		public IdentityAuthProvider(string? policy, IEnumerable<string>? roles) {
 			this.Policy = policy;
 			this.Roles = roles?.ToArray() ?? new string[0];
