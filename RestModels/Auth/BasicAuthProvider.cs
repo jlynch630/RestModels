@@ -63,8 +63,8 @@ namespace RestModels.Auth {
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
 		/// <param name="context">The current API context</param>
-		/// <returns>
-		///     <c>true</c> if this request contains an Authorization header that starts with "Basic", <c>false</c> otherwise.
+		/// <returns> 
+		///     <see langword="true"/> if this request contains an Authorization header that starts with "Basic", <see langword="false"/> otherwise.
 		/// </returns>
 		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
 			context.Request.Headers.ContainsKey(HeaderNames.Authorization)

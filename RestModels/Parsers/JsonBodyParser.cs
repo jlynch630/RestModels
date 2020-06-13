@@ -48,7 +48,7 @@ namespace RestModels.Parsers {
 		///		Gets whether or not the request body can be parsed by this <see cref="IBodyParser{TModel}"/>
 		/// </summary>
 		/// <param name="context">The context for the HTTP request</param>
-		/// <returns><c>true</c> if the request body can be parsed by this <see cref="IBodyParser{TModel}"/>, <c>false</c> otherwise</returns>
+		/// <returns><see langword="true"/> if the request body can be parsed by this <see cref="IBodyParser{TModel}"/>, <see langword="false"/> otherwise</returns>
 		public async Task<bool> CanParse(HttpContext context) => context.Request.ContentType == "application/json";
 
 		/// <summary>

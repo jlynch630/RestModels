@@ -32,8 +32,8 @@ namespace RestModels.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>
-		///     <c>true</c> if this request contains the necessary attributes to be authenticated by this
-		///     <see cref="IAuthProvider{TModel, TUser}" />, <c>false</c> otherwise.
+		///     <see langword="true"/> if this request contains the necessary attributes to be authenticated by this
+		///     <see cref="IAuthProvider{TModel, TUser}" />, <see langword="false"/> otherwise.
 		/// </returns>
 		Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context);
 	}

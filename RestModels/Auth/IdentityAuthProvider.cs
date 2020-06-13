@@ -95,7 +95,7 @@ namespace RestModels.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>
-		///     <c>true</c> always
+		///     <see langword="true"/> always
 		/// </returns>
 		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) => true;
 	}

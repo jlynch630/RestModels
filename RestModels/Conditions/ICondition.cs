@@ -31,7 +31,7 @@ namespace RestModels.Conditions {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <param name="dataset">The current dataset to be filtered</param>
-		/// <returns><code>true</code> if the request should continue, <code>false</code> otherwise</returns>
+		/// <returns><see langword="true"/> if the request should continue, <see langword="false"/> otherwise</returns>
 		Task<bool> VerifyAsync(
 			IApiContext<TModel, TUser> context,
 			IQueryable<TModel> dataset);

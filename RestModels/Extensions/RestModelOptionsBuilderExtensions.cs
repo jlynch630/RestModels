@@ -25,8 +25,8 @@ namespace RestModels.Extensions {
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="handler">
-		///     The handler which, when given the username and password, will return <c>true</c> if the value is valid and
-		///     <c>false</c> otherwise
+		///     The handler which, when given the username and password, will return <see langword="true"/> if the value is valid and
+		///     <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthBasic<TModel>(
@@ -66,8 +66,8 @@ namespace RestModels.Extensions {
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="handler">
-		///     The handler which, when given the username and password, will return <c>true</c> if the value is valid and
-		///     <c>false</c> otherwise
+		///     The handler which, when given the username and password, will return <see langword="true"/> if the value is valid and
+		///     <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthBasicAsync<TModel>(
@@ -87,8 +87,8 @@ namespace RestModels.Extensions {
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="handler">
-		///     The handler which, when given the API request context, will return <c>true</c> if the credentials are valid and
-		///     <c>false</c> otherwise
+		///     The handler which, when given the API request context, will return <see langword="true"/> if the credentials are valid and
+		///     <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthAsync<TModel>(
@@ -108,8 +108,8 @@ namespace RestModels.Extensions {
 		/// <typeparam name="TModel">The model type that the API is being built for</typeparam>
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="handler">
-		///     The handler which, when given the API request context, will return <c>true</c> if the credentials are valid and
-		///     <c>false</c> otherwise
+		///     The handler which, when given the API request context, will return <see langword="true"/> if the credentials are valid and
+		///     <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> Auth<TModel>(
@@ -126,8 +126,8 @@ namespace RestModels.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="parameterName">The name of the header to authenticate with</param>
 		/// <param name="handler">
-		///     The handler which, when given the header value, will return <c>true</c> if the value is valid and
-		///     <c>false</c> otherwise
+		///     The handler which, when given the header value, will return <see langword="true"/> if the value is valid and
+		///     <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthHeader<TModel>(
@@ -164,8 +164,8 @@ namespace RestModels.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="parameterName">The name of the header to authenticate with</param>
 		/// <param name="handler">
-		///     The handler which, when given the header value, will return <c>true</c> if the value is valid and
-		///     <c>false</c> otherwise
+		///     The handler which, when given the header value, will return <see langword="true"/> if the value is valid and
+		///     <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthHeaderAsync<TModel>(
@@ -188,8 +188,8 @@ namespace RestModels.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="parameterName">The name of the parameter to authenticate with</param>
 		/// <param name="handler">
-		///     The handler which, when given the parameter value, will return <c>true</c> if the value is valid
-		///     and <c>false</c> otherwise
+		///     The handler which, when given the parameter value, will return <see langword="true"/> if the value is valid
+		///     and <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthQuery<TModel>(
@@ -226,8 +226,8 @@ namespace RestModels.Extensions {
 		/// <param name="builder">The options builder to perform the operation on</param>
 		/// <param name="parameterName">The name of the parameter to authenticate with</param>
 		/// <param name="handler">
-		///     The handler which, when given the parameter value, will return <c>true</c> if the value is valid
-		///     and <c>false</c> otherwise
+		///     The handler which, when given the parameter value, will return <see langword="true"/> if the value is valid
+		///     and <see langword="false"/> otherwise
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public static RestModelOptionsBuilder<TModel, NoUser> AuthQueryAsync<TModel>(

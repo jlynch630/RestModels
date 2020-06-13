@@ -115,7 +115,7 @@ namespace RestModels.Responses {
 		///		Populates the model property on this <see cref="Response{TModel}"/>
 		/// </summary>
 		/// <param name="models">The model dataset</param>
-		/// <param name="shouldStrip"><c>true</c> to strip the array if there's only one element, <c>false</c> otherwise</param>
+		/// <param name="shouldStrip"><see langword="true"/> to strip the array if there's only one element, <see langword="false"/> otherwise</param>
 		public void Populate(TModel[] models, bool shouldStrip) {
 			// todo: check for attributes like [thisisthesinglepropertyattribute]?
 			PropertyInfo[] Properties = this.GetType().GetProperties();

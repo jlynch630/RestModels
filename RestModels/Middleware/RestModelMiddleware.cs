@@ -52,8 +52,8 @@ namespace RestModels.Middleware {
 		///     Handles an incoming request
 		/// </summary>
 		/// <param name="context">The http context of the current request</param>
-		/// <param name="hasNext"><c>true</c> if this route has another middleware registered to fall back on, <c>false</c> otherwise</param>
-		/// <returns><c>true</c> to attempt to use the next request handler, <c>false</c> to finish request execution here</returns>
+		/// <param name="hasNext"><see langword="true"/> if this route has another middleware registered to fall back on, <see langword="false"/> otherwise</param>
+		/// <returns><see langword="true"/> to attempt to use the next request handler, <see langword="false"/> to finish request execution here</returns>
 		public async Task<bool> TryHandleRequest(HttpContext context, bool hasNext) {
 			/**
 				Order of things here
