@@ -845,11 +845,11 @@ pre > code .line-highlight {
 
 /* Alerts */
 .alert h5 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: bold;
     margin-top: 0;
 }
-
+/*
 .alert h5:before {
     position:relative;
     top:1px;
@@ -872,7 +872,7 @@ pre > code .line-highlight {
 
 .alert-danger h5:before {
     content:"\e107"
-}
+}*/
 
 /* For Embedded Video */
 div.embeddedvideo {
@@ -907,6 +907,7 @@ div.embeddedvideo iframe {
     display: none;
   }
 }
+
 
 /* For tabbed content */
 
@@ -955,3 +956,8 @@ div.embeddedvideo iframe {
 
 .mainContainer[dir='rtl'] main ul[role="tablist"] {
   margin: 0; }
+
+/* Custom */
+img[alt="logo"] {
+  max-width: 75px;
+}

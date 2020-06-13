@@ -82,6 +82,7 @@ $(function () {
   // Enable highlight.js
   function highlight() {
     $('pre code').each(function (i, block) {
+      if (block.className === "lang-csharp") return;
       hljs.highlightBlock(block);
     });
     $('pre code[highlight-lines]').each(function (i, block) {
