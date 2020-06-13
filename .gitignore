@@ -11,3 +11,5 @@ RestModels/obj
 TestProject/obj
 TestProject/bin
 TestProject/TestProject.csproj.user
+
+node_modules
