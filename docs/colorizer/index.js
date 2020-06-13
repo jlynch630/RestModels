@@ -4,6 +4,7 @@ const oniguruma = require("oniguruma");
 const htmlParser = require('node-html-parser');
 const escapeHtml = require('escape-html');
 const colorTokens = require('./colorTokens');
+const path = require('path');
 const { settings } = require('cluster');
 
 function readFile(path) {
@@ -37,7 +38,10 @@ const registry = new textmate.Registry({
 });
 
 registry.loadGrammar('source.cs').then(grammar => {
-    updateFile("C:/workspace/RestModels/docs/docfx_project/_site/articles/request_flow/index.html", grammar);
+    //updateFile("C:/workspace/RestModels/docs/docfx_project/_site/articles/request_flow/index.html", grammar);
+    let root = path.resolve(__dirname, "../docfx_project/_site");
+    let files = getAllFiles(root).filter(f => f.endsWith(".html"));
+    files.forEach(f => updateFile(f, grammar));
 });
 
 async function updateFile(path, grammar) {
@@ -72,10 +76,6 @@ function colorizeNode(raw, grammar) {
         const lineTokens = grammar.tokenizeLine(line, ruleStack);
         for (let j = 0; j < lineTokens.tokens.length; j++) {
             const token = lineTokens.tokens[j];
-          /*  console.log(` - token from ${token.startIndex} to ${token.endIndex} ` +
-            `(${line.substring(token.startIndex, token.endIndex)}) ` +
-            `with scopes ${token.scopes.join(', ')}`
-            );*/
             let sub = line.substring(token.startIndex, token.endIndex);
             if (token.scopes.length == 0) output += sub;
             else {
@@ -92,7 +92,8 @@ function colorizeNode(raw, grammar) {
                 output += `<span style='${style}'>${escapeHtml(sub)}</span>`;
             }
         }
-        output += '<br />';
+        if (i < (text.length - 1))
+            output += '<br />';
         ruleStack = lineTokens.ruleStack;
     }
 
@@ -123,4 +124,19 @@ function matchScopeExact(scope) {
     }
 
     return null;
+}
+
+function getAllFiles(directory) {
+    let baseFiles = fs.readdirSync(directory);
+    let trueFiles = [];
+
+    baseFiles.forEach(fileName => {
+        let absolutePath = path.resolve(directory, fileName);
+        if (fs.statSync(absolutePath).isDirectory())
+            trueFiles = trueFiles.concat(getAllFiles(absolutePath));
+        else
+            trueFiles.push(absolutePath)
+    })
+
+    return trueFiles;
 }
