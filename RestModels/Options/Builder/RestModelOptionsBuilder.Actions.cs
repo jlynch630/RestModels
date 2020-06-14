@@ -30,9 +30,9 @@ namespace RestModels.Options.Builder {
 		///     result
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> PostOp(
+		public RestModelOptionsBuilder<TModel, TUser> After(
 			Action<IApiContext<TModel, TUser>, IEnumerable<TModel>> handler) {
-			return this.PostOpAsync(async (c, d) => handler(c, d));
+			return this.AfterAsync(async (c, d) => handler(c, d));
 		}
 
 		/// <summary>
@@ -43,7 +43,7 @@ namespace RestModels.Options.Builder {
 		///     result
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> PostOpAsync(
+		public RestModelOptionsBuilder<TModel, TUser> AfterAsync(
 			Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task> handler) =>
 			this.AddPostOpAction(new DelegatePostOpAction<TModel, TUser>(handler));
 
@@ -55,9 +55,9 @@ namespace RestModels.Options.Builder {
 		///     dataset
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> PreOp(
+		public RestModelOptionsBuilder<TModel, TUser> Before(
 			Action<IApiContext<TModel, TUser>, IQueryable<TModel>> handler) {
-			return this.PreOpAsync(async (c, d) => handler(c, d));
+			return this.BeforeAsync(async (c, d) => handler(c, d));
 		}
 
 		/// <summary>
@@ -68,7 +68,7 @@ namespace RestModels.Options.Builder {
 		///     dataset
 		/// </param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
-		public RestModelOptionsBuilder<TModel, TUser> PreOpAsync(
+		public RestModelOptionsBuilder<TModel, TUser> BeforeAsync(
 			Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task> handler) =>
 			this.AddPreOpAction(new DelegatePreOpAction<TModel, TUser>(handler));
 
@@ -80,7 +80,7 @@ namespace RestModels.Options.Builder {
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> WriteResponseValueAsync<TAttribute>(
 			Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task<object>> handler) where TAttribute : Attribute {
-			return this.PostOpAsync(async (c, d) => {
+			return this.AfterAsync(async (c, d) => {
 				if (c.Response == null) return;
 				object Output = await handler(c, d);
 				if (Output is string StringOutput) c.Response.SetString<TAttribute>(StringOutput);
@@ -116,7 +116,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="handler">The delegate which will return what to set the value of the property defined by <paramref name="name"/></param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> WriteResponseValueAsync(string name, Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task<object>> handler) {
-			return this.PostOpAsync(async (c, d) => {
+			return this.AfterAsync(async (c, d) => {
 				if (c.Response == null) return;
 				object Output = await handler(c, d);
 				if (Output is string StringOutput) c.Response.SetString(name, StringOutput);
@@ -197,7 +197,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="handler">The delegate which will return the value to set the header to</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> SetHeaderAsync(string name, Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task<string>> handler) {
-			return this.PostOpAsync(async (c, d) => {
+			return this.AfterAsync(async (c, d) => {
 				c.HttpResponse.Headers.Add(name, await handler(c, d));
 			});
 		}
