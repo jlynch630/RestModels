@@ -14,12 +14,12 @@ jobs:
     displayName: '.NET Build'
     inputs:
       command: 'build'
-      projects: 'RestModels/RestModels.EntityFramework.csproj'
+      projects: 'RestModels.EntityFramework/RestModels.EntityFramework.csproj'
   - task: DotNetCoreCLI@2
     displayName: '.NET Pack'
     inputs:
       command: 'pack'
-      packagesToPack: 'RestModels/RestModels.EntityFramework.csproj'
+      packagesToPack: 'RestModels.EntityFramework/RestModels.EntityFramework.csproj'
       nobuild: true
   - task: NuGetAuthenticate@0
     displayName: 'NuGet Authenticate'
