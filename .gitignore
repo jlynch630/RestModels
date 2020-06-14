@@ -1,7 +1,7 @@
 .vs/
 .vscode/
 
-RestModels/Bin
+RestModels/bin
 RestModels/obj
 
 /RestModels.EntityFramework/obj
@@ -10,3 +10,6 @@ RestModels/obj
 
 TestProject/obj
 TestProject/bin
+TestProject/TestProject.csproj.user
+
+node_modules

@@ -55,7 +55,7 @@ namespace RestModels.Results {
 		///     The index of the default result writer to use, or -1 if an error should be thrown if no
 		///     values match
 		/// </param>
-		/// <param name="caseSensitive"><code>true</code> if the parameter values are case sensitive, <code>false</code> otherwise</param>
+		/// <param name="caseSensitive"><see langword="true"/> if the parameter values are case sensitive, <see langword="false"/> otherwise</param>
 		protected RequestDependentResultWriter(
 			string[] values,
 			IResultWriter<TModel, TUser>[] writers,
@@ -71,7 +71,7 @@ namespace RestModels.Results {
 		///     Gets whether or not this <see cref="IResultWriter{TModel, TUser}" /> can write a result for the given request
 		/// </summary>
 		/// <param name="request">The request to test if a result can be written for it</param>
-		/// <returns><code>true</code> if a result can be written for <paramref name="request" />, <code>false</code> otherwise</returns>
+		/// <returns><see langword="true"/> if a result can be written for <paramref name="request" />, <see langword="false"/> otherwise</returns>
 		public virtual async Task<bool> CanWriteAsync(HttpRequest request) {
 			if (this.DefaultIndex >= 0) return true;
 

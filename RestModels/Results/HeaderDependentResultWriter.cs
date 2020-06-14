@@ -31,7 +31,7 @@ namespace RestModels.Results {
 		///     The index of the default result writer to use, or -1 if an error should be thrown if no
 		///     values match
 		/// </param>
-		/// <param name="caseSensitive"><code>true</code> if the parameter values are case sensitive, <code>false</code> otherwise</param>
+		/// <param name="caseSensitive"><see langword="true"/> if the parameter values are case sensitive, <see langword="false"/> otherwise</param>
 		public HeaderDependentResultWriter(
 			string headerName,
 			string[] values,

@@ -52,8 +52,8 @@ namespace RestModels.Middleware {
 		///     Handles an incoming request
 		/// </summary>
 		/// <param name="context">The http context of the current request</param>
-		/// <param name="hasNext"><c>true</c> if this route has another middleware registered to fall back on, <c>false</c> otherwise</param>
-		/// <returns><c>true</c> to attempt to use the next request handler, <c>false</c> to finish request execution here</returns>
+		/// <param name="hasNext"><see langword="true"/> if this route has another middleware registered to fall back on, <see langword="false"/> otherwise</param>
+		/// <returns><see langword="true"/> to attempt to use the next request handler, <see langword="false"/> to finish request execution here</returns>
 		public async Task<bool> TryHandleRequest(HttpContext context, bool hasNext) {
 			/**
 				Order of things here
@@ -236,6 +236,8 @@ namespace RestModels.Middleware {
 			byte[] BodyContents = Stream.ToArray();
 			ParseResult<TModel>[]? Parsed = null;
 			bool ParseSuccess = false;
+			ParsingFailedException? Last = null;
+
 			foreach (IBodyParser<TModel> Parser in this.Options.BodyParsers)
 				try {
 					if (!await Parser.CanParse(context.HttpContext)) continue;
@@ -243,11 +245,13 @@ namespace RestModels.Middleware {
 					ParseSuccess = true;
 					break;
 				}
-				catch (ParsingFailedException) {
+				catch (ParsingFailedException e) {
+					Last = e;
 					/* Just keep moving, by design */
 				}
 
-			return ParseSuccess ? Parsed : throw new ParsingFailedException("No valid parsers found for request body");
+// todo: check null ios okay for Last
+			return ParseSuccess ? Parsed : throw new ParsingFailedException("No valid parsers found for request body", Last);
 		}
 
 		/// <summary>

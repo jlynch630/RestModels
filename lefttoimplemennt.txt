@@ -11,7 +11,7 @@ RequestMethods
 ResultFormatter
 
 
-TODO OTHERWISE:
+TODO OTHERWISE
 	- LOTS OF OPTIONS METHODZ
 
 Ideas
@@ -22,3 +22,13 @@ Ideas
 
 EF Stuff
 	- Filter primary key by query, etc...
+
+
+Doc Articles:
+	error codes and such,
+	tips for performance
+	request flow
+	getting started
+
+	TODO: support regular EF
+	

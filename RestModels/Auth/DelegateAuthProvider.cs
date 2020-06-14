@@ -44,7 +44,7 @@ namespace RestModels.Auth {
 		///     Gets whether or not the given request can be authenticated for
 		/// </summary>
 		/// <param name="context">The current API context</param>
-		/// <returns><c>true</c></returns>
+		/// <returns><see langword="true"/></returns>
 		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) => true;
 	}
 }

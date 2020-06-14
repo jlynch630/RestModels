@@ -63,7 +63,7 @@ namespace RestModels.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>
-		///     <c>true</c> if this request contains the header value this <see cref="HeaderAuthProvider{TModel, TUser}"/> authenticates with
+		///     <see langword="true"/> if this request contains the header value this <see cref="HeaderAuthProvider{TModel, TUser}"/> authenticates with
 		/// </returns>
 		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
 			context.Request.Headers.ContainsKey(this.HeaderName);

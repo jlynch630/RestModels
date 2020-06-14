@@ -22,10 +22,10 @@ namespace RestModels.ExceptionHandlers {
 		/// </summary>
 		/// <param name="exception">The exception that was thrown</param>
 		/// <param name="context">The current request context</param>
-		/// <param name="hasNext"><c>true</c> if there is another middleware registered for this route, <c>false</c> otherwise</param>
+		/// <param name="hasNext"><see langword="true"/> if there is another middleware registered for this route, <see langword="false"/> otherwise</param>
 		/// <returns>
-		///     <code>true</code> if the request should continue and attempt to use the next middleware registered for this
-		///     route, <code>false</code> to halt request execution, <code>null</code> to continue with the next exception handler.
+		///     <see langword="true"/> if the request should continue and attempt to use the next middleware registered for this
+		///     route, <see langword="false"/> to halt request execution, <code>null</code> to continue with the next exception handler.
 		/// </returns>
 		public async Task<bool?> HandleException(Exception exception, HttpContext context, bool hasNext) {
 			if (!(exception is AuthFailedException)) return null;

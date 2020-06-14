@@ -22,7 +22,7 @@ namespace RestModels.Options {
 		/// <remarks>
 		///     For example, in JSON, this would be the difference between returning [{ ... }] and { ... }
 		/// </remarks>
-		public bool StripArrayIfSingleElement { get; set; }
+		public bool StripArrayIfSingleElement { get; set; } = true;
 
 		/// <summary>
 		///     Gets or sets a list of properties that should be included in the result

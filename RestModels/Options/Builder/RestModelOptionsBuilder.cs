@@ -135,6 +135,12 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <typeparam name="TAction">The type of post-op action to add</typeparam>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response
+		///		<para>
+		///			Note that if you would like to omit/include properties from the API response or set response parameters, use the <see cref="RestModelOptionsBuilder{TModel, TUser}.Omit(Expression{Func{TModel, object}})" />, <see cref="RestModelOptionsBuilder{TModel, TUser}.Include(Expression{Func{TModel, object}})" />, and <see cref="RestModelOptionsBuilder{TModel, TUser}.WriteResponseValue(string, object)" /> methods respectively.
+		///		</para>
+		/// </remarks>
 		public RestModelOptionsBuilder<TModel, TUser> AddPostOpAction<TAction>() where TAction : IPostOpAction<TModel, TUser>, new() {
 			this.AddPostOpAction(new TAction());
 			return this;
@@ -145,6 +151,12 @@ namespace RestModels.Options.Builder {
 		/// </summary>
 		/// <param name="action">The post-op action to add</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		/// <remarks>
+		///		This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response
+		///		<para>
+		///			Note that if you would like to omit/include properties from the API response or set response parameters, use the <see cref="RestModelOptionsBuilder{TModel, TUser}.Omit(Expression{Func{TModel, object}})" />, <see cref="RestModelOptionsBuilder{TModel, TUser}.Include(Expression{Func{TModel, object}})" />, and <see cref="RestModelOptionsBuilder{TModel, TUser}.WriteResponseValue(string, object)" /> methods respectively.
+		///		</para>
+		/// </remarks>
 		public RestModelOptionsBuilder<TModel, TUser> AddPostOpAction(IPostOpAction<TModel, TUser> action) {
 			this.Options.PostOpActions.Add(action);
 			return this;
@@ -442,9 +454,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to be ignored</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Ignore(Expression<Func<TModel, object>> propertyExpression) {
-			this.Options.ParserOptions.IgnoredParseProperties.Add(
-				RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-			return this;
+			return this.Ignore(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 		}
 
 		/// <summary>
@@ -458,6 +468,8 @@ namespace RestModels.Options.Builder {
 			                                   && !property.DeclaringType.IsSubclassOf(typeof(TModel)))
 				throw new OptionsException("Cannot ignore a property that doesn't belong to the model class");
 			this.Options.ParserOptions.IgnoredParseProperties.Add(property);
+			if (this.Options.ParserOptions.RequiredParseProperties != null)
+				this.Options.ParserOptions.RequiredParseProperties.Remove(property);
 			return this;
 		}
 
@@ -563,10 +575,12 @@ namespace RestModels.Options.Builder {
 		/// <param name="property">The property to be omitted</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Omit(PropertyInfo property) {
-			if (this.Options.FormattingOptions.IncludedReturnProperties == null)
-				this.IncludeAll();
+			if (this.Options.FormattingOptions.IncludedReturnProperties == null) {
+				this.Options.FormattingOptions.IncludedReturnProperties = new List<PropertyInfo>();
+				this.Options.FormattingOptions.IncludedReturnProperties.AddRange(typeof(TModel).GetProperties());
+			}
 
-			this.Options.FormattingOptions.IncludedReturnProperties?.Remove(property);
+			this.Options.FormattingOptions.IncludedReturnProperties!.Remove(property);
 			return this;
 		}
 

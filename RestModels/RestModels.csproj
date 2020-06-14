@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
 	<PackageId>RestModels</PackageId>
-	<Version>0.1.0</Version>
+	<Version>0.1.1</Version>
 	<Authors>John Lynch</Authors>
 	<Company>RestModels</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -29,7 +29,8 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta" />
-	  <PackageReference Include="System.IO.Pipelines" Version="4.7.1" />
+	  <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.66">
+	  	<PrivateAssets>all</PrivateAssets>
+	  </PackageReference>
 	</ItemGroup>
 </Project>

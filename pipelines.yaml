@@ -1,0 +1,55 @@
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: 'buildefcore'
+  displayName: 'Build RestModels.EntityFramework'
+  workspace:
+    clean: outputs
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Build'
+    inputs:
+      command: 'build'
+      projects: 'RestModels.EntityFramework/RestModels.EntityFramework.csproj'
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Pack'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'RestModels.EntityFramework/RestModels.EntityFramework.csproj'
+      nobuild: true
+  - task: NuGetAuthenticate@0
+    displayName: 'NuGet Authenticate'
+  - task: NuGetCommand@2
+    displayName: 'NuGet Push'
+    inputs:
+      command: push
+      publishVstsFeed: 'RestModels/RestModels'
+      allowPackageConflicts: true
+- job: 'build'
+  displayName: 'Build RestModels'
+  workspace:
+    clean: outputs
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Build'
+    inputs:
+      command: 'build'
+      projects: 'RestModels/RestModels.csproj'
+  - task: DotNetCoreCLI@2
+    displayName: '.NET Pack'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'RestModels/RestModels.csproj'
+      nobuild: true
+  - task: NuGetAuthenticate@0
+    displayName: 'NuGet Authenticate'
+  - task: NuGetCommand@2
+    displayName: 'NuGet Push'
+    inputs:
+      command: push
+      publishVstsFeed: 'RestModels/RestModels'
+      allowPackageConflicts: true

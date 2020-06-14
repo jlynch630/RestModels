@@ -1,0 +1,161 @@
+.navbar {
+    background: white;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>li>a {
+    background: white;
+    color: black;
+    transition: border 100ms linear, padding 100ms lienar;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>li>a:hover {
+    border-bottom: 4px solid black;
+    padding-bottom: 11px;
+    color: black;
+    background-color: white;
+}
+
+.breadcrumb li:last-of-type a {
+    pointer-events: none;
+    color: black;
+    cursor: default;
+}
+
+.breadcrumb > li + li:before {
+    content: "/";
+    margin: 0 6px;
+    padding: 0;
+}
+
+.sidefilter {
+    background: white;
+}
+
+
+.sidetoc {
+    background-color: white;
+}
+
+body .toc {
+    background-color: white;
+}
+
+.toc .nav > li > a {
+    font-weight: normal;
+    color: black;
+}
+
+.sideaffix {
+    font-size: 14px;
+}
+
+.affix > ul > li.active > a, .affix > ul > li.active > a:before {
+    font-weight: 600;
+}
+
+.affix ul ul > li > a:before {
+    content: "";
+}
+
+.affix ul > li.active > a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+}
+
+.toc .nav > li > a:hover {
+    color: #0065b3;
+    text-decoration: underline;
+}
+
+#logo {
+    height: 32px;
+    margin: 9px 0;
+}
+
+/* Code blocks */
+.code-header {
+    background: #f2f2f2;
+    border: 1px solid #e3e3e3;
+    border-bottom: 0;
+    margin-top: 16px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.code-header .language {
+    padding: 2px 16px;
+    font-size: 12.8px;
+    line-height: 26px;
+}
+
+.codewrapper pre {
+    margin-top: 0;
+    padding: 16px;
+    border-radius: 0;
+    border: 1px solid #e3e3e3;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+pre {
+    tab-size: 4;
+}
+
+/* Code Highlighting */
+
+.hljs-comment {
+    color: green
+}
+
+.hljs-built_in,.hljs-keyword,.hljs-name,.hljs-pscommand,.hljs-selector-tag,.hljs-tag {
+    color: #0101fd
+}
+
+.hljs-literal {
+    color: #07704a
+}
+
+.hljs-code,.hljs-deletion,.hljs-section,.hljs-string,.hljs-template-tag,.hljs-template-variable {
+    color: #a31515
+}
+
+.hljs-addition,.hljs-attribute,.hljs-meta,.hljs-parameter,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-title,.hljs-type {
+    color: #007d9a
+}
+
+.hljs-doctag {
+    color: #737373
+}
+
+.hljs-attr {
+    color: #0451a5
+}
+
+.hljs-control {
+    color: #af00db
+}
+
+.hljs-helper {
+    color: #795e26
+}
+
+.hljs-bullet,.hljs-link,.hljs-symbol {
+    color: #00b0e8
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: 600
+}
+
+.hljs-constant,.hljs-reserved {
+    color: #cd3131
+}

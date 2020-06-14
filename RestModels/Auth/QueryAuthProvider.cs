@@ -63,8 +63,8 @@ namespace RestModels.Auth {
 		/// </summary>
 		/// <param name="context">The current API context</param>
 		/// <returns>
-		///     <c>true</c> if this request contains the query parameter this
-		///     <see cref="IAuthProvider{TModel, TUser}" /> authenticates with, <c>false</c> otherwise.
+		///     <see langword="true"/> if this request contains the query parameter this
+		///     <see cref="IAuthProvider{TModel, TUser}" /> authenticates with, <see langword="false"/> otherwise.
 		/// </returns>
 		public async Task<bool> CanAuthAsync(IApiContext<TModel, TUser> context) =>
 			context.Request.Query.ContainsKey(this.ParameterName);

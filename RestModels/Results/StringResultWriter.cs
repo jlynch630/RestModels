@@ -35,7 +35,7 @@ namespace RestModels.Results {
 		/// </summary>
 		/// <param name="request">The request to test if a result can be written for it</param>
 		/// <returns>
-		///     <code>true</code>
+		///     <see langword="true"/>
 		/// </returns>
 		public async Task<bool> CanWriteAsync(HttpRequest request) => true;
 

@@ -45,6 +45,16 @@ namespace RestModels.Options.Builder {
 		}
 
 		/// <summary>
+		///     Adds a requirement to this route that will ensure that every element in the dataset meets the given condition
+		/// </summary>
+		/// <param name="condition">The delegate to use to determine if the dataset's elements meet a condition</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> RequireAll(Func<TModel, bool> condition) {
+			this.Require(d => d.All(condition));
+			return this;
+		}
+
+		/// <summary>
 		///     Adds a requirement to this route that will ensure the parsed body meets the given condition
 		/// </summary>
 		/// <param name="condition">The delegate to use to determine if the parsed body meets a condition</param>

@@ -24,7 +24,7 @@ namespace RestModels.Results {
 		///		Gets whether or not this <see cref="IResultWriter{TModel, TUser}"/> can write a result for the given request
 		/// </summary>
 		/// <param name="request">The request to test if a result can be written for it</param>
-		/// <returns><code>true</code> if a result can be written for <paramref name="request"/>, <code>false</code> otherwise</returns>
+		/// <returns><see langword="true"/> if a result can be written for <paramref name="request"/>, <see langword="false"/> otherwise</returns>
 		Task<bool> CanWriteAsync(HttpRequest request);
 
 		/// <summary>
