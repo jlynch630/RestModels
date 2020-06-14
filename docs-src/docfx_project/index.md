@@ -1,4 +1,4 @@
-# ![logo](../favicon.png) RestModels
+# ![logo](favicon.png) RestModels
 Welcome to RestModels! RestModels is a declarative, options-based framework for ASP.NET Core, designed to create database-backed REST APIs with as little code as possible.
 
 ## What RestModels Is
