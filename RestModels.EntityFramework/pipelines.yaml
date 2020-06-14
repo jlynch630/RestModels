@@ -1,5 +1,11 @@
 trigger:
-- master
+  branches:
+  - master
+  paths:
+    include:
+    - RestModels.EntityFramework/*
+    exclude:
+    - RestModels/*
 
 pool:
   vmImage: 'ubuntu-latest'
