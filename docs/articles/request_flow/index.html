@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Request Flow </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Request Flow ">
+    <meta name="generator" content="docfx 2.52.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.png">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../favicon.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="request-flow">
+<h1 id="request-flow">Request Flow</h1>
+
+<p>Every time a request comes in to your API, it goes through a series of steps before the response content is returned to the API consumer. A quick overview of each step is provided below, but there are also more in-depth articles on each topic.</p>
+<h2 id="before-you-start">Before You Start</h2>
+<p>This article assumes you have a basic understanding of the following topics:</p>
+<ul>
+<li>HTTP requests, responses, and the REST architecture (See <a href="https://en.wikipedia.org/wiki/Representational_state_transfer#Applied_to_Web_services">Wikipedia</a> for a quick overview)</li>
+<li>How to setup a basic RestModels app (See <a class="xref" href="../getting_started/efcore.html">Getting Started with RestModels and Entity Framework Core</a>)</li>
+</ul>
+<h2 id="the-ten-step-process">The Ten Step Process</h2>
+<p>On every request, each of the following ten steps is run (if applicable): Routing, Parsing, Authentication, Providing Models, Filtering, Checking Conditions, Running Pre-Operation Actions, Running the Operation, Running Post-Operation Actions, and Writing the Result. Additionally, if an error occurs at any point in this process, any registered Exception Handlers are called.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>These steps are always run in the order listed below, regardless of the order in which you add options to the API.</p>
+</div>
+<h2 id="routing">Routing</h2>
+<p><strong>See Also:</strong> <a class="xref" href="routing.html">Routing</a></p>
+<p>The first step of the flow is request routing. Routing matches an API route to the path of the HTTP request. If multiple routes match the request path, then the routes are first sorted {todo depthlink} so that routes with authentication are executed before anonymous routes.</p>
+<h3 id="example">Example</h3>
+<p>The following example sets up two routes: <code>/v1/alpha</code> and <code>/v1/beta</code>.</p>
+<pre><code class="lang-csharp">app.UseRestModels&lt;MyModel&gt;(&quot;v1&quot;, api =&gt; {
+    api.SetupGet(&quot;alpha&quot;, alpha =&gt; {
+        alpha.WriteString(&quot;Hello World!&quot;);
+    });
+    api.SetupGet(&quot;beta&quot;, beta =&gt; {
+        beta.WriteString(&quot;Hello again, World!&quot;);
+    });
+});
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Only routes that have both a request method (<code>GET</code>, <code>POST</code>, etc.) and a <a href="#%7Btodo-link%7D">Result Writer</a> will be matched. In the above example, any requests to <code>/v1</code> alone will return a <code>404 Not Found</code> response.</p>
+</div>
+<h2 id="parsing">Parsing</h2>
+<p><strong>See Also:</strong> <a href="xref:parsing">Parsing</a></p>
+<p>Once the request has been matched with a route, the request body is parsed. If the route has any <a class="xref" href="../../api/RestModels.Parsers.IBodyParser-1.html">IBodyParser&lt;TModel&gt;</a> registered, then there <em>must</em> be a body to parse. If there is no request body, then a <a class="xref" href="../../api/RestModels.Exceptions.ParsingFailedException.html">ParsingFailedException</a> will be thrown. If there are no body parsers registered, then this step is skipped and any request body will be ignored.</p>
+<h3 id="example-1">Example</h3>
+<p>The following example sets up the api to parse JSON request bodies either as single objects, <code>{...}</code>, or arrays, <code>[{...}, {...}]</code>. Using <code>ParseJson</code> instead would only accept objects. Regardless of which method is used, the <a class="xref" href="../../api/RestModels.Context.ApiContext-2.html">ApiContext&lt;TModel, TUser&gt;</a> will always contain an array of <a class="xref" href="../../api/RestModels.Parsers.ParseResult-1.html">ParseResult&lt;TModel&gt;</a> objects.</p>
+<pre><code class="lang-csharp">app.UseRestModels&lt;MyModel&gt;(&quot;v1&quot;, api =&gt; {
+    api.ParseJsonArrays();
+});
+</code></pre>
+<h2 id="authentication">Authentication</h2>
+<p><strong>See Also:</strong> <a href="xref:authentication">Authentication</a></p>
+<p>After the request body is parsed, the request is authenticated if the route has one or more <a class="xref" href="../../api/RestModels.Auth.IAuthProvider-2.html">Auth Providers</a>. Upon sucessful authentication, some auth providers return a <code>TUser</code> user object which will be stored in the <a class="xref" href="../../api/RestModels.Context.ApiContext-2.html">ApiContext&lt;TModel, TUser&gt;</a> for the duration of the request.</p>
+<h3 id="example-2">Example</h3>
+<p>The following example sets up an auth provider that calls a function to determine if a provided auth key is valid.</p>
+<pre><code class="lang-csharp">app.UseRestModels&lt;MyModel&gt;(&quot;v1&quot;, api =&gt; {
+    api.AuthHeader(&quot;X-Api-Key&quot;, this.DetermineAuth)
+       .AuthQuery(&quot;key&quot;, this.DetermineAuth);
+});
+
+...
+
+private bool DetermineAuth(string key) {
+    ...
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Versions of the <code>Auth</code> methods that accept asynchronous callbacks are also available: just append <code>Async</code> to the end of the method name.</p>
+</div>
+<h2 id="providing-models">Providing Models</h2>
+<p><strong>See Also:</strong> <a href="xref:providing-models">Providing Models</a></p>
+<p>RestModels is, at its core, a way to connect database models to API consumers. To do this, each API that you build must have a way to retrieve a set of models. After the request is authenticated, this set is retrieved for use by the next phases of the request.</p>
+<h3 id="example-3">Example</h3>
+<p>The easiest way to integrate a <a class="xref" href="../../api/RestModels.Models.IModelProvider-2.html">Model Provider</a> into your API is by using a library like <a href="%7Btodo-nuget%7D"><code>RestModels.EntityFramework</code></a>.</p>
+<pre><code class="lang-csharp">app.UseEntityFrameworkRestModels&lt;MyModel, MyDbContext&gt;(api =&gt; {
+    // Done! The entity framework model provider is already set up.
+});
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Even if you're not directly consuming these models, such as when creating a new object or just returning a string, the route must still have a model provider to succeed. (TODO: why? should it be like that? use empty/null array instead?)</p>
+</div>
+<h2 id="filtering">Filtering</h2>
+<p><strong>See Also:</strong> <a href="xref:filtering">Filtering</a></p>
+<p>Once the model set has been retrieved, any provided <a class="xref" href="../../api/RestModels.Filters.IFilter-2.html">Filters</a> are run over the dataset to ensure that only the requested models are returned or transformed.</p>
+<h3 id="example-4">Example</h3>
+<p>This example sets up a request that returns the alphabetically first model.</p>
+<pre><code class="lang-csharp">api.Get(&quot;/first&quot;, first =&gt; {
+    first.OrderByDescending(m =&gt; m.Name).LimitOne();
+});
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Filters are run in the order you add them to the API. Calling <code>First</code> before <code>OrderBy</code> would not sort the elements.</p>
+</div>
+<h2 id="conditions">Conditions</h2>
+<p><strong>See Also:</strong> <a href="xref:conditions">Conditions</a></p>
+<p>Conditions ensure that the dataset meets a certain requirement, throwing otherwise.</p>
+<h3 id="example-5">Example</h3>
+<p>This example ensures that all of the requested models are marked as available before returning them.</p>
+<pre><code class="lang-csharp">api.Get(route =&gt; {
+    route.RequireAll(m =&gt; m.IsAvailable);
+});
+</code></pre>
+<h2 id="pre-operation-actions">Pre-Operation Actions</h2>
+<p><strong>See Also:</strong> <a href="xref:actions">Actions</a></p>
+<p>These actions run before every operation. They can be used to make changes to the parsed body before the operation is run.</p>
+<h3 id="example-6">Example</h3>
+<pre><code class="lang-csharp">TODO!: Likely going to change the name to `Before()`
+TODO: Replace with BeforeForEach/ForEachBefore or whatever it becomes
+api.PostCreate(route =&gt; {
+    route.PreOp((ctx, dataset) =&gt; { foreach (var model in dataset) model.LuckyNumber = 4; });
+});
+</code></pre>
+<h2 id="operations">Operations</h2>
+<p><strong>See Also:</strong> <a href="xref:operations">Operations</a></p>
+<p>Every API route can have at most one <a class="xref" href="../../api/RestModels.Operations.IOperation-2.html">IOperation&lt;TModel, TUser&gt;</a> registered. An operation transforms the database/backend in some way, usually that means by creating, updating, or deleting models. When using <a href="%7Btodo-nuget%7D"><code>RestModels.EntityFramework</code></a>, these are usually added for you, but they can also be set manually. Every operation returns a dataset that becomes the new dataset for the Result Writer. If there is no operation, the Result Writer will write out the existing dataset.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Regardless of whether or not an operation is provided, pre- and post-operation actions will always be run.</p>
+</div>
+<h3 id="example-7">Example</h3>
+<p>This example manually sets up a route to create new models using Entity Framework from the parsed request body.</p>
+<pre><code class="lang-csharp">api.SetupPost(route =&gt; {
+    route.UseOperation(new CreateOperation&lt;MyModel, MyContext&gt;());
+});
+</code></pre>
+<h2 id="post-operation-actions">Post-Operation Actions</h2>
+<p><strong>See Also:</strong> <a href="xref:actions">Actions</a></p>
+<p>These actions run after every operation. They can be used for logging, notifying the rest of the app that data has changed, or modifying the response body.</p>
+<h3 id="example-8">Example</h3>
+<pre><code class="lang-csharp">TODO!: Likely going to change the name to `After()`
+api.PostCreate(route =&gt; {
+    route.PostOp((c, d) =&gt; c.HttpResponse.Cookies.Append(&quot;cookie&quot;, &quot;monster&quot;));
+});
+</code></pre>
+<h2 id="writing-the-result">Writing the Result</h2>
+<p><strong>See Also:</strong> <a href="xref:writing-the-result">Writing the Result</a></p>
+<p>Finally, the output result is written to the response body and sent off to the user via a <a class="xref" href="../../api/RestModels.Results.IResultWriter-2.html">Result Writer</a>. Typically the Writer just writes the model iteslf, but the response can also be wrapped in a <a class="xref" href="../../api/RestModels.Responses.Response-1.html">Response</a> object (see &lt;xref:response-wrappers&gt;).</p>
+<h3 id="example-9">Example</h3>
+<p>The following example writes the final dataset wrapped in a <a class="xref" href="../../api/RestModels.Responses.BasicResponse-1.html">BasicResponse&lt;TModel&gt;</a></p>
+<pre><code class="lang-csharp">api.Get(route =&gt; {
+    route.WrapResponse().WriteJson();
+});
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>There can only be one result writer for each route. For a context-dependent writer that looks at the <code>Accept</code> or <code>Content-Type</code> header, or a query parameter, look at the <a class="xref" href="../../api/RestModels.Results.AcceptDependentResultWriter-2.html">AcceptDependentResultWriter&lt;TModel, TUser&gt;</a>, <a class="xref" href="../../api/RestModels.Results.HeaderDependentResultWriter-2.html">HeaderDependentResultWriter&lt;TModel, TUser&gt;</a>, and <a class="xref" href="../../api/RestModels.Results.QueryDependentResultWriter-2.html">QueryDependentResultWriter&lt;TModel, TUser&gt;</a> classes.</p>
+</div>
+<h2 id="exception-handlers">Exception Handlers</h2>
+<p><strong>See Also:</strong> <a href="xref:exception-handlers">Exception Handlers</a></p>
+<p>An <a class="xref" href="../../api/RestModels.ExceptionHandlers.IExceptionHandler.html">Exception Handler</a> is run, as its name suggests, whenever an exception is thrown. They can be used to customize or log error messages, but if no Exception Handlers are provided, regular ASP.NET exception middleware can be used instead. For most cases, the <a class="xref" href="../../api/RestModels.ExceptionHandlers.SimpleExceptionHandler.html">SimpleExceptionHandler</a> will work well.</p>
+<h3 id="example-10">Example</h3>
+<p>The following example adds a <a class="xref" href="../../api/RestModels.ExceptionHandlers.SimpleExceptionHandler.html">SimpleExceptionHandler</a> using the helper method <code>CatchExceptions</code>, but also logs when parsing errors occur.</p>
+<pre><code class="lang-csharp">api.PostCreate(route =&gt; {
+    route.Catch&lt;ParsingFailedException&gt;((e, c) =&gt; ILogger.LogError(e))
+        .CatchExceptions();
+});
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jlynch630/RestModels/blob/master/docs-src/docfx_project/articles/request_flow/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

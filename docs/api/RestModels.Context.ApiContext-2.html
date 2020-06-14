@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ApiContext&lt;TModel, TUser&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ApiContext&lt;TModel, TUser&gt;
+   ">
+    <meta name="generator" content="docfx 2.52.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../favicon.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="RestModels.Context.ApiContext`2">
+  
+  
+  <h1 id="RestModels_Context_ApiContext_2" data-uid="RestModels.Context.ApiContext`2" class="text-break">Class ApiContext&lt;TModel, TUser&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Context for an API request</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ApiContext&lt;TModel, TUser&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="RestModels.Context.html">RestModels.Context</a></h6>
+  <h6><strong>Assembly</strong>: RestModels.dll</h6>
+  <h5 id="RestModels_Context_ApiContext_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public class ApiContext&lt;TModel, TUser&gt; : IDisposable, IApiContext&lt;TModel, TUser&gt; where TModel : class where TUser : class</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TModel</span></td>
+        <td><p>The type of model being managed by the AP</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TUser</span></td>
+        <td><p>The type of authenticated user context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2__ctor_Microsoft_AspNetCore_Http_HttpContext_RestModels_Responses_Response__0__.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.%23ctor(Microsoft.AspNetCore.Http.HttpContext%2CRestModels.Responses.Response%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L34">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2__ctor_" data-uid="RestModels.Context.ApiContext`2.#ctor*"></a>
+  <h4 id="RestModels_Context_ApiContext_2__ctor_Microsoft_AspNetCore_Http_HttpContext_RestModels_Responses_Response__0__" data-uid="RestModels.Context.ApiContext`2.#ctor(Microsoft.AspNetCore.Http.HttpContext,RestModels.Responses.Response{`0})">ApiContext(HttpContext, Response&lt;TModel&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="RestModels.Context.ApiContext-2.html">ApiContext&lt;TModel, TUser&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public ApiContext(HttpContext httpContext, Response&lt;TModel&gt; response)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpContext</span></td>
+        <td><span class="parametername">httpContext</span></td>
+        <td><p>The current <a class="xref" href="RestModels.Context.ApiContext-2.html#RestModels_Context_ApiContext_2_HttpContext">HttpContext</a> for this request</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="RestModels.Responses.Response-1.html">Response</a>&lt;TModel&gt;</td>
+        <td><span class="parametername">response</span></td>
+        <td><p>The response for this API call</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_HttpContext.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.HttpContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L44">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_HttpContext_" data-uid="RestModels.Context.ApiContext`2.HttpContext*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_HttpContext" data-uid="RestModels.Context.ApiContext`2.HttpContext">HttpContext</h4>
+  <div class="markdown level1 summary"><p>Gets the current <a class="xref" href="RestModels.Context.ApiContext-2.html#RestModels_Context_ApiContext_2_HttpContext">HttpContext</a> for this request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public HttpContext HttpContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_HttpResponse.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.HttpResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L49">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_HttpResponse_" data-uid="RestModels.Context.ApiContext`2.HttpResponse*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_HttpResponse" data-uid="RestModels.Context.ApiContext`2.HttpResponse">HttpResponse</h4>
+  <div class="markdown level1 summary"><p>Gets the current HTTP response context. Shortcut to <span class="xref">Microsoft.AspNetCore.Http.HttpContext.Response</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public HttpResponse HttpResponse { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpResponse</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_Parsed.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.Parsed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L55">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_Parsed_" data-uid="RestModels.Context.ApiContext`2.Parsed*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_Parsed" data-uid="RestModels.Context.ApiContext`2.Parsed">Parsed</h4>
+  <div class="markdown level1 summary"><p>Gets the models that have been parsed by the body parser. This may be null if the body has not been parsed yet or
+there are no body parsers registered for this route.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public ParseResult&lt;TModel&gt;[] Parsed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RestModels.Parsers.ParseResult-1.html">ParseResult</a>&lt;TModel&gt;[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_Request.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.Request%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L60">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_Request_" data-uid="RestModels.Context.ApiContext`2.Request*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_Request" data-uid="RestModels.Context.ApiContext`2.Request">Request</h4>
+  <div class="markdown level1 summary"><p>Gets the current request context. Shortcut to <span class="xref">Microsoft.AspNetCore.Http.HttpContext.Request</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public HttpRequest Request { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_Response.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.Response%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L65">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_Response_" data-uid="RestModels.Context.ApiContext`2.Response*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_Response" data-uid="RestModels.Context.ApiContext`2.Response">Response</h4>
+  <div class="markdown level1 summary"><p>Gets the response for this API call. If this is null, the model itself will be serialized instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public Response&lt;TModel&gt; Response { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RestModels.Responses.Response-1.html">Response</a>&lt;TModel&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_Services.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.Services%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L70">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_Services_" data-uid="RestModels.Context.ApiContext`2.Services*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_Services" data-uid="RestModels.Context.ApiContext`2.Services">Services</h4>
+  <div class="markdown level1 summary"><p>Gets a service provider for this API context</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public IServiceProvider Services { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IServiceProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_User.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L76">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_User_" data-uid="RestModels.Context.ApiContext`2.User*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_User" data-uid="RestModels.Context.ApiContext`2.User">User</h4>
+  <div class="markdown level1 summary"><p>Gets the authenticated user context for this route. This may be null if authorization has not yet occurred or there
+are no auth providers registered for this route.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public TUser User { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TUser</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2_Dispose.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L81">View Source</a>
+  </span>
+  <a id="RestModels_Context_ApiContext_2_Dispose_" data-uid="RestModels.Context.ApiContext`2.Dispose*"></a>
+  <h4 id="RestModels_Context_ApiContext_2_Dispose" data-uid="RestModels.Context.ApiContext`2.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes the <a class="xref" href="RestModels.Context.ApiContext-2.html">ApiContext&lt;TModel, TUser&gt;</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class="lang-csharp">public void Dispose()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext&lt;TModel, TUser&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Context_ApiContext_2.md&amp;value=---%0Auid%3A%20RestModels.Context.ApiContext%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Context/ApiContext.cs/#L22" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

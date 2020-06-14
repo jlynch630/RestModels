@@ -1,0 +1,1410 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/workspace/RestModels/docs-src/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions.html",
+          "hash": "mOjipthNvhh+we7tzzzspQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions.html",
+          "hash": "xkyYUc/GcwiWFOMRWGfzMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
+          "hash": "pZYroFJlopPNJ8KPjmjNhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Actions.DelegatePostOpAction-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Actions.DelegatePostOpAction-2.html",
+          "hash": "P/docSVhKDmeolFGPy2ZIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Actions.DelegatePreOpAction-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Actions.DelegatePreOpAction-2.html",
+          "hash": "yhrMwiobSF8s5odlGWHaRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Actions.IPostOpAction-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Actions.IPostOpAction-2.html",
+          "hash": "6Jwwum9T4VT9SdFw+myMgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Actions.IPreOpAction-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Actions.IPreOpAction-2.html",
+          "hash": "k6FXCwdCkQfvNSUZgDRazw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Actions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Actions.html",
+          "hash": "cZ7+LINrR/2c8HrgsJIcXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.BasicAuthProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.BasicAuthProvider-2.html",
+          "hash": "fFfbqDgeHjNXmAXpAwOcbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.DelegateAuthProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.DelegateAuthProvider-2.html",
+          "hash": "5llEu2Hqy8f8Mq0Eo3tr+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.HeaderAuthProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.HeaderAuthProvider-2.html",
+          "hash": "rwvdiygKLo7+tWB1fw3AoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.IAuthProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.IAuthProvider-2.html",
+          "hash": "Z2Oo1nCanzJxVZ/gmzgOng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.IdentityAuthProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.IdentityAuthProvider-2.html",
+          "hash": "rpmr6hDygslvYIL/afLXAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.NoUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.NoUser.html",
+          "hash": "s4mS1YtOKjZDX9k7i+TjLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.QueryAuthProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.QueryAuthProvider-2.html",
+          "hash": "n2ilVDDIsbpK7CmKe3HNPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Auth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Auth.html",
+          "hash": "EVH2GAh2O7KFVTdgBZmGvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Conditions.DelegateCondition-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Conditions.DelegateCondition-2.html",
+          "hash": "g49RfQBIaa+CJqvqAIws8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Conditions.ICondition-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Conditions.ICondition-2.html",
+          "hash": "DoFCxX914YoN6FhQPrPlEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Conditions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Conditions.html",
+          "hash": "8RWlP4zCUVbsIX9CZ+SmbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Context.ApiContext-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Context.ApiContext-2.html",
+          "hash": "k4lxoH8zb/AoIUJNqsBI6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Context.IApiContext-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Context.IApiContext-2.html",
+          "hash": "FdUvBTn6c1GUosrbTBfQmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Context.html",
+          "hash": "y++igwvKwkkLfTiCQ6TjWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.EntityFrameworkModelProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.EntityFrameworkModelProvider-2.html",
+          "hash": "hJ7wobsMWYbwenypUMmLBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.html",
+          "hash": "gEfj02+ezD0qTV94yscPUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Extensions.html",
+          "hash": "+8bbUhJV/b1LBJ7wQkA3Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Filters.PrimaryKeyFilter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Filters.PrimaryKeyFilter-2.html",
+          "hash": "P/HWgPEN5cfAwZ5PVoJU+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Filters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Filters.html",
+          "hash": "v7Xk8GnS+3+cLj98fVdyeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Operations.CreateOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Operations.CreateOperation-2.html",
+          "hash": "orRjC5eh22Ut0azWUODcXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Operations.DeleteOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Operations.DeleteOperation-2.html",
+          "hash": "024XpdeR9QoG/CnHh/BIdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Operations.UpdateOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Operations.UpdateOperation-2.html",
+          "hash": "FOC4dP5wO3E92F18s1ZMWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Operations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Operations.html",
+          "hash": "enjGSHwL/9CCVwxRSAfxFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder-2.html",
+          "hash": "CSU4fLPHKUySonnKZC2Fuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.Options.html",
+          "hash": "fC/qTSJUchm/hu2ZB00ggg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.EntityFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.EntityFramework.html",
+          "hash": "vZ/MRJ4hMduUIKzNBmtgLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ExceptionHandlers.AuthFailedExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ExceptionHandlers.AuthFailedExceptionHandler.html",
+          "hash": "sUunZy/2sDuTNzh8HeCuJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ExceptionHandlers.DelegateExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ExceptionHandlers.DelegateExceptionHandler.html",
+          "hash": "eGhg9VJAAjkhydMUgo6nZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ExceptionHandlers.IExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ExceptionHandlers.IExceptionHandler.html",
+          "hash": "oAPKoOKI2058Um9HtA+6uw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ExceptionHandlers.SimpleExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ExceptionHandlers.SimpleExceptionHandler.html",
+          "hash": "MITazBYapvXPYwBZ3WTwyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ExceptionHandlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ExceptionHandlers.html",
+          "hash": "CMF7yOx5pMGFJboZ6DmOKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.ApiException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.ApiException.html",
+          "hash": "8X7WzKwVohKI37L2K/1eTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.AuthFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.AuthFailedException.html",
+          "hash": "g6z0O+4JiqaF7JbSulfzUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.ConditionFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.ConditionFailedException.html",
+          "hash": "0pCM8Hylpu4D8KCN3heXRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.ErrorCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.ErrorCodes.html",
+          "hash": "kTkgpSlVNpdPKvI7D2VSHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.OperationFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.OperationFailedException.html",
+          "hash": "q0tenG7M29NV+BrJaAw2NQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.OptionsException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.OptionsException.html",
+          "hash": "G9JPa6EODKpk287cgtFUjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.ParsingFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.ParsingFailedException.html",
+          "hash": "vnB5gUMqJNEAZ2Ad8Mp5UQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.WritingFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.WritingFailedException.html",
+          "hash": "oKpbgR0BGQZGY1P5ynU0kQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Exceptions.html",
+          "hash": "bqejB0qzwQMAHrhGSE3/8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Extensions.RestModelOptionsBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Extensions.RestModelOptionsBuilderExtensions.html",
+          "hash": "DayQd2UdCNNJZjX/BPPvBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Extensions.html",
+          "hash": "LzRZGsSTiPtzU0mg8ylK1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Filters.DelegateFilter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Filters.DelegateFilter-2.html",
+          "hash": "874Xgdgh8V84TKm7UNhl3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Filters.IFilter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Filters.IFilter-1.html",
+          "hash": "XM9AOKk5NEp8Pjvk+VY7NQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Filters.IFilter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Filters.IFilter-2.html",
+          "hash": "ed5jMXT+hRS8Ex7YmJbccA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Filters.ParameterResolver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Filters.ParameterResolver.html",
+          "hash": "13BkkQSvICwdEIRQnw8LyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Filters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Filters.html",
+          "hash": "Rhp5I/8kGjgiCBonF1/INQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Models.IModelProvider-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Models.IModelProvider-1.html",
+          "hash": "gIjWPahAdXLAcXMkB3028Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Models.IModelProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Models.IModelProvider-2.html",
+          "hash": "leMBHLHf9BkPGzFT/t1K9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Models.html",
+          "hash": "wBPo8k2mZwNAPWNPRv95gQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Operations.IOperation-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Operations.IOperation-1.html",
+          "hash": "ApJWZu3rLIGikoNMSi3Zrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Operations.IOperation-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Operations.IOperation-2.html",
+          "hash": "gFmXJPYUs4kD0kOYOnFlsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Operations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Operations.html",
+          "hash": "Nk/mHfmY8woW1ImaqzC7qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Options.Builder.RestModelOptionsBuilder-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html",
+          "hash": "lGUkMIOwVk+p8Jc86d+zNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Options.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Options.Builder.html",
+          "hash": "TYX2zd9BB/DQp1T0/QxeCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Options.FormattingOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Options.FormattingOptions.html",
+          "hash": "7eb9rR2kCI6uwsfyisQ2hA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Options.ParserOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Options.ParserOptions.html",
+          "hash": "LUkEFa+mGF8eTrjOZAJibA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Options.RestModelOptions-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Options.RestModelOptions-2.html",
+          "hash": "5XODQYG4kiaTX4fKQO9L8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Options.html",
+          "hash": "yBa86tqOXVp9Gz8LtzfSlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ParameterRetrievers.HeaderRetriever.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ParameterRetrievers.HeaderRetriever.html",
+          "hash": "ybF+8bQMe3Fzt7E3YsSdCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ParameterRetrievers.ParameterRetriever.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ParameterRetrievers.ParameterRetriever.html",
+          "hash": "u06Tp/X9wCwx5rnu7wWp+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ParameterRetrievers.QueryParameterRetriever.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ParameterRetrievers.QueryParameterRetriever.html",
+          "hash": "i1YNCZBXCqvWAXflPnJhyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ParameterRetrievers.RouteValueRetriever.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ParameterRetrievers.RouteValueRetriever.html",
+          "hash": "j+uuzqqypvjyyfs3W5lSdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.ParameterRetrievers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.ParameterRetrievers.html",
+          "hash": "MGr4bMjki8JuR2jpSgyXSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Parsers.IBodyParser-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Parsers.IBodyParser-1.html",
+          "hash": "Hn7xFhBN1JvqPILrnqW/Tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Parsers.JsonBodyParser-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Parsers.JsonBodyParser-1.html",
+          "hash": "ipti+bQg9XAoWsOG3mlSRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Parsers.ParseResult-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Parsers.ParseResult-1.html",
+          "hash": "mfVyzi9bWM9x/R/ICEw9Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Parsers.XmlBodyParser-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Parsers.XmlBodyParser-1.html",
+          "hash": "GO65LDnHMemeIaThKrkitQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Parsers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Parsers.html",
+          "hash": "HiEu0mIeW7HDRG1AeS197Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.ApiVersionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.ApiVersionAttribute.html",
+          "hash": "rA3mAMBK2N1t70LaM9fqfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.CurrentPageAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.CurrentPageAttribute.html",
+          "hash": "l/3Uv2AriXzMZoHdP18DeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.DeprecationNoticeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.DeprecationNoticeAttribute.html",
+          "hash": "Jq96p7VHS5R2tsHnFij5Og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.ModelCountAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.ModelCountAttribute.html",
+          "hash": "Fc8+OSqckyJcF4GMYitVPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.ResponseValueAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.ResponseValueAttribute.html",
+          "hash": "l5Pjy0x80ZE8p/CT+dJiMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.TotalPagesAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.TotalPagesAttribute.html",
+          "hash": "G4UPoT8hAc9JGXBvdnS2qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Attributes.html",
+          "hash": "jVUcMSs6q0qEg+PpyxLHFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.BasicResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.BasicResponse-1.html",
+          "hash": "w7NeNR1F4dzH6PgjgaO1PA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.Response-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.Response-1.html",
+          "hash": "hFv51BHhFRGyvkRNOcYMLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Responses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Responses.html",
+          "hash": "INSD/iy0yA+bl1Fg7LBbEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.AcceptDependentResultWriter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.AcceptDependentResultWriter-2.html",
+          "hash": "DeDzlLSlnQR+yzcjFpKf4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.HeaderDependentResultWriter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.HeaderDependentResultWriter-2.html",
+          "hash": "vQ/mPvXNVcWzxpf1r5YJtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.IResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.IResultWriter-1.html",
+          "hash": "ng8hShnFuEE/8tMSG4thfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.IResultWriter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.IResultWriter-2.html",
+          "hash": "IUFPJALEPPUKgBvs7qN4hg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.Json.IModelJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.Json.IModelJsonConverter.html",
+          "hash": "wRpmj1kMLQfqjJjb88PpAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.Json.JsonResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.Json.JsonResultWriter-1.html",
+          "hash": "3fK2qilm3zXdz8s3LXDW9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.Json.ModelJsonConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.Json.ModelJsonConverter-1.html",
+          "hash": "74H83A6RevELegkroh2/0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.Json.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.Json.html",
+          "hash": "kcaE+biJgE7j8cfRP/SNuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.NumberAffectedResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.NumberAffectedResultWriter-1.html",
+          "hash": "zuX8xn6jlUZUr9Ua5PPGvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.QueryDependentResultWriter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.QueryDependentResultWriter-2.html",
+          "hash": "t8xFb600yJTrYRdOJc7kjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.RequestDependentResultWriter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.RequestDependentResultWriter-2.html",
+          "hash": "+Py91yx+e4Kfys3QZ7UdKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.StringResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.StringResultWriter-1.html",
+          "hash": "NwDnrKcDFeTsPWfBtBT9Ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.XmlResultWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.XmlResultWriter-1.html",
+          "hash": "sD8r02pZdWbr7p7KrUtMsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/RestModels.Results.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RestModels.Results.html",
+          "hash": "rQZXa64eKRdl0pPvkOe7NQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "rXNxZBq+plecBVOpqJytpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "ARqXNYP3nJ/mMHkEefuUxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting_started/efcore.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting_started/efcore.html",
+          "hash": "gUta2NeGOUfozlz1DRJhhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/getting_started/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting_started/toc.html",
+          "hash": "D2xSAE2g1QM0VUGT34HQYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "ofInnKcucOnRzfzaaUscyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink",
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/request_flow/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/request_flow/index.html",
+          "hash": "uwnnKIae0MHKJ4FWdOitUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/request_flow/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/request_flow/routing.html",
+          "hash": "0liRUg2NOsXhQY/p9oR6Rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/request_flow/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/request_flow/toc.html",
+          "hash": "wr6TokP2EcucP1Y39G3Syw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "H2IgAgj8Uhv8zw5ay0qGkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "wNGIojN7NsA4IXVw9Enh7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 101,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
