@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+
 <html>
   
   <head>
@@ -88,8 +88,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public class RestModelOptions&lt;TModel, TUser&gt;
-    where TModel : class where TUser : class</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptions</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><br /><span style='color:black;'>    </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -131,7 +130,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;IAuthProvider&lt;TModel, TUser&gt;&gt; AuthProviders { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>IAuthProvider</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>AuthProviders</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,7 +164,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;IBodyParser&lt;TModel&gt;&gt; BodyParsers { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>IBodyParser</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:#000000;'>&gt;&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>BodyParsers</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -199,7 +198,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;ICondition&lt;TModel, TUser&gt;&gt; Conditions { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>ICondition</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>Conditions</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -233,7 +232,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;IExceptionHandler&gt; ExceptionHandlers { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>IExceptionHandler</span><span style='color:#000000;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>ExceptionHandlers</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -267,7 +266,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;IFilter&lt;TModel, TUser&gt;&gt; Filters { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>IFilter</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>Filters</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -301,7 +300,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public FormattingOptions FormattingOptions { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>FormattingOptions</span><span style='color:black;'> </span><span style='color:#001080;'>FormattingOptions</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -335,7 +334,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public IModelProvider&lt;TModel, TUser&gt; ModelProvider { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>IModelProvider</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>ModelProvider</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -369,7 +368,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public IOperation&lt;TModel, TUser&gt; Operation { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>IOperation</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>Operation</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -403,7 +402,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public ParserOptions ParserOptions { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>ParserOptions</span><span style='color:black;'> </span><span style='color:#001080;'>ParserOptions</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -437,7 +436,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;IPostOpAction&lt;TModel, TUser&gt;&gt; PostOpActions { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>IPostOpAction</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>PostOpActions</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -471,7 +470,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public List&lt;IPreOpAction&lt;TModel, TUser&gt;&gt; PreOpActions { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>List</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>IPreOpAction</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>PreOpActions</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -505,7 +504,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public HashSet&lt;string&gt; RequestMethods { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>HashSet</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>string</span><span style='color:#000000;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>RequestMethods</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -539,7 +538,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public Type ResponseType { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>Type</span><span style='color:black;'> </span><span style='color:#001080;'>ResponseType</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -573,7 +572,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public IResultWriter&lt;TModel, TUser&gt; ResultWriter { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>IResultWriter</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:black;'>, </span><span style='color:#001080;'>TUser</span><span style='color:#000000;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>ResultWriter</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -607,7 +606,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public string RoutePattern { get; set; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>string</span><span style='color:black;'> </span><span style='color:#001080;'>RoutePattern</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#001080;'>set</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -643,7 +642,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public RestModelOptions&lt;TModel, TUser&gt; Copy()</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptions</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>Copy</span><span style='color:#222222;'>(</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -677,7 +676,7 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              
               </nav>
             </div>
           </div>

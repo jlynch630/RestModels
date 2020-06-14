@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+
 <html>
   
   <head>
@@ -94,7 +94,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public class ModelJsonConverter&lt;TModel&gt; : JsonConverter&lt;TModel&gt;, IModelJsonConverter where TModel : class</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>ModelJsonConverter</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#267F99;'>JsonConverter</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IModelJsonConverter</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -131,7 +131,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public ModelJsonConverter(IEnumerable&lt;PropertyInfo&gt; includedReturnProperties)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#795E26;'>ModelJsonConverter</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>IEnumerable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>PropertyInfo</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>includedReturnProperties</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -170,7 +170,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public override TModel Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>override</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#795E26;'>Read</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>ref</span><span style='color:black;'> </span><span style='color:#267F99;'>Utf8JsonReader</span><span style='color:black;'> </span><span style='color:#001080;'>reader</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Type</span><span style='color:black;'> </span><span style='color:#001080;'>typeToConvert</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>JsonSerializerOptions</span><span style='color:black;'> </span><span style='color:#001080;'>options</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -237,7 +237,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public override void Write(Utf8JsonWriter writer, TModel value, JsonSerializerOptions options)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>override</span><span style='color:black;'> </span><span style='color:#0000FF;'>void</span><span style='color:black;'> </span><span style='color:#795E26;'>Write</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Utf8JsonWriter</span><span style='color:black;'> </span><span style='color:#001080;'>writer</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#001080;'>value</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>JsonSerializerOptions</span><span style='color:black;'> </span><span style='color:#001080;'>options</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -288,7 +288,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public void WriteObject(Utf8JsonWriter writer, object value, JsonSerializerOptions options)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>void</span><span style='color:black;'> </span><span style='color:#795E26;'>WriteObject</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Utf8JsonWriter</span><span style='color:black;'> </span><span style='color:#001080;'>writer</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#0000FF;'>object</span><span style='color:black;'> </span><span style='color:#001080;'>value</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>JsonSerializerOptions</span><span style='color:black;'> </span><span style='color:#001080;'>options</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -340,7 +340,7 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              
               </nav>
             </div>
           </div>

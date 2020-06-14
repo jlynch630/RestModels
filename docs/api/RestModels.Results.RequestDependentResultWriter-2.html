@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+
 <html>
   
   <head>
@@ -95,7 +95,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public abstract class RequestDependentResultWriter&lt;TModel, TUser&gt; : IResultWriter&lt;TModel, TUser&gt; where TModel : class where TUser : class</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>abstract</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>RequestDependentResultWriter</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#267F99;'>IResultWriter</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,7 +140,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">protected RequestDependentResultWriter(string[] values, IResultWriter&lt;TModel, TUser&gt;[] writers, int defaultIndex = -1, bool caseSensitive = false)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>protected</span><span style='color:black;'> </span><span style='color:#795E26;'>RequestDependentResultWriter</span><span style='color:#222222;'>(</span><span style='color:#0000FF;'>string</span><span style='color:#222222;'>[</span><span style='color:#222222;'>]</span><span style='color:black;'> </span><span style='color:#001080;'>values</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IResultWriter</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>[</span><span style='color:#222222;'>]</span><span style='color:black;'> </span><span style='color:#001080;'>writers</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#001080;'>int</span><span style='color:black;'> </span><span style='color:#001080;'>defaultIndex</span><span style='color:black;'> </span><span style='color:#000000;'>=</span><span style='color:black;'> </span><span style='color:#000000;'>-</span><span style='color:#098658;'>1</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#001080;'>bool</span><span style='color:black;'> </span><span style='color:#001080;'>caseSensitive</span><span style='color:black;'> </span><span style='color:#000000;'>=</span><span style='color:black;'> </span><span style='color:#0000FF;'>false</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -198,7 +198,7 @@ values match</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public virtual Task&lt;bool&gt; CanWriteAsync(HttpRequest request)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>virtual</span><span style='color:black;'> </span><span style='color:#267F99;'>Task</span><span style='color:#222222;'>&lt;</span><span style='color:#0000FF;'>bool</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>CanWriteAsync</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>HttpRequest</span><span style='color:black;'> </span><span style='color:#001080;'>request</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -251,7 +251,7 @@ values match</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">protected abstract string GetRequestParameterValue(HttpRequest request)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>protected</span><span style='color:black;'> </span><span style='color:#0000FF;'>abstract</span><span style='color:black;'> </span><span style='color:#0000FF;'>string</span><span style='color:black;'> </span><span style='color:#795E26;'>GetRequestParameterValue</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>HttpRequest</span><span style='color:black;'> </span><span style='color:#001080;'>request</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -304,7 +304,7 @@ values match</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public Task WriteResultAsync(IApiContext&lt;TModel, TUser&gt; context, IEnumerable&lt;TModel&gt; data, FormattingOptions options)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>Task</span><span style='color:black;'> </span><span style='color:#795E26;'>WriteResultAsync</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>context</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IEnumerable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>data</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>FormattingOptions</span><span style='color:black;'> </span><span style='color:#001080;'>options</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -372,7 +372,7 @@ values match</p>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              
               </nav>
             </div>
           </div>

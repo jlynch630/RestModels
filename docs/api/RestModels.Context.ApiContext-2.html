@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+
 <html>
   
   <head>
@@ -93,7 +93,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public class ApiContext&lt;TModel, TUser&gt; : IDisposable, IApiContext&lt;TModel, TUser&gt; where TModel : class where TUser : class</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#267F99;'>ApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#267F99;'>IDisposable</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TModel</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span><span style='color:black;'> </span><span style='color:#0000FF;'>where</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:black;'> </span><span style='color:#222222;'>:</span><span style='color:black;'> </span><span style='color:#0000FF;'>class</span></code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -135,7 +135,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public ApiContext(HttpContext httpContext, Response&lt;TModel&gt; response)</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#795E26;'>ApiContext</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>HttpContext</span><span style='color:black;'> </span><span style='color:#001080;'>httpContext</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Response</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>response</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -180,7 +180,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public HttpContext HttpContext { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>HttpContext</span><span style='color:black;'> </span><span style='color:#001080;'>HttpContext</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -214,7 +214,7 @@
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public HttpResponse HttpResponse { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>HttpResponse</span><span style='color:black;'> </span><span style='color:#001080;'>HttpResponse</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -249,7 +249,7 @@ there are no body parsers registered for this route.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public ParseResult&lt;TModel&gt;[] Parsed { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>ParseResult</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:#000000;'>&gt;</span><span style='color:#222222;'>[</span><span style='color:#222222;'>]</span><span style='color:black;'> </span><span style='color:#001080;'>Parsed</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -283,7 +283,7 @@ there are no body parsers registered for this route.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public HttpRequest Request { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>HttpRequest</span><span style='color:black;'> </span><span style='color:#001080;'>Request</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -317,7 +317,7 @@ there are no body parsers registered for this route.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public Response&lt;TModel&gt; Response { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>Response</span><span style='color:#000000;'>&lt;</span><span style='color:#001080;'>TModel</span><span style='color:#000000;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>Response</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -351,7 +351,7 @@ there are no body parsers registered for this route.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public IServiceProvider Services { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>IServiceProvider</span><span style='color:black;'> </span><span style='color:#001080;'>Services</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -386,7 +386,7 @@ are no auth providers registered for this route.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public TUser User { get; }</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#001080;'>TUser</span><span style='color:black;'> </span><span style='color:#001080;'>User</span><span style='color:black;'> </span><span style='color:#222222;'>{</span><span style='color:black;'> </span><span style='color:#001080;'>get</span><span style='color:#222222;'>;</span><span style='color:black;'> </span><span style='color:#222222;'>}</span></code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -422,7 +422,7 @@ are no auth providers registered for this route.</p>
     <div class="code-header">
       <span class="language">C#</span>
     </div>
-    <pre><code class="lang-csharp">public void Dispose()</code></pre>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#0000FF;'>void</span><span style='color:black;'> </span><span style='color:#795E26;'>Dispose</span><span style='color:#222222;'>(</span><span style='color:#222222;'>)</span></code></pre>
   </div>
   <h3 id="implements">Implements</h3>
   <div>
@@ -447,7 +447,7 @@ are no auth providers registered for this route.</p>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              
               </nav>
             </div>
           </div>
