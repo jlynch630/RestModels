@@ -339,7 +339,7 @@ app.UseEntityFrameworkRestModels<Post, BlogServerContext>("blog/{BlogId:int}/pos
 ```
 
 > [!TIP]
-> RestModels can infer the name of the route value from the name of the property you want to set. Try removing `"BlogId` from the call to `SetValueRoute`.
+> RestModels can infer the name of the route value from the name of the property you want to set. Try removing `"BlogId"` from the call to `SetValueRoute`.
 
 
 We'll also want to add a way to `GET` all of the posts on a Blog. We can add that functionality on the base route with a simple call.
