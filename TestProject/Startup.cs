@@ -70,7 +70,7 @@ namespace TestProject
 						.PostUpdateByPrimaryKey()
 						.DeleteByPrimaryKey();*/
                     options
-                        .WriteXml()
+                        .WriteJson()
                         .WrapResponse()
                         .WriteResponseCount()
                         .StripArrayIfSingleResult()

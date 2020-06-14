@@ -70,8 +70,9 @@ namespace RestModels.Results.Json {
 			if (formatOptions.IncludedReturnProperties != null) Options = this.CreateCustomOptions(formatOptions);
 
 			// setup the writer to write out to the response body
+			MemoryStream OutStream = new MemoryStream();
 			await using Utf8JsonWriter Writer = new Utf8JsonWriter(
-				context.HttpResponse.BodyWriter,
+				OutStream,
 				new JsonWriterOptions { Encoder = Options.Encoder, Indented = Options.WriteIndented, SkipValidation = true });
 
 			if (context.Response == null) {
@@ -93,6 +94,8 @@ namespace RestModels.Results.Json {
 			}
 
 			await Writer.FlushAsync();
+			OutStream.Seek(0, SeekOrigin.Begin);
+			await OutStream.CopyToAsync(context.HttpResponse.Body);
 		}
 
 		/// <summary>
