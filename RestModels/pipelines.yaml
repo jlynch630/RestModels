@@ -19,4 +19,10 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 'RestModels/RestModels.csproj'
+    outputDir: '$(System.DefaultWorkingDirectory)/NugetOut'
     nobuild: true
+    
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: $(System.DefaultWorkingDirectory)/NugetOut
+    artifactName: NugetPackage
