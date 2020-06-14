@@ -32,5 +32,11 @@ namespace RestModels.Parsers {
 		///     Gets or sets a list of the properties that were present on this model in the request body
 		/// </summary>
 		public PropertyInfo[] PresentProperties { get; set; }
+
+		/// <summary>
+		///		Implicitly casts this <see cref="ParseResult{TModel}"/> to the <typeparamref cref="TModel"/> it contains.
+		/// </summary>
+		/// <param name="result">The <see cref="ParseResult{TModel}"/> to cast</param>
+		public static implicit operator TModel(ParseResult<TModel> result) => result.ParsedModel;
 	}
 }
