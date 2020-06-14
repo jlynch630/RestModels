@@ -236,6 +236,8 @@ namespace RestModels.Middleware {
 			byte[] BodyContents = Stream.ToArray();
 			ParseResult<TModel>[]? Parsed = null;
 			bool ParseSuccess = false;
+			ParsingFailedException? Last = null;
+
 			foreach (IBodyParser<TModel> Parser in this.Options.BodyParsers)
 				try {
 					if (!await Parser.CanParse(context.HttpContext)) continue;
@@ -243,11 +245,13 @@ namespace RestModels.Middleware {
 					ParseSuccess = true;
 					break;
 				}
-				catch (ParsingFailedException) {
+				catch (ParsingFailedException e) {
+					Last = e;
 					/* Just keep moving, by design */
 				}
 
-			return ParseSuccess ? Parsed : throw new ParsingFailedException("No valid parsers found for request body");
+// todo: check null ios okay for Last
+			return ParseSuccess ? Parsed : throw new ParsingFailedException("No valid parsers found for request body", Last);
 		}
 
 		/// <summary>

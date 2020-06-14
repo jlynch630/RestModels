@@ -10,11 +10,16 @@ namespace RestModels.Options.Builder {
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Linq.Expressions;
-	using System.Threading.Tasks;
+    using System.Reflection;
+    using System.Threading.Tasks;
 
 	using RestModels.Actions;
 	using RestModels.Context;
-	using RestModels.Responses.Attributes;
+    using RestModels.Exceptions;
+    using RestModels.Filters;
+    using RestModels.ParameterRetrievers;
+    using RestModels.Parsers;
+    using RestModels.Responses.Attributes;
 
 	/// <summary>
 	///     Builder for <see cref="RestModelOptions{TModel, TUser}" />
@@ -234,5 +239,122 @@ namespace RestModels.Options.Builder {
 		public RestModelOptionsBuilder<TModel, TUser> SetHeader(string name, string value) {
 			return this.SetHeader(name, (c, d) => value);
 		}
-	}
+
+		/// <summary>
+		///     Sets a value on parsed models before the operation occurs.
+		/// </summary>
+		/// <param name="property">The property to set the value on</param>
+		/// <param name="valueGetter">A handler to use to get the value when requested</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> SetValueAsync(
+			PropertyInfo property,
+			Func<IApiContext<TModel, TUser>, Task<object?>> valueGetter) {
+				return this.PreOpAsync(async (c, d) => {
+					if (c.Parsed == null) throw new ApiException("Cannot set value on route without parsed model");
+					foreach (ParseResult<TModel> Model in c.Parsed)
+						property.GetSetMethod()?.Invoke(Model.ParsedModel, new[] {await valueGetter(c)});
+				});
+			}
+
+        /// <summary>
+        ///     Sets a value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="valueGetter">A handler to use to get the value when requested</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValue(
+            PropertyInfo property,
+            Func<IApiContext<TModel, TUser>, object?> valueGetter)
+			=> this.SetValueAsync(property, async (c) => valueGetter(c));
+
+		/// <summary>
+        ///     Sets a value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="valueGetter">A handler to use to get the value when requested</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValue(
+            Expression<Func<TModel, object>> property,
+            Func<IApiContext<TModel, TUser>, object?> valueGetter)
+			=> this.SetValue(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property), valueGetter);
+
+		/// <summary>
+        ///     Sets a value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="valueGetter">A handler to use to get the value when requested</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValueAsync(
+            Expression<Func<TModel, object>> property,
+            Func<IApiContext<TModel, TUser>, Task<object?>> valueGetter)
+			=> this.SetValueAsync(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property), valueGetter);
+
+		/// <summary>
+        ///     Sets a value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="valueGetter">A parameter retriever to use to get the value for a request</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValue(
+            PropertyInfo property,
+            ParameterRetriever retriever) {
+			Type PropertyType = property.PropertyType;
+			return this.SetValue(property, (c) => ParameterResolver.ParseParameter(retriever.GetValue(c.Request), PropertyType));
+		}
+
+		/// <summary>
+        ///     Sets a value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="valueGetter">A parameter retriever to use to get the value for a request</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValue(
+            Expression<Func<TModel, object?>> property,
+            ParameterRetriever retriever)
+			=> this.SetValue(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property), retriever);
+
+		/// <summary>
+        ///     Sets a value obtained from a query parameter on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="parameterName">The name of the query parameter whose value <paramref name="property"/> will be set to</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValueQuery(
+            PropertyInfo property,
+            string parameterName)
+			=> this.SetValue(property, new QueryParameterRetriever(parameterName));
+
+			/// <summary>
+        ///     Sets a value obtained from a query parameter on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="parameterName">The name of the query parameter whose value <paramref name="property"/> will be set to</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValueQuery(
+            Expression<Func<TModel, object?>> property,
+            string parameterName)
+			=> this.SetValueQuery(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property), parameterName);
+
+		/// <summary>
+        ///     Sets a value obtained from a route value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="parameterName">The name of the route value whose value <paramref name="property"/> will be set to</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValueRoute(
+            PropertyInfo property,
+            string parameterName)
+			=> this.SetValue(property, new RouteValueRetriever(parameterName));
+
+		/// <summary>
+        ///     Sets a value obtained from a route value on parsed models before the operation occurs.
+        /// </summary>
+        /// <param name="property">The property to set the value on</param>
+        /// <param name="parameterName">The name of the route value whose value <paramref name="property"/> will be set to</param>
+        /// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+        public RestModelOptionsBuilder<TModel, TUser> SetValueRoute(
+            Expression<Func<TModel, object?>> property,
+            string parameterName)
+			=> this.SetValueRoute(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property), parameterName);
+    }
 }

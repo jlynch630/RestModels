@@ -106,7 +106,7 @@ namespace RestModels.Parsers {
 					$"Failed to parse input. Required properties [{String.Join(", ", RequiredLeft.Select(p => p.Name))}] not present.");
 
 			foreach ((PropertyInfo PropertyInfo, Func<object> Value) in Values) {
-				PropertyInfo.GetSetMethod().Invoke(Model, new[] { Value() });
+				PropertyInfo.GetSetMethod()?.Invoke(Model, new[] { Value() });
 			}
 
 			return new ParseResult<TModel>(Model, PresentProperties);

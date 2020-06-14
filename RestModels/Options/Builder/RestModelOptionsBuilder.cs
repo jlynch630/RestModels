@@ -454,9 +454,7 @@ namespace RestModels.Options.Builder {
 		/// <param name="propertyExpression">An expression that returns the property to be ignored</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Ignore(Expression<Func<TModel, object>> propertyExpression) {
-			this.Options.ParserOptions.IgnoredParseProperties.Add(
-				RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
-			return this;
+			return this.Ignore(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(propertyExpression));
 		}
 
 		/// <summary>
@@ -470,6 +468,8 @@ namespace RestModels.Options.Builder {
 			                                   && !property.DeclaringType.IsSubclassOf(typeof(TModel)))
 				throw new OptionsException("Cannot ignore a property that doesn't belong to the model class");
 			this.Options.ParserOptions.IgnoredParseProperties.Add(property);
+			if (this.Options.ParserOptions.RequiredParseProperties != null)
+				this.Options.ParserOptions.RequiredParseProperties.Remove(property);
 			return this;
 		}
 
@@ -575,10 +575,12 @@ namespace RestModels.Options.Builder {
 		/// <param name="property">The property to be omitted</param>
 		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
 		public RestModelOptionsBuilder<TModel, TUser> Omit(PropertyInfo property) {
-			if (this.Options.FormattingOptions.IncludedReturnProperties == null)
-				this.IncludeAll();
+			if (this.Options.FormattingOptions.IncludedReturnProperties == null) {
+				this.Options.FormattingOptions.IncludedReturnProperties = new List<PropertyInfo>();
+				this.Options.FormattingOptions.IncludedReturnProperties.AddRange(typeof(TModel).GetProperties());
+			}
 
-			this.Options.FormattingOptions.IncludedReturnProperties?.Remove(property);
+			this.Options.FormattingOptions.IncludedReturnProperties!.Remove(property);
 			return this;
 		}
 
