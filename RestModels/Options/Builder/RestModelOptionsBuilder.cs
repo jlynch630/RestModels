@@ -765,5 +765,26 @@ namespace RestModels.Options.Builder {
 			if (routeString.Length != 0 && !routeString.EndsWith("/")) routeString += "/";
 			return routeString;
 		}
+
+		/// <summary>
+		///		camelCases a string
+		/// </summary>
+		/// <param name="str">The string to camelCase</param>
+		/// <returns>The string in camelCase format</returns>
+		private static string CamelCase(string str) {
+			// little more complex to deal with ACRONYMCase --> acronymCase
+			int LastUppercase = 0;
+			while (LastUppercase < str.Length) {
+				char Char = str[LastUppercase];
+				if (Char >= 'a' && Char <= 'z')
+					break;
+				LastUppercase++;
+			}
+
+			LastUppercase--; // last uppercase is one before first lowercase
+
+			if (LastUppercase < 1) LastUppercase = 1; // NotAnAcronym or alreadyCamelCase
+			return str.Substring(0, LastUppercase).ToLower() + str.Substring(LastUppercase);
+		}
 	}
 }

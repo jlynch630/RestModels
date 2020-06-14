@@ -6142,6 +6142,15 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueAsync
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueAsync
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueAsync
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})
+  name: SetValueQuery(Expression<Func<TModel, Object>>)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Linq_Expressions_Expression_System_Func__0_System_Object___
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})
+  name.vb: SetValueQuery(Expression(Of Func(Of TModel, Object)))
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.SetValueQuery(System.Linq.Expressions.Expression<System.Func<TModel, System.Object>>)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery(System.Linq.Expressions.Expression(Of System.Func(Of TModel, System.Object)))
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueQuery(Expression<Func<TModel, Object>>)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery(Expression(Of Func(Of TModel, Object)))
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String)
   name: SetValueQuery(Expression<Func<TModel, Object>>, String)
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_String_
@@ -6151,6 +6160,14 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery(System.Linq.Expressions.Expression(Of System.Func(Of TModel, System.Object)), System.String)
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueQuery(Expression<Func<TModel, Object>>, String)
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery(Expression(Of Func(Of TModel, Object)), String)
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Reflection.PropertyInfo)
+  name: SetValueQuery(PropertyInfo)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Reflection_PropertyInfo_
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Reflection.PropertyInfo)
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.SetValueQuery(System.Reflection.PropertyInfo)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery(System.Reflection.PropertyInfo)
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueQuery(PropertyInfo)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery(PropertyInfo)
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Reflection.PropertyInfo,System.String)
   name: SetValueQuery(PropertyInfo, String)
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Reflection_PropertyInfo_System_String_
@@ -6168,6 +6185,15 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueQuery
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueQuery
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})
+  name: SetValueRoute(Expression<Func<TModel, Object>>)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Linq_Expressions_Expression_System_Func__0_System_Object___
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})
+  name.vb: SetValueRoute(Expression(Of Func(Of TModel, Object)))
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.SetValueRoute(System.Linq.Expressions.Expression<System.Func<TModel, System.Object>>)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueRoute(System.Linq.Expressions.Expression(Of System.Func(Of TModel, System.Object)))
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueRoute(Expression<Func<TModel, Object>>)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueRoute(Expression(Of Func(Of TModel, Object)))
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String)
   name: SetValueRoute(Expression<Func<TModel, Object>>, String)
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_String_
@@ -6177,6 +6203,14 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueRoute(System.Linq.Expressions.Expression(Of System.Func(Of TModel, System.Object)), System.String)
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueRoute(Expression<Func<TModel, Object>>, String)
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueRoute(Expression(Of Func(Of TModel, Object)), String)
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Reflection.PropertyInfo)
+  name: SetValueRoute(PropertyInfo)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Reflection_PropertyInfo_
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Reflection.PropertyInfo)
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.SetValueRoute(System.Reflection.PropertyInfo)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).SetValueRoute(System.Reflection.PropertyInfo)
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.SetValueRoute(PropertyInfo)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).SetValueRoute(PropertyInfo)
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Reflection.PropertyInfo,System.String)
   name: SetValueRoute(PropertyInfo, String)
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Reflection_PropertyInfo_System_String_

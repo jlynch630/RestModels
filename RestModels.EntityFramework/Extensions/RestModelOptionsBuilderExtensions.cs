@@ -194,6 +194,7 @@ namespace RestModels.EntityFramework.Extensions {
 		/// <param name="str">The string to camelCase</param>
 		/// <returns>The string in camelCase format</returns>
 		private static string CamelCase(string str) {
+			// todo: Expose CamelCase in regular RestModels and use that instead
 			// little more complex to deal with ACRONYMCase --> acronymCase
 			int LastUppercase = 0;
 			while (LastUppercase < str.Length) {

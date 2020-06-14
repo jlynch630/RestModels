@@ -391,5 +391,39 @@ namespace RestModels.Options.Builder {
 			Expression<Func<TModel, object?>> property,
 			string parameterName) =>
 			this.SetValueRoute(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property), parameterName);
+
+		/// <summary>
+		///     Sets a value obtained from a route value on parsed models before the operation occurs. The name of the route value is inferred from the property name.
+		/// </summary>
+		/// <param name="property">The property to set the value on</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> SetValueRoute(PropertyInfo property) =>
+			this.SetValueRoute(property, property.Name);
+
+		/// <summary>
+		///     Sets a value obtained from a route value on parsed models before the operation occurs. The name of the route value is inferred from the property name.
+		/// </summary>
+		/// <param name="property">The property to set the value on</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> SetValueRoute(
+			Expression<Func<TModel, object?>> property) =>
+			this.SetValueRoute(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property));
+
+		/// <summary>
+		///     Sets a value obtained from a query parameter on parsed models before the operation occurs. The name of the route value is inferred from camelCasing the property name.
+		/// </summary>
+		/// <param name="property">The property to set the value on</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> SetValueQuery(PropertyInfo property) =>
+			this.SetValueQuery(property, RestModelOptionsBuilder<TModel, TUser>.CamelCase(property.Name));
+
+		/// <summary>
+		///     Sets a value obtained from a query parameter on parsed models before the operation occurs. The name of the route value is inferred from camelCasing the property name.
+		/// </summary>
+		/// <param name="property">The property to set the value on</param>
+		/// <returns>This <see cref="RestModelOptionsBuilder{TModel, TUser}" /> object, for chaining</returns>
+		public RestModelOptionsBuilder<TModel, TUser> SetValueQuery(
+			Expression<Func<TModel, object?>> property) =>
+			this.SetValueQuery(RestModelOptionsBuilder<TModel, TUser>.ExtractProperty(property));
 	}
 }
