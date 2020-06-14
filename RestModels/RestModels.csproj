@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
 	<PackageId>RestModels</PackageId>
-	<Version>0.1.0</Version>
+	<Version>0.1.1</Version>
 	<Authors>John Lynch</Authors>
 	<Company>RestModels</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
