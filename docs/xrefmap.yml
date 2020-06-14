@@ -1,6 +1,9 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: api-docs
+  name: API Documentation
+  href: api/index.html
 - uid: getting-started
   name: Getting Started with RestModels and Entity Framework Core
   href: articles/getting_started/efcore.html
