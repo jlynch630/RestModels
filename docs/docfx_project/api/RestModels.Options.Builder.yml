@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Options.Builder
+  commentId: N:RestModels.Options.Builder
+  id: RestModels.Options.Builder
+  children:
+  - RestModels.Options.Builder.RestModelOptionsBuilder`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Options.Builder
+  nameWithType: RestModels.Options.Builder
+  fullName: RestModels.Options.Builder
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+  commentId: T:RestModels.Options.Builder.RestModelOptionsBuilder`2
+  name: RestModelOptionsBuilder<TModel, TUser>
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser)
+  name.vb: RestModelOptionsBuilder(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder
+    nameWithType: RestModelOptionsBuilder
+    fullName: RestModels.Options.Builder.RestModelOptionsBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder
+    nameWithType: RestModelOptionsBuilder
+    fullName: RestModels.Options.Builder.RestModelOptionsBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

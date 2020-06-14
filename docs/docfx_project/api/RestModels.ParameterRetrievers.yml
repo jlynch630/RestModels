@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.ParameterRetrievers
+  commentId: N:RestModels.ParameterRetrievers
+  id: RestModels.ParameterRetrievers
+  children:
+  - RestModels.ParameterRetrievers.HeaderRetriever
+  - RestModels.ParameterRetrievers.ParameterRetriever
+  - RestModels.ParameterRetrievers.QueryParameterRetriever
+  - RestModels.ParameterRetrievers.RouteValueRetriever
+  langs:
+  - csharp
+  - vb
+  name: RestModels.ParameterRetrievers
+  nameWithType: RestModels.ParameterRetrievers
+  fullName: RestModels.ParameterRetrievers
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.ParameterRetrievers.HeaderRetriever
+  commentId: T:RestModels.ParameterRetrievers.HeaderRetriever
+  name: HeaderRetriever
+  nameWithType: HeaderRetriever
+  fullName: RestModels.ParameterRetrievers.HeaderRetriever
+- uid: RestModels.ParameterRetrievers.ParameterRetriever
+  commentId: T:RestModels.ParameterRetrievers.ParameterRetriever
+  parent: RestModels.ParameterRetrievers
+  name: ParameterRetriever
+  nameWithType: ParameterRetriever
+  fullName: RestModels.ParameterRetrievers.ParameterRetriever
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever
+  commentId: T:RestModels.ParameterRetrievers.QueryParameterRetriever
+  name: QueryParameterRetriever
+  nameWithType: QueryParameterRetriever
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever
+- uid: RestModels.ParameterRetrievers.RouteValueRetriever
+  commentId: T:RestModels.ParameterRetrievers.RouteValueRetriever
+  name: RouteValueRetriever
+  nameWithType: RouteValueRetriever
+  fullName: RestModels.ParameterRetrievers.RouteValueRetriever
+- uid: RestModels.ParameterRetrievers
+  commentId: N:RestModels.ParameterRetrievers
+  name: RestModels.ParameterRetrievers
+  nameWithType: RestModels.ParameterRetrievers
+  fullName: RestModels.ParameterRetrievers

@@ -1,0 +1,1184 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Results.AcceptDependentResultWriter`2
+  commentId: T:RestModels.Results.AcceptDependentResultWriter`2
+  id: AcceptDependentResultWriter`2
+  parent: RestModels.Results
+  children:
+  - RestModels.Results.AcceptDependentResultWriter`2.#ctor(System.String[],RestModels.Results.IResultWriter{`0,`1}[],System.Int32)
+  - RestModels.Results.AcceptDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  langs:
+  - csharp
+  - vb
+  name: AcceptDependentResultWriter<TModel, TUser>
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>
+  type: Class
+  source:
+    remote:
+      path: RestModels/Results/AcceptDependentResultWriter.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AcceptDependentResultWriter
+    path: ../../RestModels/Results/AcceptDependentResultWriter.cs
+    startLine: 18
+  assemblies:
+  - RestModels
+  namespace: RestModels.Results
+  summary: "\nA <xref href=\"RestModels.Results.RequestDependentResultWriter%602\" data-throw-if-not-resolved=\"false\"></xref> that uses the Accept header to determine which result\nwriter to use\n"
+  example: []
+  syntax:
+    content: 'public class AcceptDependentResultWriter<TModel, TUser> : RequestDependentResultWriter<TModel, TUser>, IResultWriter<TModel, TUser> where TModel : class where TUser : class'
+    typeParameters:
+    - id: TModel
+      description: The type of model to format
+    - id: TUser
+      description: The type of user context
+    content.vb: >-
+      Public Class AcceptDependentResultWriter(Of TModel As Class, TUser As Class)
+
+          Inherits RequestDependentResultWriter(Of TModel, TUser)
+
+          Implements IResultWriter(Of TModel, TUser)
+  inheritance:
+  - System.Object
+  - RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}
+  implements:
+  - RestModels.Results.IResultWriter{{TModel},{TUser}}
+  inheritedMembers:
+  - RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  - RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{{TModel}},{TUser},RestModels.Options.FormattingOptions)
+  - RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser)
+  name.vb: AcceptDependentResultWriter(Of TModel, TUser)
+- uid: RestModels.Results.AcceptDependentResultWriter`2.#ctor(System.String[],RestModels.Results.IResultWriter{`0,`1}[],System.Int32)
+  commentId: M:RestModels.Results.AcceptDependentResultWriter`2.#ctor(System.String[],RestModels.Results.IResultWriter{`0,`1}[],System.Int32)
+  id: '#ctor(System.String[],RestModels.Results.IResultWriter{`0,`1}[],System.Int32)'
+  parent: RestModels.Results.AcceptDependentResultWriter`2
+  langs:
+  - csharp
+  - vb
+  name: AcceptDependentResultWriter(String[], IResultWriter<TModel, TUser>[], Int32)
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>.AcceptDependentResultWriter(String[], IResultWriter<TModel, TUser>[], Int32)
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>.AcceptDependentResultWriter(System.String[], RestModels.Results.IResultWriter<TModel, TUser>[], System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Results/AcceptDependentResultWriter.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Results/AcceptDependentResultWriter.cs
+    startLine: 29
+  assemblies:
+  - RestModels
+  namespace: RestModels.Results
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.Results.AcceptDependentResultWriter%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public AcceptDependentResultWriter(string[] mimeTypes, IResultWriter<TModel, TUser>[] writers, int defaultIndex = -1)
+    parameters:
+    - id: mimeTypes
+      type: System.String[]
+      description: The mime types that should determine which result writer to use
+    - id: writers
+      type: RestModels.Results.IResultWriter{{TModel},{TUser}}[]
+      description: The result writers to use, indexed in the same order as <code data-dev-comment-type="paramref" class="paramref">mimeTypes</code>
+    - id: defaultIndex
+      type: System.Int32
+      description: "\nThe index of the default result writer to use, or -1 if an error should be thrown if no\nvalues match\n"
+    content.vb: Public Sub New(mimeTypes As String(), writers As IResultWriter(Of TModel, TUser)(), defaultIndex As Integer = -1)
+  overload: RestModels.Results.AcceptDependentResultWriter`2.#ctor*
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser).AcceptDependentResultWriter(String(), IResultWriter(Of TModel, TUser)(), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser).AcceptDependentResultWriter(System.String(), RestModels.Results.IResultWriter(Of TModel, TUser)(), System.Int32)
+  name.vb: AcceptDependentResultWriter(String(), IResultWriter(Of TModel, TUser)(), Int32)
+- uid: RestModels.Results.AcceptDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.AcceptDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  id: GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  parent: RestModels.Results.AcceptDependentResultWriter`2
+  langs:
+  - csharp
+  - vb
+  name: GetRequestParameterValue(HttpRequest)
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>.GetRequestParameterValue(HttpRequest)
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Results/AcceptDependentResultWriter.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: GetRequestParameterValue
+    path: ../../RestModels/Results/AcceptDependentResultWriter.cs
+    startLine: 40
+  assemblies:
+  - RestModels
+  namespace: RestModels.Results
+  summary: "\nGets the first usable mime-type in the Accept header\n"
+  example: []
+  syntax:
+    content: protected override string GetRequestParameterValue(HttpRequest request)
+    parameters:
+    - id: request
+      type: Microsoft.AspNetCore.Http.HttpRequest
+      description: The request context to use to get the value
+    return:
+      type: System.String
+      description: The mime-type to use to write a result
+    content.vb: Protected Overrides Function GetRequestParameterValue(request As HttpRequest) As String
+  overridden: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  overload: RestModels.Results.AcceptDependentResultWriter`2.GetRequestParameterValue*
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser).GetRequestParameterValue(HttpRequest)
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser).GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+references:
+- uid: RestModels.Results.RequestDependentResultWriter`2
+  commentId: T:RestModels.Results.RequestDependentResultWriter`2
+  name: RequestDependentResultWriter<TModel, TUser>
+  nameWithType: RequestDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser)
+  name.vb: RequestDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter
+    nameWithType: RequestDependentResultWriter
+    fullName: RestModels.Results.RequestDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter
+    nameWithType: RequestDependentResultWriter
+    fullName: RestModels.Results.RequestDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results
+  commentId: N:RestModels.Results
+  name: RestModels.Results
+  nameWithType: RestModels.Results
+  fullName: RestModels.Results
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}
+  commentId: T:RestModels.Results.RequestDependentResultWriter{`0,`1}
+  parent: RestModels.Results
+  definition: RestModels.Results.RequestDependentResultWriter`2
+  name: RequestDependentResultWriter<TModel, TUser>
+  nameWithType: RequestDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser)
+  name.vb: RequestDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter
+    nameWithType: RequestDependentResultWriter
+    fullName: RestModels.Results.RequestDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter
+    nameWithType: RequestDependentResultWriter
+    fullName: RestModels.Results.RequestDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter{{TModel},{TUser}}
+  commentId: T:RestModels.Results.IResultWriter{`0,`1}
+  parent: RestModels.Results
+  definition: RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, TUser>
+  nameWithType: IResultWriter<TModel, TUser>
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>
+  nameWithType.vb: IResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)
+  name.vb: IResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.RequestDependentResultWriter{`0,`1}.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  parent: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}
+  definition: RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  name: CanWriteAsync(HttpRequest)
+  nameWithType: RequestDependentResultWriter<TModel, TUser>.CanWriteAsync(HttpRequest)
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync(HttpRequest)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: RequestDependentResultWriter<TModel, TUser>.CanWriteAsync
+    fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync
+    fullName: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{{TModel}},{TUser},RestModels.Options.FormattingOptions)
+  commentId: M:RestModels.Results.RequestDependentResultWriter{`0,`1}.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  parent: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}
+  definition: RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  name: WriteResultAsync(HttpContext, IEnumerable<TModel>, TUser, FormattingOptions)
+  nameWithType: RequestDependentResultWriter<TModel, TUser>.WriteResultAsync(HttpContext, IEnumerable<TModel>, TUser, FormattingOptions)
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable<TModel>, TUser, RestModels.Options.FormattingOptions)
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync(HttpContext, IEnumerable(Of TModel), TUser, FormattingOptions)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable(Of TModel), TUser, RestModels.Options.FormattingOptions)
+  name.vb: WriteResultAsync(HttpContext, IEnumerable(Of TModel), TUser, FormattingOptions)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: RequestDependentResultWriter<TModel, TUser>.WriteResultAsync
+    fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync
+    fullName: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.RequestDependentResultWriter{`0,`1}.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  parent: RestModels.Results.RequestDependentResultWriter{{TModel},{TUser}}
+  definition: RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  name: GetRequestParameterValue(HttpRequest)
+  nameWithType: RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue(HttpRequest)
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue(HttpRequest)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+    name: GetRequestParameterValue
+    nameWithType: RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue
+    fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+    name: GetRequestParameterValue
+    nameWithType: RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue
+    fullName: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Results.IResultWriter`2
+  commentId: T:RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, TUser>
+  nameWithType: IResultWriter<TModel, TUser>
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>
+  nameWithType.vb: IResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)
+  name.vb: IResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  isExternal: true
+  name: CanWriteAsync(HttpRequest)
+  nameWithType: RequestDependentResultWriter<TModel, TUser>.CanWriteAsync(HttpRequest)
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync(HttpRequest)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: RequestDependentResultWriter<TModel, TUser>.CanWriteAsync
+    fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync
+    fullName: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  commentId: M:RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  isExternal: true
+  name: WriteResultAsync(HttpContext, IEnumerable<TModel>, TUser, FormattingOptions)
+  nameWithType: RequestDependentResultWriter<TModel, TUser>.WriteResultAsync(HttpContext, IEnumerable<TModel>, TUser, FormattingOptions)
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable<TModel>, TUser, RestModels.Options.FormattingOptions)
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync(HttpContext, IEnumerable(Of TModel), TUser, FormattingOptions)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable(Of TModel), TUser, RestModels.Options.FormattingOptions)
+  name.vb: WriteResultAsync(HttpContext, IEnumerable(Of TModel), TUser, FormattingOptions)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: RequestDependentResultWriter<TModel, TUser>.WriteResultAsync
+    fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync
+    fullName: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  isExternal: true
+  name: GetRequestParameterValue(HttpRequest)
+  nameWithType: RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue(HttpRequest)
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue(HttpRequest)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+    name: GetRequestParameterValue
+    nameWithType: RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue
+    fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>.GetRequestParameterValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2.GetRequestParameterValue(Microsoft.AspNetCore.Http.HttpRequest)
+    name: GetRequestParameterValue
+    nameWithType: RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue
+    fullName: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser).GetRequestParameterValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.AcceptDependentResultWriter`2
+  commentId: T:RestModels.Results.AcceptDependentResultWriter`2
+  name: AcceptDependentResultWriter<TModel, TUser>
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser)
+  name.vb: AcceptDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.AcceptDependentResultWriter`2
+    name: AcceptDependentResultWriter
+    nameWithType: AcceptDependentResultWriter
+    fullName: RestModels.Results.AcceptDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.AcceptDependentResultWriter`2
+    name: AcceptDependentResultWriter
+    nameWithType: AcceptDependentResultWriter
+    fullName: RestModels.Results.AcceptDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.AcceptDependentResultWriter`2.#ctor*
+  commentId: Overload:RestModels.Results.AcceptDependentResultWriter`2.#ctor
+  name: AcceptDependentResultWriter
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>.AcceptDependentResultWriter
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>.AcceptDependentResultWriter
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser).AcceptDependentResultWriter
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser).AcceptDependentResultWriter
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: RestModels.Results.IResultWriter{{TModel},{TUser}}[]
+  isExternal: true
+  name: IResultWriter<TModel, TUser>[]
+  nameWithType: IResultWriter<TModel, TUser>[]
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>[]
+  nameWithType.vb: IResultWriter(Of TModel, TUser)()
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)()
+  name.vb: IResultWriter(Of TModel, TUser)()
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: RestModels.Results.AcceptDependentResultWriter`2.GetRequestParameterValue*
+  commentId: Overload:RestModels.Results.AcceptDependentResultWriter`2.GetRequestParameterValue
+  name: GetRequestParameterValue
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>.GetRequestParameterValue
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>.GetRequestParameterValue
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser).GetRequestParameterValue
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser).GetRequestParameterValue
+- uid: Microsoft.AspNetCore.Http.HttpRequest
+  commentId: T:Microsoft.AspNetCore.Http.HttpRequest
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpRequest
+  nameWithType: HttpRequest
+  fullName: Microsoft.AspNetCore.Http.HttpRequest
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http

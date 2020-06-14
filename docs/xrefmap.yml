@@ -3985,6 +3985,42 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).AddRequestMethod
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.AddRequestMethod
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).AddRequestMethod
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.After(System.Action{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0}})
+  name: After(Action<IApiContext<TModel, TUser>, IEnumerable<TModel>>)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_After_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0___
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.After(System.Action{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0}})
+  name.vb: After(Action(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel)))
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.After(System.Action<RestModels.Context.IApiContext<TModel, TUser>, System.Collections.Generic.IEnumerable<TModel>>)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).After(System.Action(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Collections.Generic.IEnumerable(Of TModel)))
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.After(Action<IApiContext<TModel, TUser>, IEnumerable<TModel>>)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).After(Action(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel)))
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.After*
+  name: After
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_After_
+  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.After
+  isSpec: "True"
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.After
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).After
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.After
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).After
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.AfterAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task})
+  name: AfterAsync(Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task>)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_AfterAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task__
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.AfterAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task})
+  name.vb: AfterAsync(Func(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel), Task))
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.AfterAsync(System.Func<RestModels.Context.IApiContext<TModel, TUser>, System.Collections.Generic.IEnumerable<TModel>, System.Threading.Tasks.Task>)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).AfterAsync(System.Func(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Collections.Generic.IEnumerable(Of TModel), System.Threading.Tasks.Task))
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.AfterAsync(Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task>)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).AfterAsync(Func(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel), Task))
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.AfterAsync*
+  name: AfterAsync
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_AfterAsync_
+  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.AfterAsync
+  isSpec: "True"
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.AfterAsync
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).AfterAsync
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.AfterAsync
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).AfterAsync
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.Auth(System.Func{RestModels.Context.IApiContext{`0,`1},`1})
   name: Auth(Func<IApiContext<TModel, TUser>, TUser>)
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Auth_System_Func_RestModels_Context_IApiContext__0__1___1__
@@ -4173,6 +4209,42 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).AuthQueryAsync
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.AuthQueryAsync
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).AuthQueryAsync
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.Before(System.Action{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0}})
+  name: Before(Action<IApiContext<TModel, TUser>, IQueryable<TModel>>)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Before_System_Action_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0___
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.Before(System.Action{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0}})
+  name.vb: Before(Action(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel)))
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.Before(System.Action<RestModels.Context.IApiContext<TModel, TUser>, System.Linq.IQueryable<TModel>>)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).Before(System.Action(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Linq.IQueryable(Of TModel)))
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.Before(Action<IApiContext<TModel, TUser>, IQueryable<TModel>>)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).Before(Action(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel)))
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.Before*
+  name: Before
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Before_
+  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.Before
+  isSpec: "True"
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.Before
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).Before
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.Before
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).Before
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.BeforeAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Threading.Tasks.Task})
+  name: BeforeAsync(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task>)
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_BeforeAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Threading_Tasks_Task__
+  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.BeforeAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Threading.Tasks.Task})
+  name.vb: BeforeAsync(Func(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel), Task))
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.BeforeAsync(System.Func<RestModels.Context.IApiContext<TModel, TUser>, System.Linq.IQueryable<TModel>, System.Threading.Tasks.Task>)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).BeforeAsync(System.Func(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Linq.IQueryable(Of TModel), System.Threading.Tasks.Task))
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.BeforeAsync(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task>)
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).BeforeAsync(Func(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel), Task))
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.BeforeAsync*
+  name: BeforeAsync
+  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_BeforeAsync_
+  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.BeforeAsync
+  isSpec: "True"
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.BeforeAsync
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).BeforeAsync
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>.BeforeAsync
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).BeforeAsync
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.BuildAll
   name: BuildAll()
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_BuildAll
@@ -5406,78 +5478,6 @@ references:
   fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).ParseXmlArrays
   nameWithType: RestModelOptionsBuilder<TModel, TUser>.ParseXmlArrays
   nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).ParseXmlArrays
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOp(System.Action{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0}})
-  name: PostOp(Action<IApiContext<TModel, TUser>, IEnumerable<TModel>>)
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOp_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0___
-  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOp(System.Action{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0}})
-  name.vb: PostOp(Action(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel)))
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PostOp(System.Action<RestModels.Context.IApiContext<TModel, TUser>, System.Collections.Generic.IEnumerable<TModel>>)
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PostOp(System.Action(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Collections.Generic.IEnumerable(Of TModel)))
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PostOp(Action<IApiContext<TModel, TUser>, IEnumerable<TModel>>)
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PostOp(Action(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel)))
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOp*
-  name: PostOp
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOp_
-  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOp
-  isSpec: "True"
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PostOp
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PostOp
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PostOp
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PostOp
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOpAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task})
-  name: PostOpAsync(Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task>)
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task__
-  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOpAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task})
-  name.vb: PostOpAsync(Func(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel), Task))
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PostOpAsync(System.Func<RestModels.Context.IApiContext<TModel, TUser>, System.Collections.Generic.IEnumerable<TModel>, System.Threading.Tasks.Task>)
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PostOpAsync(System.Func(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Collections.Generic.IEnumerable(Of TModel), System.Threading.Tasks.Task))
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PostOpAsync(Func<IApiContext<TModel, TUser>, IEnumerable<TModel>, Task>)
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PostOpAsync(Func(Of IApiContext(Of TModel, TUser), IEnumerable(Of TModel), Task))
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOpAsync*
-  name: PostOpAsync
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOpAsync_
-  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOpAsync
-  isSpec: "True"
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PostOpAsync
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PostOpAsync
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PostOpAsync
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PostOpAsync
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOp(System.Action{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0}})
-  name: PreOp(Action<IApiContext<TModel, TUser>, IQueryable<TModel>>)
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOp_System_Action_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0___
-  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOp(System.Action{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0}})
-  name.vb: PreOp(Action(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel)))
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PreOp(System.Action<RestModels.Context.IApiContext<TModel, TUser>, System.Linq.IQueryable<TModel>>)
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PreOp(System.Action(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Linq.IQueryable(Of TModel)))
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PreOp(Action<IApiContext<TModel, TUser>, IQueryable<TModel>>)
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PreOp(Action(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel)))
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOp*
-  name: PreOp
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOp_
-  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOp
-  isSpec: "True"
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PreOp
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PreOp
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PreOp
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PreOp
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOpAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Threading.Tasks.Task})
-  name: PreOpAsync(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task>)
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Threading_Tasks_Task__
-  commentId: M:RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOpAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Threading.Tasks.Task})
-  name.vb: PreOpAsync(Func(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel), Task))
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PreOpAsync(System.Func<RestModels.Context.IApiContext<TModel, TUser>, System.Linq.IQueryable<TModel>, System.Threading.Tasks.Task>)
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PreOpAsync(System.Func(Of RestModels.Context.IApiContext(Of TModel, TUser), System.Linq.IQueryable(Of TModel), System.Threading.Tasks.Task))
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PreOpAsync(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Task>)
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PreOpAsync(Func(Of IApiContext(Of TModel, TUser), IQueryable(Of TModel), Task))
-- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOpAsync*
-  name: PreOpAsync
-  href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOpAsync_
-  commentId: Overload:RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOpAsync
-  isSpec: "True"
-  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>.PreOpAsync
-  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser).PreOpAsync
-  nameWithType: RestModelOptionsBuilder<TModel, TUser>.PreOpAsync
-  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser).PreOpAsync
 - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2.Require(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Boolean})
   name: Require(Func<IApiContext<TModel, TUser>, IQueryable<TModel>, Boolean>)
   href: api/RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Require_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Boolean__
@@ -7305,6 +7305,25 @@ references:
   fullName.vb: RestModels.Parsers.ParseResult(Of TModel).ParseResult
   nameWithType: ParseResult<TModel>.ParseResult
   nameWithType.vb: ParseResult(Of TModel).ParseResult
+- uid: RestModels.Parsers.ParseResult`1.op_Implicit(RestModels.Parsers.ParseResult{`0})~`0
+  name: Implicit(ParseResult<TModel> to TModel)
+  href: api/RestModels.Parsers.ParseResult-1.html#RestModels_Parsers_ParseResult_1_op_Implicit_RestModels_Parsers_ParseResult__0____0
+  commentId: M:RestModels.Parsers.ParseResult`1.op_Implicit(RestModels.Parsers.ParseResult{`0})~`0
+  name.vb: Widening(ParseResult(Of TModel) to TModel)
+  fullName: RestModels.Parsers.ParseResult<TModel>.Implicit(RestModels.Parsers.ParseResult<TModel> to TModel)
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).Widening(RestModels.Parsers.ParseResult(Of TModel) to TModel)
+  nameWithType: ParseResult<TModel>.Implicit(ParseResult<TModel> to TModel)
+  nameWithType.vb: ParseResult(Of TModel).Widening(ParseResult(Of TModel) to TModel)
+- uid: RestModels.Parsers.ParseResult`1.op_Implicit*
+  name: Implicit
+  href: api/RestModels.Parsers.ParseResult-1.html#RestModels_Parsers_ParseResult_1_op_Implicit_
+  commentId: Overload:RestModels.Parsers.ParseResult`1.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: RestModels.Parsers.ParseResult<TModel>.Implicit
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).Widening
+  nameWithType: ParseResult<TModel>.Implicit
+  nameWithType.vb: ParseResult(Of TModel).Widening
 - uid: RestModels.Parsers.ParseResult`1.ParsedModel
   name: ParsedModel
   href: api/RestModels.Parsers.ParseResult-1.html#RestModels_Parsers_ParseResult_1_ParsedModel

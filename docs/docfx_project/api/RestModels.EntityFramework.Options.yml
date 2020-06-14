@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.EntityFramework.Options
+  commentId: N:RestModels.EntityFramework.Options
+  id: RestModels.EntityFramework.Options
+  children:
+  - RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.EntityFramework.Options
+  nameWithType: RestModels.EntityFramework.Options
+  fullName: RestModels.EntityFramework.Options
+  type: Namespace
+  assemblies:
+  - RestModels.EntityFramework
+references:
+- uid: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder`2
+  commentId: T:RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder`2
+  name: EntityFrameworkRestModelOptionsBuilder<TModel, TUser>
+  nameWithType: EntityFrameworkRestModelOptionsBuilder<TModel, TUser>
+  fullName: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder<TModel, TUser>
+  nameWithType.vb: EntityFrameworkRestModelOptionsBuilder(Of TModel, TUser)
+  fullName.vb: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder(Of TModel, TUser)
+  name.vb: EntityFrameworkRestModelOptionsBuilder(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder`2
+    name: EntityFrameworkRestModelOptionsBuilder
+    nameWithType: EntityFrameworkRestModelOptionsBuilder
+    fullName: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder`2
+    name: EntityFrameworkRestModelOptionsBuilder
+    nameWithType: EntityFrameworkRestModelOptionsBuilder
+    fullName: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

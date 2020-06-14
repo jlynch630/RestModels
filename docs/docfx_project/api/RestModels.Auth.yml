@@ -1,0 +1,316 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Auth
+  commentId: N:RestModels.Auth
+  id: RestModels.Auth
+  children:
+  - RestModels.Auth.BasicAuthProvider`2
+  - RestModels.Auth.DelegateAuthProvider`2
+  - RestModels.Auth.HeaderAuthProvider`2
+  - RestModels.Auth.IAuthProvider`2
+  - RestModels.Auth.IdentityAuthProvider`2
+  - RestModels.Auth.NoUser
+  - RestModels.Auth.QueryAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Auth
+  nameWithType: RestModels.Auth
+  fullName: RestModels.Auth
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Auth.BasicAuthProvider`2
+  commentId: T:RestModels.Auth.BasicAuthProvider`2
+  name: BasicAuthProvider<TModel, TUser>
+  nameWithType: BasicAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.BasicAuthProvider<TModel, TUser>
+  nameWithType.vb: BasicAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.BasicAuthProvider(Of TModel, TUser)
+  name.vb: BasicAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.BasicAuthProvider`2
+    name: BasicAuthProvider
+    nameWithType: BasicAuthProvider
+    fullName: RestModels.Auth.BasicAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.BasicAuthProvider`2
+    name: BasicAuthProvider
+    nameWithType: BasicAuthProvider
+    fullName: RestModels.Auth.BasicAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.DelegateAuthProvider`2
+  commentId: T:RestModels.Auth.DelegateAuthProvider`2
+  name: DelegateAuthProvider<TModel, TUser>
+  nameWithType: DelegateAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.DelegateAuthProvider<TModel, TUser>
+  nameWithType.vb: DelegateAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.DelegateAuthProvider(Of TModel, TUser)
+  name.vb: DelegateAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.DelegateAuthProvider`2
+    name: DelegateAuthProvider
+    nameWithType: DelegateAuthProvider
+    fullName: RestModels.Auth.DelegateAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.DelegateAuthProvider`2
+    name: DelegateAuthProvider
+    nameWithType: DelegateAuthProvider
+    fullName: RestModels.Auth.DelegateAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.HeaderAuthProvider`2
+  commentId: T:RestModels.Auth.HeaderAuthProvider`2
+  name: HeaderAuthProvider<TModel, TUser>
+  nameWithType: HeaderAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.HeaderAuthProvider<TModel, TUser>
+  nameWithType.vb: HeaderAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.HeaderAuthProvider(Of TModel, TUser)
+  name.vb: HeaderAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.HeaderAuthProvider`2
+    name: HeaderAuthProvider
+    nameWithType: HeaderAuthProvider
+    fullName: RestModels.Auth.HeaderAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.HeaderAuthProvider`2
+    name: HeaderAuthProvider
+    nameWithType: HeaderAuthProvider
+    fullName: RestModels.Auth.HeaderAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IAuthProvider`2
+  commentId: T:RestModels.Auth.IAuthProvider`2
+  name: IAuthProvider<TModel, TUser>
+  nameWithType: IAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>
+  nameWithType.vb: IAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser)
+  name.vb: IAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IdentityAuthProvider`2
+  commentId: T:RestModels.Auth.IdentityAuthProvider`2
+  name: IdentityAuthProvider<TModel, TUser>
+  nameWithType: IdentityAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser)
+  name.vb: IdentityAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.IdentityAuthProvider`2
+    name: IdentityAuthProvider
+    nameWithType: IdentityAuthProvider
+    fullName: RestModels.Auth.IdentityAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.IdentityAuthProvider`2
+    name: IdentityAuthProvider
+    nameWithType: IdentityAuthProvider
+    fullName: RestModels.Auth.IdentityAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.NoUser
+  commentId: T:RestModels.Auth.NoUser
+  name: NoUser
+  nameWithType: NoUser
+  fullName: RestModels.Auth.NoUser
+- uid: RestModels.Auth.QueryAuthProvider`2
+  commentId: T:RestModels.Auth.QueryAuthProvider`2
+  name: QueryAuthProvider<TModel, TUser>
+  nameWithType: QueryAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.QueryAuthProvider<TModel, TUser>
+  nameWithType.vb: QueryAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.QueryAuthProvider(Of TModel, TUser)
+  name.vb: QueryAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.QueryAuthProvider`2
+    name: QueryAuthProvider
+    nameWithType: QueryAuthProvider
+    fullName: RestModels.Auth.QueryAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.QueryAuthProvider`2
+    name: QueryAuthProvider
+    nameWithType: QueryAuthProvider
+    fullName: RestModels.Auth.QueryAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.EntityFramework.Extensions
+  commentId: N:RestModels.EntityFramework.Extensions
+  id: RestModels.EntityFramework.Extensions
+  children:
+  - RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RestModels.EntityFramework.Extensions
+  nameWithType: RestModels.EntityFramework.Extensions
+  fullName: RestModels.EntityFramework.Extensions
+  type: Namespace
+  assemblies:
+  - RestModels.EntityFramework
+references:
+- uid: RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions
+  commentId: T:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions
+  parent: RestModels.EntityFramework.Extensions
+  name: RestModelOptionsBuilderExtensions
+  nameWithType: RestModelOptionsBuilderExtensions
+  fullName: RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions
+- uid: RestModels.EntityFramework.Extensions
+  commentId: N:RestModels.EntityFramework.Extensions
+  name: RestModels.EntityFramework.Extensions
+  nameWithType: RestModels.EntityFramework.Extensions
+  fullName: RestModels.EntityFramework.Extensions

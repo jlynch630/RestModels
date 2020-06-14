@@ -1,0 +1,390 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Auth.IAuthProvider`2
+  commentId: T:RestModels.Auth.IAuthProvider`2
+  id: IAuthProvider`2
+  parent: RestModels.Auth
+  children:
+  - RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  - RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  langs:
+  - csharp
+  - vb
+  name: IAuthProvider<TModel, TUser>
+  nameWithType: IAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>
+  type: Interface
+  source:
+    remote:
+      path: RestModels/Auth/IAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: IAuthProvider
+    path: ../../RestModels/Auth/IAuthProvider.cs
+    startLine: 19
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nProviders for a RestModel API authentication\n"
+  example: []
+  syntax:
+    content: >-
+      public interface IAuthProvider<TModel, TUser>
+
+          where TModel : class where TUser : class
+    typeParameters:
+    - id: TModel
+      description: The type of model served by the API
+    - id: TUser
+      description: The authenticated user context type
+    content.vb: Public Interface IAuthProvider(Of TModel As Class, TUser As Class)
+  nameWithType.vb: IAuthProvider(Of TModel, TUser)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser)
+  name.vb: IAuthProvider(Of TModel, TUser)
+- uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  commentId: M:RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  id: AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  parent: RestModels.Auth.IAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  nameWithType: IAuthProvider<TModel, TUser>.AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult<TModel>[])
+  type: Method
+  source:
+    remote:
+      path: RestModels/Auth/IAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthenticateAsync
+    path: ../../RestModels/Auth/IAuthProvider.cs
+    startLine: 27
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nAuthenticates the given request context, and returns the authenticated user\n"
+  example: []
+  syntax:
+    content: Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current request context
+    - id: parsed
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The models parsed from the request body, if any
+    return:
+      type: System.Threading.Tasks.Task{{TUser}}
+      description: The currently authenticated user context
+    content.vb: Function AuthenticateAsync(context As HttpContext, parsed As ParseResult(Of TModel)()) As Task(Of TUser)
+  overload: RestModels.Auth.IAuthProvider`2.AuthenticateAsync*
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+- uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  commentId: M:RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  id: CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  parent: RestModels.Auth.IAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  nameWithType: IAuthProvider<TModel, TUser>.CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult<TModel>[])
+  type: Method
+  source:
+    remote:
+      path: RestModels/Auth/IAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: CanAuthAsync
+    path: ../../RestModels/Auth/IAuthProvider.cs
+    startLine: 38
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nGets whether or not the given request can be authenticated for\n"
+  example: []
+  syntax:
+    content: Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel)
+    parameters:
+    - id: requestContext
+      type: Microsoft.AspNetCore.Http.HttpRequest
+      description: The current request context
+    - id: parsedModel
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The models parsed from the request body, if any
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: "\n<code>true</code> if this request contains the necessary attributes to be authenticated by this\n<xref href=\"RestModels.Auth.IAuthProvider%602\" data-throw-if-not-resolved=\"false\"></xref>, <code>false</code> otherwise.\n"
+    content.vb: Function CanAuthAsync(requestContext As HttpRequest, parsedModel As ParseResult(Of TModel)()) As Task(Of Boolean)
+  overload: RestModels.Auth.IAuthProvider`2.CanAuthAsync*
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+references:
+- uid: RestModels.Auth
+  commentId: N:RestModels.Auth
+  name: RestModels.Auth
+  nameWithType: RestModels.Auth
+  fullName: RestModels.Auth
+- uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync*
+  commentId: Overload:RestModels.Auth.IAuthProvider`2.AuthenticateAsync
+  name: AuthenticateAsync
+  nameWithType: IAuthProvider<TModel, TUser>.AuthenticateAsync
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.AuthenticateAsync
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).AuthenticateAsync
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).AuthenticateAsync
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: RestModels.Parsers.ParseResult{{TModel}}[]
+  isExternal: true
+  name: ParseResult<TModel>[]
+  nameWithType: ParseResult<TModel>[]
+  fullName: RestModels.Parsers.ParseResult<TModel>[]
+  nameWithType.vb: ParseResult(Of TModel)()
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)()
+  name.vb: ParseResult(Of TModel)()
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Threading.Tasks.Task{{TUser}}
+  commentId: T:System.Threading.Tasks.Task{`1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TUser>
+  nameWithType: Task<TUser>
+  fullName: System.Threading.Tasks.Task<TUser>
+  nameWithType.vb: Task(Of TUser)
+  fullName.vb: System.Threading.Tasks.Task(Of TUser)
+  name.vb: Task(Of TUser)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: RestModels.Auth.IAuthProvider`2
+  commentId: T:RestModels.Auth.IAuthProvider`2
+  name: IAuthProvider<TModel, TUser>
+  nameWithType: IAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>
+  nameWithType.vb: IAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser)
+  name.vb: IAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync*
+  commentId: Overload:RestModels.Auth.IAuthProvider`2.CanAuthAsync
+  name: CanAuthAsync
+  nameWithType: IAuthProvider<TModel, TUser>.CanAuthAsync
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.CanAuthAsync
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).CanAuthAsync
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).CanAuthAsync
+- uid: Microsoft.AspNetCore.Http.HttpRequest
+  commentId: T:Microsoft.AspNetCore.Http.HttpRequest
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpRequest
+  nameWithType: HttpRequest
+  fullName: Microsoft.AspNetCore.Http.HttpRequest
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,64 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Exceptions
+  commentId: N:RestModels.Exceptions
+  id: RestModels.Exceptions
+  children:
+  - RestModels.Exceptions.AuthFailedException
+  - RestModels.Exceptions.ConditionFailedException
+  - RestModels.Exceptions.InvalidParserException
+  - RestModels.Exceptions.OperationFailedException
+  - RestModels.Exceptions.OptionsException
+  - RestModels.Exceptions.ParsingFailedException
+  - RestModels.Exceptions.RequestFailedException
+  - RestModels.Exceptions.WritingFailedException
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Exceptions
+  nameWithType: RestModels.Exceptions
+  fullName: RestModels.Exceptions
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Exceptions.AuthFailedException
+  commentId: T:RestModels.Exceptions.AuthFailedException
+  name: AuthFailedException
+  nameWithType: AuthFailedException
+  fullName: RestModels.Exceptions.AuthFailedException
+- uid: RestModels.Exceptions.ConditionFailedException
+  commentId: T:RestModels.Exceptions.ConditionFailedException
+  name: ConditionFailedException
+  nameWithType: ConditionFailedException
+  fullName: RestModels.Exceptions.ConditionFailedException
+- uid: RestModels.Exceptions.InvalidParserException
+  commentId: T:RestModels.Exceptions.InvalidParserException
+  name: InvalidParserException
+  nameWithType: InvalidParserException
+  fullName: RestModels.Exceptions.InvalidParserException
+- uid: RestModels.Exceptions.OperationFailedException
+  commentId: T:RestModels.Exceptions.OperationFailedException
+  name: OperationFailedException
+  nameWithType: OperationFailedException
+  fullName: RestModels.Exceptions.OperationFailedException
+- uid: RestModels.Exceptions.OptionsException
+  commentId: T:RestModels.Exceptions.OptionsException
+  name: OptionsException
+  nameWithType: OptionsException
+  fullName: RestModels.Exceptions.OptionsException
+- uid: RestModels.Exceptions.ParsingFailedException
+  commentId: T:RestModels.Exceptions.ParsingFailedException
+  name: ParsingFailedException
+  nameWithType: ParsingFailedException
+  fullName: RestModels.Exceptions.ParsingFailedException
+- uid: RestModels.Exceptions.RequestFailedException
+  commentId: T:RestModels.Exceptions.RequestFailedException
+  name: RequestFailedException
+  nameWithType: RequestFailedException
+  fullName: RestModels.Exceptions.RequestFailedException
+- uid: RestModels.Exceptions.WritingFailedException
+  commentId: T:RestModels.Exceptions.WritingFailedException
+  name: WritingFailedException
+  nameWithType: WritingFailedException
+  fullName: RestModels.Exceptions.WritingFailedException

@@ -126,10 +126,10 @@ These actions run before every operation. They can be used to make changes to th
 
 ### Example
 ```csharp
-TODO!: Likely going to change the name to `Before()`
 TODO: Replace with BeforeForEach/ForEachBefore or whatever it becomes
 api.PostCreate(route => {
-    route.PreOp((ctx, dataset) => { foreach (var model in dataset) model.LuckyNumber = 4; });
+    route.Before((ctx, dataset) => { foreach (var model in dataset) model.LuckyNumber = 4; });
+    // Equivalent to: route.SetValue(m => m.LuckyNumber, (c) => 4);
 });
 ```
 
@@ -157,9 +157,8 @@ These actions run after every operation. They can be used for logging, notifying
 
 ### Example
 ```csharp
-TODO!: Likely going to change the name to `After()`
 api.PostCreate(route => {
-    route.PostOp((c, d) => c.HttpResponse.Cookies.Append("cookie", "monster"));
+    route.After((c, d) => c.HttpResponse.Cookies.Append("cookie", "monster"));
 });
 ```
 

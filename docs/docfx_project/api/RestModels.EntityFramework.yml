@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.EntityFramework
+  commentId: N:RestModels.EntityFramework
+  id: RestModels.EntityFramework
+  children:
+  - RestModels.EntityFramework.EntityFrameworkModelProvider`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.EntityFramework
+  nameWithType: RestModels.EntityFramework
+  fullName: RestModels.EntityFramework
+  type: Namespace
+  assemblies:
+  - RestModels.EntityFramework
+references:
+- uid: RestModels.EntityFramework.EntityFrameworkModelProvider`2
+  commentId: T:RestModels.EntityFramework.EntityFrameworkModelProvider`2
+  name: EntityFrameworkModelProvider<TModel, TContext>
+  nameWithType: EntityFrameworkModelProvider<TModel, TContext>
+  fullName: RestModels.EntityFramework.EntityFrameworkModelProvider<TModel, TContext>
+  nameWithType.vb: EntityFrameworkModelProvider(Of TModel, TContext)
+  fullName.vb: RestModels.EntityFramework.EntityFrameworkModelProvider(Of TModel, TContext)
+  name.vb: EntityFrameworkModelProvider(Of TModel, TContext)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.EntityFrameworkModelProvider`2
+    name: EntityFrameworkModelProvider
+    nameWithType: EntityFrameworkModelProvider
+    fullName: RestModels.EntityFramework.EntityFrameworkModelProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.EntityFrameworkModelProvider`2
+    name: EntityFrameworkModelProvider
+    nameWithType: EntityFrameworkModelProvider
+    fullName: RestModels.EntityFramework.EntityFrameworkModelProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )

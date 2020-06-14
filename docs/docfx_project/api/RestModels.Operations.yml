@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Operations
+  commentId: N:RestModels.Operations
+  id: RestModels.Operations
+  children:
+  - RestModels.Operations.IOperation`1
+  - RestModels.Operations.IOperation`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Operations
+  nameWithType: RestModels.Operations
+  fullName: RestModels.Operations
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Operations.IOperation`2
+  commentId: T:RestModels.Operations.IOperation`2
+  name: IOperation<TModel, TUser>
+  nameWithType: IOperation<TModel, TUser>
+  fullName: RestModels.Operations.IOperation<TModel, TUser>
+  nameWithType.vb: IOperation(Of TModel, TUser)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, TUser)
+  name.vb: IOperation(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Operations.IOperation`1
+  commentId: T:RestModels.Operations.IOperation`1
+  name: IOperation<TModel>
+  nameWithType: IOperation<TModel>
+  fullName: RestModels.Operations.IOperation<TModel>
+  nameWithType.vb: IOperation(Of TModel)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel)
+  name.vb: IOperation(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )

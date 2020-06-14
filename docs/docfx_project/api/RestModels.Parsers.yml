@@ -1,0 +1,164 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Parsers
+  commentId: N:RestModels.Parsers
+  id: RestModels.Parsers
+  children:
+  - RestModels.Parsers.IBodyParser`1
+  - RestModels.Parsers.JsonBodyParser`1
+  - RestModels.Parsers.ParseResult`1
+  - RestModels.Parsers.XmlBodyParser`1
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Parsers
+  nameWithType: RestModels.Parsers
+  fullName: RestModels.Parsers
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Parsers.IBodyParser`1
+  commentId: T:RestModels.Parsers.IBodyParser`1
+  name: IBodyParser<TModel>
+  nameWithType: IBodyParser<TModel>
+  fullName: RestModels.Parsers.IBodyParser<TModel>
+  nameWithType.vb: IBodyParser(Of TModel)
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel)
+  name.vb: IBodyParser(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser
+    nameWithType: IBodyParser
+    fullName: RestModels.Parsers.IBodyParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser
+    nameWithType: IBodyParser
+    fullName: RestModels.Parsers.IBodyParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.JsonBodyParser`1
+  commentId: T:RestModels.Parsers.JsonBodyParser`1
+  name: JsonBodyParser<TModel>
+  nameWithType: JsonBodyParser<TModel>
+  fullName: RestModels.Parsers.JsonBodyParser<TModel>
+  nameWithType.vb: JsonBodyParser(Of TModel)
+  fullName.vb: RestModels.Parsers.JsonBodyParser(Of TModel)
+  name.vb: JsonBodyParser(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Parsers.JsonBodyParser`1
+    name: JsonBodyParser
+    nameWithType: JsonBodyParser
+    fullName: RestModels.Parsers.JsonBodyParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Parsers.JsonBodyParser`1
+    name: JsonBodyParser
+    nameWithType: JsonBodyParser
+    fullName: RestModels.Parsers.JsonBodyParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.ParseResult`1
+  commentId: T:RestModels.Parsers.ParseResult`1
+  name: ParseResult<TModel>
+  nameWithType: ParseResult<TModel>
+  fullName: RestModels.Parsers.ParseResult<TModel>
+  nameWithType.vb: ParseResult(Of TModel)
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)
+  name.vb: ParseResult(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.XmlBodyParser`1
+  commentId: T:RestModels.Parsers.XmlBodyParser`1
+  name: XmlBodyParser<TModel>
+  nameWithType: XmlBodyParser<TModel>
+  fullName: RestModels.Parsers.XmlBodyParser<TModel>
+  nameWithType.vb: XmlBodyParser(Of TModel)
+  fullName.vb: RestModels.Parsers.XmlBodyParser(Of TModel)
+  name.vb: XmlBodyParser(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Parsers.XmlBodyParser`1
+    name: XmlBodyParser
+    nameWithType: XmlBodyParser
+    fullName: RestModels.Parsers.XmlBodyParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Parsers.XmlBodyParser`1
+    name: XmlBodyParser
+    nameWithType: XmlBodyParser
+    fullName: RestModels.Parsers.XmlBodyParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )

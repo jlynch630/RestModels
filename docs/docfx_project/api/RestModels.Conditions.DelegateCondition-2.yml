@@ -1,0 +1,1426 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Conditions.DelegateCondition`2
+  commentId: T:RestModels.Conditions.DelegateCondition`2
+  id: DelegateCondition`2
+  parent: RestModels.Conditions
+  children:
+  - RestModels.Conditions.DelegateCondition`2.#ctor(System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1,System.Threading.Tasks.Task{System.Boolean}})
+  - RestModels.Conditions.DelegateCondition`2.FailureMessage
+  - RestModels.Conditions.DelegateCondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  langs:
+  - csharp
+  - vb
+  name: DelegateCondition<TModel, TUser>
+  nameWithType: DelegateCondition<TModel, TUser>
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>
+  type: Class
+  source:
+    remote:
+      path: RestModels/Conditions/DelegateCondition.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: DelegateCondition
+    path: ../../RestModels/Conditions/DelegateCondition.cs
+    startLine: 21
+  assemblies:
+  - RestModels
+  namespace: RestModels.Conditions
+  summary: "\nCondition that uses a delegate to check if it has been met\n"
+  example: []
+  syntax:
+    content: 'public class DelegateCondition<TModel, TUser> : ICondition<TModel, TUser> where TModel : class where TUser : class'
+    typeParameters:
+    - id: TModel
+      description: The type of model in the dataset
+    - id: TUser
+      description: The type of authenticated user
+    content.vb: >-
+      Public Class DelegateCondition(Of TModel As Class, TUser As Class)
+
+          Implements ICondition(Of TModel, TUser)
+  inheritance:
+  - System.Object
+  implements:
+  - RestModels.Conditions.ICondition{{TModel},{TUser}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: DelegateCondition(Of TModel, TUser)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser)
+  name.vb: DelegateCondition(Of TModel, TUser)
+- uid: RestModels.Conditions.DelegateCondition`2.#ctor(System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1,System.Threading.Tasks.Task{System.Boolean}})
+  commentId: M:RestModels.Conditions.DelegateCondition`2.#ctor(System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1,System.Threading.Tasks.Task{System.Boolean}})
+  id: '#ctor(System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1,System.Threading.Tasks.Task{System.Boolean}})'
+  parent: RestModels.Conditions.DelegateCondition`2
+  langs:
+  - csharp
+  - vb
+  name: DelegateCondition(Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<Boolean>>)
+  nameWithType: DelegateCondition<TModel, TUser>.DelegateCondition(Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<Boolean>>)
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>.DelegateCondition(System.Func<Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser, System.Threading.Tasks.Task<System.Boolean>>)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Conditions/DelegateCondition.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Conditions/DelegateCondition.cs
+    startLine: 32
+  assemblies:
+  - RestModels
+  namespace: RestModels.Conditions
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.Conditions.DelegateCondition%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public DelegateCondition(Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<bool>> conditionDelegate)
+    parameters:
+    - id: conditionDelegate
+      type: System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],{TUser},System.Threading.Tasks.Task{System.Boolean}}
+      description: The delegate to use to check the status of the condition
+    content.vb: Public Sub New(conditionDelegate As Func(Of HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser, Task(Of Boolean)))
+  overload: RestModels.Conditions.DelegateCondition`2.#ctor*
+  nameWithType.vb: DelegateCondition(Of TModel, TUser).DelegateCondition(Func(Of HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser, Task(Of Boolean)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser).DelegateCondition(System.Func(Of Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser, System.Threading.Tasks.Task(Of System.Boolean)))
+  name.vb: DelegateCondition(Func(Of HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser, Task(Of Boolean)))
+- uid: RestModels.Conditions.DelegateCondition`2.FailureMessage
+  commentId: P:RestModels.Conditions.DelegateCondition`2.FailureMessage
+  id: FailureMessage
+  parent: RestModels.Conditions.DelegateCondition`2
+  langs:
+  - csharp
+  - vb
+  name: FailureMessage
+  nameWithType: DelegateCondition<TModel, TUser>.FailureMessage
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>.FailureMessage
+  type: Property
+  source:
+    remote:
+      path: RestModels/Conditions/DelegateCondition.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: FailureMessage
+    path: ../../RestModels/Conditions/DelegateCondition.cs
+    startLine: 38
+  assemblies:
+  - RestModels
+  namespace: RestModels.Conditions
+  summary: "\nGets a message indicating why the condition might have failed\n"
+  example: []
+  syntax:
+    content: public string FailureMessage { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FailureMessage As String
+  overload: RestModels.Conditions.DelegateCondition`2.FailureMessage*
+  implements:
+  - RestModels.Conditions.ICondition{{TModel},{TUser}}.FailureMessage
+  nameWithType.vb: DelegateCondition(Of TModel, TUser).FailureMessage
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser).FailureMessage
+- uid: RestModels.Conditions.DelegateCondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  commentId: M:RestModels.Conditions.DelegateCondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  id: VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  parent: RestModels.Conditions.DelegateCondition`2
+  langs:
+  - csharp
+  - vb
+  name: VerifyAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  nameWithType: DelegateCondition<TModel, TUser>.VerifyAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Conditions/DelegateCondition.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: VerifyAsync
+    path: ../../RestModels/Conditions/DelegateCondition.cs
+    startLine: 48
+  assemblies:
+  - RestModels
+  namespace: RestModels.Conditions
+  summary: "\nVerifies that the current request meets a condition\n"
+  example: []
+  syntax:
+    content: public Task<bool> VerifyAsync(HttpContext context, IQueryable<TModel> dataset, ParseResult<TModel>[] parsed, TUser user)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current request context
+    - id: dataset
+      type: System.Linq.IQueryable{{TModel}}
+      description: The current dataset to be filtered
+    - id: parsed
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The parsed request body, if any
+    - id: user
+      type: '{TUser}'
+      description: The current user context, if any
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: <pre><code>true</code></pre> if the request should continue, <pre><code>false</code></pre> otherwise
+    content.vb: Public Function VerifyAsync(context As HttpContext, dataset As IQueryable(Of TModel), parsed As ParseResult(Of TModel)(), user As TUser) As Task(Of Boolean)
+  overload: RestModels.Conditions.DelegateCondition`2.VerifyAsync*
+  implements:
+  - RestModels.Conditions.ICondition{{TModel},{TUser}}.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],{TUser})
+  nameWithType.vb: DelegateCondition(Of TModel, TUser).VerifyAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser).VerifyAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser)
+  name.vb: VerifyAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+references:
+- uid: RestModels.Conditions
+  commentId: N:RestModels.Conditions
+  name: RestModels.Conditions
+  nameWithType: RestModels.Conditions
+  fullName: RestModels.Conditions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: RestModels.Conditions.ICondition{{TModel},{TUser}}
+  commentId: T:RestModels.Conditions.ICondition{`0,`1}
+  parent: RestModels.Conditions
+  definition: RestModels.Conditions.ICondition`2
+  name: ICondition<TModel, TUser>
+  nameWithType: ICondition<TModel, TUser>
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>
+  nameWithType.vb: ICondition(Of TModel, TUser)
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser)
+  name.vb: ICondition(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Conditions.ICondition`2
+  commentId: T:RestModels.Conditions.ICondition`2
+  name: ICondition<TModel, TUser>
+  nameWithType: ICondition<TModel, TUser>
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>
+  nameWithType.vb: ICondition(Of TModel, TUser)
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser)
+  name.vb: ICondition(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Conditions.DelegateCondition`2
+  commentId: T:RestModels.Conditions.DelegateCondition`2
+  name: DelegateCondition<TModel, TUser>
+  nameWithType: DelegateCondition<TModel, TUser>
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>
+  nameWithType.vb: DelegateCondition(Of TModel, TUser)
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser)
+  name.vb: DelegateCondition(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.DelegateCondition`2
+    name: DelegateCondition
+    nameWithType: DelegateCondition
+    fullName: RestModels.Conditions.DelegateCondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Conditions.DelegateCondition`2
+    name: DelegateCondition
+    nameWithType: DelegateCondition
+    fullName: RestModels.Conditions.DelegateCondition
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Conditions.DelegateCondition`2.#ctor*
+  commentId: Overload:RestModels.Conditions.DelegateCondition`2.#ctor
+  name: DelegateCondition
+  nameWithType: DelegateCondition<TModel, TUser>.DelegateCondition
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>.DelegateCondition
+  nameWithType.vb: DelegateCondition(Of TModel, TUser).DelegateCondition
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser).DelegateCondition
+- uid: System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],{TUser},System.Threading.Tasks.Task{System.Boolean}}
+  commentId: T:System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1,System.Threading.Tasks.Task{System.Boolean}}
+  parent: System
+  definition: System.Func`5
+  name: Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<Boolean>>
+  nameWithType: Func<HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser, Task<Boolean>>
+  fullName: System.Func<Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser, System.Threading.Tasks.Task<System.Boolean>>
+  nameWithType.vb: Func(Of HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser, Task(Of Boolean))
+  fullName.vb: System.Func(Of Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser, System.Threading.Tasks.Task(Of System.Boolean))
+  name.vb: Func(Of HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser, Task(Of Boolean))
+  spec.csharp:
+  - uid: System.Func`5
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`5
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`5
+  commentId: T:System.Func`5
+  isExternal: true
+  name: Func<T1, T2, T3, T4, TResult>
+  nameWithType: Func<T1, T2, T3, T4, TResult>
+  fullName: System.Func<T1, T2, T3, T4, TResult>
+  nameWithType.vb: Func(Of T1, T2, T3, T4, TResult)
+  fullName.vb: System.Func(Of T1, T2, T3, T4, TResult)
+  name.vb: Func(Of T1, T2, T3, T4, TResult)
+  spec.csharp:
+  - uid: System.Func`5
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T4
+    nameWithType: T4
+    fullName: T4
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`5
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T4
+    nameWithType: T4
+    fullName: T4
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Conditions.DelegateCondition`2.FailureMessage*
+  commentId: Overload:RestModels.Conditions.DelegateCondition`2.FailureMessage
+  name: FailureMessage
+  nameWithType: DelegateCondition<TModel, TUser>.FailureMessage
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>.FailureMessage
+  nameWithType.vb: DelegateCondition(Of TModel, TUser).FailureMessage
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser).FailureMessage
+- uid: RestModels.Conditions.ICondition{{TModel},{TUser}}.FailureMessage
+  commentId: P:RestModels.Conditions.ICondition{`0,`1}.FailureMessage
+  parent: RestModels.Conditions.ICondition{{TModel},{TUser}}
+  definition: RestModels.Conditions.ICondition`2.FailureMessage
+  name: FailureMessage
+  nameWithType: ICondition<TModel, TUser>.FailureMessage
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>.FailureMessage
+  nameWithType.vb: ICondition(Of TModel, TUser).FailureMessage
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser).FailureMessage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: RestModels.Conditions.ICondition`2.FailureMessage
+  commentId: P:RestModels.Conditions.ICondition`2.FailureMessage
+  name: FailureMessage
+  nameWithType: ICondition<TModel, TUser>.FailureMessage
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>.FailureMessage
+  nameWithType.vb: ICondition(Of TModel, TUser).FailureMessage
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser).FailureMessage
+- uid: RestModels.Conditions.DelegateCondition`2.VerifyAsync*
+  commentId: Overload:RestModels.Conditions.DelegateCondition`2.VerifyAsync
+  name: VerifyAsync
+  nameWithType: DelegateCondition<TModel, TUser>.VerifyAsync
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>.VerifyAsync
+  nameWithType.vb: DelegateCondition(Of TModel, TUser).VerifyAsync
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser).VerifyAsync
+- uid: RestModels.Conditions.ICondition{{TModel},{TUser}}.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],{TUser})
+  commentId: M:RestModels.Conditions.ICondition{`0,`1}.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  parent: RestModels.Conditions.ICondition{{TModel},{TUser}}
+  definition: RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  name: VerifyAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  nameWithType: ICondition<TModel, TUser>.VerifyAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser)
+  nameWithType.vb: ICondition(Of TModel, TUser).VerifyAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser).VerifyAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser)
+  name.vb: VerifyAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: VerifyAsync
+    nameWithType: ICondition<TModel, TUser>.VerifyAsync
+    fullName: RestModels.Conditions.ICondition<TModel, TUser>.VerifyAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: VerifyAsync
+    nameWithType: ICondition(Of TModel, TUser).VerifyAsync
+    fullName: RestModels.Conditions.ICondition(Of TModel, TUser).VerifyAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: System.Linq.IQueryable{{TModel}}
+  commentId: T:System.Linq.IQueryable{`0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  name: IQueryable<TModel>
+  nameWithType: IQueryable<TModel>
+  fullName: System.Linq.IQueryable<TModel>
+  nameWithType.vb: IQueryable(Of TModel)
+  fullName.vb: System.Linq.IQueryable(Of TModel)
+  name.vb: IQueryable(Of TModel)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.ParseResult{{TModel}}[]
+  isExternal: true
+  name: ParseResult<TModel>[]
+  nameWithType: ParseResult<TModel>[]
+  fullName: RestModels.Parsers.ParseResult<TModel>[]
+  nameWithType.vb: ParseResult(Of TModel)()
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)()
+  name.vb: ParseResult(Of TModel)()
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: '{TUser}'
+  commentId: '!:TUser'
+  definition: TUser
+  name: TUser
+  nameWithType: TUser
+  fullName: TUser
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  commentId: M:RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  isExternal: true
+  name: VerifyAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  nameWithType: ICondition<TModel, TUser>.VerifyAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser)
+  nameWithType.vb: ICondition(Of TModel, TUser).VerifyAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser).VerifyAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser)
+  name.vb: VerifyAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: VerifyAsync
+    nameWithType: ICondition<TModel, TUser>.VerifyAsync
+    fullName: RestModels.Conditions.ICondition<TModel, TUser>.VerifyAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Conditions.ICondition`2.VerifyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: VerifyAsync
+    nameWithType: ICondition(Of TModel, TUser).VerifyAsync
+    fullName: RestModels.Conditions.ICondition(Of TModel, TUser).VerifyAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+- uid: TUser
+  name: TUser
+  nameWithType: TUser
+  fullName: TUser
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

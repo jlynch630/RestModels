@@ -1,0 +1,410 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Filters.IFilter`1
+  commentId: T:RestModels.Filters.IFilter`1
+  id: IFilter`1
+  parent: RestModels.Filters
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IFilter<TModel>
+  nameWithType: IFilter<TModel>
+  fullName: RestModels.Filters.IFilter<TModel>
+  type: Interface
+  source:
+    remote:
+      path: RestModels/Filters/IFilter.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: IFilter
+    path: ../../RestModels/Filters/IFilter.cs
+    startLine: 40
+  assemblies:
+  - RestModels
+  namespace: RestModels.Filters
+  summary: "\nFilter for model datasets\n"
+  example: []
+  syntax:
+    content: 'public interface IFilter<TModel> : IFilter<TModel, object> where TModel : class'
+    typeParameters:
+    - id: TModel
+      description: The type of model being filtered
+    content.vb: >-
+      Public Interface IFilter(Of TModel As Class)
+
+          Inherits IFilter(Of TModel, Object)
+  inheritedMembers:
+  - RestModels.Filters.IFilter{{TModel},System.Object}.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],System.Object)
+  nameWithType.vb: IFilter(Of TModel)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: RestModels.Filters.IFilter(Of TModel)
+  name.vb: IFilter(Of TModel)
+references:
+- uid: RestModels.Filters
+  commentId: N:RestModels.Filters
+  name: RestModels.Filters
+  nameWithType: RestModels.Filters
+  fullName: RestModels.Filters
+- uid: RestModels.Filters.IFilter{{TModel},System.Object}.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],System.Object)
+  commentId: M:RestModels.Filters.IFilter{`0,System.Object}.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],System.Object)
+  parent: RestModels.Filters.IFilter{{TModel},System.Object}
+  definition: RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  name: FilterDataAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], Object)
+  nameWithType: IFilter<TModel, Object>.FilterDataAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], Object)
+  fullName: RestModels.Filters.IFilter<TModel, System.Object>.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], System.Object)
+  nameWithType.vb: IFilter(Of TModel, Object).FilterDataAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), Object)
+  fullName.vb: RestModels.Filters.IFilter(Of TModel, System.Object).FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), System.Object)
+  name.vb: FilterDataAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), Object)
+  spec.csharp:
+  - uid: RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: FilterDataAsync
+    nameWithType: IFilter<TModel, Object>.FilterDataAsync
+    fullName: RestModels.Filters.IFilter<TModel, System.Object>.FilterDataAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: FilterDataAsync
+    nameWithType: IFilter(Of TModel, Object).FilterDataAsync
+    fullName: RestModels.Filters.IFilter(Of TModel, System.Object).FilterDataAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  commentId: M:RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  isExternal: true
+  name: FilterDataAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  nameWithType: IFilter<TModel, TUser>.FilterDataAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  fullName: RestModels.Filters.IFilter<TModel, TUser>.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser)
+  nameWithType.vb: IFilter(Of TModel, TUser).FilterDataAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  fullName.vb: RestModels.Filters.IFilter(Of TModel, TUser).FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser)
+  name.vb: FilterDataAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  spec.csharp:
+  - uid: RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: FilterDataAsync
+    nameWithType: IFilter<TModel, TUser>.FilterDataAsync
+    fullName: RestModels.Filters.IFilter<TModel, TUser>.FilterDataAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Filters.IFilter`2.FilterDataAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: FilterDataAsync
+    nameWithType: IFilter(Of TModel, TUser).FilterDataAsync
+    fullName: RestModels.Filters.IFilter(Of TModel, TUser).FilterDataAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Filters.IFilter{{TModel},System.Object}
+  commentId: T:RestModels.Filters.IFilter{`0,System.Object}
+  parent: RestModels.Filters
+  definition: RestModels.Filters.IFilter`2
+  name: IFilter<TModel, Object>
+  nameWithType: IFilter<TModel, Object>
+  fullName: RestModels.Filters.IFilter<TModel, System.Object>
+  nameWithType.vb: IFilter(Of TModel, Object)
+  fullName.vb: RestModels.Filters.IFilter(Of TModel, System.Object)
+  name.vb: IFilter(Of TModel, Object)
+  spec.csharp:
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Filters.IFilter`2
+  commentId: T:RestModels.Filters.IFilter`2
+  name: IFilter<TModel, TUser>
+  nameWithType: IFilter<TModel, TUser>
+  fullName: RestModels.Filters.IFilter<TModel, TUser>
+  nameWithType.vb: IFilter(Of TModel, TUser)
+  fullName.vb: RestModels.Filters.IFilter(Of TModel, TUser)
+  name.vb: IFilter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

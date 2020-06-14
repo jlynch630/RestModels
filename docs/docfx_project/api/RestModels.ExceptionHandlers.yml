@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.ExceptionHandlers
+  commentId: N:RestModels.ExceptionHandlers
+  id: RestModels.ExceptionHandlers
+  children:
+  - RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  - RestModels.ExceptionHandlers.DelegateExceptionHandler
+  - RestModels.ExceptionHandlers.IExceptionHandler
+  - RestModels.ExceptionHandlers.SimpleExceptionHandler
+  langs:
+  - csharp
+  - vb
+  name: RestModels.ExceptionHandlers
+  nameWithType: RestModels.ExceptionHandlers
+  fullName: RestModels.ExceptionHandlers
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  commentId: T:RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  name: AuthFailedExceptionHandler
+  nameWithType: AuthFailedExceptionHandler
+  fullName: RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+- uid: RestModels.ExceptionHandlers.DelegateExceptionHandler
+  commentId: T:RestModels.ExceptionHandlers.DelegateExceptionHandler
+  name: DelegateExceptionHandler
+  nameWithType: DelegateExceptionHandler
+  fullName: RestModels.ExceptionHandlers.DelegateExceptionHandler
+- uid: RestModels.ExceptionHandlers.IExceptionHandler
+  commentId: T:RestModels.ExceptionHandlers.IExceptionHandler
+  parent: RestModels.ExceptionHandlers
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: RestModels.ExceptionHandlers.IExceptionHandler
+- uid: RestModels.ExceptionHandlers.SimpleExceptionHandler
+  commentId: T:RestModels.ExceptionHandlers.SimpleExceptionHandler
+  name: SimpleExceptionHandler
+  nameWithType: SimpleExceptionHandler
+  fullName: RestModels.ExceptionHandlers.SimpleExceptionHandler
+- uid: RestModels.ExceptionHandlers
+  commentId: N:RestModels.ExceptionHandlers
+  name: RestModels.ExceptionHandlers
+  nameWithType: RestModels.ExceptionHandlers
+  fullName: RestModels.ExceptionHandlers

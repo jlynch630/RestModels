@@ -1,0 +1,157 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Filters
+  commentId: N:RestModels.Filters
+  id: RestModels.Filters
+  children:
+  - RestModels.Filters.DelegateFilter`2
+  - RestModels.Filters.IFilter`1
+  - RestModels.Filters.IFilter`2
+  - RestModels.Filters.ParameterResolver
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Filters
+  nameWithType: RestModels.Filters
+  fullName: RestModels.Filters
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Filters.DelegateFilter`2
+  commentId: T:RestModels.Filters.DelegateFilter`2
+  name: DelegateFilter<TModel, TUser>
+  nameWithType: DelegateFilter<TModel, TUser>
+  fullName: RestModels.Filters.DelegateFilter<TModel, TUser>
+  nameWithType.vb: DelegateFilter(Of TModel, TUser)
+  fullName.vb: RestModels.Filters.DelegateFilter(Of TModel, TUser)
+  name.vb: DelegateFilter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Filters.DelegateFilter`2
+    name: DelegateFilter
+    nameWithType: DelegateFilter
+    fullName: RestModels.Filters.DelegateFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Filters.DelegateFilter`2
+    name: DelegateFilter
+    nameWithType: DelegateFilter
+    fullName: RestModels.Filters.DelegateFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Filters.IFilter`2
+  commentId: T:RestModels.Filters.IFilter`2
+  name: IFilter<TModel, TUser>
+  nameWithType: IFilter<TModel, TUser>
+  fullName: RestModels.Filters.IFilter<TModel, TUser>
+  nameWithType.vb: IFilter(Of TModel, TUser)
+  fullName.vb: RestModels.Filters.IFilter(Of TModel, TUser)
+  name.vb: IFilter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Filters.IFilter`1
+  commentId: T:RestModels.Filters.IFilter`1
+  name: IFilter<TModel>
+  nameWithType: IFilter<TModel>
+  fullName: RestModels.Filters.IFilter<TModel>
+  nameWithType.vb: IFilter(Of TModel)
+  fullName.vb: RestModels.Filters.IFilter(Of TModel)
+  name.vb: IFilter(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Filters.IFilter`1
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Filters.IFilter`1
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Filters.ParameterResolver
+  commentId: T:RestModels.Filters.ParameterResolver
+  name: ParameterResolver
+  nameWithType: ParameterResolver
+  fullName: RestModels.Filters.ParameterResolver

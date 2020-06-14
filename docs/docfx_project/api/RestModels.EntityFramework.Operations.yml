@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.EntityFramework.Operations
+  commentId: N:RestModels.EntityFramework.Operations
+  id: RestModels.EntityFramework.Operations
+  children:
+  - RestModels.EntityFramework.Operations.CreateOperation`2
+  - RestModels.EntityFramework.Operations.DeleteOperation`2
+  - RestModels.EntityFramework.Operations.UpdateOperation`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.EntityFramework.Operations
+  nameWithType: RestModels.EntityFramework.Operations
+  fullName: RestModels.EntityFramework.Operations
+  type: Namespace
+  assemblies:
+  - RestModels.EntityFramework
+references:
+- uid: RestModels.EntityFramework.Operations.CreateOperation`2
+  commentId: T:RestModels.EntityFramework.Operations.CreateOperation`2
+  name: CreateOperation<TModel, TContext>
+  nameWithType: CreateOperation<TModel, TContext>
+  fullName: RestModels.EntityFramework.Operations.CreateOperation<TModel, TContext>
+  nameWithType.vb: CreateOperation(Of TModel, TContext)
+  fullName.vb: RestModels.EntityFramework.Operations.CreateOperation(Of TModel, TContext)
+  name.vb: CreateOperation(Of TModel, TContext)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.Operations.CreateOperation`2
+    name: CreateOperation
+    nameWithType: CreateOperation
+    fullName: RestModels.EntityFramework.Operations.CreateOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.Operations.CreateOperation`2
+    name: CreateOperation
+    nameWithType: CreateOperation
+    fullName: RestModels.EntityFramework.Operations.CreateOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.EntityFramework.Operations.DeleteOperation`2
+  commentId: T:RestModels.EntityFramework.Operations.DeleteOperation`2
+  name: DeleteOperation<TModel, TContext>
+  nameWithType: DeleteOperation<TModel, TContext>
+  fullName: RestModels.EntityFramework.Operations.DeleteOperation<TModel, TContext>
+  nameWithType.vb: DeleteOperation(Of TModel, TContext)
+  fullName.vb: RestModels.EntityFramework.Operations.DeleteOperation(Of TModel, TContext)
+  name.vb: DeleteOperation(Of TModel, TContext)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.Operations.DeleteOperation`2
+    name: DeleteOperation
+    nameWithType: DeleteOperation
+    fullName: RestModels.EntityFramework.Operations.DeleteOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.Operations.DeleteOperation`2
+    name: DeleteOperation
+    nameWithType: DeleteOperation
+    fullName: RestModels.EntityFramework.Operations.DeleteOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+  commentId: T:RestModels.EntityFramework.Operations.UpdateOperation`2
+  name: UpdateOperation<TModel, TContext>
+  nameWithType: UpdateOperation<TModel, TContext>
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>
+  nameWithType.vb: UpdateOperation(Of TModel, TContext)
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext)
+  name.vb: UpdateOperation(Of TModel, TContext)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+    name: UpdateOperation
+    nameWithType: UpdateOperation
+    fullName: RestModels.EntityFramework.Operations.UpdateOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+    name: UpdateOperation
+    nameWithType: UpdateOperation
+    fullName: RestModels.EntityFramework.Operations.UpdateOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )

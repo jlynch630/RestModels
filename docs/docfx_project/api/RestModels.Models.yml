@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Models
+  commentId: N:RestModels.Models
+  id: RestModels.Models
+  children:
+  - RestModels.Models.IModelProvider`1
+  - RestModels.Models.IModelProvider`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Models
+  nameWithType: RestModels.Models
+  fullName: RestModels.Models
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Models.IModelProvider`2
+  commentId: T:RestModels.Models.IModelProvider`2
+  name: IModelProvider<TModel, TUser>
+  nameWithType: IModelProvider<TModel, TUser>
+  fullName: RestModels.Models.IModelProvider<TModel, TUser>
+  nameWithType.vb: IModelProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel, TUser)
+  name.vb: IModelProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Models.IModelProvider`1
+  commentId: T:RestModels.Models.IModelProvider`1
+  name: IModelProvider<TModel>
+  nameWithType: IModelProvider<TModel>
+  fullName: RestModels.Models.IModelProvider<TModel>
+  nameWithType.vb: IModelProvider(Of TModel)
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel)
+  name.vb: IModelProvider(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Models.IModelProvider`1
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Models.IModelProvider`1
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )

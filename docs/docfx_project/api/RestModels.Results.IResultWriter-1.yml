@@ -1,0 +1,444 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Results.IResultWriter`1
+  commentId: T:RestModels.Results.IResultWriter`1
+  id: IResultWriter`1
+  parent: RestModels.Results
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IResultWriter<TModel>
+  nameWithType: IResultWriter<TModel>
+  fullName: RestModels.Results.IResultWriter<TModel>
+  type: Interface
+  source:
+    remote:
+      path: RestModels/Results/IResultWriter.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: IResultWriter
+    path: ../../RestModels/Results/IResultWriter.cs
+    startLine: 43
+  assemblies:
+  - RestModels
+  namespace: RestModels.Results
+  summary: "\nWriter for API results\n"
+  example: []
+  syntax:
+    content: 'public interface IResultWriter<in TModel> : IResultWriter<TModel, object> where TModel : class'
+    typeParameters:
+    - id: TModel
+      description: The type of model to format
+    content.vb: >-
+      Public Interface IResultWriter(Of In TModel As Class)
+
+          Inherits IResultWriter(Of TModel, Object)
+  inheritedMembers:
+  - RestModels.Results.IResultWriter{{TModel},System.Object}.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  - RestModels.Results.IResultWriter{{TModel},System.Object}.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{{TModel}},System.Object,RestModels.Options.FormattingOptions)
+  nameWithType.vb: IResultWriter(Of TModel)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel)
+  name.vb: IResultWriter(Of TModel)
+references:
+- uid: RestModels.Results
+  commentId: N:RestModels.Results
+  name: RestModels.Results
+  nameWithType: RestModels.Results
+  fullName: RestModels.Results
+- uid: RestModels.Results.IResultWriter{{TModel},System.Object}.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.IResultWriter{`0,System.Object}.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  parent: RestModels.Results.IResultWriter{{TModel},System.Object}
+  definition: RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  name: CanWriteAsync(HttpRequest)
+  nameWithType: IResultWriter<TModel, Object>.CanWriteAsync(HttpRequest)
+  fullName: RestModels.Results.IResultWriter<TModel, System.Object>.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType.vb: IResultWriter(Of TModel, Object).CanWriteAsync(HttpRequest)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, System.Object).CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: IResultWriter<TModel, Object>.CanWriteAsync
+    fullName: RestModels.Results.IResultWriter<TModel, System.Object>.CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: IResultWriter(Of TModel, Object).CanWriteAsync
+    fullName: RestModels.Results.IResultWriter(Of TModel, System.Object).CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter{{TModel},System.Object}.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{{TModel}},System.Object,RestModels.Options.FormattingOptions)
+  commentId: M:RestModels.Results.IResultWriter{`0,System.Object}.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},System.Object,RestModels.Options.FormattingOptions)
+  parent: RestModels.Results.IResultWriter{{TModel},System.Object}
+  definition: RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  name: WriteResultAsync(HttpContext, IEnumerable<TModel>, Object, FormattingOptions)
+  nameWithType: IResultWriter<TModel, Object>.WriteResultAsync(HttpContext, IEnumerable<TModel>, Object, FormattingOptions)
+  fullName: RestModels.Results.IResultWriter<TModel, System.Object>.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable<TModel>, System.Object, RestModels.Options.FormattingOptions)
+  nameWithType.vb: IResultWriter(Of TModel, Object).WriteResultAsync(HttpContext, IEnumerable(Of TModel), Object, FormattingOptions)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, System.Object).WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable(Of TModel), System.Object, RestModels.Options.FormattingOptions)
+  name.vb: WriteResultAsync(HttpContext, IEnumerable(Of TModel), Object, FormattingOptions)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: IResultWriter<TModel, Object>.WriteResultAsync
+    fullName: RestModels.Results.IResultWriter<TModel, System.Object>.WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: IResultWriter(Of TModel, Object).WriteResultAsync
+    fullName: RestModels.Results.IResultWriter(Of TModel, System.Object).WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  isExternal: true
+  name: CanWriteAsync(HttpRequest)
+  nameWithType: IResultWriter<TModel, TUser>.CanWriteAsync(HttpRequest)
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  nameWithType.vb: IResultWriter(Of TModel, TUser).CanWriteAsync(HttpRequest)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser).CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: IResultWriter<TModel, TUser>.CanWriteAsync
+    fullName: RestModels.Results.IResultWriter<TModel, TUser>.CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2.CanWriteAsync(Microsoft.AspNetCore.Http.HttpRequest)
+    name: CanWriteAsync
+    nameWithType: IResultWriter(Of TModel, TUser).CanWriteAsync
+    fullName: RestModels.Results.IResultWriter(Of TModel, TUser).CanWriteAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter{{TModel},System.Object}
+  commentId: T:RestModels.Results.IResultWriter{`0,System.Object}
+  parent: RestModels.Results
+  definition: RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, Object>
+  nameWithType: IResultWriter<TModel, Object>
+  fullName: RestModels.Results.IResultWriter<TModel, System.Object>
+  nameWithType.vb: IResultWriter(Of TModel, Object)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, System.Object)
+  name.vb: IResultWriter(Of TModel, Object)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  commentId: M:RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+  isExternal: true
+  name: WriteResultAsync(HttpContext, IEnumerable<TModel>, TUser, FormattingOptions)
+  nameWithType: IResultWriter<TModel, TUser>.WriteResultAsync(HttpContext, IEnumerable<TModel>, TUser, FormattingOptions)
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable<TModel>, TUser, RestModels.Options.FormattingOptions)
+  nameWithType.vb: IResultWriter(Of TModel, TUser).WriteResultAsync(HttpContext, IEnumerable(Of TModel), TUser, FormattingOptions)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser).WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext, System.Collections.Generic.IEnumerable(Of TModel), TUser, RestModels.Options.FormattingOptions)
+  name.vb: WriteResultAsync(HttpContext, IEnumerable(Of TModel), TUser, FormattingOptions)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: IResultWriter<TModel, TUser>.WriteResultAsync
+    fullName: RestModels.Results.IResultWriter<TModel, TUser>.WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2.WriteResultAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{`0},`1,RestModels.Options.FormattingOptions)
+    name: WriteResultAsync
+    nameWithType: IResultWriter(Of TModel, TUser).WriteResultAsync
+    fullName: RestModels.Results.IResultWriter(Of TModel, TUser).WriteResultAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+    nameWithType: FormattingOptions
+    fullName: RestModels.Options.FormattingOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter`2
+  commentId: T:RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, TUser>
+  nameWithType: IResultWriter<TModel, TUser>
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>
+  nameWithType.vb: IResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)
+  name.vb: IResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

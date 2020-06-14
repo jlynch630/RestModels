@@ -1,0 +1,216 @@
+### YamlMime:TableOfContent
+- uid: Microsoft.Extensions.DependencyInjection
+  name: Microsoft.Extensions.DependencyInjection
+  items:
+  - uid: Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions
+    name: EntityFrameworkRestModelsApplicationBuilderExtensions
+  - uid: Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions
+    name: RestModelsApplicationBuilderExtensions
+- uid: RestModels.Auth
+  name: RestModels.Auth
+  items:
+  - uid: RestModels.Auth.BasicAuthProvider`2
+    name: BasicAuthProvider<TModel, TUser>
+    name.vb: BasicAuthProvider(Of TModel, TUser)
+  - uid: RestModels.Auth.DelegateAuthProvider`2
+    name: DelegateAuthProvider<TModel, TUser>
+    name.vb: DelegateAuthProvider(Of TModel, TUser)
+  - uid: RestModels.Auth.HeaderAuthProvider`2
+    name: HeaderAuthProvider<TModel, TUser>
+    name.vb: HeaderAuthProvider(Of TModel, TUser)
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider<TModel, TUser>
+    name.vb: IAuthProvider(Of TModel, TUser)
+  - uid: RestModels.Auth.IdentityAuthProvider`2
+    name: IdentityAuthProvider<TModel, TUser>
+    name.vb: IdentityAuthProvider(Of TModel, TUser)
+  - uid: RestModels.Auth.NoUser
+    name: NoUser
+  - uid: RestModels.Auth.QueryAuthProvider`2
+    name: QueryAuthProvider<TModel, TUser>
+    name.vb: QueryAuthProvider(Of TModel, TUser)
+- uid: RestModels.Conditions
+  name: RestModels.Conditions
+  items:
+  - uid: RestModels.Conditions.DelegateCondition`2
+    name: DelegateCondition<TModel, TUser>
+    name.vb: DelegateCondition(Of TModel, TUser)
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition<TModel, TUser>
+    name.vb: ICondition(Of TModel, TUser)
+- uid: RestModels.EntityFramework
+  name: RestModels.EntityFramework
+  items:
+  - uid: RestModels.EntityFramework.EntityFrameworkModelProvider`2
+    name: EntityFrameworkModelProvider<TModel, TContext>
+    name.vb: EntityFrameworkModelProvider(Of TModel, TContext)
+- uid: RestModels.EntityFramework.Extensions
+  name: RestModels.EntityFramework.Extensions
+  items:
+  - uid: RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions
+    name: RestModelOptionsBuilderExtensions
+- uid: RestModels.EntityFramework.Filters
+  name: RestModels.EntityFramework.Filters
+  items:
+  - uid: RestModels.EntityFramework.Filters.PrimaryKeyFilter`2
+    name: PrimaryKeyFilter<TModel, TContext>
+    name.vb: PrimaryKeyFilter(Of TModel, TContext)
+- uid: RestModels.EntityFramework.Operations
+  name: RestModels.EntityFramework.Operations
+  items:
+  - uid: RestModels.EntityFramework.Operations.CreateOperation`2
+    name: CreateOperation<TModel, TContext>
+    name.vb: CreateOperation(Of TModel, TContext)
+  - uid: RestModels.EntityFramework.Operations.DeleteOperation`2
+    name: DeleteOperation<TModel, TContext>
+    name.vb: DeleteOperation(Of TModel, TContext)
+  - uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+    name: UpdateOperation<TModel, TContext>
+    name.vb: UpdateOperation(Of TModel, TContext)
+- uid: RestModels.EntityFramework.Options
+  name: RestModels.EntityFramework.Options
+  items:
+  - uid: RestModels.EntityFramework.Options.EntityFrameworkRestModelOptionsBuilder`2
+    name: EntityFrameworkRestModelOptionsBuilder<TModel, TUser>
+    name.vb: EntityFrameworkRestModelOptionsBuilder(Of TModel, TUser)
+- uid: RestModels.ExceptionHandlers
+  name: RestModels.ExceptionHandlers
+  items:
+  - uid: RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+    name: AuthFailedExceptionHandler
+  - uid: RestModels.ExceptionHandlers.DelegateExceptionHandler
+    name: DelegateExceptionHandler
+  - uid: RestModels.ExceptionHandlers.IExceptionHandler
+    name: IExceptionHandler
+  - uid: RestModels.ExceptionHandlers.SimpleExceptionHandler
+    name: SimpleExceptionHandler
+- uid: RestModels.Exceptions
+  name: RestModels.Exceptions
+  items:
+  - uid: RestModels.Exceptions.AuthFailedException
+    name: AuthFailedException
+  - uid: RestModels.Exceptions.ConditionFailedException
+    name: ConditionFailedException
+  - uid: RestModels.Exceptions.InvalidParserException
+    name: InvalidParserException
+  - uid: RestModels.Exceptions.OperationFailedException
+    name: OperationFailedException
+  - uid: RestModels.Exceptions.OptionsException
+    name: OptionsException
+  - uid: RestModels.Exceptions.ParsingFailedException
+    name: ParsingFailedException
+  - uid: RestModels.Exceptions.RequestFailedException
+    name: RequestFailedException
+  - uid: RestModels.Exceptions.WritingFailedException
+    name: WritingFailedException
+- uid: RestModels.Extensions
+  name: RestModels.Extensions
+  items:
+  - uid: RestModels.Extensions.RestModelOptionsBuilderExtensions
+    name: RestModelOptionsBuilderExtensions
+- uid: RestModels.Filters
+  name: RestModels.Filters
+  items:
+  - uid: RestModels.Filters.DelegateFilter`2
+    name: DelegateFilter<TModel, TUser>
+    name.vb: DelegateFilter(Of TModel, TUser)
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter<TModel, TUser>
+    name.vb: IFilter(Of TModel, TUser)
+  - uid: RestModels.Filters.IFilter`1
+    name: IFilter<TModel>
+    name.vb: IFilter(Of TModel)
+  - uid: RestModels.Filters.ParameterResolver
+    name: ParameterResolver
+- uid: RestModels.Models
+  name: RestModels.Models
+  items:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider<TModel, TUser>
+    name.vb: IModelProvider(Of TModel, TUser)
+  - uid: RestModels.Models.IModelProvider`1
+    name: IModelProvider<TModel>
+    name.vb: IModelProvider(Of TModel)
+- uid: RestModels.Operations
+  name: RestModels.Operations
+  items:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation<TModel, TUser>
+    name.vb: IOperation(Of TModel, TUser)
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation<TModel>
+    name.vb: IOperation(Of TModel)
+- uid: RestModels.Options
+  name: RestModels.Options
+  items:
+  - uid: RestModels.Options.FormattingOptions
+    name: FormattingOptions
+  - uid: RestModels.Options.ParserOptions
+    name: ParserOptions
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions<TModel, TUser>
+    name.vb: RestModelOptions(Of TModel, TUser)
+- uid: RestModels.Options.Builder
+  name: RestModels.Options.Builder
+  items:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder<TModel, TUser>
+    name.vb: RestModelOptionsBuilder(Of TModel, TUser)
+- uid: RestModels.ParameterRetrievers
+  name: RestModels.ParameterRetrievers
+  items:
+  - uid: RestModels.ParameterRetrievers.HeaderRetriever
+    name: HeaderRetriever
+  - uid: RestModels.ParameterRetrievers.ParameterRetriever
+    name: ParameterRetriever
+  - uid: RestModels.ParameterRetrievers.QueryParameterRetriever
+    name: QueryParameterRetriever
+  - uid: RestModels.ParameterRetrievers.RouteValueRetriever
+    name: RouteValueRetriever
+- uid: RestModels.Parsers
+  name: RestModels.Parsers
+  items:
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser<TModel>
+    name.vb: IBodyParser(Of TModel)
+  - uid: RestModels.Parsers.JsonBodyParser`1
+    name: JsonBodyParser<TModel>
+    name.vb: JsonBodyParser(Of TModel)
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult<TModel>
+    name.vb: ParseResult(Of TModel)
+  - uid: RestModels.Parsers.XmlBodyParser`1
+    name: XmlBodyParser<TModel>
+    name.vb: XmlBodyParser(Of TModel)
+- uid: RestModels.Results
+  name: RestModels.Results
+  items:
+  - uid: RestModels.Results.AcceptDependentResultWriter`2
+    name: AcceptDependentResultWriter<TModel, TUser>
+    name.vb: AcceptDependentResultWriter(Of TModel, TUser)
+  - uid: RestModels.Results.HeaderDependentResultWriter`2
+    name: HeaderDependentResultWriter<TModel, TUser>
+    name.vb: HeaderDependentResultWriter(Of TModel, TUser)
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter<TModel, TUser>
+    name.vb: IResultWriter(Of TModel, TUser)
+  - uid: RestModels.Results.IResultWriter`1
+    name: IResultWriter<TModel>
+    name.vb: IResultWriter(Of TModel)
+  - uid: RestModels.Results.JsonResultWriter`1
+    name: JsonResultWriter<TModel>
+    name.vb: JsonResultWriter(Of TModel)
+  - uid: RestModels.Results.NumberAffectedResultWriter`1
+    name: NumberAffectedResultWriter<TModel>
+    name.vb: NumberAffectedResultWriter(Of TModel)
+  - uid: RestModels.Results.QueryDependentResultWriter`2
+    name: QueryDependentResultWriter<TModel, TUser>
+    name.vb: QueryDependentResultWriter(Of TModel, TUser)
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter<TModel, TUser>
+    name.vb: RequestDependentResultWriter(Of TModel, TUser)
+  - uid: RestModels.Results.StringResultWriter
+    name: StringResultWriter
+  - uid: RestModels.Results.XmlResultWriter`1
+    name: XmlResultWriter<TModel>
+    name.vb: XmlResultWriter(Of TModel)

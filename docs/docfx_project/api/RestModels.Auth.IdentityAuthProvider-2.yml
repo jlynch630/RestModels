@@ -1,0 +1,1430 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Auth.IdentityAuthProvider`2
+  commentId: T:RestModels.Auth.IdentityAuthProvider`2
+  id: IdentityAuthProvider`2
+  parent: RestModels.Auth
+  children:
+  - RestModels.Auth.IdentityAuthProvider`2.#ctor
+  - RestModels.Auth.IdentityAuthProvider`2.#ctor(System.Collections.Generic.IEnumerable{System.String})
+  - RestModels.Auth.IdentityAuthProvider`2.#ctor(System.String)
+  - RestModels.Auth.IdentityAuthProvider`2.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})
+  - RestModels.Auth.IdentityAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  - RestModels.Auth.IdentityAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  langs:
+  - csharp
+  - vb
+  name: IdentityAuthProvider<TModel, TUser>
+  nameWithType: IdentityAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>
+  type: Class
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: IdentityAuthProvider
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 26
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nAuth provider that uses ASP.NET Core Identity to authorize the user\n"
+  example: []
+  syntax:
+    content: 'public class IdentityAuthProvider<TModel, TUser> : IAuthProvider<TModel, TUser> where TModel : class where TUser : class'
+    typeParameters:
+    - id: TModel
+      description: The type of model that this API handles
+    - id: TUser
+      description: The type of the authenticated user context
+    content.vb: >-
+      Public Class IdentityAuthProvider(Of TModel As Class, TUser As Class)
+
+          Implements IAuthProvider(Of TModel, TUser)
+  inheritance:
+  - System.Object
+  implements:
+  - RestModels.Auth.IAuthProvider{{TModel},{TUser}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser)
+  name.vb: IdentityAuthProvider(Of TModel, TUser)
+- uid: RestModels.Auth.IdentityAuthProvider`2.#ctor
+  commentId: M:RestModels.Auth.IdentityAuthProvider`2.#ctor
+  id: '#ctor'
+  parent: RestModels.Auth.IdentityAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: IdentityAuthProvider()
+  nameWithType: IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider()
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider()
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 41
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.Auth.IdentityAuthProvider%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public IdentityAuthProvider()
+    content.vb: Public Sub New
+  overload: RestModels.Auth.IdentityAuthProvider`2.#ctor*
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider()
+- uid: RestModels.Auth.IdentityAuthProvider`2.#ctor(System.String)
+  commentId: M:RestModels.Auth.IdentityAuthProvider`2.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: RestModels.Auth.IdentityAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: IdentityAuthProvider(String)
+  nameWithType: IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider(String)
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 47
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.Auth.IdentityAuthProvider%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public IdentityAuthProvider(string policy)
+    parameters:
+    - id: policy
+      type: System.String
+      description: The policy that the <see cref="!:TUser"></see> must fulfill to authenticate
+    content.vb: Public Sub New(policy As String)
+  overload: RestModels.Auth.IdentityAuthProvider`2.#ctor*
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider(System.String)
+- uid: RestModels.Auth.IdentityAuthProvider`2.#ctor(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:RestModels.Auth.IdentityAuthProvider`2.#ctor(System.Collections.Generic.IEnumerable{System.String})
+  id: '#ctor(System.Collections.Generic.IEnumerable{System.String})'
+  parent: RestModels.Auth.IdentityAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: IdentityAuthProvider(IEnumerable<String>)
+  nameWithType: IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider(IEnumerable<String>)
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider(System.Collections.Generic.IEnumerable<System.String>)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 53
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.Auth.IdentityAuthProvider%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public IdentityAuthProvider(IEnumerable<string> roles)
+    parameters:
+    - id: roles
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: The roles that the <see cref="!:TUser"></see> must be in to authenticate
+    content.vb: Public Sub New(roles As IEnumerable(Of String))
+  overload: RestModels.Auth.IdentityAuthProvider`2.#ctor*
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider(IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider(System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: IdentityAuthProvider(IEnumerable(Of String))
+- uid: RestModels.Auth.IdentityAuthProvider`2.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:RestModels.Auth.IdentityAuthProvider`2.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})
+  id: '#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})'
+  parent: RestModels.Auth.IdentityAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: IdentityAuthProvider(String, IEnumerable<String>)
+  nameWithType: IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider(String, IEnumerable<String>)
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider(System.String, System.Collections.Generic.IEnumerable<System.String>)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 60
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.Auth.IdentityAuthProvider%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public IdentityAuthProvider(string policy, IEnumerable<string> roles)
+    parameters:
+    - id: policy
+      type: System.String
+      description: The policy that the <see cref="!:TUser"></see> must fulfill to authenticate
+    - id: roles
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: The roles that the <see cref="!:TUser"></see> must be in to authenticate
+    content.vb: Public Sub New(policy As String, roles As IEnumerable(Of String))
+  overload: RestModels.Auth.IdentityAuthProvider`2.#ctor*
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider(String, IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider(System.String, System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: IdentityAuthProvider(String, IEnumerable(Of String))
+- uid: RestModels.Auth.IdentityAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  commentId: M:RestModels.Auth.IdentityAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  id: AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  parent: RestModels.Auth.IdentityAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  nameWithType: IdentityAuthProvider<TModel, TUser>.AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult<TModel>[])
+  type: Method
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthenticateAsync
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 71
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nAuthenticates the given request context, and returns the authenticated user\n"
+  example: []
+  syntax:
+    content: public Task<TUser> AuthenticateAsync(HttpContext context, ParseResult<TModel>[] parsed)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current request context
+    - id: parsed
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The models parsed from the request body, if any
+    return:
+      type: System.Threading.Tasks.Task{{TUser}}
+      description: The currently authenticated user context
+    content.vb: Public Function AuthenticateAsync(context As HttpContext, parsed As ParseResult(Of TModel)()) As Task(Of TUser)
+  overload: RestModels.Auth.IdentityAuthProvider`2.AuthenticateAsync*
+  implements:
+  - RestModels.Auth.IAuthProvider{{TModel},{TUser}}.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{{TModel}}[])
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+- uid: RestModels.Auth.IdentityAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  commentId: M:RestModels.Auth.IdentityAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  id: CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  parent: RestModels.Auth.IdentityAuthProvider`2
+  langs:
+  - csharp
+  - vb
+  name: CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  nameWithType: IdentityAuthProvider<TModel, TUser>.CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult<TModel>[])
+  type: Method
+  source:
+    remote:
+      path: RestModels/Auth/IdentityAuthProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: CanAuthAsync
+    path: ../../RestModels/Auth/IdentityAuthProvider.cs
+    startLine: 101
+  assemblies:
+  - RestModels
+  namespace: RestModels.Auth
+  summary: "\nGets whether or not the given request can be authenticated for\n"
+  example: []
+  syntax:
+    content: public Task<bool> CanAuthAsync(HttpRequest requestContext, ParseResult<TModel>[] parsedModel)
+    parameters:
+    - id: requestContext
+      type: Microsoft.AspNetCore.Http.HttpRequest
+      description: The current request context
+    - id: parsedModel
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The models parsed from the request body, if any
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: "\n<code>true</code> if this request contains the header value this <xref href=\"RestModels.Auth.HeaderAuthProvider%602\" data-throw-if-not-resolved=\"false\"></xref> authenticates with\n"
+    content.vb: Public Function CanAuthAsync(requestContext As HttpRequest, parsedModel As ParseResult(Of TModel)()) As Task(Of Boolean)
+  overload: RestModels.Auth.IdentityAuthProvider`2.CanAuthAsync*
+  implements:
+  - RestModels.Auth.IAuthProvider{{TModel},{TUser}}.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{{TModel}}[])
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+references:
+- uid: RestModels.Auth
+  commentId: N:RestModels.Auth
+  name: RestModels.Auth
+  nameWithType: RestModels.Auth
+  fullName: RestModels.Auth
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: RestModels.Auth.IAuthProvider{{TModel},{TUser}}
+  commentId: T:RestModels.Auth.IAuthProvider{`0,`1}
+  parent: RestModels.Auth
+  definition: RestModels.Auth.IAuthProvider`2
+  name: IAuthProvider<TModel, TUser>
+  nameWithType: IAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>
+  nameWithType.vb: IAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser)
+  name.vb: IAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Auth.IAuthProvider`2
+  commentId: T:RestModels.Auth.IAuthProvider`2
+  name: IAuthProvider<TModel, TUser>
+  nameWithType: IAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>
+  nameWithType.vb: IAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser)
+  name.vb: IAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IdentityAuthProvider`2
+  commentId: T:RestModels.Auth.IdentityAuthProvider`2
+  name: IdentityAuthProvider<TModel, TUser>
+  nameWithType: IdentityAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser)
+  name.vb: IdentityAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.IdentityAuthProvider`2
+    name: IdentityAuthProvider
+    nameWithType: IdentityAuthProvider
+    fullName: RestModels.Auth.IdentityAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.IdentityAuthProvider`2
+    name: IdentityAuthProvider
+    nameWithType: IdentityAuthProvider
+    fullName: RestModels.Auth.IdentityAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IdentityAuthProvider`2.#ctor*
+  commentId: Overload:RestModels.Auth.IdentityAuthProvider`2.#ctor
+  name: IdentityAuthProvider
+  nameWithType: IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.IdentityAuthProvider
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).IdentityAuthProvider
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: RestModels.Auth.IdentityAuthProvider`2.AuthenticateAsync*
+  commentId: Overload:RestModels.Auth.IdentityAuthProvider`2.AuthenticateAsync
+  name: AuthenticateAsync
+  nameWithType: IdentityAuthProvider<TModel, TUser>.AuthenticateAsync
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.AuthenticateAsync
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).AuthenticateAsync
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).AuthenticateAsync
+- uid: RestModels.Auth.IAuthProvider{{TModel},{TUser}}.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{{TModel}}[])
+  commentId: M:RestModels.Auth.IAuthProvider{`0,`1}.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  parent: RestModels.Auth.IAuthProvider{{TModel},{TUser}}
+  definition: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  name: AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  nameWithType: IAuthProvider<TModel, TUser>.AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult<TModel>[])
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+    name: AuthenticateAsync
+    nameWithType: IAuthProvider<TModel, TUser>.AuthenticateAsync
+    fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.AuthenticateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+    name: AuthenticateAsync
+    nameWithType: IAuthProvider(Of TModel, TUser).AuthenticateAsync
+    fullName: RestModels.Auth.IAuthProvider(Of TModel, TUser).AuthenticateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: RestModels.Parsers.ParseResult{{TModel}}[]
+  isExternal: true
+  name: ParseResult<TModel>[]
+  nameWithType: ParseResult<TModel>[]
+  fullName: RestModels.Parsers.ParseResult<TModel>[]
+  nameWithType.vb: ParseResult(Of TModel)()
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)()
+  name.vb: ParseResult(Of TModel)()
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Threading.Tasks.Task{{TUser}}
+  commentId: T:System.Threading.Tasks.Task{`1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TUser>
+  nameWithType: Task<TUser>
+  fullName: System.Threading.Tasks.Task<TUser>
+  nameWithType.vb: Task(Of TUser)
+  fullName.vb: System.Threading.Tasks.Task(Of TUser)
+  name.vb: Task(Of TUser)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  commentId: M:RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+  isExternal: true
+  name: AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  nameWithType: IAuthProvider<TModel, TUser>.AuthenticateAsync(HttpContext, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult<TModel>[])
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: AuthenticateAsync(HttpContext, ParseResult(Of TModel)())
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+    name: AuthenticateAsync
+    nameWithType: IAuthProvider<TModel, TUser>.AuthenticateAsync
+    fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.AuthenticateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2.AuthenticateAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[])
+    name: AuthenticateAsync
+    nameWithType: IAuthProvider(Of TModel, TUser).AuthenticateAsync
+    fullName: RestModels.Auth.IAuthProvider(Of TModel, TUser).AuthenticateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: RestModels.Auth.HeaderAuthProvider`2
+  commentId: T:RestModels.Auth.HeaderAuthProvider`2
+  name: HeaderAuthProvider<TModel, TUser>
+  nameWithType: HeaderAuthProvider<TModel, TUser>
+  fullName: RestModels.Auth.HeaderAuthProvider<TModel, TUser>
+  nameWithType.vb: HeaderAuthProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Auth.HeaderAuthProvider(Of TModel, TUser)
+  name.vb: HeaderAuthProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Auth.HeaderAuthProvider`2
+    name: HeaderAuthProvider
+    nameWithType: HeaderAuthProvider
+    fullName: RestModels.Auth.HeaderAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Auth.HeaderAuthProvider`2
+    name: HeaderAuthProvider
+    nameWithType: HeaderAuthProvider
+    fullName: RestModels.Auth.HeaderAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IdentityAuthProvider`2.CanAuthAsync*
+  commentId: Overload:RestModels.Auth.IdentityAuthProvider`2.CanAuthAsync
+  name: CanAuthAsync
+  nameWithType: IdentityAuthProvider<TModel, TUser>.CanAuthAsync
+  fullName: RestModels.Auth.IdentityAuthProvider<TModel, TUser>.CanAuthAsync
+  nameWithType.vb: IdentityAuthProvider(Of TModel, TUser).CanAuthAsync
+  fullName.vb: RestModels.Auth.IdentityAuthProvider(Of TModel, TUser).CanAuthAsync
+- uid: RestModels.Auth.IAuthProvider{{TModel},{TUser}}.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{{TModel}}[])
+  commentId: M:RestModels.Auth.IAuthProvider{`0,`1}.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  parent: RestModels.Auth.IAuthProvider{{TModel},{TUser}}
+  definition: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  name: CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  nameWithType: IAuthProvider<TModel, TUser>.CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult<TModel>[])
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+    name: CanAuthAsync
+    nameWithType: IAuthProvider<TModel, TUser>.CanAuthAsync
+    fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.CanAuthAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+    name: CanAuthAsync
+    nameWithType: IAuthProvider(Of TModel, TUser).CanAuthAsync
+    fullName: RestModels.Auth.IAuthProvider(Of TModel, TUser).CanAuthAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http.HttpRequest
+  commentId: T:Microsoft.AspNetCore.Http.HttpRequest
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpRequest
+  nameWithType: HttpRequest
+  fullName: Microsoft.AspNetCore.Http.HttpRequest
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  commentId: M:RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+  isExternal: true
+  name: CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  nameWithType: IAuthProvider<TModel, TUser>.CanAuthAsync(HttpRequest, ParseResult<TModel>[])
+  fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult<TModel>[])
+  nameWithType.vb: IAuthProvider(Of TModel, TUser).CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+  fullName.vb: RestModels.Auth.IAuthProvider(Of TModel, TUser).CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest, RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: CanAuthAsync(HttpRequest, ParseResult(Of TModel)())
+  spec.csharp:
+  - uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+    name: CanAuthAsync
+    nameWithType: IAuthProvider<TModel, TUser>.CanAuthAsync
+    fullName: RestModels.Auth.IAuthProvider<TModel, TUser>.CanAuthAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Auth.IAuthProvider`2.CanAuthAsync(Microsoft.AspNetCore.Http.HttpRequest,RestModels.Parsers.ParseResult{`0}[])
+    name: CanAuthAsync
+    nameWithType: IAuthProvider(Of TModel, TUser).CanAuthAsync
+    fullName: RestModels.Auth.IAuthProvider(Of TModel, TUser).CanAuthAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )

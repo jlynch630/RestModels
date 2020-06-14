@@ -7,7 +7,7 @@ uid: getting-started
 In this getting started example, we'll be building a simple API for a blog server. When you're finished, you'll be able to create, read, update, and delete blogs and blog posts with simple key-based authentication.
 
 ## Terminology
-Some of the terms used in this article can mean a lot of different things in a lot of different places, so heres a quick breakdown of what they mean here:
+Some of the terms used in this article can mean a lot of different things in a lot of different places, so here's a quick breakdown of what they mean in this article:
 
 * **API:** Every call to some form of `app.UseRestModels` is an "API," a set of routes bundled together for working with a specific model.
 * **Model:** The data class that the API operates on. In Entity Framework, this is also referred to as an Entity.
@@ -16,13 +16,17 @@ Some of the terms used in this article can mean a lot of different things in a l
 
 ## Prerequisites
 * [Visual Studio with .NET Core](https://visualstudio.microsoft.com/) (Windows) or [Visual Studio Code](https://code.visualstudio.com/) and the [.NET Core SDK](https://www.microsoft.com/net/download/core) (Windows, Mac, Linux)
-* A good knowledge of Entity Framework is recommended, but not required.
+* A good knowledge of ASP.NET Core and Entity Framework is recommended, but not required.
 
 ## Creating a new Project
 Step one is creating a new ASP.NET Core project in Visual Studio, or on the command line.
 
-### [Visual Studio](#tab/vs)
-todo
+### [Visual Studio 2019](#tab/vs)
+* From the Start Page, click on **Create a new project**
+* Click on or search for **ASP.NET Core Web Application**
+* Enter a suitable project name, like **RMGettingStarted**
+* Click **Create**
+
 ### [Command Line](#tab/cli)
 Create a new folder for your project, and a new web application with `dotnet`:
 ```bash
@@ -34,12 +38,17 @@ Create a new folder for your project, and a new web application with `dotnet`:
 ## Installing Dependencies
 Next, install the `RestModels.EntityFrameworkCore` nuget package, as well as the Entity Framework package for your database. In this example, we'll be using `Sqlite`.
 
-### [Visual Studio](#tab/vs)
-todo
+### [Visual Studio 2019](#tab/vs)
+* From the toolbar, select **Tools** > **NuGet Package Manager** > **Package Manager Console**
+* Enter the following commands in the Package Manager Console:
+```powershell
+Install-Package Microsoft.EntityFrameworkCore.Sqlite
+Install-Package RestModels.EntityFrameworkCore
+```
 ### [Command Line](#tab/cli)
 ```bash
-~/BlogServer$ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-~/BlogServer$ dotnet add package RestModels.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package RestModels.EntityFrameworkCore
 ```
 ***
 
@@ -97,7 +106,7 @@ services.AddDbContext<BlogServerContext>(); // { todo -- better error when missi
 
 Then, create a migration and the database:
 
-### [Visual Studio](#tab/vs)
+### [Visual Studio 2019](#tab/vs)
 In the Package Manager Console, run the following:
 ```powershell
 Install-Package Microsoft.EntityFrameworkCore.Tools
@@ -108,10 +117,10 @@ Update-Database
 For more details on what these commands are doing, refer to EF Core's [getting started guide](https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=visual-studio#tabpanel_CeZOj-G++Q-4_visual-studio)
 ### [Command Line](#tab/cli)
 ```bash
-~/BlogServer$ dotnet tool install --global dotnet-ef
-~/BlogServer$ dotnet add package Microsoft.EntityFrameworkCore.Design
-~/BlogServer$ dotnet ef migrations add InitialCreate
-~/BlogServer$ dotnet ef database update
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet ef migrations add InitialCreate
+dotnet ef database update
 ```
 
 For more details on what these commands are doing, refer to EF Core's [getting started guide](https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=netcore-cli#tabpanel_CeZOj-G++Q-4_netcore-cli)

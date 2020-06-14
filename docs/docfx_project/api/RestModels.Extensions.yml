@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Extensions
+  commentId: N:RestModels.Extensions
+  id: RestModels.Extensions
+  children:
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Extensions
+  nameWithType: RestModels.Extensions
+  fullName: RestModels.Extensions
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  commentId: T:RestModels.Extensions.RestModelOptionsBuilderExtensions
+  name: RestModelOptionsBuilderExtensions
+  nameWithType: RestModelOptionsBuilderExtensions
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions

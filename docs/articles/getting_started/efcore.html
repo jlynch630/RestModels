@@ -71,7 +71,7 @@
 
 <p>In this getting started example, we'll be building a simple API for a blog server. When you're finished, you'll be able to create, read, update, and delete blogs and blog posts with simple key-based authentication.</p>
 <h2 id="terminology">Terminology</h2>
-<p>Some of the terms used in this article can mean a lot of different things in a lot of different places, so heres a quick breakdown of what they mean here:</p>
+<p>Some of the terms used in this article can mean a lot of different things in a lot of different places, so here's a quick breakdown of what they mean in this article:</p>
 <ul>
 <li><strong>API:</strong> Every call to some form of <code>app.UseRestModels</code> is an &quot;API,&quot; a set of routes bundled together for working with a specific model.</li>
 <li><strong>Model:</strong> The data class that the API operates on. In Entity Framework, this is also referred to as an Entity.</li>
@@ -81,14 +81,14 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li><a href="https://visualstudio.microsoft.com/">Visual Studio with .NET Core</a> (Windows) or <a href="https://code.visualstudio.com/">Visual Studio Code</a> and the <a href="https://www.microsoft.com/net/download/core">.NET Core SDK</a> (Windows, Mac, Linux)</li>
-<li>A good knowledge of Entity Framework is recommended, but not required.</li>
+<li>A good knowledge of ASP.NET Core and Entity Framework is recommended, but not required.</li>
 </ul>
 <h2 id="creating-a-new-project">Creating a new Project</h2>
 <p>Step one is creating a new ASP.NET Core project in Visual Studio, or on the command line.</p>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_vs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vs" data-tab="vs" tabindex="0" aria-selected="true">Visual Studio</a>
+<a href="#tabpanel_CeZOj-G++Q_vs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vs" data-tab="vs" tabindex="0" aria-selected="true">Visual Studio 2019</a>
 </li>
 <li role="presentation">
 <a href="#tabpanel_CeZOj-G++Q_cli" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cli" data-tab="cli" tabindex="-1">Command Line</a>
@@ -96,7 +96,12 @@
 </ul>
 <section id="tabpanel_CeZOj-G++Q_vs" role="tabpanel" data-tab="vs">
 
-<p>todo</p>
+<ul>
+<li>From the Start Page, click on <strong>Create a new project</strong></li>
+<li>Click on or search for <strong>ASP.NET Core Web Application</strong></li>
+<li>Enter a suitable project name, like <strong>RMGettingStarted</strong></li>
+<li>Click <strong>Create</strong></li>
+</ul>
 </section>
 <section id="tabpanel_CeZOj-G++Q_cli" role="tabpanel" data-tab="cli" aria-hidden="true" hidden="hidden">
 
@@ -111,7 +116,7 @@
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_vs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vs" data-tab="vs" tabindex="0" aria-selected="true">Visual Studio</a>
+<a href="#tabpanel_CeZOj-G++Q-1_vs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vs" data-tab="vs" tabindex="0" aria-selected="true">Visual Studio 2019</a>
 </li>
 <li role="presentation">
 <a href="#tabpanel_CeZOj-G++Q-1_cli" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cli" data-tab="cli" tabindex="-1">Command Line</a>
@@ -119,12 +124,18 @@
 </ul>
 <section id="tabpanel_CeZOj-G++Q-1_vs" role="tabpanel" data-tab="vs">
 
-<p>todo</p>
+<ul>
+<li>From the toolbar, select <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Package Manager Console</strong></li>
+<li>Enter the following commands in the Package Manager Console:</li>
+</ul>
+<pre><code class="lang-powershell">Install-Package Microsoft.EntityFrameworkCore.Sqlite
+Install-Package RestModels.EntityFrameworkCore
+</code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q-1_cli" role="tabpanel" data-tab="cli" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-bash">~/BlogServer$ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-~/BlogServer$ dotnet add package RestModels.EntityFrameworkCore
+<pre><code class="lang-bash">dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package RestModels.EntityFrameworkCore
 </code></pre>
 </section>
 </div>
@@ -163,7 +174,7 @@
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q-4">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-4_vs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_vs" data-tab="vs" tabindex="0" aria-selected="true">Visual Studio</a>
+<a href="#tabpanel_CeZOj-G++Q-4_vs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_vs" data-tab="vs" tabindex="0" aria-selected="true">Visual Studio 2019</a>
 </li>
 <li role="presentation">
 <a href="#tabpanel_CeZOj-G++Q-4_cli" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_cli" data-tab="cli" tabindex="-1">Command Line</a>
@@ -180,10 +191,10 @@ Update-Database
 </section>
 <section id="tabpanel_CeZOj-G++Q-4_cli" role="tabpanel" data-tab="cli" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-bash">~/BlogServer$ dotnet tool install --global dotnet-ef
-~/BlogServer$ dotnet add package Microsoft.EntityFrameworkCore.Design
-~/BlogServer$ dotnet ef migrations add InitialCreate
-~/BlogServer$ dotnet ef database update
+<pre><code class="lang-bash">dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet ef migrations add InitialCreate
+dotnet ef database update
 </code></pre>
 <p>For more details on what these commands are doing, refer to EF Core's <a href="https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=netcore-cli#tabpanel_CeZOj-G++Q-4_netcore-cli">getting started guide</a></p>
 </section>

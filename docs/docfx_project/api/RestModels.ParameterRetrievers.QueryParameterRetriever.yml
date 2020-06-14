@@ -1,0 +1,525 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever
+  commentId: T:RestModels.ParameterRetrievers.QueryParameterRetriever
+  id: QueryParameterRetriever
+  parent: RestModels.ParameterRetrievers
+  children:
+  - RestModels.ParameterRetrievers.QueryParameterRetriever.#ctor(System.String,System.String)
+  - RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  langs:
+  - csharp
+  - vb
+  name: QueryParameterRetriever
+  nameWithType: QueryParameterRetriever
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever
+  type: Class
+  source:
+    remote:
+      path: RestModels/ParameterRetrievers/QueryParameterRetriever.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: QueryParameterRetriever
+    path: ../../RestModels/ParameterRetrievers/QueryParameterRetriever.cs
+    startLine: 13
+  assemblies:
+  - RestModels
+  namespace: RestModels.ParameterRetrievers
+  summary: "\nParameter retriever that retrieves a query parameter by name\n"
+  example: []
+  syntax:
+    content: 'public class QueryParameterRetriever : ParameterRetriever'
+    content.vb: >-
+      Public Class QueryParameterRetriever
+
+          Inherits ParameterRetriever
+  inheritance:
+  - System.Object
+  - RestModels.ParameterRetrievers.ParameterRetriever
+  inheritedMembers:
+  - RestModels.ParameterRetrievers.ParameterRetriever.DefaultValue
+  - RestModels.ParameterRetrievers.ParameterRetriever.ParameterName
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever.#ctor(System.String,System.String)
+  commentId: M:RestModels.ParameterRetrievers.QueryParameterRetriever.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: RestModels.ParameterRetrievers.QueryParameterRetriever
+  langs:
+  - csharp
+  - vb
+  name: QueryParameterRetriever(String, String)
+  nameWithType: QueryParameterRetriever.QueryParameterRetriever(String, String)
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever.QueryParameterRetriever(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/ParameterRetrievers/QueryParameterRetriever.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/ParameterRetrievers/QueryParameterRetriever.cs
+    startLine: 19
+  assemblies:
+  - RestModels
+  namespace: RestModels.ParameterRetrievers
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.ParameterRetrievers.QueryParameterRetriever\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public QueryParameterRetriever(string name, string defaultValue = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the query parameter to retrieve
+    - id: defaultValue
+      type: System.String
+      description: The default value of the parameter if none is specified
+    content.vb: Public Sub New(name As String, defaultValue As String = Nothing)
+  overload: RestModels.ParameterRetrievers.QueryParameterRetriever.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  id: GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  parent: RestModels.ParameterRetrievers.QueryParameterRetriever
+  langs:
+  - csharp
+  - vb
+  name: GetValue(HttpRequest)
+  nameWithType: QueryParameterRetriever.GetValue(HttpRequest)
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  type: Method
+  source:
+    remote:
+      path: RestModels/ParameterRetrievers/QueryParameterRetriever.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: GetValue
+    path: ../../RestModels/ParameterRetrievers/QueryParameterRetriever.cs
+    startLine: 27
+  assemblies:
+  - RestModels
+  namespace: RestModels.ParameterRetrievers
+  summary: "\nGets the value of the query parameter for the given request\n"
+  example: []
+  syntax:
+    content: public override string GetValue(HttpRequest request)
+    parameters:
+    - id: request
+      type: Microsoft.AspNetCore.Http.HttpRequest
+      description: The HTTP request context
+    return:
+      type: System.String
+      description: The retrieved parameter value
+    content.vb: Public Overrides Function GetValue(request As HttpRequest) As String
+  overridden: RestModels.ParameterRetrievers.ParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  overload: RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: RestModels.ParameterRetrievers
+  commentId: N:RestModels.ParameterRetrievers
+  name: RestModels.ParameterRetrievers
+  nameWithType: RestModels.ParameterRetrievers
+  fullName: RestModels.ParameterRetrievers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: RestModels.ParameterRetrievers.ParameterRetriever
+  commentId: T:RestModels.ParameterRetrievers.ParameterRetriever
+  parent: RestModels.ParameterRetrievers
+  name: ParameterRetriever
+  nameWithType: ParameterRetriever
+  fullName: RestModels.ParameterRetrievers.ParameterRetriever
+- uid: RestModels.ParameterRetrievers.ParameterRetriever.DefaultValue
+  commentId: P:RestModels.ParameterRetrievers.ParameterRetriever.DefaultValue
+  parent: RestModels.ParameterRetrievers.ParameterRetriever
+  name: DefaultValue
+  nameWithType: ParameterRetriever.DefaultValue
+  fullName: RestModels.ParameterRetrievers.ParameterRetriever.DefaultValue
+- uid: RestModels.ParameterRetrievers.ParameterRetriever.ParameterName
+  commentId: P:RestModels.ParameterRetrievers.ParameterRetriever.ParameterName
+  parent: RestModels.ParameterRetrievers.ParameterRetriever
+  name: ParameterName
+  nameWithType: ParameterRetriever.ParameterName
+  fullName: RestModels.ParameterRetrievers.ParameterRetriever.ParameterName
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever
+  commentId: T:RestModels.ParameterRetrievers.QueryParameterRetriever
+  name: QueryParameterRetriever
+  nameWithType: QueryParameterRetriever
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever.#ctor*
+  commentId: Overload:RestModels.ParameterRetrievers.QueryParameterRetriever.#ctor
+  name: QueryParameterRetriever
+  nameWithType: QueryParameterRetriever.QueryParameterRetriever
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever.QueryParameterRetriever
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: RestModels.ParameterRetrievers.ParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  commentId: M:RestModels.ParameterRetrievers.ParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  parent: RestModels.ParameterRetrievers.ParameterRetriever
+  isExternal: true
+  name: GetValue(HttpRequest)
+  nameWithType: ParameterRetriever.GetValue(HttpRequest)
+  fullName: RestModels.ParameterRetrievers.ParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+  spec.csharp:
+  - uid: RestModels.ParameterRetrievers.ParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+    name: GetValue
+    nameWithType: ParameterRetriever.GetValue
+    fullName: RestModels.ParameterRetrievers.ParameterRetriever.GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.ParameterRetrievers.ParameterRetriever.GetValue(Microsoft.AspNetCore.Http.HttpRequest)
+    name: GetValue
+    nameWithType: ParameterRetriever.GetValue
+    fullName: RestModels.ParameterRetrievers.ParameterRetriever.GetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpRequest
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: Microsoft.AspNetCore.Http.HttpRequest
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue*
+  commentId: Overload:RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue
+  name: GetValue
+  nameWithType: QueryParameterRetriever.GetValue
+  fullName: RestModels.ParameterRetrievers.QueryParameterRetriever.GetValue
+- uid: Microsoft.AspNetCore.Http.HttpRequest
+  commentId: T:Microsoft.AspNetCore.Http.HttpRequest
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpRequest
+  nameWithType: HttpRequest
+  fullName: Microsoft.AspNetCore.Http.HttpRequest
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http

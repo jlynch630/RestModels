@@ -1,0 +1,1839 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Options.RestModelOptions`2
+  commentId: T:RestModels.Options.RestModelOptions`2
+  id: RestModelOptions`2
+  parent: RestModels.Options
+  children:
+  - RestModels.Options.RestModelOptions`2.AuthProviders
+  - RestModels.Options.RestModelOptions`2.BodyParsers
+  - RestModels.Options.RestModelOptions`2.Conditions
+  - RestModels.Options.RestModelOptions`2.Copy
+  - RestModels.Options.RestModelOptions`2.ExceptionHandlers
+  - RestModels.Options.RestModelOptions`2.Filters
+  - RestModels.Options.RestModelOptions`2.FormattingOptions
+  - RestModels.Options.RestModelOptions`2.ModelProvider
+  - RestModels.Options.RestModelOptions`2.Operation
+  - RestModels.Options.RestModelOptions`2.ParserOptions
+  - RestModels.Options.RestModelOptions`2.RequestMethods
+  - RestModels.Options.RestModelOptions`2.ResultWriter
+  - RestModels.Options.RestModelOptions`2.RoutePattern
+  langs:
+  - csharp
+  - vb
+  name: RestModelOptions<TModel, TUser>
+  nameWithType: RestModelOptions<TModel, TUser>
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>
+  type: Class
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: RestModelOptions
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 27
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nOptions for a specific RestModels route\n"
+  example: []
+  syntax:
+    content: >-
+      public class RestModelOptions<TModel, TUser>
+
+          where TModel : class where TUser : class
+    typeParameters:
+    - id: TModel
+      description: The type of model this route handles
+    - id: TUser
+      description: The type of authenticated user context
+    content.vb: Public Class RestModelOptions(Of TModel As Class, TUser As Class)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: RestModelOptions(Of TModel, TUser)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser)
+  name.vb: RestModelOptions(Of TModel, TUser)
+- uid: RestModels.Options.RestModelOptions`2.AuthProviders
+  commentId: P:RestModels.Options.RestModelOptions`2.AuthProviders
+  id: AuthProviders
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: AuthProviders
+  nameWithType: RestModelOptions<TModel, TUser>.AuthProviders
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.AuthProviders
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthProviders
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 32
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets a list of providers available to authenticate the request\n"
+  example: []
+  syntax:
+    content: public List<IAuthProvider<TModel, TUser>> AuthProviders { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{RestModels.Auth.IAuthProvider{{TModel},{TUser}}}
+    content.vb: Public Property AuthProviders As List(Of IAuthProvider(Of TModel, TUser))
+  overload: RestModels.Options.RestModelOptions`2.AuthProviders*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).AuthProviders
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).AuthProviders
+- uid: RestModels.Options.RestModelOptions`2.BodyParsers
+  commentId: P:RestModels.Options.RestModelOptions`2.BodyParsers
+  id: BodyParsers
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: BodyParsers
+  nameWithType: RestModelOptions<TModel, TUser>.BodyParsers
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.BodyParsers
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: BodyParsers
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 37
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the parsers available to parse a request body\n"
+  example: []
+  syntax:
+    content: public List<IBodyParser<TModel>> BodyParsers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{RestModels.Parsers.IBodyParser{{TModel}}}
+    content.vb: Public Property BodyParsers As List(Of IBodyParser(Of TModel))
+  overload: RestModels.Options.RestModelOptions`2.BodyParsers*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).BodyParsers
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).BodyParsers
+- uid: RestModels.Options.RestModelOptions`2.Conditions
+  commentId: P:RestModels.Options.RestModelOptions`2.Conditions
+  id: Conditions
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: Conditions
+  nameWithType: RestModelOptions<TModel, TUser>.Conditions
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Conditions
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: Conditions
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 42
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets a list of conditions that the request must meet\n"
+  example: []
+  syntax:
+    content: public List<ICondition<TModel, TUser>> Conditions { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{RestModels.Conditions.ICondition{{TModel},{TUser}}}
+    content.vb: Public Property Conditions As List(Of ICondition(Of TModel, TUser))
+  overload: RestModels.Options.RestModelOptions`2.Conditions*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Conditions
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Conditions
+- uid: RestModels.Options.RestModelOptions`2.Filters
+  commentId: P:RestModels.Options.RestModelOptions`2.Filters
+  id: Filters
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: Filters
+  nameWithType: RestModelOptions<TModel, TUser>.Filters
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Filters
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: Filters
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 47
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets a list of filters to pare down the dataset\n"
+  example: []
+  syntax:
+    content: public List<IFilter<TModel, TUser>> Filters { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{RestModels.Filters.IFilter{{TModel},{TUser}}}
+    content.vb: Public Property Filters As List(Of IFilter(Of TModel, TUser))
+  overload: RestModels.Options.RestModelOptions`2.Filters*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Filters
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Filters
+- uid: RestModels.Options.RestModelOptions`2.ModelProvider
+  commentId: P:RestModels.Options.RestModelOptions`2.ModelProvider
+  id: ModelProvider
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: ModelProvider
+  nameWithType: RestModelOptions<TModel, TUser>.ModelProvider
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ModelProvider
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: ModelProvider
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 52
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the provider for the API&apos;s models\n"
+  example: []
+  syntax:
+    content: public IModelProvider<TModel, TUser> ModelProvider { get; set; }
+    parameters: []
+    return:
+      type: RestModels.Models.IModelProvider{{TModel},{TUser}}
+    content.vb: Public Property ModelProvider As IModelProvider(Of TModel, TUser)
+  overload: RestModels.Options.RestModelOptions`2.ModelProvider*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ModelProvider
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ModelProvider
+- uid: RestModels.Options.RestModelOptions`2.Operation
+  commentId: P:RestModels.Options.RestModelOptions`2.Operation
+  id: Operation
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: Operation
+  nameWithType: RestModelOptions<TModel, TUser>.Operation
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Operation
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: Operation
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 57
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the operation to perform on the dataset, if any\n"
+  example: []
+  syntax:
+    content: public IOperation<TModel, TUser> Operation { get; set; }
+    parameters: []
+    return:
+      type: RestModels.Operations.IOperation{{TModel},{TUser}}
+    content.vb: Public Property Operation As IOperation(Of TModel, TUser)
+  overload: RestModels.Options.RestModelOptions`2.Operation*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Operation
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Operation
+- uid: RestModels.Options.RestModelOptions`2.ParserOptions
+  commentId: P:RestModels.Options.RestModelOptions`2.ParserOptions
+  id: ParserOptions
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: ParserOptions
+  nameWithType: RestModelOptions<TModel, TUser>.ParserOptions
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ParserOptions
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: ParserOptions
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 62
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the options for parsing request bodies\n"
+  example: []
+  syntax:
+    content: public ParserOptions ParserOptions { get; set; }
+    parameters: []
+    return:
+      type: RestModels.Options.ParserOptions
+    content.vb: Public Property ParserOptions As ParserOptions
+  overload: RestModels.Options.RestModelOptions`2.ParserOptions*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ParserOptions
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ParserOptions
+- uid: RestModels.Options.RestModelOptions`2.RequestMethods
+  commentId: P:RestModels.Options.RestModelOptions`2.RequestMethods
+  id: RequestMethods
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: RequestMethods
+  nameWithType: RestModelOptions<TModel, TUser>.RequestMethods
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.RequestMethods
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: RequestMethods
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 67
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the request methods these options match\n"
+  example: []
+  syntax:
+    content: public HashSet<string> RequestMethods { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.HashSet{System.String}
+    content.vb: Public Property RequestMethods As HashSet(Of String)
+  overload: RestModels.Options.RestModelOptions`2.RequestMethods*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).RequestMethods
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).RequestMethods
+- uid: RestModels.Options.RestModelOptions`2.ResultWriter
+  commentId: P:RestModels.Options.RestModelOptions`2.ResultWriter
+  id: ResultWriter
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: ResultWriter
+  nameWithType: RestModelOptions<TModel, TUser>.ResultWriter
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ResultWriter
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: ResultWriter
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 72
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the result writer for this route\n"
+  example: []
+  syntax:
+    content: public IResultWriter<TModel, TUser> ResultWriter { get; set; }
+    parameters: []
+    return:
+      type: RestModels.Results.IResultWriter{{TModel},{TUser}}
+    content.vb: Public Property ResultWriter As IResultWriter(Of TModel, TUser)
+  overload: RestModels.Options.RestModelOptions`2.ResultWriter*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ResultWriter
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ResultWriter
+- uid: RestModels.Options.RestModelOptions`2.FormattingOptions
+  commentId: P:RestModels.Options.RestModelOptions`2.FormattingOptions
+  id: FormattingOptions
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: FormattingOptions
+  nameWithType: RestModelOptions<TModel, TUser>.FormattingOptions
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.FormattingOptions
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: FormattingOptions
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 77
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets any options for the <xref href=\"RestModels.Options.RestModelOptions%602.ResultWriter\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: public FormattingOptions FormattingOptions { get; set; }
+    parameters: []
+    return:
+      type: RestModels.Options.FormattingOptions
+    content.vb: Public Property FormattingOptions As FormattingOptions
+  overload: RestModels.Options.RestModelOptions`2.FormattingOptions*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).FormattingOptions
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).FormattingOptions
+- uid: RestModels.Options.RestModelOptions`2.RoutePattern
+  commentId: P:RestModels.Options.RestModelOptions`2.RoutePattern
+  id: RoutePattern
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: RoutePattern
+  nameWithType: RestModelOptions<TModel, TUser>.RoutePattern
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.RoutePattern
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: RoutePattern
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 82
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the pattern of the route that these options match with\n"
+  example: []
+  syntax:
+    content: public string RoutePattern { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RoutePattern As String
+  overload: RestModels.Options.RestModelOptions`2.RoutePattern*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).RoutePattern
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).RoutePattern
+- uid: RestModels.Options.RestModelOptions`2.ExceptionHandlers
+  commentId: P:RestModels.Options.RestModelOptions`2.ExceptionHandlers
+  id: ExceptionHandlers
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: ExceptionHandlers
+  nameWithType: RestModelOptions<TModel, TUser>.ExceptionHandlers
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ExceptionHandlers
+  type: Property
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: ExceptionHandlers
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 87
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nGets or sets the list of exception handlers for this route\n"
+  example: []
+  syntax:
+    content: public List<IExceptionHandler> ExceptionHandlers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{RestModels.ExceptionHandlers.IExceptionHandler}
+    content.vb: Public Property ExceptionHandlers As List(Of IExceptionHandler)
+  overload: RestModels.Options.RestModelOptions`2.ExceptionHandlers*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ExceptionHandlers
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ExceptionHandlers
+- uid: RestModels.Options.RestModelOptions`2.Copy
+  commentId: M:RestModels.Options.RestModelOptions`2.Copy
+  id: Copy
+  parent: RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: Copy()
+  nameWithType: RestModelOptions<TModel, TUser>.Copy()
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Copy()
+  type: Method
+  source:
+    remote:
+      path: RestModels/Options/RestModelOptions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: Copy
+    path: ../../RestModels/Options/RestModelOptions.cs
+    startLine: 98
+  assemblies:
+  - RestModels
+  namespace: RestModels.Options
+  summary: "\nMakes a copy of this options object and returns it\n"
+  example: []
+  syntax:
+    content: public RestModelOptions<TModel, TUser> Copy()
+    return:
+      type: RestModels.Options.RestModelOptions{{TModel},{TUser}}
+      description: The copy of this <xref href="RestModels.Options.RestModelOptions%602" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function Copy As RestModelOptions(Of TModel, TUser)
+  overload: RestModels.Options.RestModelOptions`2.Copy*
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Copy()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Copy()
+references:
+- uid: RestModels.Options
+  commentId: N:RestModels.Options
+  name: RestModels.Options
+  nameWithType: RestModels.Options
+  fullName: RestModels.Options
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Options.RestModelOptions`2.AuthProviders*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.AuthProviders
+  name: AuthProviders
+  nameWithType: RestModelOptions<TModel, TUser>.AuthProviders
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.AuthProviders
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).AuthProviders
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).AuthProviders
+- uid: System.Collections.Generic.List{RestModels.Auth.IAuthProvider{{TModel},{TUser}}}
+  commentId: T:System.Collections.Generic.List{RestModels.Auth.IAuthProvider{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IAuthProvider<TModel, TUser>>
+  nameWithType: List<IAuthProvider<TModel, TUser>>
+  fullName: System.Collections.Generic.List<RestModels.Auth.IAuthProvider<TModel, TUser>>
+  nameWithType.vb: List(Of IAuthProvider(Of TModel, TUser))
+  fullName.vb: System.Collections.Generic.List(Of RestModels.Auth.IAuthProvider(Of TModel, TUser))
+  name.vb: List(Of IAuthProvider(Of TModel, TUser))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: RestModels.Auth.IAuthProvider`2
+    name: IAuthProvider
+    nameWithType: IAuthProvider
+    fullName: RestModels.Auth.IAuthProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: RestModels.Options.RestModelOptions`2.BodyParsers*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.BodyParsers
+  name: BodyParsers
+  nameWithType: RestModelOptions<TModel, TUser>.BodyParsers
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.BodyParsers
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).BodyParsers
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).BodyParsers
+- uid: System.Collections.Generic.List{RestModels.Parsers.IBodyParser{{TModel}}}
+  commentId: T:System.Collections.Generic.List{RestModels.Parsers.IBodyParser{`0}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IBodyParser<TModel>>
+  nameWithType: List<IBodyParser<TModel>>
+  fullName: System.Collections.Generic.List<RestModels.Parsers.IBodyParser<TModel>>
+  nameWithType.vb: List(Of IBodyParser(Of TModel))
+  fullName.vb: System.Collections.Generic.List(Of RestModels.Parsers.IBodyParser(Of TModel))
+  name.vb: List(Of IBodyParser(Of TModel))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser
+    nameWithType: IBodyParser
+    fullName: RestModels.Parsers.IBodyParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser
+    nameWithType: IBodyParser
+    fullName: RestModels.Parsers.IBodyParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.RestModelOptions`2.Conditions*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.Conditions
+  name: Conditions
+  nameWithType: RestModelOptions<TModel, TUser>.Conditions
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Conditions
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Conditions
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Conditions
+- uid: System.Collections.Generic.List{RestModels.Conditions.ICondition{{TModel},{TUser}}}
+  commentId: T:System.Collections.Generic.List{RestModels.Conditions.ICondition{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ICondition<TModel, TUser>>
+  nameWithType: List<ICondition<TModel, TUser>>
+  fullName: System.Collections.Generic.List<RestModels.Conditions.ICondition<TModel, TUser>>
+  nameWithType.vb: List(Of ICondition(Of TModel, TUser))
+  fullName.vb: System.Collections.Generic.List(Of RestModels.Conditions.ICondition(Of TModel, TUser))
+  name.vb: List(Of ICondition(Of TModel, TUser))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.RestModelOptions`2.Filters*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.Filters
+  name: Filters
+  nameWithType: RestModelOptions<TModel, TUser>.Filters
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Filters
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Filters
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Filters
+- uid: System.Collections.Generic.List{RestModels.Filters.IFilter{{TModel},{TUser}}}
+  commentId: T:System.Collections.Generic.List{RestModels.Filters.IFilter{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IFilter<TModel, TUser>>
+  nameWithType: List<IFilter<TModel, TUser>>
+  fullName: System.Collections.Generic.List<RestModels.Filters.IFilter<TModel, TUser>>
+  nameWithType.vb: List(Of IFilter(Of TModel, TUser))
+  fullName.vb: System.Collections.Generic.List(Of RestModels.Filters.IFilter(Of TModel, TUser))
+  name.vb: List(Of IFilter(Of TModel, TUser))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: RestModels.Filters.IFilter`2
+    name: IFilter
+    nameWithType: IFilter
+    fullName: RestModels.Filters.IFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.RestModelOptions`2.ModelProvider*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.ModelProvider
+  name: ModelProvider
+  nameWithType: RestModelOptions<TModel, TUser>.ModelProvider
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ModelProvider
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ModelProvider
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ModelProvider
+- uid: RestModels.Models.IModelProvider{{TModel},{TUser}}
+  commentId: T:RestModels.Models.IModelProvider{`0,`1}
+  parent: RestModels.Models
+  definition: RestModels.Models.IModelProvider`2
+  name: IModelProvider<TModel, TUser>
+  nameWithType: IModelProvider<TModel, TUser>
+  fullName: RestModels.Models.IModelProvider<TModel, TUser>
+  nameWithType.vb: IModelProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel, TUser)
+  name.vb: IModelProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Models.IModelProvider`2
+  commentId: T:RestModels.Models.IModelProvider`2
+  name: IModelProvider<TModel, TUser>
+  nameWithType: IModelProvider<TModel, TUser>
+  fullName: RestModels.Models.IModelProvider<TModel, TUser>
+  nameWithType.vb: IModelProvider(Of TModel, TUser)
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel, TUser)
+  name.vb: IModelProvider(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Models.IModelProvider`2
+    name: IModelProvider
+    nameWithType: IModelProvider
+    fullName: RestModels.Models.IModelProvider
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Models
+  commentId: N:RestModels.Models
+  name: RestModels.Models
+  nameWithType: RestModels.Models
+  fullName: RestModels.Models
+- uid: RestModels.Options.RestModelOptions`2.Operation*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.Operation
+  name: Operation
+  nameWithType: RestModelOptions<TModel, TUser>.Operation
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Operation
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Operation
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Operation
+- uid: RestModels.Operations.IOperation{{TModel},{TUser}}
+  commentId: T:RestModels.Operations.IOperation{`0,`1}
+  parent: RestModels.Operations
+  definition: RestModels.Operations.IOperation`2
+  name: IOperation<TModel, TUser>
+  nameWithType: IOperation<TModel, TUser>
+  fullName: RestModels.Operations.IOperation<TModel, TUser>
+  nameWithType.vb: IOperation(Of TModel, TUser)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, TUser)
+  name.vb: IOperation(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Operations.IOperation`2
+  commentId: T:RestModels.Operations.IOperation`2
+  name: IOperation<TModel, TUser>
+  nameWithType: IOperation<TModel, TUser>
+  fullName: RestModels.Operations.IOperation<TModel, TUser>
+  nameWithType.vb: IOperation(Of TModel, TUser)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, TUser)
+  name.vb: IOperation(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Operations
+  commentId: N:RestModels.Operations
+  name: RestModels.Operations
+  nameWithType: RestModels.Operations
+  fullName: RestModels.Operations
+- uid: RestModels.Options.RestModelOptions`2.ParserOptions*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.ParserOptions
+  name: ParserOptions
+  nameWithType: RestModelOptions<TModel, TUser>.ParserOptions
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ParserOptions
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ParserOptions
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ParserOptions
+- uid: RestModels.Options.ParserOptions
+  commentId: T:RestModels.Options.ParserOptions
+  parent: RestModels.Options
+  name: ParserOptions
+  nameWithType: ParserOptions
+  fullName: RestModels.Options.ParserOptions
+- uid: RestModels.Options.RestModelOptions`2.RequestMethods*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.RequestMethods
+  name: RequestMethods
+  nameWithType: RestModelOptions<TModel, TUser>.RequestMethods
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.RequestMethods
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).RequestMethods
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).RequestMethods
+- uid: System.Collections.Generic.HashSet{System.String}
+  commentId: T:System.Collections.Generic.HashSet{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  name: HashSet<String>
+  nameWithType: HashSet<String>
+  fullName: System.Collections.Generic.HashSet<System.String>
+  nameWithType.vb: HashSet(Of String)
+  fullName.vb: System.Collections.Generic.HashSet(Of System.String)
+  name.vb: HashSet(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: System.Collections.Generic.HashSet
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: System.Collections.Generic.HashSet
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: System.Collections.Generic.HashSet
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    nameWithType: HashSet
+    fullName: System.Collections.Generic.HashSet
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.RestModelOptions`2.ResultWriter*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.ResultWriter
+  name: ResultWriter
+  nameWithType: RestModelOptions<TModel, TUser>.ResultWriter
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ResultWriter
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ResultWriter
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ResultWriter
+- uid: RestModels.Results.IResultWriter{{TModel},{TUser}}
+  commentId: T:RestModels.Results.IResultWriter{`0,`1}
+  parent: RestModels.Results
+  definition: RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, TUser>
+  nameWithType: IResultWriter<TModel, TUser>
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>
+  nameWithType.vb: IResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)
+  name.vb: IResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter`2
+  commentId: T:RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, TUser>
+  nameWithType: IResultWriter<TModel, TUser>
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>
+  nameWithType.vb: IResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)
+  name.vb: IResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results
+  commentId: N:RestModels.Results
+  name: RestModels.Results
+  nameWithType: RestModels.Results
+  fullName: RestModels.Results
+- uid: RestModels.Options.RestModelOptions`2.ResultWriter
+  commentId: P:RestModels.Options.RestModelOptions`2.ResultWriter
+  isExternal: true
+- uid: RestModels.Options.RestModelOptions`2.FormattingOptions*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.FormattingOptions
+  name: FormattingOptions
+  nameWithType: RestModelOptions<TModel, TUser>.FormattingOptions
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.FormattingOptions
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).FormattingOptions
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).FormattingOptions
+- uid: RestModels.Options.FormattingOptions
+  commentId: T:RestModels.Options.FormattingOptions
+  parent: RestModels.Options
+  name: FormattingOptions
+  nameWithType: FormattingOptions
+  fullName: RestModels.Options.FormattingOptions
+- uid: RestModels.Options.RestModelOptions`2.RoutePattern*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.RoutePattern
+  name: RoutePattern
+  nameWithType: RestModelOptions<TModel, TUser>.RoutePattern
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.RoutePattern
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).RoutePattern
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).RoutePattern
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: RestModels.Options.RestModelOptions`2.ExceptionHandlers*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.ExceptionHandlers
+  name: ExceptionHandlers
+  nameWithType: RestModelOptions<TModel, TUser>.ExceptionHandlers
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.ExceptionHandlers
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).ExceptionHandlers
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).ExceptionHandlers
+- uid: System.Collections.Generic.List{RestModels.ExceptionHandlers.IExceptionHandler}
+  commentId: T:System.Collections.Generic.List{RestModels.ExceptionHandlers.IExceptionHandler}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IExceptionHandler>
+  nameWithType: List<IExceptionHandler>
+  fullName: System.Collections.Generic.List<RestModels.ExceptionHandlers.IExceptionHandler>
+  nameWithType.vb: List(Of IExceptionHandler)
+  fullName.vb: System.Collections.Generic.List(Of RestModels.ExceptionHandlers.IExceptionHandler)
+  name.vb: List(Of IExceptionHandler)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: RestModels.ExceptionHandlers.IExceptionHandler
+    name: IExceptionHandler
+    nameWithType: IExceptionHandler
+    fullName: RestModels.ExceptionHandlers.IExceptionHandler
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: RestModels.ExceptionHandlers.IExceptionHandler
+    name: IExceptionHandler
+    nameWithType: IExceptionHandler
+    fullName: RestModels.ExceptionHandlers.IExceptionHandler
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.RestModelOptions`2
+  commentId: T:RestModels.Options.RestModelOptions`2
+  name: RestModelOptions<TModel, TUser>
+  nameWithType: RestModelOptions<TModel, TUser>
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>
+  nameWithType.vb: RestModelOptions(Of TModel, TUser)
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser)
+  name.vb: RestModelOptions(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions
+    nameWithType: RestModelOptions
+    fullName: RestModels.Options.RestModelOptions
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions
+    nameWithType: RestModelOptions
+    fullName: RestModels.Options.RestModelOptions
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.RestModelOptions`2.Copy*
+  commentId: Overload:RestModels.Options.RestModelOptions`2.Copy
+  name: Copy
+  nameWithType: RestModelOptions<TModel, TUser>.Copy
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>.Copy
+  nameWithType.vb: RestModelOptions(Of TModel, TUser).Copy
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser).Copy
+- uid: RestModels.Options.RestModelOptions{{TModel},{TUser}}
+  commentId: T:RestModels.Options.RestModelOptions{`0,`1}
+  parent: RestModels.Options
+  definition: RestModels.Options.RestModelOptions`2
+  name: RestModelOptions<TModel, TUser>
+  nameWithType: RestModelOptions<TModel, TUser>
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>
+  nameWithType.vb: RestModelOptions(Of TModel, TUser)
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser)
+  name.vb: RestModelOptions(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions
+    nameWithType: RestModelOptions
+    fullName: RestModels.Options.RestModelOptions
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions
+    nameWithType: RestModelOptions
+    fullName: RestModels.Options.RestModelOptions
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

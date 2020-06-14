@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Conditions
+  commentId: N:RestModels.Conditions
+  id: RestModels.Conditions
+  children:
+  - RestModels.Conditions.DelegateCondition`2
+  - RestModels.Conditions.ICondition`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Conditions
+  nameWithType: RestModels.Conditions
+  fullName: RestModels.Conditions
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Conditions.DelegateCondition`2
+  commentId: T:RestModels.Conditions.DelegateCondition`2
+  name: DelegateCondition<TModel, TUser>
+  nameWithType: DelegateCondition<TModel, TUser>
+  fullName: RestModels.Conditions.DelegateCondition<TModel, TUser>
+  nameWithType.vb: DelegateCondition(Of TModel, TUser)
+  fullName.vb: RestModels.Conditions.DelegateCondition(Of TModel, TUser)
+  name.vb: DelegateCondition(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.DelegateCondition`2
+    name: DelegateCondition
+    nameWithType: DelegateCondition
+    fullName: RestModels.Conditions.DelegateCondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Conditions.DelegateCondition`2
+    name: DelegateCondition
+    nameWithType: DelegateCondition
+    fullName: RestModels.Conditions.DelegateCondition
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Conditions.ICondition`2
+  commentId: T:RestModels.Conditions.ICondition`2
+  name: ICondition<TModel, TUser>
+  nameWithType: ICondition<TModel, TUser>
+  fullName: RestModels.Conditions.ICondition<TModel, TUser>
+  nameWithType.vb: ICondition(Of TModel, TUser)
+  fullName.vb: RestModels.Conditions.ICondition(Of TModel, TUser)
+  name.vb: ICondition(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Conditions.ICondition`2
+    name: ICondition
+    nameWithType: ICondition
+    fullName: RestModels.Conditions.ICondition
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )

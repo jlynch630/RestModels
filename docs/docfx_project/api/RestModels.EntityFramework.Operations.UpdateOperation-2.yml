@@ -1,0 +1,1250 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+  commentId: T:RestModels.EntityFramework.Operations.UpdateOperation`2
+  id: UpdateOperation`2
+  parent: RestModels.EntityFramework.Operations
+  children:
+  - RestModels.EntityFramework.Operations.UpdateOperation`2.#ctor(System.Reflection.PropertyInfo[],RestModels.ParameterRetrievers.ParameterRetriever[])
+  - RestModels.EntityFramework.Operations.UpdateOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],System.Object)
+  langs:
+  - csharp
+  - vb
+  name: UpdateOperation<TModel, TContext>
+  nameWithType: UpdateOperation<TModel, TContext>
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>
+  type: Class
+  source:
+    remote:
+      path: RestModels.EntityFramework/Operations/UpdateOperation.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: UpdateOperation
+    path: ../../RestModels.EntityFramework/Operations/UpdateOperation.cs
+    startLine: 30
+  assemblies:
+  - RestModels.EntityFramework
+  namespace: RestModels.EntityFramework.Operations
+  summary: "\nAn operation that will update models in an EntityFramework context\n"
+  example: []
+  syntax:
+    content: 'public class UpdateOperation<TModel, TContext> : IOperation<TModel>, IOperation<TModel, object> where TModel : class where TContext : DbContext'
+    typeParameters:
+    - id: TModel
+      description: The type of model to update
+    - id: TContext
+      description: The type of EntityFramework database context to use
+    content.vb: >-
+      Public Class UpdateOperation(Of TModel As Class, TContext As DbContext)
+
+          Implements IOperation(Of TModel), IOperation(Of TModel, Object)
+  inheritance:
+  - System.Object
+  implements:
+  - RestModels.Operations.IOperation{{TModel}}
+  - RestModels.Operations.IOperation{{TModel},System.Object}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: UpdateOperation(Of TModel, TContext)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext)
+  name.vb: UpdateOperation(Of TModel, TContext)
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2.#ctor(System.Reflection.PropertyInfo[],RestModels.ParameterRetrievers.ParameterRetriever[])
+  commentId: M:RestModels.EntityFramework.Operations.UpdateOperation`2.#ctor(System.Reflection.PropertyInfo[],RestModels.ParameterRetrievers.ParameterRetriever[])
+  id: '#ctor(System.Reflection.PropertyInfo[],RestModels.ParameterRetrievers.ParameterRetriever[])'
+  parent: RestModels.EntityFramework.Operations.UpdateOperation`2
+  langs:
+  - csharp
+  - vb
+  name: UpdateOperation(PropertyInfo[], ParameterRetriever[])
+  nameWithType: UpdateOperation<TModel, TContext>.UpdateOperation(PropertyInfo[], ParameterRetriever[])
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>.UpdateOperation(System.Reflection.PropertyInfo[], RestModels.ParameterRetrievers.ParameterRetriever[])
+  type: Constructor
+  source:
+    remote:
+      path: RestModels.EntityFramework/Operations/UpdateOperation.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels.EntityFramework/Operations/UpdateOperation.cs
+    startLine: 50
+  assemblies:
+  - RestModels.EntityFramework
+  namespace: RestModels.EntityFramework.Operations
+  summary: "\nInitializes a new instance of the <xref href=\"RestModels.EntityFramework.Operations.UpdateOperation%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public UpdateOperation(PropertyInfo[] properties, ParameterRetriever[] parameterDelegates = null)
+    parameters:
+    - id: properties
+      type: System.Reflection.PropertyInfo[]
+      description: The properties to compare when determining which model to update
+    - id: parameterDelegates
+      type: RestModels.ParameterRetrievers.ParameterRetriever[]
+      description: "\nA delegate that will retrieve the values of the given properties for a request. If\nnull or omitted, the properties are assumed to be present in the parsed model\n"
+    content.vb: Public Sub New(properties As PropertyInfo(), parameterDelegates As ParameterRetriever() = Nothing)
+  overload: RestModels.EntityFramework.Operations.UpdateOperation`2.#ctor*
+  nameWithType.vb: UpdateOperation(Of TModel, TContext).UpdateOperation(PropertyInfo(), ParameterRetriever())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext).UpdateOperation(System.Reflection.PropertyInfo(), RestModels.ParameterRetrievers.ParameterRetriever())
+  name.vb: UpdateOperation(PropertyInfo(), ParameterRetriever())
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],System.Object)
+  commentId: M:RestModels.EntityFramework.Operations.UpdateOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],System.Object)
+  id: OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],System.Object)
+  parent: RestModels.EntityFramework.Operations.UpdateOperation`2
+  langs:
+  - csharp
+  - vb
+  name: OperateAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], Object)
+  nameWithType: UpdateOperation<TModel, TContext>.OperateAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], Object)
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>.OperateAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], System.Object)
+  type: Method
+  source:
+    remote:
+      path: RestModels.EntityFramework/Operations/UpdateOperation.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: OperateAsync
+    path: ../../RestModels.EntityFramework/Operations/UpdateOperation.cs
+    startLine: 63
+  assemblies:
+  - RestModels.EntityFramework
+  namespace: RestModels.EntityFramework.Operations
+  summary: "\nUpdates the models specified in the request body by their primary key\n"
+  example: []
+  syntax:
+    content: public Task<IEnumerable<TModel>> OperateAsync(HttpContext context, IQueryable<TModel> dataset, ParseResult<TModel>[] parsed, object user)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current request context
+    - id: dataset
+      type: System.Linq.IQueryable{{TModel}}
+      description: The filtered dataset to operate on
+    - id: parsed
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The parsed request body, if any
+    - id: user
+      type: System.Object
+      description: The current user context, if any
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TModel}}}
+      description: The affected models
+    content.vb: Public Function OperateAsync(context As HttpContext, dataset As IQueryable(Of TModel), parsed As ParseResult(Of TModel)(), user As Object) As Task(Of IEnumerable(Of TModel))
+  overload: RestModels.EntityFramework.Operations.UpdateOperation`2.OperateAsync*
+  implements:
+  - RestModels.Operations.IOperation{{TModel},System.Object}.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],System.Object)
+  nameWithType.vb: UpdateOperation(Of TModel, TContext).OperateAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext).OperateAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), System.Object)
+  name.vb: OperateAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), Object)
+references:
+- uid: RestModels.EntityFramework.Operations
+  commentId: N:RestModels.EntityFramework.Operations
+  name: RestModels.EntityFramework.Operations
+  nameWithType: RestModels.EntityFramework.Operations
+  fullName: RestModels.EntityFramework.Operations
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: RestModels.Operations.IOperation{{TModel}}
+  commentId: T:RestModels.Operations.IOperation{`0}
+  parent: RestModels.Operations
+  definition: RestModels.Operations.IOperation`1
+  name: IOperation<TModel>
+  nameWithType: IOperation<TModel>
+  fullName: RestModels.Operations.IOperation<TModel>
+  nameWithType.vb: IOperation(Of TModel)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel)
+  name.vb: IOperation(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Operations.IOperation{{TModel},System.Object}
+  commentId: T:RestModels.Operations.IOperation{`0,System.Object}
+  parent: RestModels.Operations
+  definition: RestModels.Operations.IOperation`2
+  name: IOperation<TModel, Object>
+  nameWithType: IOperation<TModel, Object>
+  fullName: RestModels.Operations.IOperation<TModel, System.Object>
+  nameWithType.vb: IOperation(Of TModel, Object)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, System.Object)
+  name.vb: IOperation(Of TModel, Object)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Operations.IOperation`1
+  commentId: T:RestModels.Operations.IOperation`1
+  name: IOperation<TModel>
+  nameWithType: IOperation<TModel>
+  fullName: RestModels.Operations.IOperation<TModel>
+  nameWithType.vb: IOperation(Of TModel)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel)
+  name.vb: IOperation(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`1
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Operations
+  commentId: N:RestModels.Operations
+  name: RestModels.Operations
+  nameWithType: RestModels.Operations
+  fullName: RestModels.Operations
+- uid: RestModels.Operations.IOperation`2
+  commentId: T:RestModels.Operations.IOperation`2
+  name: IOperation<TModel, TUser>
+  nameWithType: IOperation<TModel, TUser>
+  fullName: RestModels.Operations.IOperation<TModel, TUser>
+  nameWithType.vb: IOperation(Of TModel, TUser)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, TUser)
+  name.vb: IOperation(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2
+    name: IOperation
+    nameWithType: IOperation
+    fullName: RestModels.Operations.IOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+  commentId: T:RestModels.EntityFramework.Operations.UpdateOperation`2
+  name: UpdateOperation<TModel, TContext>
+  nameWithType: UpdateOperation<TModel, TContext>
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>
+  nameWithType.vb: UpdateOperation(Of TModel, TContext)
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext)
+  name.vb: UpdateOperation(Of TModel, TContext)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+    name: UpdateOperation
+    nameWithType: UpdateOperation
+    fullName: RestModels.EntityFramework.Operations.UpdateOperation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.Operations.UpdateOperation`2
+    name: UpdateOperation
+    nameWithType: UpdateOperation
+    fullName: RestModels.EntityFramework.Operations.UpdateOperation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2.#ctor*
+  commentId: Overload:RestModels.EntityFramework.Operations.UpdateOperation`2.#ctor
+  name: UpdateOperation
+  nameWithType: UpdateOperation<TModel, TContext>.UpdateOperation
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>.UpdateOperation
+  nameWithType.vb: UpdateOperation(Of TModel, TContext).UpdateOperation
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext).UpdateOperation
+- uid: System.Reflection.PropertyInfo[]
+  isExternal: true
+  name: PropertyInfo[]
+  nameWithType: PropertyInfo[]
+  fullName: System.Reflection.PropertyInfo[]
+  nameWithType.vb: PropertyInfo()
+  fullName.vb: System.Reflection.PropertyInfo()
+  name.vb: PropertyInfo()
+  spec.csharp:
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    nameWithType: PropertyInfo
+    fullName: System.Reflection.PropertyInfo
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    nameWithType: PropertyInfo
+    fullName: System.Reflection.PropertyInfo
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: RestModels.ParameterRetrievers.ParameterRetriever[]
+  isExternal: true
+  name: ParameterRetriever[]
+  nameWithType: ParameterRetriever[]
+  fullName: RestModels.ParameterRetrievers.ParameterRetriever[]
+  nameWithType.vb: ParameterRetriever()
+  fullName.vb: RestModels.ParameterRetrievers.ParameterRetriever()
+  name.vb: ParameterRetriever()
+  spec.csharp:
+  - uid: RestModels.ParameterRetrievers.ParameterRetriever
+    name: ParameterRetriever
+    nameWithType: ParameterRetriever
+    fullName: RestModels.ParameterRetrievers.ParameterRetriever
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.ParameterRetrievers.ParameterRetriever
+    name: ParameterRetriever
+    nameWithType: ParameterRetriever
+    fullName: RestModels.ParameterRetrievers.ParameterRetriever
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: RestModels.EntityFramework.Operations.UpdateOperation`2.OperateAsync*
+  commentId: Overload:RestModels.EntityFramework.Operations.UpdateOperation`2.OperateAsync
+  name: OperateAsync
+  nameWithType: UpdateOperation<TModel, TContext>.OperateAsync
+  fullName: RestModels.EntityFramework.Operations.UpdateOperation<TModel, TContext>.OperateAsync
+  nameWithType.vb: UpdateOperation(Of TModel, TContext).OperateAsync
+  fullName.vb: RestModels.EntityFramework.Operations.UpdateOperation(Of TModel, TContext).OperateAsync
+- uid: RestModels.Operations.IOperation{{TModel},System.Object}.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{{TModel}},RestModels.Parsers.ParseResult{{TModel}}[],System.Object)
+  commentId: M:RestModels.Operations.IOperation{`0,System.Object}.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],System.Object)
+  parent: RestModels.Operations.IOperation{{TModel},System.Object}
+  definition: RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  name: OperateAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], Object)
+  nameWithType: IOperation<TModel, Object>.OperateAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], Object)
+  fullName: RestModels.Operations.IOperation<TModel, System.Object>.OperateAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], System.Object)
+  nameWithType.vb: IOperation(Of TModel, Object).OperateAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), Object)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, System.Object).OperateAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), System.Object)
+  name.vb: OperateAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), Object)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: OperateAsync
+    nameWithType: IOperation<TModel, Object>.OperateAsync
+    fullName: RestModels.Operations.IOperation<TModel, System.Object>.OperateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: OperateAsync
+    nameWithType: IOperation(Of TModel, Object).OperateAsync
+    fullName: RestModels.Operations.IOperation(Of TModel, System.Object).OperateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: System.Linq.IQueryable{{TModel}}
+  commentId: T:System.Linq.IQueryable{`0}
+  parent: System.Linq
+  definition: System.Linq.IQueryable`1
+  name: IQueryable<TModel>
+  nameWithType: IQueryable<TModel>
+  fullName: System.Linq.IQueryable<TModel>
+  nameWithType.vb: IQueryable(Of TModel)
+  fullName.vb: System.Linq.IQueryable(Of TModel)
+  name.vb: IQueryable(Of TModel)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.ParseResult{{TModel}}[]
+  isExternal: true
+  name: ParseResult<TModel>[]
+  nameWithType: ParseResult<TModel>[]
+  fullName: RestModels.Parsers.ParseResult<TModel>[]
+  nameWithType.vb: ParseResult(Of TModel)()
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)()
+  name.vb: ParseResult(Of TModel)()
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TModel}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<IEnumerable<TModel>>
+  nameWithType: Task<IEnumerable<TModel>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<TModel>>
+  nameWithType.vb: Task(Of IEnumerable(Of TModel))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of TModel))
+  name.vb: Task(Of IEnumerable(Of TModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  commentId: M:RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+  isExternal: true
+  name: OperateAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  nameWithType: IOperation<TModel, TUser>.OperateAsync(HttpContext, IQueryable<TModel>, ParseResult<TModel>[], TUser)
+  fullName: RestModels.Operations.IOperation<TModel, TUser>.OperateAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable<TModel>, RestModels.Parsers.ParseResult<TModel>[], TUser)
+  nameWithType.vb: IOperation(Of TModel, TUser).OperateAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  fullName.vb: RestModels.Operations.IOperation(Of TModel, TUser).OperateAsync(Microsoft.AspNetCore.Http.HttpContext, System.Linq.IQueryable(Of TModel), RestModels.Parsers.ParseResult(Of TModel)(), TUser)
+  name.vb: OperateAsync(HttpContext, IQueryable(Of TModel), ParseResult(Of TModel)(), TUser)
+  spec.csharp:
+  - uid: RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: OperateAsync
+    nameWithType: IOperation<TModel, TUser>.OperateAsync
+    fullName: RestModels.Operations.IOperation<TModel, TUser>.OperateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.Operations.IOperation`2.OperateAsync(Microsoft.AspNetCore.Http.HttpContext,System.Linq.IQueryable{`0},RestModels.Parsers.ParseResult{`0}[],`1)
+    name: OperateAsync
+    nameWithType: IOperation(Of TModel, TUser).OperateAsync
+    fullName: RestModels.Operations.IOperation(Of TModel, TUser).OperateAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Linq
+  commentId: N:System.Linq
+  isExternal: true
+  name: System.Linq
+  nameWithType: System.Linq
+  fullName: System.Linq
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

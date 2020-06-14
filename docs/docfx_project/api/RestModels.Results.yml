@@ -1,0 +1,415 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Results
+  commentId: N:RestModels.Results
+  id: RestModels.Results
+  children:
+  - RestModels.Results.AcceptDependentResultWriter`2
+  - RestModels.Results.HeaderDependentResultWriter`2
+  - RestModels.Results.IResultWriter`1
+  - RestModels.Results.IResultWriter`2
+  - RestModels.Results.JsonResultWriter`1
+  - RestModels.Results.NumberAffectedResultWriter`1
+  - RestModels.Results.QueryDependentResultWriter`2
+  - RestModels.Results.RequestDependentResultWriter`2
+  - RestModels.Results.StringResultWriter
+  - RestModels.Results.XmlResultWriter`1
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Results
+  nameWithType: RestModels.Results
+  fullName: RestModels.Results
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Results.AcceptDependentResultWriter`2
+  commentId: T:RestModels.Results.AcceptDependentResultWriter`2
+  name: AcceptDependentResultWriter<TModel, TUser>
+  nameWithType: AcceptDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.AcceptDependentResultWriter<TModel, TUser>
+  nameWithType.vb: AcceptDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.AcceptDependentResultWriter(Of TModel, TUser)
+  name.vb: AcceptDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.AcceptDependentResultWriter`2
+    name: AcceptDependentResultWriter
+    nameWithType: AcceptDependentResultWriter
+    fullName: RestModels.Results.AcceptDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.AcceptDependentResultWriter`2
+    name: AcceptDependentResultWriter
+    nameWithType: AcceptDependentResultWriter
+    fullName: RestModels.Results.AcceptDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.HeaderDependentResultWriter`2
+  commentId: T:RestModels.Results.HeaderDependentResultWriter`2
+  name: HeaderDependentResultWriter<TModel, TUser>
+  nameWithType: HeaderDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.HeaderDependentResultWriter<TModel, TUser>
+  nameWithType.vb: HeaderDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.HeaderDependentResultWriter(Of TModel, TUser)
+  name.vb: HeaderDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.HeaderDependentResultWriter`2
+    name: HeaderDependentResultWriter
+    nameWithType: HeaderDependentResultWriter
+    fullName: RestModels.Results.HeaderDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.HeaderDependentResultWriter`2
+    name: HeaderDependentResultWriter
+    nameWithType: HeaderDependentResultWriter
+    fullName: RestModels.Results.HeaderDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter`2
+  commentId: T:RestModels.Results.IResultWriter`2
+  name: IResultWriter<TModel, TUser>
+  nameWithType: IResultWriter<TModel, TUser>
+  fullName: RestModels.Results.IResultWriter<TModel, TUser>
+  nameWithType.vb: IResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel, TUser)
+  name.vb: IResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`2
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.IResultWriter`1
+  commentId: T:RestModels.Results.IResultWriter`1
+  name: IResultWriter<TModel>
+  nameWithType: IResultWriter<TModel>
+  fullName: RestModels.Results.IResultWriter<TModel>
+  nameWithType.vb: IResultWriter(Of TModel)
+  fullName.vb: RestModels.Results.IResultWriter(Of TModel)
+  name.vb: IResultWriter(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Results.IResultWriter`1
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.IResultWriter`1
+    name: IResultWriter
+    nameWithType: IResultWriter
+    fullName: RestModels.Results.IResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.JsonResultWriter`1
+  commentId: T:RestModels.Results.JsonResultWriter`1
+  name: JsonResultWriter<TModel>
+  nameWithType: JsonResultWriter<TModel>
+  fullName: RestModels.Results.JsonResultWriter<TModel>
+  nameWithType.vb: JsonResultWriter(Of TModel)
+  fullName.vb: RestModels.Results.JsonResultWriter(Of TModel)
+  name.vb: JsonResultWriter(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Results.JsonResultWriter`1
+    name: JsonResultWriter
+    nameWithType: JsonResultWriter
+    fullName: RestModels.Results.JsonResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.JsonResultWriter`1
+    name: JsonResultWriter
+    nameWithType: JsonResultWriter
+    fullName: RestModels.Results.JsonResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.NumberAffectedResultWriter`1
+  commentId: T:RestModels.Results.NumberAffectedResultWriter`1
+  name: NumberAffectedResultWriter<TModel>
+  nameWithType: NumberAffectedResultWriter<TModel>
+  fullName: RestModels.Results.NumberAffectedResultWriter<TModel>
+  nameWithType.vb: NumberAffectedResultWriter(Of TModel)
+  fullName.vb: RestModels.Results.NumberAffectedResultWriter(Of TModel)
+  name.vb: NumberAffectedResultWriter(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Results.NumberAffectedResultWriter`1
+    name: NumberAffectedResultWriter
+    nameWithType: NumberAffectedResultWriter
+    fullName: RestModels.Results.NumberAffectedResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.NumberAffectedResultWriter`1
+    name: NumberAffectedResultWriter
+    nameWithType: NumberAffectedResultWriter
+    fullName: RestModels.Results.NumberAffectedResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.QueryDependentResultWriter`2
+  commentId: T:RestModels.Results.QueryDependentResultWriter`2
+  name: QueryDependentResultWriter<TModel, TUser>
+  nameWithType: QueryDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.QueryDependentResultWriter<TModel, TUser>
+  nameWithType.vb: QueryDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.QueryDependentResultWriter(Of TModel, TUser)
+  name.vb: QueryDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.QueryDependentResultWriter`2
+    name: QueryDependentResultWriter
+    nameWithType: QueryDependentResultWriter
+    fullName: RestModels.Results.QueryDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.QueryDependentResultWriter`2
+    name: QueryDependentResultWriter
+    nameWithType: QueryDependentResultWriter
+    fullName: RestModels.Results.QueryDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.RequestDependentResultWriter`2
+  commentId: T:RestModels.Results.RequestDependentResultWriter`2
+  name: RequestDependentResultWriter<TModel, TUser>
+  nameWithType: RequestDependentResultWriter<TModel, TUser>
+  fullName: RestModels.Results.RequestDependentResultWriter<TModel, TUser>
+  nameWithType.vb: RequestDependentResultWriter(Of TModel, TUser)
+  fullName.vb: RestModels.Results.RequestDependentResultWriter(Of TModel, TUser)
+  name.vb: RequestDependentResultWriter(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter
+    nameWithType: RequestDependentResultWriter
+    fullName: RestModels.Results.RequestDependentResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.RequestDependentResultWriter`2
+    name: RequestDependentResultWriter
+    nameWithType: RequestDependentResultWriter
+    fullName: RestModels.Results.RequestDependentResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Results.StringResultWriter
+  commentId: T:RestModels.Results.StringResultWriter
+  name: StringResultWriter
+  nameWithType: StringResultWriter
+  fullName: RestModels.Results.StringResultWriter
+- uid: RestModels.Results.XmlResultWriter`1
+  commentId: T:RestModels.Results.XmlResultWriter`1
+  name: XmlResultWriter<TModel>
+  nameWithType: XmlResultWriter<TModel>
+  fullName: RestModels.Results.XmlResultWriter<TModel>
+  nameWithType.vb: XmlResultWriter(Of TModel)
+  fullName.vb: RestModels.Results.XmlResultWriter(Of TModel)
+  name.vb: XmlResultWriter(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Results.XmlResultWriter`1
+    name: XmlResultWriter
+    nameWithType: XmlResultWriter
+    fullName: RestModels.Results.XmlResultWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Results.XmlResultWriter`1
+    name: XmlResultWriter
+    nameWithType: XmlResultWriter
+    fullName: RestModels.Results.XmlResultWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )

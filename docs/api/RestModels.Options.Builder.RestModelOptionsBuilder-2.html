@@ -978,6 +978,135 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_After_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.After(System.Action%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L51">View Source</a>
+  </span>
+  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_After_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.After*"></a>
+  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_After_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.After(System.Action{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0}})">After(Action&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a post-operation action to this route that will run after the operation is executed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>After</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IEnumerable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The action to run after the operation, which will be passed the current API context and operation
+result</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
+        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_After_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This action will be run after every operation and can be used to log data, notify other parts of the app, or modify
+the HTTP response</p>
+<p>
+    Note that if you would like to omit/include properties from the API response or set response parameters, use
+    the
+<a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Omit_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Omit(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>
+, <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Include_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Include(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>, and
+<a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Object_">WriteResponseValue(String, Object)</a> methods respectively.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_AfterAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.AfterAsync(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L74">View Source</a>
+  </span>
+  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_AfterAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.AfterAsync*"></a>
+  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_AfterAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.AfterAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task})">AfterAsync(Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a post-operation action to this route that will run after the operation is executed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>AfterAsync</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Func</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IEnumerable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Task</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The action to run after the operation, which will be passed the current API context and operation
+result</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
+        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_AfterAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This action will be run after every operation and can be used to log data, notify other parts of the app, or modify
+the HTTP response</p>
+<p>
+    Note that if you would like to omit/include properties from the API response or set response parameters, use
+    the <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Omit_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Omit(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>,
+<a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Include_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Include(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>, and
+<a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Object_">WriteResponseValue(String, Object)</a> methods respectively.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_Auth_System_Func_RestModels_Context_IApiContext__0__1___1__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.Auth(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -1558,6 +1687,114 @@ value is invalid</p>
         <td><span class="parametername">handler</span></td>
         <td><p>The handler which, when given the parameter value, will return a user context or throw if the
 value is invalid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
+        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_Before_System_Action_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.Before(System.Action%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Linq.IQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L86">View Source</a>
+  </span>
+  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_Before_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.Before*"></a>
+  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_Before_System_Action_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.Before(System.Action{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0}})">Before(Action&lt;IApiContext&lt;TModel, TUser&gt;, IQueryable&lt;TModel&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a pre-operation action to this route that will run before the operation is executed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>Before</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IQueryable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;TModel&gt;&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The action to run before the operation, which will be passed the current API context and model
+dataset</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
+        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_BeforeAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.BeforeAsync(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Linq.IQueryable%7B%600%7D%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L99">View Source</a>
+  </span>
+  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_BeforeAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.BeforeAsync*"></a>
+  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_BeforeAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Threading_Tasks_Task__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.BeforeAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Threading.Tasks.Task})">BeforeAsync(Func&lt;IApiContext&lt;TModel, TUser&gt;, IQueryable&lt;TModel&gt;, Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a pre-operation action to this route that will run before the operation is executed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <div class="code-header">
+      <span class="language">C#</span>
+    </div>
+    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>BeforeAsync</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Func</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IQueryable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Task</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;TModel&gt;, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The action to run before the operation, which will be passed the current API context and model
+dataset</p>
 </td>
       </tr>
     </tbody>
@@ -3627,11 +3864,12 @@ options. When overriden in a derived class, this method can be used to ensure th
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_Deprecate_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.Deprecate(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L207">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L244">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_Deprecate_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.Deprecate*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_Deprecate_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.Deprecate(System.String)">Deprecate(String)</h4>
-  <div class="markdown level1 summary"><p>Sets the response value defined by the <a class="xref" href="RestModels.Responses.Attributes.DeprecationNoticeAttribute.html">DeprecationNoticeAttribute</a> to the given deprecation message, or a boilerplate one if none is specified.</p>
+  <div class="markdown level1 summary"><p>Sets the response value defined by the <a class="xref" href="RestModels.Responses.Attributes.DeprecationNoticeAttribute.html">DeprecationNoticeAttribute</a> to the given deprecation message,
+or a boilerplate one if none is specified.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -6319,234 +6557,6 @@ create the route.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOp_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.PostOp(System.Action%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L45">View Source</a>
-  </span>
-  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOp_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOp*"></a>
-  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOp_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOp(System.Action{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0}})">PostOp(Action&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds a post-operation action to this route that will run after the operation is executed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <div class="code-header">
-      <span class="language">C#</span>
-    </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>PostOp</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IEnumerable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;&gt;</td>
-        <td><span class="parametername">handler</span></td>
-        <td><p>The action to run after the operation, which will be passed the current API context and operation
-result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
-        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOp_System_Action_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0____remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response</p>
-<p>
-	Note that if you would like to omit/include properties from the API response or set response parameters, use the <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Omit_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Omit(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>, <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Include_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Include(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>, and <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Object_">WriteResponseValue(String, Object)</a> methods respectively.
-</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.PostOpAsync(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L64">View Source</a>
-  </span>
-  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOpAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOpAsync*"></a>
-  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PostOpAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task})">PostOpAsync(Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Task&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds a post-operation action to this route that will run after the operation is executed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <div class="code-header">
-      <span class="language">C#</span>
-    </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>PostOpAsync</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Func</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IEnumerable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Task</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
-        <td><span class="parametername">handler</span></td>
-        <td><p>The action to run after the operation, which will be passed the current API context and operation
-result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
-        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PostOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This action will be run after every operation and can be used to log data, notify other parts of the app, or modify the HTTP response</p>
-<p>
-	Note that if you would like to omit/include properties from the API response or set response parameters, use the <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Omit_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Omit(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>, <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_Include_System_Linq_Expressions_Expression_System_Func__0_System_Object___">Include(Expression&lt;Func&lt;TModel, Object&gt;&gt;)</a>, and <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html#RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Object_">WriteResponseValue(String, Object)</a> methods respectively.
-</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOp_System_Action_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.PreOp(System.Action%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Linq.IQueryable%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L76">View Source</a>
-  </span>
-  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOp_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOp*"></a>
-  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOp_System_Action_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOp(System.Action{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0}})">PreOp(Action&lt;IApiContext&lt;TModel, TUser&gt;, IQueryable&lt;TModel&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds a pre-operation action to this route that will run before the operation is executed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <div class="code-header">
-      <span class="language">C#</span>
-    </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>PreOp</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Action</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IQueryable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;TModel&gt;&gt;</td>
-        <td><span class="parametername">handler</span></td>
-        <td><p>The action to run before the operation, which will be passed the current API context and model
-dataset</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
-        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Threading_Tasks_Task__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.PreOpAsync(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Linq.IQueryable%7B%600%7D%2CSystem.Threading.Tasks.Task%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L89">View Source</a>
-  </span>
-  <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOpAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOpAsync*"></a>
-  <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_PreOpAsync_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Threading_Tasks_Task__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.PreOpAsync(System.Func{RestModels.Context.IApiContext{`0,`1},System.Linq.IQueryable{`0},System.Threading.Tasks.Task})">PreOpAsync(Func&lt;IApiContext&lt;TModel, TUser&gt;, IQueryable&lt;TModel&gt;, Task&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds a pre-operation action to this route that will run before the operation is executed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <div class="code-header">
-      <span class="language">C#</span>
-    </div>
-    <pre><code class='lang-csharp'><span style='color:#0000FF;'>public</span><span style='color:black;'> </span><span style='color:#267F99;'>RestModelOptionsBuilder</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#795E26;'>PreOpAsync</span><span style='color:#222222;'>(</span><span style='color:#267F99;'>Func</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>IApiContext</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>TUser</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>IQueryable</span><span style='color:#222222;'>&lt;</span><span style='color:#267F99;'>TModel</span><span style='color:#222222;'>&gt;</span><span style='color:#222222;'>,</span><span style='color:black;'> </span><span style='color:#267F99;'>Task</span><span style='color:#222222;'>&gt;</span><span style='color:black;'> </span><span style='color:#001080;'>handler</span><span style='color:#222222;'>)</span></code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Linq.IQueryable</span>&lt;TModel&gt;, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
-        <td><span class="parametername">handler</span></td>
-        <td><p>The action to run before the operation, which will be passed the current API context and model
-dataset</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder</a>&lt;TModel, TUser&gt;</td>
-        <td><p>This <a class="xref" href="RestModels.Options.Builder.RestModelOptionsBuilder-2.html">RestModelOptionsBuilder&lt;TModel, TUser&gt;</a> object, for chaining</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_Require_System_Func_RestModels_Context_IApiContext__0__1__System_Linq_IQueryable__0__System_Boolean__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.Require(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Linq.IQueryable%7B%600%7D%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -7503,7 +7513,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeader_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_String__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetHeader(System.String%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L229">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L265">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeader_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetHeader*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeader_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_String__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetHeader(System.String,System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.String})">SetHeader(String, Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, String&gt;)</h4>
@@ -7562,7 +7572,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeader_System_String_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetHeader(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L239">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L277">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeader_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetHeader*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeader_System_String_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetHeader(System.String,System.String)">SetHeader(String, String)</h4>
@@ -7621,7 +7631,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeaderAsync_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task_System_String___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetHeaderAsync(System.String%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Threading.Tasks.Task%7BSystem.String%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L217">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L253">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeaderAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetHeaderAsync*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetHeaderAsync_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task_System_String___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetHeaderAsync(System.String,System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task{System.String}})">SetHeaderAsync(String, Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Task&lt;String&gt;&gt;)</h4>
@@ -8562,7 +8572,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Linq_Expressions_Expression_System_Func__0_System_Object___RestModels_ParameterRetrievers_ParameterRetriever_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValue(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%2CRestModels.ParameterRetrievers.ParameterRetriever)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L311">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L350">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Linq_Expressions_Expression_System_Func__0_System_Object___RestModels_ParameterRetrievers_ParameterRetriever_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},RestModels.ParameterRetrievers.ParameterRetriever)">SetValue(Expression&lt;Func&lt;TModel, Object&gt;&gt;, ParameterRetriever)</h4>
@@ -8595,7 +8605,8 @@ except for the route pattern</p>
       <tr>
         <td><a class="xref" href="RestModels.ParameterRetrievers.ParameterRetriever.html">ParameterRetriever</a></td>
         <td><span class="parametername">retriever</span></td>
-        <td></td>
+        <td><p>A parameter retriever to use to get the value for a request</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -8620,7 +8631,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_Func_RestModels_Context_IApiContext__0__1__System_Object__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValue(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L276">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L315">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_Func_RestModels_Context_IApiContext__0__1__System_Object__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Func{RestModels.Context.IApiContext{`0,`1},System.Object})">SetValue(Expression&lt;Func&lt;TModel, Object&gt;&gt;, Func&lt;IApiContext&lt;TModel, TUser&gt;, Object&gt;)</h4>
@@ -8679,7 +8690,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Reflection_PropertyInfo_RestModels_ParameterRetrievers_ParameterRetriever_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValue(System.Reflection.PropertyInfo%2CRestModels.ParameterRetrievers.ParameterRetriever)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L298">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L337">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Reflection_PropertyInfo_RestModels_ParameterRetrievers_ParameterRetriever_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue(System.Reflection.PropertyInfo,RestModels.ParameterRetrievers.ParameterRetriever)">SetValue(PropertyInfo, ParameterRetriever)</h4>
@@ -8712,7 +8723,8 @@ except for the route pattern</p>
       <tr>
         <td><a class="xref" href="RestModels.ParameterRetrievers.ParameterRetriever.html">ParameterRetriever</a></td>
         <td><span class="parametername">retriever</span></td>
-        <td></td>
+        <td><p>A parameter retriever to use to get the value for a request</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -8737,7 +8749,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Reflection_PropertyInfo_System_Func_RestModels_Context_IApiContext__0__1__System_Object__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValue(System.Reflection.PropertyInfo%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L265">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L304">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValue_System_Reflection_PropertyInfo_System_Func_RestModels_Context_IApiContext__0__1__System_Object__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValue(System.Reflection.PropertyInfo,System.Func{RestModels.Context.IApiContext{`0,`1},System.Object})">SetValue(PropertyInfo, Func&lt;IApiContext&lt;TModel, TUser&gt;, Object&gt;)</h4>
@@ -8796,7 +8808,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueAsync_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_Func_RestModels_Context_IApiContext__0__1__System_Threading_Tasks_Task_System_Object___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValueAsync(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Threading.Tasks.Task%7BSystem.Object%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L287">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L326">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueAsync*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueAsync_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_Func_RestModels_Context_IApiContext__0__1__System_Threading_Tasks_Task_System_Object___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Func{RestModels.Context.IApiContext{`0,`1},System.Threading.Tasks.Task{System.Object}})">SetValueAsync(Expression&lt;Func&lt;TModel, Object&gt;&gt;, Func&lt;IApiContext&lt;TModel, TUser&gt;, Task&lt;Object&gt;&gt;)</h4>
@@ -8855,7 +8867,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueAsync_System_Reflection_PropertyInfo_System_Func_RestModels_Context_IApiContext__0__1__System_Threading_Tasks_Task_System_Object___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValueAsync(System.Reflection.PropertyInfo%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Threading.Tasks.Task%7BSystem.Object%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L249">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L287">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueAsync*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueAsync_System_Reflection_PropertyInfo_System_Func_RestModels_Context_IApiContext__0__1__System_Threading_Tasks_Task_System_Object___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueAsync(System.Reflection.PropertyInfo,System.Func{RestModels.Context.IApiContext{`0,`1},System.Threading.Tasks.Task{System.Object}})">SetValueAsync(PropertyInfo, Func&lt;IApiContext&lt;TModel, TUser&gt;, Task&lt;Object&gt;&gt;)</h4>
@@ -8914,7 +8926,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValueQuery(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L333">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L370">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String)">SetValueQuery(Expression&lt;Func&lt;TModel, Object&gt;&gt;, String)</h4>
@@ -8973,7 +8985,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Reflection_PropertyInfo_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValueQuery(System.Reflection.PropertyInfo%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L322">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L361">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueQuery_System_Reflection_PropertyInfo_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueQuery(System.Reflection.PropertyInfo,System.String)">SetValueQuery(PropertyInfo, String)</h4>
@@ -9032,7 +9044,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValueRoute(System.Linq.Expressions.Expression%7BSystem.Func%7B%600%2CSystem.Object%7D%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L355">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L390">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Linq_Expressions_Expression_System_Func__0_System_Object___System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.String)">SetValueRoute(Expression&lt;Func&lt;TModel, Object&gt;&gt;, String)</h4>
@@ -9091,7 +9103,7 @@ except for the route pattern</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Reflection_PropertyInfo_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.SetValueRoute(System.Reflection.PropertyInfo%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L344">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L381">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_SetValueRoute_System_Reflection_PropertyInfo_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.SetValueRoute(System.Reflection.PropertyInfo,System.String)">SetValueRoute(PropertyInfo, String)</h4>
@@ -9930,11 +9942,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseCount.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L169">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L207">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseCount_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseCount*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseCount" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseCount">WriteResponseCount()</h4>
-  <div class="markdown level1 summary"><p>Sets the response value defined by the <a class="xref" href="RestModels.Responses.Attributes.ModelCountAttribute.html">ModelCountAttribute</a> to the size of the resulting dataset after the operation, if any.</p>
+  <div class="markdown level1 summary"><p>Sets the response value defined by the <a class="xref" href="RestModels.Responses.Attributes.ModelCountAttribute.html">ModelCountAttribute</a> to the size of the resulting dataset
+after the operation, if any.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -9965,11 +9978,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Object__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseValue(System.String%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L151">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L185">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Object__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue(System.String,System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Object})">WriteResponseValue(String, Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Object&gt;)</h4>
-  <div class="markdown level1 summary"><p>Sets a response value for this request using a synchronous handler. The response value to set is determined by the given attribute type</p>
+  <div class="markdown level1 summary"><p>Sets a response value for this request using a synchronous handler. The response value to set is determined by the
+given attribute type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -9998,7 +10012,8 @@ Content-Type header, defaulting to JSON.</p>
       <tr>
         <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">handler</span></td>
-        <td><p>The delegate which will return what to set the value of the property defined by <code data-dev-comment-type="paramref" class="paramref">name</code></p>
+        <td><p>The delegate which will return what to set the value of the property defined by
+<code data-dev-comment-type="paramref" class="paramref">name</code></p>
 </td>
       </tr>
     </tbody>
@@ -10024,11 +10039,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Object_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseValue(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L161">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L198">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_System_String_System_Object_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue(System.String,System.Object)">WriteResponseValue(String, Object)</h4>
-  <div class="markdown level1 summary"><p>Sets a response value for this request to a predefined value. The response value to set is determined by the given attribute type</p>
+  <div class="markdown level1 summary"><p>Sets a response value for this request to a predefined value. The response value to set is determined by the given
+attribute type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -10083,11 +10099,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue__1_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Object__.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseValue%60%601(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L115">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L135">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue__1_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Object__" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue``1(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Object})">WriteResponseValue&lt;TAttribute&gt;(Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Object&gt;)</h4>
-  <div class="markdown level1 summary"><p>Sets a response value for this request using a synchronous handler. The response value to set is determined by the given attribute type</p>
+  <div class="markdown level1 summary"><p>Sets a response value for this request using a synchronous handler. The response value to set is determined by the
+given attribute type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -10110,7 +10127,8 @@ Content-Type header, defaulting to JSON.</p>
       <tr>
         <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">handler</span></td>
-        <td><p>The delegate which will return what to set the value of the property defined by the <code data-dev-comment-type="typeparamref" class="typeparamref">TAttribute</code> attribute</p>
+        <td><p>The delegate which will return what to set the value of the property defined by the
+<code data-dev-comment-type="typeparamref" class="typeparamref">TAttribute</code> attribute</p>
 </td>
       </tr>
     </tbody>
@@ -10152,11 +10170,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue__1_System_Object_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseValue%60%601(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L126">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L148">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValue__1_System_Object_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValue``1(System.Object)">WriteResponseValue&lt;TAttribute&gt;(Object)</h4>
-  <div class="markdown level1 summary"><p>Sets a response value for this request to a predefined value. The response value to set is determined by the given attribute type</p>
+  <div class="markdown level1 summary"><p>Sets a response value for this request to a predefined value. The response value to set is determined by the given
+attribute type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -10221,11 +10240,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValueAsync_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task_System_Object___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseValueAsync(System.String%2CSystem.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Threading.Tasks.Task%7BSystem.Object%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L136">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L163">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValueAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValueAsync*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValueAsync_System_String_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task_System_Object___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValueAsync(System.String,System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task{System.Object}})">WriteResponseValueAsync(String, Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Task&lt;Object&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Sets a response value for this request using an asynchronous handler. The response value to set is determined by the given attribute type</p>
+  <div class="markdown level1 summary"><p>Sets a response value for this request using an asynchronous handler. The response value to set is determined by
+the given attribute type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -10254,7 +10274,8 @@ Content-Type header, defaulting to JSON.</p>
       <tr>
         <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;, <span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
         <td><span class="parametername">handler</span></td>
-        <td><p>The delegate which will return what to set the value of the property defined by <code data-dev-comment-type="paramref" class="paramref">name</code></p>
+        <td><p>The delegate which will return what to set the value of the property defined by
+<code data-dev-comment-type="paramref" class="paramref">name</code></p>
 </td>
       </tr>
     </tbody>
@@ -10280,11 +10301,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValueAsync__1_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task_System_Object___.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteResponseValueAsync%60%601(System.Func%7BRestModels.Context.IApiContext%7B%600%2C%601%7D%2CSystem.Collections.Generic.IEnumerable%7B%600%7D%2CSystem.Threading.Tasks.Task%7BSystem.Object%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L99">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L113">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValueAsync_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValueAsync*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteResponseValueAsync__1_System_Func_RestModels_Context_IApiContext__0__1__System_Collections_Generic_IEnumerable__0__System_Threading_Tasks_Task_System_Object___" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteResponseValueAsync``1(System.Func{RestModels.Context.IApiContext{`0,`1},System.Collections.Generic.IEnumerable{`0},System.Threading.Tasks.Task{System.Object}})">WriteResponseValueAsync&lt;TAttribute&gt;(Func&lt;IApiContext&lt;TModel, TUser&gt;, IEnumerable&lt;TModel&gt;, Task&lt;Object&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Sets a response value for this request using an asynchronous handler. The response value to set is determined by the given attribute type</p>
+  <div class="markdown level1 summary"><p>Sets a response value for this request using an asynchronous handler. The response value to set is determined by
+the given attribute type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -10307,7 +10329,8 @@ Content-Type header, defaulting to JSON.</p>
       <tr>
         <td><span class="xref">System.Func</span>&lt;<a class="xref" href="RestModels.Context.IApiContext-2.html">IApiContext</a>&lt;TModel, TUser&gt;, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TModel&gt;, <span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
         <td><span class="parametername">handler</span></td>
-        <td><p>The delegate which will return what to set the value of the property defined by the <code data-dev-comment-type="typeparamref" class="typeparamref">TAttribute</code> attribute</p>
+        <td><p>The delegate which will return what to set the value of the property defined by the
+<code data-dev-comment-type="typeparamref" class="typeparamref">TAttribute</code> attribute</p>
 </td>
       </tr>
     </tbody>
@@ -10402,11 +10425,12 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersion_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteVersion(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L196">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L233">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersion_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteVersion*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersion_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteVersion(System.String)">WriteVersion(String)</h4>
-  <div class="markdown level1 summary"><p>Sets the response value defined by the <a class="xref" href="RestModels.Responses.Attributes.ApiVersionAttribute.html">ApiVersionAttribute</a> and the X-Api-Version header to the current API version.</p>
+  <div class="markdown level1 summary"><p>Sets the response value defined by the <a class="xref" href="RestModels.Responses.Attributes.ApiVersionAttribute.html">ApiVersionAttribute</a> and the X-Api-Version header to the
+current API version.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -10455,7 +10479,7 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersionHeader_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteVersionHeader(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L187">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L224">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersionHeader_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteVersionHeader*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersionHeader_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteVersionHeader(System.String)">WriteVersionHeader(String)</h4>
@@ -10508,7 +10532,7 @@ Content-Type header, defaulting to JSON.</p>
     <a href="https://github.com/jlynch630/RestModels/new/master/apiSpec/new?filename=RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersionValue_System_String_.md&amp;value=---%0Auid%3A%20RestModels.Options.Builder.RestModelOptionsBuilder%602.WriteVersionValue(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L178">View Source</a>
+    <a href="https://github.com/jlynch630/RestModels/blob/master/RestModels/Options/Builder/RestModelOptionsBuilder.Actions.cs/#L216">View Source</a>
   </span>
   <a id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersionValue_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteVersionValue*"></a>
   <h4 id="RestModels_Options_Builder_RestModelOptionsBuilder_2_WriteVersionValue_System_String_" data-uid="RestModels.Options.Builder.RestModelOptionsBuilder`2.WriteVersionValue(System.String)">WriteVersionValue(String)</h4>

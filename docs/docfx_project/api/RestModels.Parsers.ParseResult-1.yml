@@ -1,0 +1,655 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Parsers.ParseResult`1
+  commentId: T:RestModels.Parsers.ParseResult`1
+  id: ParseResult`1
+  parent: RestModels.Parsers
+  children:
+  - RestModels.Parsers.ParseResult`1.#ctor(`0,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo})
+  - RestModels.Parsers.ParseResult`1.ParsedModel
+  - RestModels.Parsers.ParseResult`1.PresentProperties
+  langs:
+  - csharp
+  - vb
+  name: ParseResult<TModel>
+  nameWithType: ParseResult<TModel>
+  fullName: RestModels.Parsers.ParseResult<TModel>
+  type: Class
+  source:
+    remote:
+      path: RestModels/Parsers/ParseResult.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: ParseResult
+    path: ../../RestModels/Parsers/ParseResult.cs
+    startLine: 16
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: "\nThe result of parsing a request body\n"
+  example: []
+  syntax:
+    content: public class ParseResult<TModel>
+    typeParameters:
+    - id: TModel
+      description: The type of model being parsed
+    content.vb: Public Class ParseResult(Of TModel)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: ParseResult(Of TModel)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)
+  name.vb: ParseResult(Of TModel)
+- uid: RestModels.Parsers.ParseResult`1.#ctor(`0,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo})
+  commentId: M:RestModels.Parsers.ParseResult`1.#ctor(`0,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo})
+  id: '#ctor(`0,System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo})'
+  parent: RestModels.Parsers.ParseResult`1
+  langs:
+  - csharp
+  - vb
+  name: ParseResult(TModel, IEnumerable<PropertyInfo>)
+  nameWithType: ParseResult<TModel>.ParseResult(TModel, IEnumerable<PropertyInfo>)
+  fullName: RestModels.Parsers.ParseResult<TModel>.ParseResult(TModel, System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo>)
+  type: Constructor
+  source:
+    remote:
+      path: RestModels/Parsers/ParseResult.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: .ctor
+    path: ../../RestModels/Parsers/ParseResult.cs
+    startLine: 20
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: Initializes a new instance of the <xref href="RestModels.Parsers.ParseResult%601" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public ParseResult(TModel parsedModel, IEnumerable<PropertyInfo> presentProperties)
+    parameters:
+    - id: parsedModel
+      type: '{TModel}'
+      description: The model that was parsed
+    - id: presentProperties
+      type: System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo}
+      description: The properties that were present on this model in the request body
+    content.vb: Public Sub New(parsedModel As TModel, presentProperties As IEnumerable(Of PropertyInfo))
+  overload: RestModels.Parsers.ParseResult`1.#ctor*
+  nameWithType.vb: ParseResult(Of TModel).ParseResult(TModel, IEnumerable(Of PropertyInfo))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).ParseResult(TModel, System.Collections.Generic.IEnumerable(Of System.Reflection.PropertyInfo))
+  name.vb: ParseResult(TModel, IEnumerable(Of PropertyInfo))
+- uid: RestModels.Parsers.ParseResult`1.ParsedModel
+  commentId: P:RestModels.Parsers.ParseResult`1.ParsedModel
+  id: ParsedModel
+  parent: RestModels.Parsers.ParseResult`1
+  langs:
+  - csharp
+  - vb
+  name: ParsedModel
+  nameWithType: ParseResult<TModel>.ParsedModel
+  fullName: RestModels.Parsers.ParseResult<TModel>.ParsedModel
+  type: Property
+  source:
+    remote:
+      path: RestModels/Parsers/ParseResult.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: ParsedModel
+    path: ../../RestModels/Parsers/ParseResult.cs
+    startLine: 28
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: "\nGets or sets the model that was parsed\n"
+  example: []
+  syntax:
+    content: public TModel ParsedModel { get; set; }
+    parameters: []
+    return:
+      type: '{TModel}'
+    content.vb: Public Property ParsedModel As TModel
+  overload: RestModels.Parsers.ParseResult`1.ParsedModel*
+  nameWithType.vb: ParseResult(Of TModel).ParsedModel
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).ParsedModel
+- uid: RestModels.Parsers.ParseResult`1.PresentProperties
+  commentId: P:RestModels.Parsers.ParseResult`1.PresentProperties
+  id: PresentProperties
+  parent: RestModels.Parsers.ParseResult`1
+  langs:
+  - csharp
+  - vb
+  name: PresentProperties
+  nameWithType: ParseResult<TModel>.PresentProperties
+  fullName: RestModels.Parsers.ParseResult<TModel>.PresentProperties
+  type: Property
+  source:
+    remote:
+      path: RestModels/Parsers/ParseResult.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: PresentProperties
+    path: ../../RestModels/Parsers/ParseResult.cs
+    startLine: 33
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: "\nGets or sets a list of the properties that were present on this model in the request body\n"
+  example: []
+  syntax:
+    content: public PropertyInfo[] PresentProperties { get; set; }
+    parameters: []
+    return:
+      type: System.Reflection.PropertyInfo[]
+    content.vb: Public Property PresentProperties As PropertyInfo()
+  overload: RestModels.Parsers.ParseResult`1.PresentProperties*
+  nameWithType.vb: ParseResult(Of TModel).PresentProperties
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).PresentProperties
+references:
+- uid: RestModels.Parsers
+  commentId: N:RestModels.Parsers
+  name: RestModels.Parsers
+  nameWithType: RestModels.Parsers
+  fullName: RestModels.Parsers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Parsers.ParseResult`1
+  commentId: T:RestModels.Parsers.ParseResult`1
+  name: ParseResult<TModel>
+  nameWithType: ParseResult<TModel>
+  fullName: RestModels.Parsers.ParseResult<TModel>
+  nameWithType.vb: ParseResult(Of TModel)
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)
+  name.vb: ParseResult(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.ParseResult`1.#ctor*
+  commentId: Overload:RestModels.Parsers.ParseResult`1.#ctor
+  name: ParseResult
+  nameWithType: ParseResult<TModel>.ParseResult
+  fullName: RestModels.Parsers.ParseResult<TModel>.ParseResult
+  nameWithType.vb: ParseResult(Of TModel).ParseResult
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).ParseResult
+- uid: '{TModel}'
+  commentId: '!:TModel'
+  definition: TModel
+  name: TModel
+  nameWithType: TModel
+  fullName: TModel
+- uid: System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<PropertyInfo>
+  nameWithType: IEnumerable<PropertyInfo>
+  fullName: System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo>
+  nameWithType.vb: IEnumerable(Of PropertyInfo)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Reflection.PropertyInfo)
+  name.vb: IEnumerable(Of PropertyInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    nameWithType: PropertyInfo
+    fullName: System.Reflection.PropertyInfo
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    nameWithType: PropertyInfo
+    fullName: System.Reflection.PropertyInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TModel
+  name: TModel
+  nameWithType: TModel
+  fullName: TModel
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: RestModels.Parsers.ParseResult`1.ParsedModel*
+  commentId: Overload:RestModels.Parsers.ParseResult`1.ParsedModel
+  name: ParsedModel
+  nameWithType: ParseResult<TModel>.ParsedModel
+  fullName: RestModels.Parsers.ParseResult<TModel>.ParsedModel
+  nameWithType.vb: ParseResult(Of TModel).ParsedModel
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).ParsedModel
+- uid: RestModels.Parsers.ParseResult`1.PresentProperties*
+  commentId: Overload:RestModels.Parsers.ParseResult`1.PresentProperties
+  name: PresentProperties
+  nameWithType: ParseResult<TModel>.PresentProperties
+  fullName: RestModels.Parsers.ParseResult<TModel>.PresentProperties
+  nameWithType.vb: ParseResult(Of TModel).PresentProperties
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel).PresentProperties
+- uid: System.Reflection.PropertyInfo[]
+  isExternal: true
+  name: PropertyInfo[]
+  nameWithType: PropertyInfo[]
+  fullName: System.Reflection.PropertyInfo[]
+  nameWithType.vb: PropertyInfo()
+  fullName.vb: System.Reflection.PropertyInfo()
+  name.vb: PropertyInfo()
+  spec.csharp:
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    nameWithType: PropertyInfo
+    fullName: System.Reflection.PropertyInfo
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    nameWithType: PropertyInfo
+    fullName: System.Reflection.PropertyInfo
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()

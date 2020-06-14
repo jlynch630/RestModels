@@ -1,0 +1,617 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  commentId: T:RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  id: AuthFailedExceptionHandler
+  parent: RestModels.ExceptionHandlers
+  children:
+  - RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: AuthFailedExceptionHandler
+  nameWithType: AuthFailedExceptionHandler
+  fullName: RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  type: Class
+  source:
+    remote:
+      path: RestModels/ExceptionHandlers/AuthFailedExceptionHandler.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthFailedExceptionHandler
+    path: ../../RestModels/ExceptionHandlers/AuthFailedExceptionHandler.cs
+    startLine: 18
+  assemblies:
+  - RestModels
+  namespace: RestModels.ExceptionHandlers
+  summary: "\nAn ExceptionHandler that halts request execution if auth fails\n"
+  example: []
+  syntax:
+    content: 'public class AuthFailedExceptionHandler : IExceptionHandler'
+    content.vb: >-
+      Public Class AuthFailedExceptionHandler
+
+          Implements IExceptionHandler
+  inheritance:
+  - System.Object
+  implements:
+  - RestModels.ExceptionHandlers.IExceptionHandler
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  commentId: M:RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  id: HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  parent: RestModels.ExceptionHandlers.AuthFailedExceptionHandler
+  langs:
+  - csharp
+  - vb
+  name: HandleException(Exception, HttpContext, Boolean)
+  nameWithType: AuthFailedExceptionHandler.HandleException(Exception, HttpContext, Boolean)
+  fullName: RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException(System.Exception, Microsoft.AspNetCore.Http.HttpContext, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: RestModels/ExceptionHandlers/AuthFailedExceptionHandler.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: HandleException
+    path: ../../RestModels/ExceptionHandlers/AuthFailedExceptionHandler.cs
+    startLine: 29
+  assemblies:
+  - RestModels
+  namespace: RestModels.ExceptionHandlers
+  summary: "\nHandles API exceptions\n"
+  example: []
+  syntax:
+    content: public Task<bool?> HandleException(Exception exception, HttpContext context, bool hasNext)
+    parameters:
+    - id: exception
+      type: System.Exception
+      description: The exception that was thrown
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current request context
+    - id: hasNext
+      type: System.Boolean
+      description: <code>true</code> if there is another middleware registered for this route, <code>false</code> otherwise
+    return:
+      type: System.Threading.Tasks.Task{System.Nullable{System.Boolean}}
+      description: "\n<pre><code>true</code></pre> if the request should continue and attempt to use the next middleware registered for this\nroute, <pre><code>false</code></pre> to halt request execution, <pre><code>null</code></pre> to continue with the next exception handler.\n"
+    content.vb: Public Function HandleException(exception As Exception, context As HttpContext, hasNext As Boolean) As Task(Of Boolean?)
+  overload: RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException*
+  implements:
+  - RestModels.ExceptionHandlers.IExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: RestModels.ExceptionHandlers
+  commentId: N:RestModels.ExceptionHandlers
+  name: RestModels.ExceptionHandlers
+  nameWithType: RestModels.ExceptionHandlers
+  fullName: RestModels.ExceptionHandlers
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: RestModels.ExceptionHandlers.IExceptionHandler
+  commentId: T:RestModels.ExceptionHandlers.IExceptionHandler
+  parent: RestModels.ExceptionHandlers
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: RestModels.ExceptionHandlers.IExceptionHandler
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException*
+  commentId: Overload:RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException
+  name: HandleException
+  nameWithType: AuthFailedExceptionHandler.HandleException
+  fullName: RestModels.ExceptionHandlers.AuthFailedExceptionHandler.HandleException
+- uid: RestModels.ExceptionHandlers.IExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  commentId: M:RestModels.ExceptionHandlers.IExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+  parent: RestModels.ExceptionHandlers.IExceptionHandler
+  isExternal: true
+  name: HandleException(Exception, HttpContext, Boolean)
+  nameWithType: IExceptionHandler.HandleException(Exception, HttpContext, Boolean)
+  fullName: RestModels.ExceptionHandlers.IExceptionHandler.HandleException(System.Exception, Microsoft.AspNetCore.Http.HttpContext, System.Boolean)
+  spec.csharp:
+  - uid: RestModels.ExceptionHandlers.IExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+    name: HandleException
+    nameWithType: IExceptionHandler.HandleException
+    fullName: RestModels.ExceptionHandlers.IExceptionHandler.HandleException
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: RestModels.ExceptionHandlers.IExceptionHandler.HandleException(System.Exception,Microsoft.AspNetCore.Http.HttpContext,System.Boolean)
+    name: HandleException
+    nameWithType: IExceptionHandler.HandleException
+    fullName: RestModels.ExceptionHandlers.IExceptionHandler.HandleException
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    nameWithType: HttpContext
+    fullName: Microsoft.AspNetCore.Http.HttpContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Threading.Tasks.Task{System.Nullable{System.Boolean}}
+  commentId: T:System.Threading.Tasks.Task{System.Nullable{System.Boolean}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Nullable<Boolean>>
+  nameWithType: Task<Nullable<Boolean>>
+  fullName: System.Threading.Tasks.Task<System.Nullable<System.Boolean>>
+  nameWithType.vb: Task(Of Nullable(Of Boolean))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Nullable(Of System.Boolean))
+  name.vb: Task(Of Nullable(Of Boolean))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

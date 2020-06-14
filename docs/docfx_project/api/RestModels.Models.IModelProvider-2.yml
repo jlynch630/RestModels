@@ -1,0 +1,316 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Models.IModelProvider`2
+  commentId: T:RestModels.Models.IModelProvider`2
+  id: IModelProvider`2
+  parent: RestModels.Models
+  children:
+  - RestModels.Models.IModelProvider`2.GetModelsAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[],`1)
+  langs:
+  - csharp
+  - vb
+  name: IModelProvider<TModel, TUser>
+  nameWithType: IModelProvider<TModel, TUser>
+  fullName: RestModels.Models.IModelProvider<TModel, TUser>
+  type: Interface
+  source:
+    remote:
+      path: RestModels/Models/IModelProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: IModelProvider
+    path: ../../RestModels/Models/IModelProvider.cs
+    startLine: 20
+  assemblies:
+  - RestModels
+  namespace: RestModels.Models
+  summary: "\nProvider for API models\n"
+  example: []
+  syntax:
+    content: >-
+      public interface IModelProvider<TModel, in TUser>
+
+          where TModel : class where TUser : class
+    typeParameters:
+    - id: TModel
+      description: The type of model being queried for
+    - id: TUser
+      description: The type of authenticated user
+    content.vb: Public Interface IModelProvider(Of TModel As Class, In TUser As Class)
+  nameWithType.vb: IModelProvider(Of TModel, TUser)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel, TUser)
+  name.vb: IModelProvider(Of TModel, TUser)
+- uid: RestModels.Models.IModelProvider`2.GetModelsAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[],`1)
+  commentId: M:RestModels.Models.IModelProvider`2.GetModelsAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[],`1)
+  id: GetModelsAsync(Microsoft.AspNetCore.Http.HttpContext,RestModels.Parsers.ParseResult{`0}[],`1)
+  parent: RestModels.Models.IModelProvider`2
+  langs:
+  - csharp
+  - vb
+  name: GetModelsAsync(HttpContext, ParseResult<TModel>[], TUser)
+  nameWithType: IModelProvider<TModel, TUser>.GetModelsAsync(HttpContext, ParseResult<TModel>[], TUser)
+  fullName: RestModels.Models.IModelProvider<TModel, TUser>.GetModelsAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult<TModel>[], TUser)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Models/IModelProvider.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: GetModelsAsync
+    path: ../../RestModels/Models/IModelProvider.cs
+    startLine: 28
+  assemblies:
+  - RestModels
+  namespace: RestModels.Models
+  summary: "\nGets a query pointing to all of the models available for the current request context\n"
+  example: []
+  syntax:
+    content: Task<IQueryable<TModel>> GetModelsAsync(HttpContext context, ParseResult<TModel>[] parsed, TUser user)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The current request context
+    - id: parsed
+      type: RestModels.Parsers.ParseResult{{TModel}}[]
+      description: The parsed request body, if any
+    - id: user
+      type: '{TUser}'
+      description: The current user context, if any
+    return:
+      type: System.Threading.Tasks.Task{System.Linq.IQueryable{{TModel}}}
+      description: An <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref> of all of the models available
+    content.vb: Function GetModelsAsync(context As HttpContext, parsed As ParseResult(Of TModel)(), user As TUser) As Task(Of IQueryable(Of TModel))
+  overload: RestModels.Models.IModelProvider`2.GetModelsAsync*
+  nameWithType.vb: IModelProvider(Of TModel, TUser).GetModelsAsync(HttpContext, ParseResult(Of TModel)(), TUser)
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel, TUser).GetModelsAsync(Microsoft.AspNetCore.Http.HttpContext, RestModels.Parsers.ParseResult(Of TModel)(), TUser)
+  name.vb: GetModelsAsync(HttpContext, ParseResult(Of TModel)(), TUser)
+references:
+- uid: RestModels.Models
+  commentId: N:RestModels.Models
+  name: RestModels.Models
+  nameWithType: RestModels.Models
+  fullName: RestModels.Models
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Models.IModelProvider`2.GetModelsAsync*
+  commentId: Overload:RestModels.Models.IModelProvider`2.GetModelsAsync
+  name: GetModelsAsync
+  nameWithType: IModelProvider<TModel, TUser>.GetModelsAsync
+  fullName: RestModels.Models.IModelProvider<TModel, TUser>.GetModelsAsync
+  nameWithType.vb: IModelProvider(Of TModel, TUser).GetModelsAsync
+  fullName.vb: RestModels.Models.IModelProvider(Of TModel, TUser).GetModelsAsync
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: RestModels.Parsers.ParseResult{{TModel}}[]
+  isExternal: true
+  name: ParseResult<TModel>[]
+  nameWithType: ParseResult<TModel>[]
+  fullName: RestModels.Parsers.ParseResult<TModel>[]
+  nameWithType.vb: ParseResult(Of TModel)()
+  fullName.vb: RestModels.Parsers.ParseResult(Of TModel)()
+  name.vb: ParseResult(Of TModel)()
+  spec.csharp:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: '{TUser}'
+  commentId: '!:TUser'
+  definition: TUser
+  name: TUser
+  nameWithType: TUser
+  fullName: TUser
+- uid: System.Threading.Tasks.Task{System.Linq.IQueryable{{TModel}}}
+  commentId: T:System.Threading.Tasks.Task{System.Linq.IQueryable{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<IQueryable<TModel>>
+  nameWithType: Task<IQueryable<TModel>>
+  fullName: System.Threading.Tasks.Task<System.Linq.IQueryable<TModel>>
+  nameWithType.vb: Task(Of IQueryable(Of TModel))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Linq.IQueryable(Of TModel))
+  name.vb: Task(Of IQueryable(Of TModel))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    nameWithType: IQueryable
+    fullName: System.Linq.IQueryable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: TUser
+  name: TUser
+  nameWithType: TUser
+  fullName: TUser
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

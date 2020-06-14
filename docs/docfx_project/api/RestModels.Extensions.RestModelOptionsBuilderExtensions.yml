@@ -1,0 +1,1460 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  commentId: T:RestModels.Extensions.RestModelOptionsBuilderExtensions
+  id: RestModelOptionsBuilderExtensions
+  parent: RestModels.Extensions
+  children:
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Boolean})
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}})
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  - RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  langs:
+  - csharp
+  - vb
+  name: RestModelOptionsBuilderExtensions
+  nameWithType: RestModelOptionsBuilderExtensions
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: RestModelOptionsBuilderExtensions
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 19
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nExtension methods for the <xref href=\"RestModels.Options.Builder.RestModelOptionsBuilder%602\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public static class RestModelOptionsBuilderExtensions
+    content.vb: Public Module RestModelOptionsBuilderExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Boolean})
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Boolean})
+  id: AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Boolean})
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthBasic<TModel>(RestModelOptionsBuilder<TModel, NoUser>, Func<String, String, Boolean>)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthBasic<TModel>(RestModelOptionsBuilder<TModel, NoUser>, Func<String, String, Boolean>)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.Func<System.String, System.String, System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthBasic
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 30
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with basic auth\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthBasic<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, Func<string, string, bool> handler)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: handler
+      type: System.Func{System.String,System.String,System.Boolean}
+      description: "\nThe handler which, when given the username and password, will return <code>true</code> if the value is valid and\n<code>false</code> otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthBasic(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), handler As Func(Of String, String, Boolean)) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthBasic(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), Func(Of String, String, Boolean))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.Func(Of System.String, System.String, System.Boolean))
+  name.vb: AuthBasic(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), Func(Of String, String, Boolean))
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  id: AuthBasic``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthBasic<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, String)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthBasic<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, String)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthBasic
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 53
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with basic auth\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthBasic<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string username, string password)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: username
+      type: System.String
+      description: "\nThe expected value of the username. Authorization will succeed if both this and <code data-dev-comment-type=\"paramref\" class=\"paramref\">password</code> value\nequals\nthe actual values and fail otherwise\n"
+    - id: password
+      type: System.String
+      description: "\nThe expected value of the password. Authorization will succeed if both this and <code data-dev-comment-type=\"paramref\" class=\"paramref\">username</code> value\nequals\nthe actual values and fail otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthBasic(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), username As String, password As String) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthBasic(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.String)
+  name.vb: AuthBasic(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, String)
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}})
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}})
+  id: AuthBasicAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}})
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthBasicAsync<TModel>(RestModelOptionsBuilder<TModel, NoUser>, Func<String, String, Task<Boolean>>)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthBasicAsync<TModel>(RestModelOptionsBuilder<TModel, NoUser>, Func<String, String, Task<Boolean>>)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.Func<System.String, System.String, System.Threading.Tasks.Task<System.Boolean>>)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthBasicAsync
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 71
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with basic auth\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthBasicAsync<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, Func<string, string, Task<bool>> handler)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: handler
+      type: System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}}
+      description: "\nThe handler which, when given the username and password, will return <code>true</code> if the value is valid and\n<code>false</code> otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthBasicAsync(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), handler As Func(Of String, String, Task(Of Boolean))) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthBasicAsync(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), Func(Of String, String, Task(Of Boolean)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.Func(Of System.String, System.String, System.Threading.Tasks.Task(Of System.Boolean)))
+  name.vb: AuthBasicAsync(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), Func(Of String, String, Task(Of Boolean)))
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  id: AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthHeader<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Boolean>)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthHeader<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Boolean>)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.Func<System.String, System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthHeader
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 93
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with a header\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthHeader<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string parameterName, Func<string, bool> handler)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: parameterName
+      type: System.String
+      description: The name of the header to authenticate with
+    - id: handler
+      type: System.Func{System.String,System.Boolean}
+      description: "\nThe handler which, when given the header value, will return <code>true</code> if the value is valid and\n<code>false</code> otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthHeader(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), parameterName As String, handler As Func(Of String, Boolean)) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthHeader(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Boolean))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.Func(Of System.String, System.Boolean))
+  name.vb: AuthHeader(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Boolean))
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  id: AuthHeader``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthHeader<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, String)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthHeader<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, String)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthHeader
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 112
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with a header\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthHeader<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string parameterName, string value)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: parameterName
+      type: System.String
+      description: The name of the header to authenticate with
+    - id: value
+      type: System.String
+      description: "\nThe expected value of the parameter. Authorization will succeed if the parameter value equals\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code> and fail otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthHeader(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), parameterName As String, value As String) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthHeader(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.String)
+  name.vb: AuthHeader(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, String)
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  id: AuthHeaderAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthHeaderAsync<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Task<Boolean>>)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthHeaderAsync<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Task<Boolean>>)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.Func<System.String, System.Threading.Tasks.Task<System.Boolean>>)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthHeaderAsync
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 131
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with a header\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthHeaderAsync<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string parameterName, Func<string, Task<bool>> handler)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: parameterName
+      type: System.String
+      description: The name of the header to authenticate with
+    - id: handler
+      type: System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}}
+      description: "\nThe handler which, when given the header value, will return <code>true</code> if the value is valid and\n<code>false</code> otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthHeaderAsync(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), parameterName As String, handler As Func(Of String, Task(Of Boolean))) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthHeaderAsync(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Task(Of Boolean)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.Func(Of System.String, System.Threading.Tasks.Task(Of System.Boolean)))
+  name.vb: AuthHeaderAsync(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Task(Of Boolean)))
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  id: AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Boolean})
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthQuery<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Boolean>)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthQuery<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Boolean>)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.Func<System.String, System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthQuery
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 155
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with a query parameter\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthQuery<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string parameterName, Func<string, bool> handler)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: parameterName
+      type: System.String
+      description: The name of the parameter to authenticate with
+    - id: handler
+      type: System.Func{System.String,System.Boolean}
+      description: "\nThe handler which, when given the parameter value, will return <code>true</code> if the value is valid\nand <code>false</code> otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthQuery(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), parameterName As String, handler As Func(Of String, Boolean)) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthQuery(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Boolean))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.Func(Of System.String, System.Boolean))
+  name.vb: AuthQuery(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Boolean))
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  id: AuthQuery``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.String)
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthQuery<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, String)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthQuery<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, String)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthQuery
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 174
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with a query parameter\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthQuery<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string parameterName, string value)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: parameterName
+      type: System.String
+      description: The name of the parameter to authenticate with
+    - id: value
+      type: System.String
+      description: "\nThe expected value of the parameter. Authorization will succeed if the parameter value equals\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code> and fail otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthQuery(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), parameterName As String, value As String) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthQuery(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.String)
+  name.vb: AuthQuery(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, String)
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  commentId: M:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  id: AuthQueryAsync``1(RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser},System.String,System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}})
+  isExtensionMethod: true
+  parent: RestModels.Extensions.RestModelOptionsBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AuthQueryAsync<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Task<Boolean>>)
+  nameWithType: RestModelOptionsBuilderExtensions.AuthQueryAsync<TModel>(RestModelOptionsBuilder<TModel, NoUser>, String, Func<String, Task<Boolean>>)
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync<TModel>(RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>, System.String, System.Func<System.String, System.Threading.Tasks.Task<System.Boolean>>)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: AuthQueryAsync
+    path: ../../RestModels/Extensions/RestModelOptionsBuilderExtensions.cs
+    startLine: 193
+  assemblies:
+  - RestModels
+  namespace: RestModels.Extensions
+  summary: "\nAdds an auth provider to this route that authenticates with a query parameter\n"
+  example: []
+  syntax:
+    content: >-
+      public static RestModelOptionsBuilder<TModel, NoUser> AuthQueryAsync<TModel>(this RestModelOptionsBuilder<TModel, NoUser> builder, string parameterName, Func<string, Task<bool>> handler)
+
+          where TModel : class
+    parameters:
+    - id: builder
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: The options builder to perform the operation on
+    - id: parameterName
+      type: System.String
+      description: The name of the parameter to authenticate with
+    - id: handler
+      type: System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}}
+      description: "\nThe handler which, when given the parameter value, will return <code>true</code> if the value is valid\nand <code>false</code> otherwise\n"
+    typeParameters:
+    - id: TModel
+      description: The model type that the API is being built for
+    return:
+      type: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+      description: This <xref href="RestModels.Options.Builder.RestModelOptionsBuilder%602" data-throw-if-not-resolved="false"></xref> object, for chaining
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AuthQueryAsync(Of TModel As Class)(builder As RestModelOptionsBuilder(Of TModel, NoUser), parameterName As String, handler As Func(Of String, Task(Of Boolean))) As RestModelOptionsBuilder(Of TModel, NoUser)
+  overload: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync*
+  nameWithType.vb: RestModelOptionsBuilderExtensions.AuthQueryAsync(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Task(Of Boolean)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync(Of TModel)(RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser), System.String, System.Func(Of System.String, System.Threading.Tasks.Task(Of System.Boolean)))
+  name.vb: AuthQueryAsync(Of TModel)(RestModelOptionsBuilder(Of TModel, NoUser), String, Func(Of String, Task(Of Boolean)))
+references:
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+  commentId: T:RestModels.Options.Builder.RestModelOptionsBuilder`2
+  name: RestModelOptionsBuilder<TModel, TUser>
+  nameWithType: RestModelOptionsBuilder<TModel, TUser>
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, TUser>
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, TUser)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, TUser)
+  name.vb: RestModelOptionsBuilder(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder
+    nameWithType: RestModelOptionsBuilder
+    fullName: RestModels.Options.Builder.RestModelOptionsBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder
+    nameWithType: RestModelOptionsBuilder
+    fullName: RestModels.Options.Builder.RestModelOptionsBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Extensions
+  commentId: N:RestModels.Extensions
+  name: RestModels.Extensions
+  nameWithType: RestModels.Extensions
+  fullName: RestModels.Extensions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic*
+  commentId: Overload:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic
+  name: AuthBasic
+  nameWithType: RestModelOptionsBuilderExtensions.AuthBasic
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasic
+- uid: RestModels.Options.Builder.RestModelOptionsBuilder{{TModel},RestModels.Auth.NoUser}
+  commentId: T:RestModels.Options.Builder.RestModelOptionsBuilder{``0,RestModels.Auth.NoUser}
+  parent: RestModels.Options.Builder
+  definition: RestModels.Options.Builder.RestModelOptionsBuilder`2
+  name: RestModelOptionsBuilder<TModel, NoUser>
+  nameWithType: RestModelOptionsBuilder<TModel, NoUser>
+  fullName: RestModels.Options.Builder.RestModelOptionsBuilder<TModel, RestModels.Auth.NoUser>
+  nameWithType.vb: RestModelOptionsBuilder(Of TModel, NoUser)
+  fullName.vb: RestModels.Options.Builder.RestModelOptionsBuilder(Of TModel, RestModels.Auth.NoUser)
+  name.vb: RestModelOptionsBuilder(Of TModel, NoUser)
+  spec.csharp:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder
+    nameWithType: RestModelOptionsBuilder
+    fullName: RestModels.Options.Builder.RestModelOptionsBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Auth.NoUser
+    name: NoUser
+    nameWithType: NoUser
+    fullName: RestModels.Auth.NoUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Options.Builder.RestModelOptionsBuilder`2
+    name: RestModelOptionsBuilder
+    nameWithType: RestModelOptionsBuilder
+    fullName: RestModels.Options.Builder.RestModelOptionsBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: RestModels.Auth.NoUser
+    name: NoUser
+    nameWithType: NoUser
+    fullName: RestModels.Auth.NoUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.String,System.String,System.Boolean}
+  commentId: T:System.Func{System.String,System.String,System.Boolean}
+  parent: System
+  definition: System.Func`3
+  name: Func<String, String, Boolean>
+  nameWithType: Func<String, String, Boolean>
+  fullName: System.Func<System.String, System.String, System.Boolean>
+  nameWithType.vb: Func(Of String, String, Boolean)
+  fullName.vb: System.Func(Of System.String, System.String, System.Boolean)
+  name.vb: Func(Of String, String, Boolean)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options.Builder
+  commentId: N:RestModels.Options.Builder
+  name: RestModels.Options.Builder
+  nameWithType: RestModels.Options.Builder
+  fullName: RestModels.Options.Builder
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync*
+  commentId: Overload:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync
+  name: AuthBasicAsync
+  nameWithType: RestModelOptionsBuilderExtensions.AuthBasicAsync
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthBasicAsync
+- uid: System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}}
+  commentId: T:System.Func{System.String,System.String,System.Threading.Tasks.Task{System.Boolean}}
+  parent: System
+  definition: System.Func`3
+  name: Func<String, String, Task<Boolean>>
+  nameWithType: Func<String, String, Task<Boolean>>
+  fullName: System.Func<System.String, System.String, System.Threading.Tasks.Task<System.Boolean>>
+  nameWithType.vb: Func(Of String, String, Task(Of Boolean))
+  fullName.vb: System.Func(Of System.String, System.String, System.Threading.Tasks.Task(Of System.Boolean))
+  name.vb: Func(Of String, String, Task(Of Boolean))
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader*
+  commentId: Overload:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader
+  name: AuthHeader
+  nameWithType: RestModelOptionsBuilderExtensions.AuthHeader
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeader
+- uid: System.Func{System.String,System.Boolean}
+  commentId: T:System.Func{System.String,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  name: Func<String, Boolean>
+  nameWithType: Func<String, Boolean>
+  fullName: System.Func<System.String, System.Boolean>
+  nameWithType.vb: Func(Of String, Boolean)
+  fullName.vb: System.Func(Of System.String, System.Boolean)
+  name.vb: Func(Of String, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync*
+  commentId: Overload:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync
+  name: AuthHeaderAsync
+  nameWithType: RestModelOptionsBuilderExtensions.AuthHeaderAsync
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthHeaderAsync
+- uid: System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}}
+  commentId: T:System.Func{System.String,System.Threading.Tasks.Task{System.Boolean}}
+  parent: System
+  definition: System.Func`2
+  name: Func<String, Task<Boolean>>
+  nameWithType: Func<String, Task<Boolean>>
+  fullName: System.Func<System.String, System.Threading.Tasks.Task<System.Boolean>>
+  nameWithType.vb: Func(Of String, Task(Of Boolean))
+  fullName.vb: System.Func(Of System.String, System.Threading.Tasks.Task(Of System.Boolean))
+  name.vb: Func(Of String, Task(Of Boolean))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery*
+  commentId: Overload:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery
+  name: AuthQuery
+  nameWithType: RestModelOptionsBuilderExtensions.AuthQuery
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQuery
+- uid: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync*
+  commentId: Overload:RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync
+  name: AuthQueryAsync
+  nameWithType: RestModelOptionsBuilderExtensions.AuthQueryAsync
+  fullName: RestModels.Extensions.RestModelOptionsBuilderExtensions.AuthQueryAsync

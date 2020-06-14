@@ -1,0 +1,386 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Parsers.IBodyParser`1
+  commentId: T:RestModels.Parsers.IBodyParser`1
+  id: IBodyParser`1
+  parent: RestModels.Parsers
+  children:
+  - RestModels.Parsers.IBodyParser`1.CanParse(Microsoft.AspNetCore.Http.HttpContext)
+  - RestModels.Parsers.IBodyParser`1.Parse(System.Byte[],RestModels.Options.ParserOptions,Microsoft.AspNetCore.Http.HttpContext)
+  langs:
+  - csharp
+  - vb
+  name: IBodyParser<TModel>
+  nameWithType: IBodyParser<TModel>
+  fullName: RestModels.Parsers.IBodyParser<TModel>
+  type: Interface
+  source:
+    remote:
+      path: RestModels/Parsers/IBodyParser.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: IBodyParser
+    path: ../../RestModels/Parsers/IBodyParser.cs
+    startLine: 19
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: "\nParser for a request body\n"
+  example: []
+  syntax:
+    content: public interface IBodyParser<TModel>
+    typeParameters:
+    - id: TModel
+      description: The type to parse to
+    content.vb: Public Interface IBodyParser(Of TModel)
+  nameWithType.vb: IBodyParser(Of TModel)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel)
+  name.vb: IBodyParser(Of TModel)
+- uid: RestModels.Parsers.IBodyParser`1.Parse(System.Byte[],RestModels.Options.ParserOptions,Microsoft.AspNetCore.Http.HttpContext)
+  commentId: M:RestModels.Parsers.IBodyParser`1.Parse(System.Byte[],RestModels.Options.ParserOptions,Microsoft.AspNetCore.Http.HttpContext)
+  id: Parse(System.Byte[],RestModels.Options.ParserOptions,Microsoft.AspNetCore.Http.HttpContext)
+  parent: RestModels.Parsers.IBodyParser`1
+  langs:
+  - csharp
+  - vb
+  name: Parse(Byte[], ParserOptions, HttpContext)
+  nameWithType: IBodyParser<TModel>.Parse(Byte[], ParserOptions, HttpContext)
+  fullName: RestModels.Parsers.IBodyParser<TModel>.Parse(System.Byte[], RestModels.Options.ParserOptions, Microsoft.AspNetCore.Http.HttpContext)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Parsers/IBodyParser.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: Parse
+    path: ../../RestModels/Parsers/IBodyParser.cs
+    startLine: 27
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: "\nParses a request body\n"
+  example: []
+  syntax:
+    content: Task<ParseResult<TModel>[]> Parse(byte[] body, ParserOptions options, HttpContext context)
+    parameters:
+    - id: body
+      type: System.Byte[]
+      description: The data of the request body
+    - id: options
+      type: RestModels.Options.ParserOptions
+      description: Options for the parser
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The context for the HTTP request
+    return:
+      type: System.Threading.Tasks.Task{RestModels.Parsers.ParseResult{{TModel}}[]}
+      description: The parsed models
+    content.vb: Function Parse(body As Byte(), options As ParserOptions, context As HttpContext) As Task(Of ParseResult(Of TModel)())
+  overload: RestModels.Parsers.IBodyParser`1.Parse*
+  nameWithType.vb: IBodyParser(Of TModel).Parse(Byte(), ParserOptions, HttpContext)
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel).Parse(System.Byte(), RestModels.Options.ParserOptions, Microsoft.AspNetCore.Http.HttpContext)
+  name.vb: Parse(Byte(), ParserOptions, HttpContext)
+- uid: RestModels.Parsers.IBodyParser`1.CanParse(Microsoft.AspNetCore.Http.HttpContext)
+  commentId: M:RestModels.Parsers.IBodyParser`1.CanParse(Microsoft.AspNetCore.Http.HttpContext)
+  id: CanParse(Microsoft.AspNetCore.Http.HttpContext)
+  parent: RestModels.Parsers.IBodyParser`1
+  langs:
+  - csharp
+  - vb
+  name: CanParse(HttpContext)
+  nameWithType: IBodyParser<TModel>.CanParse(HttpContext)
+  fullName: RestModels.Parsers.IBodyParser<TModel>.CanParse(Microsoft.AspNetCore.Http.HttpContext)
+  type: Method
+  source:
+    remote:
+      path: RestModels/Parsers/IBodyParser.cs
+      branch: master
+      repo: git@github.com:jlynch630/RestModels.git
+    id: CanParse
+    path: ../../RestModels/Parsers/IBodyParser.cs
+    startLine: 34
+  assemblies:
+  - RestModels
+  namespace: RestModels.Parsers
+  summary: "\nGets whether or not the request body can be parsed by this <xref href=\"RestModels.Parsers.IBodyParser%601\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: Task<bool> CanParse(HttpContext context)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The context for the HTTP request
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: <code>true</code> if the request body can be parsed by this <xref href="RestModels.Parsers.IBodyParser%601" data-throw-if-not-resolved="false"></xref>, <code>false</code> otherwise
+    content.vb: Function CanParse(context As HttpContext) As Task(Of Boolean)
+  overload: RestModels.Parsers.IBodyParser`1.CanParse*
+  nameWithType.vb: IBodyParser(Of TModel).CanParse(HttpContext)
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel).CanParse(Microsoft.AspNetCore.Http.HttpContext)
+references:
+- uid: RestModels.Parsers
+  commentId: N:RestModels.Parsers
+  name: RestModels.Parsers
+  nameWithType: RestModels.Parsers
+  fullName: RestModels.Parsers
+- uid: RestModels.Parsers.IBodyParser`1.Parse*
+  commentId: Overload:RestModels.Parsers.IBodyParser`1.Parse
+  name: Parse
+  nameWithType: IBodyParser<TModel>.Parse
+  fullName: RestModels.Parsers.IBodyParser<TModel>.Parse
+  nameWithType.vb: IBodyParser(Of TModel).Parse
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel).Parse
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: RestModels.Options.ParserOptions
+  commentId: T:RestModels.Options.ParserOptions
+  parent: RestModels.Options
+  name: ParserOptions
+  nameWithType: ParserOptions
+  fullName: RestModels.Options.ParserOptions
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: System.Threading.Tasks.Task{RestModels.Parsers.ParseResult{{TModel}}[]}
+  commentId: T:System.Threading.Tasks.Task{RestModels.Parsers.ParseResult{`0}[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ParseResult<TModel>[]>
+  nameWithType: Task<ParseResult<TModel>[]>
+  fullName: System.Threading.Tasks.Task<RestModels.Parsers.ParseResult<TModel>[]>
+  nameWithType.vb: Task(Of ParseResult(Of TModel)())
+  fullName.vb: System.Threading.Tasks.Task(Of RestModels.Parsers.ParseResult(Of TModel)())
+  name.vb: Task(Of ParseResult(Of TModel)())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: RestModels.Parsers.ParseResult`1
+    name: ParseResult
+    nameWithType: ParseResult
+    fullName: RestModels.Parsers.ParseResult
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options
+  commentId: N:RestModels.Options
+  name: RestModels.Options
+  nameWithType: RestModels.Options
+  fullName: RestModels.Options
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: RestModels.Parsers.IBodyParser`1
+  commentId: T:RestModels.Parsers.IBodyParser`1
+  name: IBodyParser<TModel>
+  nameWithType: IBodyParser<TModel>
+  fullName: RestModels.Parsers.IBodyParser<TModel>
+  nameWithType.vb: IBodyParser(Of TModel)
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel)
+  name.vb: IBodyParser(Of TModel)
+  spec.csharp:
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser
+    nameWithType: IBodyParser
+    fullName: RestModels.Parsers.IBodyParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Parsers.IBodyParser`1
+    name: IBodyParser
+    nameWithType: IBodyParser
+    fullName: RestModels.Parsers.IBodyParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Parsers.IBodyParser`1.CanParse*
+  commentId: Overload:RestModels.Parsers.IBodyParser`1.CanParse
+  name: CanParse
+  nameWithType: IBodyParser<TModel>.CanParse
+  fullName: RestModels.Parsers.IBodyParser<TModel>.CanParse
+  nameWithType.vb: IBodyParser(Of TModel).CanParse
+  fullName.vb: RestModels.Parsers.IBodyParser(Of TModel).CanParse
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

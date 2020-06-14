@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.Options
+  commentId: N:RestModels.Options
+  id: RestModels.Options
+  children:
+  - RestModels.Options.FormattingOptions
+  - RestModels.Options.ParserOptions
+  - RestModels.Options.RestModelOptions`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.Options
+  nameWithType: RestModels.Options
+  fullName: RestModels.Options
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: RestModels.Options.FormattingOptions
+  commentId: T:RestModels.Options.FormattingOptions
+  parent: RestModels.Options
+  name: FormattingOptions
+  nameWithType: FormattingOptions
+  fullName: RestModels.Options.FormattingOptions
+- uid: RestModels.Options.ParserOptions
+  commentId: T:RestModels.Options.ParserOptions
+  parent: RestModels.Options
+  name: ParserOptions
+  nameWithType: ParserOptions
+  fullName: RestModels.Options.ParserOptions
+- uid: RestModels.Options.RestModelOptions`2
+  commentId: T:RestModels.Options.RestModelOptions`2
+  name: RestModelOptions<TModel, TUser>
+  nameWithType: RestModelOptions<TModel, TUser>
+  fullName: RestModels.Options.RestModelOptions<TModel, TUser>
+  nameWithType.vb: RestModelOptions(Of TModel, TUser)
+  fullName.vb: RestModels.Options.RestModelOptions(Of TModel, TUser)
+  name.vb: RestModelOptions(Of TModel, TUser)
+  spec.csharp:
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions
+    nameWithType: RestModelOptions
+    fullName: RestModels.Options.RestModelOptions
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.Options.RestModelOptions`2
+    name: RestModelOptions
+    nameWithType: RestModelOptions
+    fullName: RestModels.Options.RestModelOptions
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TUser
+    nameWithType: TUser
+    fullName: TUser
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: RestModels.Options
+  commentId: N:RestModels.Options
+  name: RestModels.Options
+  nameWithType: RestModels.Options
+  fullName: RestModels.Options

@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: RestModels.EntityFramework.Filters
+  commentId: N:RestModels.EntityFramework.Filters
+  id: RestModels.EntityFramework.Filters
+  children:
+  - RestModels.EntityFramework.Filters.PrimaryKeyFilter`2
+  langs:
+  - csharp
+  - vb
+  name: RestModels.EntityFramework.Filters
+  nameWithType: RestModels.EntityFramework.Filters
+  fullName: RestModels.EntityFramework.Filters
+  type: Namespace
+  assemblies:
+  - RestModels.EntityFramework
+references:
+- uid: RestModels.EntityFramework.Filters.PrimaryKeyFilter`2
+  commentId: T:RestModels.EntityFramework.Filters.PrimaryKeyFilter`2
+  name: PrimaryKeyFilter<TModel, TContext>
+  nameWithType: PrimaryKeyFilter<TModel, TContext>
+  fullName: RestModels.EntityFramework.Filters.PrimaryKeyFilter<TModel, TContext>
+  nameWithType.vb: PrimaryKeyFilter(Of TModel, TContext)
+  fullName.vb: RestModels.EntityFramework.Filters.PrimaryKeyFilter(Of TModel, TContext)
+  name.vb: PrimaryKeyFilter(Of TModel, TContext)
+  spec.csharp:
+  - uid: RestModels.EntityFramework.Filters.PrimaryKeyFilter`2
+    name: PrimaryKeyFilter
+    nameWithType: PrimaryKeyFilter
+    fullName: RestModels.EntityFramework.Filters.PrimaryKeyFilter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: RestModels.EntityFramework.Filters.PrimaryKeyFilter`2
+    name: PrimaryKeyFilter
+    nameWithType: PrimaryKeyFilter
+    fullName: RestModels.EntityFramework.Filters.PrimaryKeyFilter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TModel
+    nameWithType: TModel
+    fullName: TModel
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )

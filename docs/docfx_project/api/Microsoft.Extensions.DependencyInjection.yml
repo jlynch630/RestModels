@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  id: Microsoft.Extensions.DependencyInjection
+  children:
+  - Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions
+  - Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  type: Namespace
+  assemblies:
+  - RestModels
+references:
+- uid: Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions
+  commentId: T:Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions
+  name: RestModelsApplicationBuilderExtensions
+  nameWithType: RestModelsApplicationBuilderExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.RestModelsApplicationBuilderExtensions
+- uid: Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions
+  commentId: T:Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions
+  name: EntityFrameworkRestModelsApplicationBuilderExtensions
+  nameWithType: EntityFrameworkRestModelsApplicationBuilderExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.EntityFrameworkRestModelsApplicationBuilderExtensions
