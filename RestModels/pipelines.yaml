@@ -19,10 +19,13 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: 'RestModels/RestModels.csproj'
-    outputDir: '$(System.DefaultWorkingDirectory)/NugetOut'
     nobuild: true
-    
-- task: PublishPipelineArtifact@1
+   
+- task: NuGetAuthenticate@0
+  displayName: 'NuGet Authenticate'
+- task: NuGetCommand@2
+  displayName: 'NuGet Push'
   inputs:
-    targetPath: $(System.DefaultWorkingDirectory)/NugetOut
-    artifactName: NugetPackage
+    command: push
+    publishVstsFeed: 'RestModels/RestModels'
+    allowPackageConflicts: true
