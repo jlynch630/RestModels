@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "RestModels.OrmBase/0.1.1": {
+        "dependencies": {
+          "RestModels": "0.1.2"
+        },
+        "runtime": {
+          "RestModels.OrmBase.dll": {}
+        }
+      },
+      "RestModels/0.1.2": {
+        "runtime": {
+          "RestModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RestModels.OrmBase/0.1.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RestModels/0.1.2": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

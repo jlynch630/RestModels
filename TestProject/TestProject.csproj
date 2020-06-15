@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RestModels.EntityFramework\RestModels.EntityFramework.csproj" />
+    <ProjectReference Include="..\RestModels.EntityFrameworkCore\RestModels.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>

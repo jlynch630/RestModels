@@ -1,0 +1,16 @@
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.OrmBase.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.pdb
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.csprojAssemblyReference.cache
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.AssemblyInfoInputs.cache
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.AssemblyInfo.cs
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.EntityFramework.deps.json
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.EntityFramework.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.EntityFramework.pdb
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.OrmBase.pdb
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.OrmBase.xml
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\bin\Debug\netcoreapp3.1\RestModels.xml
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.csproj.CopyComplete
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.dll
+C:\Users\jlync\Documents\Visual Studio 2019\Projects\RestModels\RestModels.EntityFramework\obj\Debug\netcoreapp3.1\RestModels.EntityFramework.pdb

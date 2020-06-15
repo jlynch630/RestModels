@@ -24,14 +24,14 @@ namespace TestProject
     using RestModels.Exceptions;
     using RestModels.Extensions;
     using RestModels.Filters;
-    using RestModels.EntityFramework.Filters;
     using RestModels.Models;
     using RestModels.EntityFramework.Operations;
+    using RestModels.OrmBase.Extensions;
     using RestModels.Parsers;
     using RestModels.Results;
 
     using TestProject.TestComponents;
-    using RestModels.EntityFramework.Extensions;
+
     using RestModels.Responses;
 
     public class Startup

@@ -1,0 +1,2096 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RestModels.OrmBase</name>
+    </assembly>
+    <members>
+        <member name="T:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions">
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+            <summary>
+                Extension methods for the <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> class
+            </summary>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.IgnorePrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Ensures that the primary key of the <typeparamref name="TModel" /> will not be parsed from the request body
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.IncludePrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Ensures that the primary key of the <typeparamref name="TModel" /> will be included in the response body
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.OmitPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Ensures that the primary key of the <typeparamref name="TModel" /> will be omitted from the response body
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.FilterByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},RestModels.ParameterRetrievers.ParameterRetriever[])">
+            <summary>
+                Filter's this route's dataset by a request parameter that is compared to the primary key of the model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="parameters">The parameters to filter by</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.FilterByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String[])">
+            <summary>
+                Filter's this route's dataset by query parameters compared to the primary key of the model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="parameterNames">The names of the query parameters to filter by</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.FilterByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Filter's this route's dataset by query parameters compared to the primary key of the model. The query parameters'
+                names will be camelCased versions of their C# property name
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.FilterByPrimaryKeyRoute``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String[])">
+            <summary>
+                Filter's this route's dataset by route values compared to the primary key of the model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="parameterNames">The names of the query parameters to filter by</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.FilterByPrimaryKeyRoute``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Filter's this route's dataset by route values compared to the primary key of the model. The query parameters' names
+                will be camelCased versions of their C# property name
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.FilterByPrimaryKey``3(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String[])">
+            <summary>
+                Filter's this route's dataset by a query parameter that is compared to the primary key of the model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <typeparam name="TRetriever">The type of parameter retriever to use</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="parameterNames">The names of the query parameters to filter by</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetKeyNames``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+            	Gets camelCased versions of the names of the primary key properties
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The builder containing the type of database context to get the keys for</param>
+            <returns>camelCased versions of the primary key property names, in order</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.CamelCase(System.String)">
+            <summary>
+            	camelCases a string
+            </summary>
+            <param name="str">The string to camelCase</param>
+            <returns>The string in camelCase format</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+            	Gets the properties that make up the primary key for the model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The builder containing the type of database context to get the keys for</param>
+            <returns>The properties that make up the primary key, in order</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.ExtractProperty``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+                Extracts a property from an expression
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TProperty">The type of the property to extract</typeparam>
+            <param name="propertyExpression">The expression that refers to a property</param>
+            <returns>The extracted property</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.Delete``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+            <remarks>
+                If not used with any filters, this route will drop all models in the dataset
+            </remarks>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE by primary key request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameters">The parameters that will make up the primary key to filter by</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Sets this route up to handle a DELETE request by route values using an ORM. The names of the route values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by route values using an ORM. The names of the route values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by route values using an ORM. The names of the route values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by query parameters using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by a primary key query parameter using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by query parameters using an ORM. The names of the query
+                parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.DeleteByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a DELETE request by query parameters on the same route pattern using an ORM.
+                The names of the query parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.Get``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+            <remarks>This function just calls <see cref="M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetupGet(System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{`0,`1}})"/>, just makes GET requests more consistent in Entity Framework with the other requests</remarks>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.Get``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+            <remarks>This function simply calls <see cref="M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetupGet(System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{`0,`1}})"/>, makes GET requests more consistent in Entity Framework with the other requests</remarks>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.Get``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Sets this route up to handle a GET request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+            <remarks>This function simply calls <see cref="M:RestModels.Options.Builder.RestModelOptionsBuilder`2.SetupGet"/>, makes GET requests more consistent in Entity Framework with the other requests</remarks>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET by primary key request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameters">The parameters that will make up the primary key to filter by</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by route values using an ORM. The names of the route values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by route values using an ORM. The names of the route values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by query parameters using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by a primary key query parameter using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by query parameters using an ORM. The names of the query
+                parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.GetByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a GET request by query parameters on the same route pattern using an ORM.
+                The names of the query parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="routeValues">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route pattern, comparing the
+                given property with a route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="routeValues">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="routeValue">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="routeValue">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM. The property to compare is assumed to be
+                directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM. The property to compare is assumed to be
+                directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="retrievers">The parameters to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},RestModels.ParameterRetrievers.ParameterRetriever,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="retriever">The parameter to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="retrievers">The parameters to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update by primary key request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameters">The parameters that will make up the primary key to filter by</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Sets this route up to handle a PATCH update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PATCH update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PATCH update request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PATCH update request by query parameters using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PATCH update request by a primary key query parameter using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PATCH update request by query parameters using an ORM. The names of the
+                query
+                parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request by query parameters on the same route pattern using Entity
+                Framework.
+                The names of the query parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route pattern, comparing the
+                given property with a query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PatchUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PATCH update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostCreate``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST creation request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostCreate``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST creation request with the same route pattern using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="routeValues">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route pattern, comparing the
+                given property with a route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="routeValues">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="routeValue">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="routeValue">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM. The property to compare is assumed to be
+                directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM. The property to compare is assumed to be
+                directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="retrievers">The parameters to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},RestModels.ParameterRetrievers.ParameterRetriever,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="retriever">The parameter to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="retrievers">The parameters to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update by primary key request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameters">The parameters that will make up the primary key to filter by</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Sets this route up to handle a POST update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a POST update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a POST update request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a POST update request by query parameters using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a POST update request by a primary key query parameter using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a POST update request by query parameters using an ORM. The names of the
+                query
+                parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request by query parameters on the same route pattern using Entity
+                Framework.
+                The names of the query parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route pattern, comparing the
+                given property with a query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PostUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a POST update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="routeValues">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route pattern, comparing the
+                given property with a route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="routeValues">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                route value to determine which elements to update. The names of the route values will be camelCase versions of the
+                C# properties to compare. If these route values do not yet exist, they will be added to the end of the route
+                pattern in order.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="routeValue">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                route value to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="routeValue">The route value names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateBy``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route, comparing the given
+                property with a route value to determine which elements to update. The name of the route value will be a camelCase
+                version of the C# property to compare. If this route value does not yet exist, it will be added to the end of the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM. The property to compare is assumed to be
+                directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM. The property to compare is assumed to be
+                directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByBody``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM. The properties to compare are assumed to
+                be directly set in the parsed model
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="retrievers">The parameters to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},RestModels.ParameterRetrievers.ParameterRetriever,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="retriever">The parameter to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByParam``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when update the model</param>
+            <param name="retrievers">The parameters to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,RestModels.ParameterRetrievers.ParameterRetriever[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update by primary key request using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameters">The parameters that will make up the primary key to filter by</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1})">
+            <summary>
+                Sets this route up to handle a PUT update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PUT update request by route values using an ORM. The names of the route
+                values
+                will be camelCased versions of the C# property name. If these route parameters do not already exist they will be
+                added in order, e.g. /key1/key2.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKey``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PUT update request by route values using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PUT update request by query parameters using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterNames">The names of the route value parameters to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PUT update request by a primary key query parameter using an ORM
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="parameterName">The name of the route value parameter to use</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets a route up to handle a PUT update request by query parameters using an ORM. The names of the
+                query
+                parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByPrimaryKeyQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request by query parameters on the same route pattern using Entity
+                Framework.
+                The names of the query parameters will be camelCased names of the primary key of the entity
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.String[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route pattern, comparing the
+                given property with a query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="queryParameters">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[],System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update. The names of the query parameters will be camelCase versions
+                of the
+                C# properties to compare.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.String,System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM, comparing the given property with a
+                query parameter to determine which elements to update
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="queryParameter">The query parameter names to use to get the property values for a request</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Action{RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1}})">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpression">An expression representing the property to compare when updating the model</param>
+            <param name="optionsHandler">A handler for the route options</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Extensions.RestModelOptionsBuilderExtensions.PutUpdateByQuery``2(RestModels.Options.Builder.RestModelOptionsBuilder{``0,``1},System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+            <summary>
+                Sets this route up to handle a PUT update request using an ORM at the same route, comparing the given
+                property with a query parameter to determine which elements to update. The name of the query parameter will be a
+                camelCase
+                version of the C# property to compare. If this query parameter does not yet exist, it will be added to the end of
+                the
+                route pattern.
+            </summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+            <param name="builder">The options builder to perform the operation on</param>
+            <param name="routePattern">The route pattern to set up the request for</param>
+            <param name="propertyExpressions">Expressions representing the properties to compare when updating the model</param>
+            <returns>This <see cref="T:RestModels.Options.Builder.RestModelOptionsBuilder`2" /> object, for chaining</returns>
+        </member>
+        <member name="T:RestModels.EntityFramework.Filters.PrimaryKeyFilter`1">
+            <summary>
+                A filter that filters the dataset by the primary key of the model.
+            </summary>
+            <typeparam name="TModel">The type of model being filtered</typeparam>
+            <typeparam name="TContext">The context to use to get information about the primary key</typeparam>
+        </member>
+        <member name="F:RestModels.EntityFramework.Filters.PrimaryKeyFilter`1.Parameters">
+            <summary>
+                The parameter retrievers for the primary keys, in the order of the keys
+            </summary>
+        </member>
+        <member name="F:RestModels.EntityFramework.Filters.PrimaryKeyFilter`1.PrimaryKey">
+            <summary>
+            	A list of the properties that make up the primary key
+            </summary>
+        </member>
+        <member name="M:RestModels.EntityFramework.Filters.PrimaryKeyFilter`1.#ctor(System.Collections.Generic.List{RestModels.OrmBase.KeyProperty},RestModels.ParameterRetrievers.ParameterRetriever[])">
+            <summary>
+                Initializes a new instance of the <see cref="!:PrimaryKeyFilter&lt;TModel,TContext&gt;" /> class.
+            </summary>
+            <param name="parameters">The parameters for the primary keys, in the order of the keys</param>
+        </member>
+        <member name="M:RestModels.EntityFramework.Filters.PrimaryKeyFilter`1.FilterDataAsync(RestModels.Context.IApiContext{`0,System.Object},System.Linq.IQueryable{`0})">
+            <summary>
+                Filters the model dataset by the primary key obtained from the request context
+            </summary>
+            <param name="context">The current API context</param>
+            <param name="dataset">The current dataset to be filtered</param>
+            <returns>The filtered dataset</returns>
+        </member>
+        <member name="T:RestModels.EntityFramework.Options.IOrmRestModelOptionsBuilder`2">
+            <summary>Contract for an options builder for an ORM-based API</summary>
+            <typeparam name="TModel">The model type that the API is being built for</typeparam>
+            <typeparam name="TUser">The type of authenticated user context</typeparam>
+        </member>
+        <member name="M:RestModels.EntityFramework.Options.IOrmRestModelOptionsBuilder`2.GetPrimaryKey">
+            <summary>
+                Gets the properties that make up the primary key of <see cref="!:TModel" />
+            </summary>
+            <returns>The properties that make up the primary key of <see cref="!:TModel" /></returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Options.IOrmRestModelOptionsBuilder`2.GetCreateOperation">
+            <summary>
+            	Gets a create <see cref="T:RestModels.Operations.IOperation`2"/> for this model
+            </summary>
+            <returns>A new create operation for <see cref="!:TModel"/></returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Options.IOrmRestModelOptionsBuilder`2.GetUpdateOperation(System.Reflection.PropertyInfo[],RestModels.ParameterRetrievers.ParameterRetriever[])">
+            <summary>
+            	Gets an update <see cref="T:RestModels.Operations.IOperation`2"/> for this model
+            </summary>
+            <param name="properties">The properties to use to compare existing models with parsed models to determine which models to update</param>
+            <param name="retrievers">A list of parameter retrievers to use to get values for the properties. If null, the parsed body will be used instead</param>
+            <returns>A new update operation for <see cref="!:TModel"/></returns>
+        </member>
+        <member name="M:RestModels.EntityFramework.Options.IOrmRestModelOptionsBuilder`2.GetDeleteOperation">
+            <summary>
+            	Gets a delete <see cref="T:RestModels.Operations.IOperation`2"/> for this model
+            </summary>
+            <returns>A new delete operation for <see cref="!:TModel"/></returns>
+        </member>
+        <member name="T:RestModels.OrmBase.KeyProperty">
+            <summary>
+                A property that makes up a part of a PrimaryKey
+            </summary>
+        </member>
+        <member name="M:RestModels.OrmBase.KeyProperty.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+                Initializes a new instance of the <see cref="T:RestModels.OrmBase.KeyProperty" /> class, with the name set to the name of the given
+                <see cref="P:RestModels.OrmBase.KeyProperty.PropertyInfo" />
+            </summary>
+            <param name="propertyInfo">The key property</param>
+        </member>
+        <member name="M:RestModels.OrmBase.KeyProperty.#ctor(System.String,System.Reflection.PropertyInfo)">
+            <summary>
+                Initializes a new instance of the <see cref="T:RestModels.OrmBase.KeyProperty" /> class.
+            </summary>
+            <param name="name">The name of the property</param>
+            <param name="propertyInfo">The key property</param>
+        </member>
+        <member name="P:RestModels.OrmBase.KeyProperty.Name">
+            <summary>
+                Gets the name of the key property
+            </summary>
+        </member>
+        <member name="P:RestModels.OrmBase.KeyProperty.PropertyInfo">
+            <summary>
+                Gets the key property
+            </summary>
+        </member>
+    </members>
+</doc>
